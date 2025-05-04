@@ -1,0 +1,1210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1733</width>
+    <height>937</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(248,248,255);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="fullMenu" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>10</y>
+      <width>351</width>
+      <height>871</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(185,242,255);
+border-radius: 13px;</string>
+    </property>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>50</x>
+       <y>30</y>
+       <width>251</width>
+       <height>48</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MS Sans Serif</family>
+       <pointsize>30</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>ComplaSys</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="homeBtn">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>210</y>
+       <width>201</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>System</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+font-weight: bold;
+border-radius: 13px;</string>
+     </property>
+     <property name="text">
+      <string>Home</string>
+     </property>
+     <property name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/icon/icons/home-7-64.ico</normaloff>:/icon/icons/home-7-64.ico</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="resBtn">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>300</y>
+       <width>201</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>System</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+font-weight: bold;
+border-radius: 13px;</string>
+     </property>
+     <property name="text">
+      <string>Residents</string>
+     </property>
+     <property name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/icon/icons/group-64.ico</normaloff>:/icon/icons/group-64.ico</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="compBtn">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>390</y>
+       <width>201</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>System</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+font-weight: bold;
+border-radius: 13px;</string>
+     </property>
+     <property name="text">
+      <string>Complaints</string>
+     </property>
+     <property name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/icon/icons/report-3-64.ico</normaloff>:/icon/icons/report-3-64.ico</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="offiBtn">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>480</y>
+       <width>201</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>System</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+font-weight: bold;
+border-radius: 13px;</string>
+     </property>
+     <property name="text">
+      <string>Officials</string>
+     </property>
+     <property name="icon">
+      <iconset resource="resource.qrc">
+       <normaloff>:/icon/icons/businessman-64.ico</normaloff>:/icon/icons/businessman-64.ico</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="exBtn">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>740</y>
+       <width>201</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>System</family>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+font-weight: bold;
+border-radius: 13px;</string>
+     </property>
+     <property name="text">
+      <string>Exit</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_6">
+     <property name="geometry">
+      <rect>
+       <x>70</x>
+       <y>80</y>
+       <width>211</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MS Sans Serif</family>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Del Carmen Complaint System</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>10</y>
+      <width>1331</width>
+      <height>871</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(240,255,255);
+border-radius: 13px;</string>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1331</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>24</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+font-weight: bold;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>  Welcome!</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="accBtn_1">
+      <property name="geometry">
+       <rect>
+        <x>1240</x>
+        <y>20</y>
+        <width>81</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(248,248,255);
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/user-4-64.ico</normaloff>:/icon/icons/user-4-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="notiBtn_1">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>20</y>
+        <width>81</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(248,248,255);
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/bell-2-64.ico</normaloff>:/icon/icons/bell-2-64.ico</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1331</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>24</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+font-weight: bold;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>  Residents</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="resident_table">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>190</y>
+        <width>1201</width>
+        <height>601</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>residentID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>lastname</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>sex</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>birthdate</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>contact</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>address</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>credentials</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="updResBtn">
+      <property name="geometry">
+       <rect>
+        <x>1100</x>
+        <y>820</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255,179,71);
+font-weight: bold;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Edit</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/edit-2-64.ico</normaloff>:/icon/icons/edit-2-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delResBtn">
+      <property name="geometry">
+       <rect>
+        <x>980</x>
+        <y>820</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(240,128,128);
+font-weight: bold;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/minus-64.ico</normaloff>:/icon/icons/minus-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addResBtn">
+      <property name="geometry">
+       <rect>
+        <x>1220</x>
+        <y>820</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:  rgb(144,238,144);
+font-weight: bold;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Add</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/plus-64.ico</normaloff>:/icon/icons/plus-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="searchRes_line">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>120</y>
+        <width>451</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Search Residents...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="searchResBtn">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>130</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/search-12-64.ico</normaloff>:/icon/icons/search-12-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="accBtn_2">
+      <property name="geometry">
+       <rect>
+        <x>1240</x>
+        <y>20</y>
+        <width>81</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(248,248,255);
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/user-4-64.ico</normaloff>:/icon/icons/user-4-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="notiBtn_2">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>20</y>
+        <width>81</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(248,248,255);
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/bell-2-64.ico</normaloff>:/icon/icons/bell-2-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="refreshResBtn">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>810</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(135,206,250);
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string>Refresh</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/available-updates-64.ico</normaloff>:/icon/icons/available-updates-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveResBtn">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>810</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(253,253,150);
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/save-64.ico</normaloff>:/icon/icons/save-64.ico</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1331</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>24</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+font-weight: bold;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>  Complaints</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="complaint_table">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>190</y>
+        <width>1201</width>
+        <height>601</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <column>
+       <property name="text">
+        <string>complaintID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>residentID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>category</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>description</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>datetime</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>location</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>status</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="delCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>980</x>
+        <y>820</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(240,128,128);
+font-weight: bold;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/minus-64.ico</normaloff>:/icon/icons/minus-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="updCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>1100</x>
+        <y>820</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255,179,71);
+font-weight: bold;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Edit</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/edit-2-64.ico</normaloff>:/icon/icons/edit-2-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>1220</x>
+        <y>820</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:  rgb(144,238,144);
+font-weight: bold;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Add</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/plus-64.ico</normaloff>:/icon/icons/plus-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="searchComp_line">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>120</y>
+        <width>451</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Search Complaints...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="searchCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>130</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/search-12-64.ico</normaloff>:/icon/icons/search-12-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="searchResBtn_3">
+      <property name="geometry">
+       <rect>
+        <x>1240</x>
+        <y>20</y>
+        <width>81</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(248,248,255);
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/user-4-64.ico</normaloff>:/icon/icons/user-4-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="notiBtn_3">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>20</y>
+        <width>81</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(248,248,255);
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/bell-2-64.ico</normaloff>:/icon/icons/bell-2-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="refreshCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>810</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(135,206,250);
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string>Refresh</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/available-updates-64.ico</normaloff>:/icon/icons/available-updates-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>810</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(253,253,150);
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/save-64.ico</normaloff>:/icon/icons/save-64.ico</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_4">
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1331</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>24</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+font-weight: bold;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>  Officials</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="official_table">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>190</y>
+        <width>1201</width>
+        <height>601</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <column>
+       <property name="text">
+        <string>officialID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>position</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>firstname</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>lastname</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>contact</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="updOffiBtn">
+      <property name="geometry">
+       <rect>
+        <x>1100</x>
+        <y>820</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255,179,71);
+font-weight: bold;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Edit</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/edit-2-64.ico</normaloff>:/icon/icons/edit-2-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delOffiBtn">
+      <property name="geometry">
+       <rect>
+        <x>980</x>
+        <y>820</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(240,128,128);
+font-weight: bold;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/minus-64.ico</normaloff>:/icon/icons/minus-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addOffiBtn">
+      <property name="geometry">
+       <rect>
+        <x>1220</x>
+        <y>820</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:  rgb(144,238,144);
+font-weight: bold;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Add</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/plus-64.ico</normaloff>:/icon/icons/plus-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="searchOffi_line">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>120</y>
+        <width>451</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <property name="placeholderText">
+       <string>Search Officials...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="searchOffiBtn">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>130</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/search-12-64.ico</normaloff>:/icon/icons/search-12-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="accBtn_4">
+      <property name="geometry">
+       <rect>
+        <x>1240</x>
+        <y>20</y>
+        <width>81</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(248,248,255);
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/user-4-64.ico</normaloff>:/icon/icons/user-4-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="notiBtn_4">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>20</y>
+        <width>81</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(248,248,255);
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/bell-2-64.ico</normaloff>:/icon/icons/bell-2-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="refreshOffiBtn">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>810</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(135,206,250);
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string>Refresh</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/available-updates-64.ico</normaloff>:/icon/icons/available-updates-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveOffiBtn">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>810</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(253,253,150);
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+      <property name="icon">
+       <iconset resource="resource.qrc">
+        <normaloff>:/icon/icons/save-64.ico</normaloff>:/icon/icons/save-64.ico</iconset>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1733</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources>
+  <include location="resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>

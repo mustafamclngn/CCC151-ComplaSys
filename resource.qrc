@@ -1,0 +1,17 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>icons/save-64.ico</file>
+    <file>icons/bell-2-64.ico</file>
+    <file>icons/available-updates-64.ico</file>
+    <file>icons/edit-2-64.ico</file>
+    <file>icons/minus-64.ico</file>
+    <file>icons/plus-64.ico</file>
+    <file>icons/search-12-64.ico</file>
+    <file>icons/user-4-64.ico</file>
+    <file>icons/x-mark-64.ico</file>
+    <file>icons/businessman-64.ico</file>
+    <file>icons/group-64.ico</file>
+    <file>icons/home-7-64.ico</file>
+    <file>icons/report-3-64.ico</file>
+  </qresource>
+</RCC>
