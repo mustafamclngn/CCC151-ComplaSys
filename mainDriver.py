@@ -1,5 +1,7 @@
 import sys
 from PyQt5.QtWidgets import *
+from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
+from PyQt5.QtGui import QFontDatabase, QFont
 from PyQt5.QtCore import QTimer, QDateTime
 from PyQt5 import QtCore
 import resources_qrc
@@ -11,6 +13,15 @@ class MainClass(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
 
+        #Font
+        font_id = QFontDatabase.addApplicationFont("Gilroy-Medium.ttf")
+        if font_id == -1:
+            print("Failed to load font.")
+        else:
+            font_family = QFontDatabase.applicationFontFamilies(font_id)[0]
+            custom_font = QFont(font_family, 12)
+            app.setFont(custom_font)
+
         self.homeBtn.clicked.connect(self.show_home)
         self.resBtn.clicked.connect(self.show_residents)
         self.compBtn.clicked.connect(self.show_complaints)
@@ -19,6 +30,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.abtBtn.clicked.connect(self.show_about)
         self.faqBtn.clicked.connect(self.show_faq)
         self.exBtn.clicked.connect(self.show_exit_message)
+        
         #Datettime
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.updateDateTime)
