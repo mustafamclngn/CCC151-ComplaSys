@@ -1,5 +1,6 @@
 import sys
 from PyQt5.QtWidgets import *
+from PyQt5.QtCore import QTimer, QDateTime
 from PyQt5 import QtCore
 import resources_qrc
 
@@ -14,7 +15,27 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.resBtn.clicked.connect(self.show_residents)
         self.compBtn.clicked.connect(self.show_complaints)
         self.offiBtn.clicked.connect(self.show_officials)
+        self.settBtn.clicked.connect(self.show_settings)
+        self.abtBtn.clicked.connect(self.show_about)
+        self.faqBtn.clicked.connect(self.show_faq)
         self.exBtn.clicked.connect(self.show_exit_message)
+        #Datettime
+        self.timer = QTimer(self)
+        self.timer.timeout.connect(self.updateDateTime)
+        self.timer.start(1000)
+        self.updateDateTime()
+
+    def updateDateTime(self):
+        current = QDateTime.currentDateTime()
+        formatted = current.toString("dddd, MMMM d, h:mm AP")
+        self.labelDateTime.setText(formatted)
+        self.labelDateTime_3.setText(formatted)
+        self.labelDateTime_2.setText(formatted)
+        self.labelDateTime_4.setText(formatted)
+        self.labelDateTime_5.setText(formatted)
+        self.labelDateTime_6.setText(formatted)
+        self.labelDateTime_7.setText(formatted)
+
 
     def show_exit_message(self):
         reply = QMessageBox.question(self, 'Exit', 'Are you sure you want to exit?', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
@@ -32,6 +53,15 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
     def show_officials(self):
         self.stackedWidget.setCurrentIndex(3)
+
+    def show_settings(self):
+        self.stackedWidget.setCurrentIndex(4)
+
+    def show_about(self):
+        self.stackedWidget.setCurrentIndex(5)
+    
+    def show_faq(self):
+        self.stackedWidget.setCurrentIndex(6)
 
 
 if __name__ == '__main__':

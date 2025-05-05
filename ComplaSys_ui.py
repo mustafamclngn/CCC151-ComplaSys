@@ -10,26 +10,24 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 import resources_qrc
-
-
+    
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(1733, 937)
-        MainWindow.setStyleSheet("background-color: rgb(248,248,255);")
+        MainWindow.setStyleSheet("background-color: rgb(229,228,226);")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.fullMenu = QtWidgets.QWidget(self.centralwidget)
-        self.fullMenu.setGeometry(QtCore.QRect(20, 10, 351, 871))
+        self.fullMenu.setGeometry(QtCore.QRect(0, 0, 291, 881))
         font = QtGui.QFont()
         font.setBold(True)
         font.setWeight(75)
         self.fullMenu.setFont(font)
-        self.fullMenu.setStyleSheet("background-color: rgb(185,242,255);\n"
-"border-radius: 13px;")
+        self.fullMenu.setStyleSheet("background-color: rgb(242,243,244);")
         self.fullMenu.setObjectName("fullMenu")
         self.label_3 = QtWidgets.QLabel(self.fullMenu)
-        self.label_3.setGeometry(QtCore.QRect(50, 30, 251, 48))
+        self.label_3.setGeometry(QtCore.QRect(20, 30, 261, 51))
         font = QtGui.QFont()
         font.setFamily("MS Sans Serif")
         font.setPointSize(30)
@@ -38,133 +36,175 @@ class Ui_MainWindow(object):
         self.label_3.setFont(font)
         self.label_3.setObjectName("label_3")
         self.homeBtn = QtWidgets.QPushButton(self.fullMenu)
-        self.homeBtn.setGeometry(QtCore.QRect(70, 210, 201, 81))
+        self.homeBtn.setGeometry(QtCore.QRect(30, 200, 241, 51))
         font = QtGui.QFont()
-        font.setFamily("System")
-        font.setBold(True)
-        font.setWeight(75)
-        self.homeBtn.setFont(font)
-        self.homeBtn.setStyleSheet("background-color: white;\n"
-"font-weight: bold;\n"
-"border-radius: 13px;")
-        icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap(":/icon/icons/home-7-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.homeBtn.setIcon(icon)
-        self.homeBtn.setObjectName("homeBtn")
-        self.resBtn = QtWidgets.QPushButton(self.fullMenu)
-        self.resBtn.setGeometry(QtCore.QRect(70, 300, 201, 81))
-        font = QtGui.QFont()
-        font.setFamily("System")
-        font.setBold(True)
-        font.setWeight(75)
-        self.resBtn.setFont(font)
-        self.resBtn.setStyleSheet("background-color: white;\n"
-"font-weight: bold;\n"
-"border-radius: 13px;")
-        icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap(":/icon/icons/group-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.resBtn.setIcon(icon1)
-        self.resBtn.setObjectName("resBtn")
-        self.compBtn = QtWidgets.QPushButton(self.fullMenu)
-        self.compBtn.setGeometry(QtCore.QRect(70, 390, 201, 81))
-        font = QtGui.QFont()
-        font.setFamily("System")
-        font.setBold(True)
-        font.setWeight(75)
-        self.compBtn.setFont(font)
-        self.compBtn.setStyleSheet("background-color: white;\n"
-"font-weight: bold;\n"
-"border-radius: 13px;")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap(":/icon/icons/report-3-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.compBtn.setIcon(icon2)
-        self.compBtn.setObjectName("compBtn")
-        self.offiBtn = QtWidgets.QPushButton(self.fullMenu)
-        self.offiBtn.setGeometry(QtCore.QRect(70, 480, 201, 81))
-        font = QtGui.QFont()
-        font.setFamily("System")
-        font.setBold(True)
-        font.setWeight(75)
-        self.offiBtn.setFont(font)
-        self.offiBtn.setStyleSheet("background-color: white;\n"
-"font-weight: bold;\n"
-"border-radius: 13px;")
-        icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap(":/icon/icons/businessman-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.offiBtn.setIcon(icon3)
-        self.offiBtn.setObjectName("offiBtn")
-        self.exBtn = QtWidgets.QPushButton(self.fullMenu)
-        self.exBtn.setGeometry(QtCore.QRect(70, 740, 201, 81))
-        font = QtGui.QFont()
-        font.setFamily("System")
-        font.setBold(True)
-        font.setWeight(75)
-        self.exBtn.setFont(font)
-        self.exBtn.setStyleSheet("background-color: white;\n"
-"font-weight: bold;\n"
-"border-radius: 13px;")
-        self.exBtn.setObjectName("exBtn")
-        self.label_6 = QtWidgets.QLabel(self.fullMenu)
-        self.label_6.setGeometry(QtCore.QRect(70, 80, 211, 16))
-        font = QtGui.QFont()
-        font.setFamily("MS Sans Serif")
+        font.setPointSize(10)
         font.setBold(False)
         font.setWeight(50)
-        self.label_6.setFont(font)
-        self.label_6.setObjectName("label_6")
-        self.stackedWidget = QtWidgets.QStackedWidget(self.centralwidget)
-        self.stackedWidget.setGeometry(QtCore.QRect(390, 10, 1331, 871))
-        self.stackedWidget.setStyleSheet("background-color: rgb(240,255,255);\n"
+        self.homeBtn.setFont(font)
+        self.homeBtn.setStyleSheet("background-color: white;\n"
+"border-radius: 13px;\n"
+"text-align: left;")
+        self.homeBtn.setObjectName("homeBtn")
+        self.resBtn = QtWidgets.QPushButton(self.fullMenu)
+        self.resBtn.setGeometry(QtCore.QRect(30, 260, 241, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.resBtn.setFont(font)
+        self.resBtn.setStyleSheet("background-color: white;\n"
+"border-radius: 13px;\n"
+"text-align: left;")
+        self.resBtn.setObjectName("resBtn")
+        self.compBtn = QtWidgets.QPushButton(self.fullMenu)
+        self.compBtn.setGeometry(QtCore.QRect(30, 320, 241, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.compBtn.setFont(font)
+        self.compBtn.setStyleSheet("background-color: white;\n"
+"border-radius: 13px;\n"
+"text-align: left;")
+        self.compBtn.setObjectName("compBtn")
+        self.offiBtn = QtWidgets.QPushButton(self.fullMenu)
+        self.offiBtn.setGeometry(QtCore.QRect(30, 380, 241, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.offiBtn.setFont(font)
+        self.offiBtn.setStyleSheet("background-color: white;\n"
+"border-radius: 13px;\n"
+"text-align: left;")
+        self.offiBtn.setObjectName("offiBtn")
+        self.frame = QtWidgets.QFrame(self.fullMenu)
+        self.frame.setGeometry(QtCore.QRect(-10, 800, 301, 91))
+        self.frame.setStyleSheet("background-color: white;")
+        self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.frame.setObjectName("frame")
+        self.accBtn = QtWidgets.QPushButton(self.frame)
+        self.accBtn.setGeometry(QtCore.QRect(30, 10, 61, 51))
+        self.accBtn.setStyleSheet("background-color: rgb(248,248,255);\n"
+"border-radius: 9px;")
+        self.accBtn.setText("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icon/icons/user-4-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.accBtn.setIcon(icon)
+        self.accBtn.setObjectName("accBtn")
+        self.label = QtWidgets.QLabel(self.frame)
+        self.label.setGeometry(QtCore.QRect(100, 20, 101, 16))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.label_2 = QtWidgets.QLabel(self.frame)
+        self.label_2.setGeometry(QtCore.QRect(100, 40, 191, 16))
+        font = QtGui.QFont()
+        font.setPointSize(8)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.exBtn = QtWidgets.QPushButton(self.fullMenu)
+        self.exBtn.setGeometry(QtCore.QRect(30, 730, 241, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.exBtn.setFont(font)
+        self.exBtn.setStyleSheet("background-color: white;\n"
 "border-radius: 13px;")
+        self.exBtn.setObjectName("exBtn")
+        self.settBtn = QtWidgets.QPushButton(self.fullMenu)
+        self.settBtn.setGeometry(QtCore.QRect(30, 440, 241, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.settBtn.setFont(font)
+        self.settBtn.setStyleSheet("background-color: white;\n"
+"border-radius: 13px;\n"
+"text-align: left;")
+        self.settBtn.setObjectName("settBtn")
+        self.abtBtn = QtWidgets.QPushButton(self.fullMenu)
+        self.abtBtn.setGeometry(QtCore.QRect(30, 500, 241, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.abtBtn.setFont(font)
+        self.abtBtn.setStyleSheet("background-color: white;\n"
+"border-radius: 13px;\n"
+"text-align: left;")
+        self.abtBtn.setObjectName("abtBtn")
+        self.faqBtn = QtWidgets.QPushButton(self.fullMenu)
+        self.faqBtn.setGeometry(QtCore.QRect(30, 560, 241, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(False)
+        font.setWeight(50)
+        self.faqBtn.setFont(font)
+        self.faqBtn.setStyleSheet("background-color: white;\n"
+"border-radius: 13px;\n"
+"text-align: left;")
+        self.faqBtn.setObjectName("faqBtn")
+        self.label_4 = QtWidgets.QLabel(self.fullMenu)
+        self.label_4.setGeometry(QtCore.QRect(40, 90, 201, 16))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_4.setFont(font)
+        self.label_4.setObjectName("label_4")
+        self.stackedWidget = QtWidgets.QStackedWidget(self.centralwidget)
+        self.stackedWidget.setGeometry(QtCore.QRect(310, 0, 1401, 881))
+        font = QtGui.QFont()
+        font.setFamily("System")
+        font.setBold(True)
+        font.setWeight(75)
+        self.stackedWidget.setFont(font)
+        self.stackedWidget.setStyleSheet("background-color: rgb(242,243,244);")
         self.stackedWidget.setObjectName("stackedWidget")
         self.page = QtWidgets.QWidget()
         self.page.setObjectName("page")
         self.label_7 = QtWidgets.QLabel(self.page)
-        self.label_7.setGeometry(QtCore.QRect(0, 0, 1331, 101))
+        self.label_7.setGeometry(QtCore.QRect(0, 0, 1401, 101))
         font = QtGui.QFont()
         font.setFamily("MS Shell Dlg 2")
         font.setPointSize(24)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setWeight(50)
         self.label_7.setFont(font)
         self.label_7.setStyleSheet("background-color: white;\n"
-"font-weight: bold;\n"
 "border-radius: 13px;")
         self.label_7.setObjectName("label_7")
-        self.accBtn_1 = QtWidgets.QPushButton(self.page)
-        self.accBtn_1.setGeometry(QtCore.QRect(1240, 20, 81, 61))
-        self.accBtn_1.setStyleSheet("background-color: rgb(248,248,255);\n"
-"border-radius: 9px;")
-        self.accBtn_1.setText("")
-        icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap(":/icon/icons/user-4-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.accBtn_1.setIcon(icon4)
-        self.accBtn_1.setObjectName("accBtn_1")
-        self.notiBtn_1 = QtWidgets.QPushButton(self.page)
-        self.notiBtn_1.setGeometry(QtCore.QRect(1150, 20, 81, 61))
-        self.notiBtn_1.setStyleSheet("background-color: rgb(248,248,255);\n"
-"border-radius: 9px;")
-        self.notiBtn_1.setText("")
-        icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap(":/icon/icons/bell-2-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.notiBtn_1.setIcon(icon5)
-        self.notiBtn_1.setObjectName("notiBtn_1")
+        self.labelDateTime_3 = QtWidgets.QLabel(self.page)
+        self.labelDateTime_3.setGeometry(QtCore.QRect(1200, 30, 201, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.labelDateTime_3.setFont(font)
+        self.labelDateTime_3.setStyleSheet("background-color: white;")
+        self.labelDateTime_3.setObjectName("labelDateTime_3")
         self.stackedWidget.addWidget(self.page)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
         self.label_8 = QtWidgets.QLabel(self.page_2)
-        self.label_8.setGeometry(QtCore.QRect(0, 0, 1331, 101))
+        self.label_8.setGeometry(QtCore.QRect(0, 0, 1401, 101))
         font = QtGui.QFont()
         font.setPointSize(24)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setWeight(50)
         self.label_8.setFont(font)
         self.label_8.setStyleSheet("background-color: white;\n"
-"font-weight: bold;\n"
 "border-radius: 13px;")
         self.label_8.setObjectName("label_8")
         self.resident_table = QtWidgets.QTableWidget(self.page_2)
-        self.resident_table.setGeometry(QtCore.QRect(60, 190, 1201, 601))
+        self.resident_table.setGeometry(QtCore.QRect(60, 190, 1271, 601))
         self.resident_table.setStyleSheet("background-color: white;")
         self.resident_table.setObjectName("resident_table")
         self.resident_table.setColumnCount(7)
@@ -191,12 +231,12 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.updResBtn.setFont(font)
-        self.updResBtn.setStyleSheet("background-color: rgb(255,179,71);\n"
-"font-weight: bold;\n"
+        self.updResBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
 "border-radius: 13px;")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap(":/icon/icons/edit-2-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.updResBtn.setIcon(icon6)
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/icon/icons/edit-2-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.updResBtn.setIcon(icon1)
         self.updResBtn.setObjectName("updResBtn")
         self.delResBtn = QtWidgets.QPushButton(self.page_2)
         self.delResBtn.setGeometry(QtCore.QRect(980, 820, 101, 41))
@@ -205,12 +245,12 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.delResBtn.setFont(font)
-        self.delResBtn.setStyleSheet("background-color: rgb(240,128,128);\n"
-"font-weight: bold;\n"
+        self.delResBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
 "border-radius: 13px;")
-        icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap(":/icon/icons/minus-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.delResBtn.setIcon(icon7)
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/icon/icons/minus-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.delResBtn.setIcon(icon2)
         self.delResBtn.setObjectName("delResBtn")
         self.addResBtn = QtWidgets.QPushButton(self.page_2)
         self.addResBtn.setGeometry(QtCore.QRect(1220, 820, 101, 41))
@@ -219,82 +259,78 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.addResBtn.setFont(font)
-        self.addResBtn.setStyleSheet("background-color:  rgb(144,238,144);\n"
-"font-weight: bold;\n"
+        self.addResBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
 "border-radius: 13px;")
-        icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap(":/icon/icons/plus-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.addResBtn.setIcon(icon8)
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/icon/icons/plus-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.addResBtn.setIcon(icon3)
         self.addResBtn.setObjectName("addResBtn")
         self.searchRes_line = QtWidgets.QLineEdit(self.page_2)
-        self.searchRes_line.setGeometry(QtCore.QRect(50, 120, 451, 51))
-        self.searchRes_line.setStyleSheet("background-color: white;")
+        self.searchRes_line.setGeometry(QtCore.QRect(30, 120, 451, 51))
+        self.searchRes_line.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 13px;")
         self.searchRes_line.setObjectName("searchRes_line")
         self.searchResBtn = QtWidgets.QPushButton(self.page_2)
-        self.searchResBtn.setGeometry(QtCore.QRect(510, 130, 41, 31))
+        self.searchResBtn.setGeometry(QtCore.QRect(490, 120, 61, 51))
         self.searchResBtn.setStyleSheet("background-color: white;\n"
 "border-radius: 9px;")
         self.searchResBtn.setText("")
-        icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap(":/icon/icons/search-12-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.searchResBtn.setIcon(icon9)
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap(":/icon/icons/search-12-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.searchResBtn.setIcon(icon4)
         self.searchResBtn.setObjectName("searchResBtn")
-        self.accBtn_2 = QtWidgets.QPushButton(self.page_2)
-        self.accBtn_2.setGeometry(QtCore.QRect(1240, 20, 81, 61))
-        self.accBtn_2.setStyleSheet("background-color: rgb(248,248,255);\n"
-"border-radius: 9px;")
-        self.accBtn_2.setText("")
-        self.accBtn_2.setIcon(icon4)
-        self.accBtn_2.setObjectName("accBtn_2")
-        self.notiBtn_2 = QtWidgets.QPushButton(self.page_2)
-        self.notiBtn_2.setGeometry(QtCore.QRect(1150, 20, 81, 61))
-        self.notiBtn_2.setStyleSheet("background-color: rgb(248,248,255);\n"
-"border-radius: 9px;")
-        self.notiBtn_2.setText("")
-        self.notiBtn_2.setIcon(icon5)
-        self.notiBtn_2.setObjectName("notiBtn_2")
         self.refreshResBtn = QtWidgets.QPushButton(self.page_2)
-        self.refreshResBtn.setGeometry(QtCore.QRect(70, 810, 101, 41))
+        self.refreshResBtn.setGeometry(QtCore.QRect(70, 820, 101, 41))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setBold(True)
         font.setWeight(75)
         self.refreshResBtn.setFont(font)
-        self.refreshResBtn.setStyleSheet("background-color: rgb(135,206,250);\n"
-"border-radius: 9px;")
-        icon10 = QtGui.QIcon()
-        icon10.addPixmap(QtGui.QPixmap(":/icon/icons/available-updates-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.refreshResBtn.setIcon(icon10)
+        self.refreshResBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 13px;")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap(":/icon/icons/available-updates-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.refreshResBtn.setIcon(icon5)
         self.refreshResBtn.setObjectName("refreshResBtn")
         self.saveResBtn = QtWidgets.QPushButton(self.page_2)
-        self.saveResBtn.setGeometry(QtCore.QRect(190, 810, 101, 41))
+        self.saveResBtn.setGeometry(QtCore.QRect(190, 820, 101, 41))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setBold(True)
         font.setWeight(75)
         self.saveResBtn.setFont(font)
-        self.saveResBtn.setStyleSheet("background-color: rgb(253,253,150);\n"
-"border-radius: 9px;")
-        icon11 = QtGui.QIcon()
-        icon11.addPixmap(QtGui.QPixmap(":/icon/icons/save-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.saveResBtn.setIcon(icon11)
+        self.saveResBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 13px;")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap(":/icon/icons/save-64.ico"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.saveResBtn.setIcon(icon6)
         self.saveResBtn.setObjectName("saveResBtn")
+        self.labelDateTime_4 = QtWidgets.QLabel(self.page_2)
+        self.labelDateTime_4.setGeometry(QtCore.QRect(1200, 30, 201, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.labelDateTime_4.setFont(font)
+        self.labelDateTime_4.setStyleSheet("background-color: white;")
+        self.labelDateTime_4.setObjectName("labelDateTime_4")
         self.stackedWidget.addWidget(self.page_2)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
         self.label_9 = QtWidgets.QLabel(self.page_3)
-        self.label_9.setGeometry(QtCore.QRect(0, 0, 1331, 101))
+        self.label_9.setGeometry(QtCore.QRect(0, 0, 1401, 101))
         font = QtGui.QFont()
         font.setPointSize(24)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setWeight(50)
         self.label_9.setFont(font)
         self.label_9.setStyleSheet("background-color: white;\n"
-"font-weight: bold;\n"
 "border-radius: 13px;")
         self.label_9.setObjectName("label_9")
         self.complaint_table = QtWidgets.QTableWidget(self.page_3)
-        self.complaint_table.setGeometry(QtCore.QRect(60, 190, 1201, 601))
+        self.complaint_table.setGeometry(QtCore.QRect(60, 190, 1271, 601))
         self.complaint_table.setStyleSheet("background-color: white;")
         self.complaint_table.setObjectName("complaint_table")
         self.complaint_table.setColumnCount(7)
@@ -320,10 +356,10 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.delCompBtn.setFont(font)
-        self.delCompBtn.setStyleSheet("background-color: rgb(240,128,128);\n"
-"font-weight: bold;\n"
+        self.delCompBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.delCompBtn.setIcon(icon7)
+        self.delCompBtn.setIcon(icon2)
         self.delCompBtn.setObjectName("delCompBtn")
         self.updCompBtn = QtWidgets.QPushButton(self.page_3)
         self.updCompBtn.setGeometry(QtCore.QRect(1100, 820, 101, 41))
@@ -332,10 +368,10 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.updCompBtn.setFont(font)
-        self.updCompBtn.setStyleSheet("background-color: rgb(255,179,71);\n"
-"font-weight: bold;\n"
+        self.updCompBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.updCompBtn.setIcon(icon6)
+        self.updCompBtn.setIcon(icon1)
         self.updCompBtn.setObjectName("updCompBtn")
         self.addCompBtn = QtWidgets.QPushButton(self.page_3)
         self.addCompBtn.setGeometry(QtCore.QRect(1220, 820, 101, 41))
@@ -344,74 +380,70 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.addCompBtn.setFont(font)
-        self.addCompBtn.setStyleSheet("background-color:  rgb(144,238,144);\n"
-"font-weight: bold;\n"
+        self.addCompBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.addCompBtn.setIcon(icon8)
+        self.addCompBtn.setIcon(icon3)
         self.addCompBtn.setObjectName("addCompBtn")
         self.searchComp_line = QtWidgets.QLineEdit(self.page_3)
-        self.searchComp_line.setGeometry(QtCore.QRect(50, 120, 451, 51))
-        self.searchComp_line.setStyleSheet("background-color: white;")
+        self.searchComp_line.setGeometry(QtCore.QRect(30, 120, 451, 51))
+        self.searchComp_line.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 2px;")
         self.searchComp_line.setObjectName("searchComp_line")
         self.searchCompBtn = QtWidgets.QPushButton(self.page_3)
-        self.searchCompBtn.setGeometry(QtCore.QRect(510, 130, 41, 31))
+        self.searchCompBtn.setGeometry(QtCore.QRect(490, 120, 61, 51))
         self.searchCompBtn.setStyleSheet("background-color: white;\n"
 "border-radius: 9px;")
         self.searchCompBtn.setText("")
-        self.searchCompBtn.setIcon(icon9)
+        self.searchCompBtn.setIcon(icon4)
         self.searchCompBtn.setObjectName("searchCompBtn")
-        self.searchResBtn_3 = QtWidgets.QPushButton(self.page_3)
-        self.searchResBtn_3.setGeometry(QtCore.QRect(1240, 20, 81, 61))
-        self.searchResBtn_3.setStyleSheet("background-color: rgb(248,248,255);\n"
-"border-radius: 9px;")
-        self.searchResBtn_3.setText("")
-        self.searchResBtn_3.setIcon(icon4)
-        self.searchResBtn_3.setObjectName("searchResBtn_3")
-        self.notiBtn_3 = QtWidgets.QPushButton(self.page_3)
-        self.notiBtn_3.setGeometry(QtCore.QRect(1150, 20, 81, 61))
-        self.notiBtn_3.setStyleSheet("background-color: rgb(248,248,255);\n"
-"border-radius: 9px;")
-        self.notiBtn_3.setText("")
-        self.notiBtn_3.setIcon(icon5)
-        self.notiBtn_3.setObjectName("notiBtn_3")
         self.refreshCompBtn = QtWidgets.QPushButton(self.page_3)
-        self.refreshCompBtn.setGeometry(QtCore.QRect(70, 810, 101, 41))
+        self.refreshCompBtn.setGeometry(QtCore.QRect(70, 820, 101, 41))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setBold(True)
         font.setWeight(75)
         self.refreshCompBtn.setFont(font)
-        self.refreshCompBtn.setStyleSheet("background-color: rgb(135,206,250);\n"
-"border-radius: 9px;")
-        self.refreshCompBtn.setIcon(icon10)
+        self.refreshCompBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 13px;")
+        self.refreshCompBtn.setIcon(icon5)
         self.refreshCompBtn.setObjectName("refreshCompBtn")
         self.saveCompBtn = QtWidgets.QPushButton(self.page_3)
-        self.saveCompBtn.setGeometry(QtCore.QRect(190, 810, 101, 41))
+        self.saveCompBtn.setGeometry(QtCore.QRect(190, 820, 101, 41))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setBold(True)
         font.setWeight(75)
         self.saveCompBtn.setFont(font)
-        self.saveCompBtn.setStyleSheet("background-color: rgb(253,253,150);\n"
-"border-radius: 9px;")
-        self.saveCompBtn.setIcon(icon11)
+        self.saveCompBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 13px;")
+        self.saveCompBtn.setIcon(icon6)
         self.saveCompBtn.setObjectName("saveCompBtn")
+        self.labelDateTime = QtWidgets.QLabel(self.page_3)
+        self.labelDateTime.setGeometry(QtCore.QRect(1200, 30, 201, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.labelDateTime.setFont(font)
+        self.labelDateTime.setStyleSheet("background-color: white;")
+        self.labelDateTime.setObjectName("labelDateTime")
         self.stackedWidget.addWidget(self.page_3)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
         self.label_10 = QtWidgets.QLabel(self.page_4)
-        self.label_10.setGeometry(QtCore.QRect(0, 0, 1331, 101))
+        self.label_10.setGeometry(QtCore.QRect(0, 0, 1401, 101))
         font = QtGui.QFont()
         font.setPointSize(24)
-        font.setBold(True)
-        font.setWeight(75)
+        font.setBold(False)
+        font.setWeight(50)
         self.label_10.setFont(font)
         self.label_10.setStyleSheet("background-color: white;\n"
-"font-weight: bold;\n"
 "border-radius: 13px;")
         self.label_10.setObjectName("label_10")
         self.official_table = QtWidgets.QTableWidget(self.page_4)
-        self.official_table.setGeometry(QtCore.QRect(60, 190, 1201, 601))
+        self.official_table.setGeometry(QtCore.QRect(60, 190, 1271, 601))
         self.official_table.setStyleSheet("background-color: white;")
         self.official_table.setObjectName("official_table")
         self.official_table.setColumnCount(5)
@@ -433,10 +465,10 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.updOffiBtn.setFont(font)
-        self.updOffiBtn.setStyleSheet("background-color: rgb(255,179,71);\n"
-"font-weight: bold;\n"
+        self.updOffiBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.updOffiBtn.setIcon(icon6)
+        self.updOffiBtn.setIcon(icon1)
         self.updOffiBtn.setObjectName("updOffiBtn")
         self.delOffiBtn = QtWidgets.QPushButton(self.page_4)
         self.delOffiBtn.setGeometry(QtCore.QRect(980, 820, 101, 41))
@@ -445,10 +477,10 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.delOffiBtn.setFont(font)
-        self.delOffiBtn.setStyleSheet("background-color: rgb(240,128,128);\n"
-"font-weight: bold;\n"
+        self.delOffiBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.delOffiBtn.setIcon(icon7)
+        self.delOffiBtn.setIcon(icon2)
         self.delOffiBtn.setObjectName("delOffiBtn")
         self.addOffiBtn = QtWidgets.QPushButton(self.page_4)
         self.addOffiBtn.setGeometry(QtCore.QRect(1220, 820, 101, 41))
@@ -457,59 +489,116 @@ class Ui_MainWindow(object):
         font.setBold(True)
         font.setWeight(75)
         self.addOffiBtn.setFont(font)
-        self.addOffiBtn.setStyleSheet("background-color:  rgb(144,238,144);\n"
-"font-weight: bold;\n"
+        self.addOffiBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.addOffiBtn.setIcon(icon8)
+        self.addOffiBtn.setIcon(icon3)
         self.addOffiBtn.setObjectName("addOffiBtn")
         self.searchOffi_line = QtWidgets.QLineEdit(self.page_4)
-        self.searchOffi_line.setGeometry(QtCore.QRect(50, 120, 451, 51))
-        self.searchOffi_line.setStyleSheet("background-color: white;")
+        self.searchOffi_line.setGeometry(QtCore.QRect(30, 120, 451, 51))
+        self.searchOffi_line.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 2px;")
         self.searchOffi_line.setObjectName("searchOffi_line")
         self.searchOffiBtn = QtWidgets.QPushButton(self.page_4)
-        self.searchOffiBtn.setGeometry(QtCore.QRect(510, 130, 41, 31))
+        self.searchOffiBtn.setGeometry(QtCore.QRect(490, 120, 61, 51))
         self.searchOffiBtn.setStyleSheet("background-color: white;\n"
 "border-radius: 9px;")
         self.searchOffiBtn.setText("")
-        self.searchOffiBtn.setIcon(icon9)
+        self.searchOffiBtn.setIcon(icon4)
         self.searchOffiBtn.setObjectName("searchOffiBtn")
-        self.accBtn_4 = QtWidgets.QPushButton(self.page_4)
-        self.accBtn_4.setGeometry(QtCore.QRect(1240, 20, 81, 61))
-        self.accBtn_4.setStyleSheet("background-color: rgb(248,248,255);\n"
-"border-radius: 9px;")
-        self.accBtn_4.setText("")
-        self.accBtn_4.setIcon(icon4)
-        self.accBtn_4.setObjectName("accBtn_4")
-        self.notiBtn_4 = QtWidgets.QPushButton(self.page_4)
-        self.notiBtn_4.setGeometry(QtCore.QRect(1150, 20, 81, 61))
-        self.notiBtn_4.setStyleSheet("background-color: rgb(248,248,255);\n"
-"border-radius: 9px;")
-        self.notiBtn_4.setText("")
-        self.notiBtn_4.setIcon(icon5)
-        self.notiBtn_4.setObjectName("notiBtn_4")
         self.refreshOffiBtn = QtWidgets.QPushButton(self.page_4)
-        self.refreshOffiBtn.setGeometry(QtCore.QRect(70, 810, 101, 41))
+        self.refreshOffiBtn.setGeometry(QtCore.QRect(70, 820, 101, 41))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setBold(True)
         font.setWeight(75)
         self.refreshOffiBtn.setFont(font)
-        self.refreshOffiBtn.setStyleSheet("background-color: rgb(135,206,250);\n"
-"border-radius: 9px;")
-        self.refreshOffiBtn.setIcon(icon10)
+        self.refreshOffiBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 13px;")
+        self.refreshOffiBtn.setIcon(icon5)
         self.refreshOffiBtn.setObjectName("refreshOffiBtn")
         self.saveOffiBtn = QtWidgets.QPushButton(self.page_4)
-        self.saveOffiBtn.setGeometry(QtCore.QRect(190, 810, 101, 41))
+        self.saveOffiBtn.setGeometry(QtCore.QRect(190, 820, 101, 41))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setBold(True)
         font.setWeight(75)
         self.saveOffiBtn.setFont(font)
-        self.saveOffiBtn.setStyleSheet("background-color: rgb(253,253,150);\n"
-"border-radius: 9px;")
-        self.saveOffiBtn.setIcon(icon11)
+        self.saveOffiBtn.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 13px;")
+        self.saveOffiBtn.setIcon(icon6)
         self.saveOffiBtn.setObjectName("saveOffiBtn")
+        self.labelDateTime_2 = QtWidgets.QLabel(self.page_4)
+        self.labelDateTime_2.setGeometry(QtCore.QRect(1200, 30, 201, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.labelDateTime_2.setFont(font)
+        self.labelDateTime_2.setStyleSheet("background-color: white;")
+        self.labelDateTime_2.setObjectName("labelDateTime_2")
         self.stackedWidget.addWidget(self.page_4)
+        self.page_5 = QtWidgets.QWidget()
+        self.page_5.setObjectName("page_5")
+        self.label_11 = QtWidgets.QLabel(self.page_5)
+        self.label_11.setGeometry(QtCore.QRect(0, 0, 1401, 101))
+        font = QtGui.QFont()
+        font.setPointSize(24)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_11.setFont(font)
+        self.label_11.setStyleSheet("background-color: white;\n"
+"border-radius: 13px;")
+        self.label_11.setObjectName("label_11")
+        self.labelDateTime_5 = QtWidgets.QLabel(self.page_5)
+        self.labelDateTime_5.setGeometry(QtCore.QRect(1200, 30, 201, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.labelDateTime_5.setFont(font)
+        self.labelDateTime_5.setStyleSheet("background-color: white;")
+        self.labelDateTime_5.setObjectName("labelDateTime_5")
+        self.stackedWidget.addWidget(self.page_5)
+        self.page_6 = QtWidgets.QWidget()
+        self.page_6.setObjectName("page_6")
+        self.label_12 = QtWidgets.QLabel(self.page_6)
+        self.label_12.setGeometry(QtCore.QRect(0, 0, 1401, 101))
+        font = QtGui.QFont()
+        font.setPointSize(24)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_12.setFont(font)
+        self.label_12.setStyleSheet("background-color: white;\n"
+"border-radius: 13px;")
+        self.label_12.setObjectName("label_12")
+        self.labelDateTime_6 = QtWidgets.QLabel(self.page_6)
+        self.labelDateTime_6.setGeometry(QtCore.QRect(1200, 30, 201, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.labelDateTime_6.setFont(font)
+        self.labelDateTime_6.setStyleSheet("background-color: white;")
+        self.labelDateTime_6.setObjectName("labelDateTime_6")
+        self.stackedWidget.addWidget(self.page_6)
+        self.page_7 = QtWidgets.QWidget()
+        self.page_7.setObjectName("page_7")
+        self.label_13 = QtWidgets.QLabel(self.page_7)
+        self.label_13.setGeometry(QtCore.QRect(0, 0, 1401, 101))
+        font = QtGui.QFont()
+        font.setPointSize(24)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_13.setFont(font)
+        self.label_13.setStyleSheet("background-color: white;\n"
+"border-radius: 13px;")
+        self.label_13.setObjectName("label_13")
+        self.labelDateTime_7 = QtWidgets.QLabel(self.page_7)
+        self.labelDateTime_7.setGeometry(QtCore.QRect(1200, 30, 201, 51))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.labelDateTime_7.setFont(font)
+        self.labelDateTime_7.setStyleSheet("background-color: white;")
+        self.labelDateTime_7.setObjectName("labelDateTime_7")
+        self.stackedWidget.addWidget(self.page_7)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 1733, 26))
@@ -527,13 +616,19 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_3.setText(_translate("MainWindow", "ComplaSys"))
-        self.homeBtn.setText(_translate("MainWindow", "Home"))
-        self.resBtn.setText(_translate("MainWindow", "Residents"))
-        self.compBtn.setText(_translate("MainWindow", "Complaints"))
-        self.offiBtn.setText(_translate("MainWindow", "Officials"))
-        self.exBtn.setText(_translate("MainWindow", "Exit"))
-        self.label_6.setText(_translate("MainWindow", "Del Carmen Complaint System"))
-        self.label_7.setText(_translate("MainWindow", "  Welcome!"))
+        self.homeBtn.setText(_translate("MainWindow", "  Dashboard"))
+        self.resBtn.setText(_translate("MainWindow", "  Residents"))
+        self.compBtn.setText(_translate("MainWindow", "  Complaints"))
+        self.offiBtn.setText(_translate("MainWindow", "  Officials"))
+        self.label.setText(_translate("MainWindow", "ADMIN"))
+        self.label_2.setText(_translate("MainWindow", "Del Carmen Complaint System"))
+        self.exBtn.setText(_translate("MainWindow", "  Exit"))
+        self.settBtn.setText(_translate("MainWindow", "  Settings"))
+        self.abtBtn.setText(_translate("MainWindow", "  About"))
+        self.faqBtn.setText(_translate("MainWindow", "  FAQ"))
+        self.label_4.setText(_translate("MainWindow", "Del Carmen Complaint System"))
+        self.label_7.setText(_translate("MainWindow", "  Dashboard"))
+        self.labelDateTime_3.setText(_translate("MainWindow", "TextLabel"))
         self.label_8.setText(_translate("MainWindow", "  Residents"))
         item = self.resident_table.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "residentID"))
@@ -555,6 +650,7 @@ class Ui_MainWindow(object):
         self.searchRes_line.setPlaceholderText(_translate("MainWindow", "Search Residents..."))
         self.refreshResBtn.setText(_translate("MainWindow", "Refresh"))
         self.saveResBtn.setText(_translate("MainWindow", "Save"))
+        self.labelDateTime_4.setText(_translate("MainWindow", "TextLabel"))
         self.label_9.setText(_translate("MainWindow", "  Complaints"))
         item = self.complaint_table.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "complaintID"))
@@ -576,6 +672,7 @@ class Ui_MainWindow(object):
         self.searchComp_line.setPlaceholderText(_translate("MainWindow", "Search Complaints..."))
         self.refreshCompBtn.setText(_translate("MainWindow", "Refresh"))
         self.saveCompBtn.setText(_translate("MainWindow", "Save"))
+        self.labelDateTime.setText(_translate("MainWindow", "TextLabel"))
         self.label_10.setText(_translate("MainWindow", "  Officials"))
         item = self.official_table.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "officialID"))
@@ -593,103 +690,62 @@ class Ui_MainWindow(object):
         self.searchOffi_line.setPlaceholderText(_translate("MainWindow", "Search Officials..."))
         self.refreshOffiBtn.setText(_translate("MainWindow", "Refresh"))
         self.saveOffiBtn.setText(_translate("MainWindow", "Save"))
+        self.labelDateTime_2.setText(_translate("MainWindow", "TextLabel"))
+        self.label_11.setText(_translate("MainWindow", "  Settings"))
+        self.labelDateTime_5.setText(_translate("MainWindow", "TextLabel"))
+        self.label_12.setText(_translate("MainWindow", "  About"))
+        self.labelDateTime_6.setText(_translate("MainWindow", "TextLabel"))
+        self.label_13.setText(_translate("MainWindow", "  FAQ"))
+        self.labelDateTime_7.setText(_translate("MainWindow", "TextLabel"))
 
-        
-        addBtn_style = """
-    QPushButton {
-        background-color:  rgb(144,238,144);
-        font-weight: bold;
-        border-radius: 13px;
-    }
-    QPushButton:hover {
-        background-color: rgb(30, 199, 30);
-    }
-"""
-        updBtn_style = """
-    QPushButton {
-        background-color: rgb(255,179,71);
-        font-weight: bold;
-        border-radius: 13px;
-    }
-    QPushButton:hover {
-        background-color: rgb(196, 115, 0);
-    }
-"""
-        delBtn_style = """
-    QPushButton {
-        background-color: rgb(240,128,128);
-        font-weight: bold;
-        border-radius: 13px;
-    }
-    QPushButton:hover {
-        background-color: rgb(197, 23, 23);
-    }
-"""
-        refreshBtn_style = """
-    QPushButton {
-        background-color: rgb(135,206,250);
-        border-radius: 9px;
-    }
-    QPushButton:hover {
-        background-color: rgb(9, 140, 222);
-    }
-"""
-        saveBtn_style = """
-    QPushButton {
-        background-color: rgb(253,253,150);
-        border-radius: 9px;
-    }
-    QPushButton:hover {
-        background-color: rgb(237, 237, 5);
-    }
-"""
         OtherBtn_style = """
     QPushButton {
         background-color: white;
         border-radius: 9px;
+        text-align: left;
+    }
+    QPushButton:hover {
+        background-color: rgb(204, 204, 204);
+    }
+        QPushButton.active {
+        border: 2px solid purple;
+    }
+"""
+        MainBtn_style = """
+    QPushButton {
+    background-color: white;
+        border: 1px solid grey;
+        border-radius: 13px;
     }
     QPushButton:hover {
         background-color: rgb(204, 204, 204);
     }
 """
-        MiscBtn_style = """
-    QPushButton {
-        background-color: rgb(248,248,255);
-        border-radius: 9px;
-    }
-    QPushButton:hover {
-        background-color: rgb(147, 147, 255);
-    }
-"""
-        self.accBtn_1.setStyleSheet(MiscBtn_style)
-        self.notiBtn_1.setStyleSheet(MiscBtn_style)
-        self.accBtn_2.setStyleSheet(MiscBtn_style)
-        self.notiBtn_2.setStyleSheet(MiscBtn_style)
-        self.accBtn_4.setStyleSheet(MiscBtn_style)
-        self.notiBtn_3.setStyleSheet(MiscBtn_style)
+
+        self.addCompBtn.setStyleSheet(MainBtn_style)
+        self.delCompBtn.setStyleSheet(MainBtn_style)
+        self.updCompBtn.setStyleSheet(MainBtn_style)
+        self.refreshCompBtn.setStyleSheet(MainBtn_style)
+        self.saveCompBtn.setStyleSheet(MainBtn_style)
+        self.addResBtn.setStyleSheet(MainBtn_style)
+        self.delResBtn.setStyleSheet(MainBtn_style)
+        self.updResBtn.setStyleSheet(MainBtn_style)
+        self.refreshResBtn.setStyleSheet(MainBtn_style)
+        self.saveResBtn.setStyleSheet(MainBtn_style)
+        self.addOffiBtn.setStyleSheet(MainBtn_style)
+        self.delOffiBtn.setStyleSheet(MainBtn_style)
+        self.updOffiBtn.setStyleSheet(MainBtn_style)
+        self.refreshOffiBtn.setStyleSheet(MainBtn_style)
+        self.saveOffiBtn.setStyleSheet(MainBtn_style)
         self.homeBtn.setStyleSheet(OtherBtn_style)
         self.resBtn.setStyleSheet(OtherBtn_style)
         self.compBtn.setStyleSheet(OtherBtn_style)
         self.offiBtn.setStyleSheet(OtherBtn_style)
         self.exBtn.setStyleSheet(OtherBtn_style)
-        self.searchResBtn.setStyleSheet(OtherBtn_style)
-        self.searchCompBtn.setStyleSheet(OtherBtn_style)
-        self.searchOffiBtn.setStyleSheet(OtherBtn_style)
-        self.saveResBtn.setStyleSheet(saveBtn_style)
-        self.saveCompBtn.setStyleSheet(saveBtn_style)
-        self.saveOffiBtn.setStyleSheet(saveBtn_style)
-        self.refreshResBtn.setStyleSheet(refreshBtn_style)
-        self.refreshCompBtn.setStyleSheet(refreshBtn_style)
-        self.refreshOffiBtn.setStyleSheet(refreshBtn_style)
-        self.delResBtn.setStyleSheet(delBtn_style)
-        self.delCompBtn.setStyleSheet(delBtn_style)
-        self.delOffiBtn.setStyleSheet(delBtn_style)
-        self.updResBtn.setStyleSheet(updBtn_style)
-        self.updCompBtn.setStyleSheet(updBtn_style)
-        self.updOffiBtn.setStyleSheet(updBtn_style)
-        self.addResBtn.setStyleSheet(addBtn_style)
-        self.addCompBtn.setStyleSheet(addBtn_style)
-        self.addOffiBtn.setStyleSheet(addBtn_style)
+        self.settBtn.setStyleSheet(OtherBtn_style)
+        self.abtBtn.setStyleSheet(OtherBtn_style)
+        self.faqBtn.setStyleSheet(OtherBtn_style)
+
 
 if __name__ == "__main__":
     import sys
