@@ -207,7 +207,7 @@ class Ui_MainWindow(object):
         self.resident_table.setGeometry(QtCore.QRect(60, 190, 1271, 601))
         self.resident_table.setStyleSheet("background-color: white;")
         self.resident_table.setObjectName("resident_table")
-        self.resident_table.setColumnCount(7)
+        self.resident_table.setColumnCount(8)
         self.resident_table.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
         self.resident_table.setHorizontalHeaderItem(0, item)
@@ -223,6 +223,8 @@ class Ui_MainWindow(object):
         self.resident_table.setHorizontalHeaderItem(5, item)
         item = QtWidgets.QTableWidgetItem()
         self.resident_table.setHorizontalHeaderItem(6, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.resident_table.setHorizontalHeaderItem(7, item)
         self.resident_table.horizontalHeader().setStretchLastSection(False)
         self.updResBtn = QtWidgets.QPushButton(self.page_2)
         self.updResBtn.setGeometry(QtCore.QRect(1100, 820, 101, 41))
@@ -633,16 +635,18 @@ class Ui_MainWindow(object):
         item = self.resident_table.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "residentID"))
         item = self.resident_table.horizontalHeaderItem(1)
-        item.setText(_translate("MainWindow", "lastname"))
+        item.setText(_translate("MainWindow", "firstname"))
         item = self.resident_table.horizontalHeaderItem(2)
-        item.setText(_translate("MainWindow", "sex"))
+        item.setText(_translate("MainWindow", "lastname"))
         item = self.resident_table.horizontalHeaderItem(3)
-        item.setText(_translate("MainWindow", "birthdate"))
+        item.setText(_translate("MainWindow", "sex"))
         item = self.resident_table.horizontalHeaderItem(4)
-        item.setText(_translate("MainWindow", "contact"))
+        item.setText(_translate("MainWindow", "birthdate"))
         item = self.resident_table.horizontalHeaderItem(5)
-        item.setText(_translate("MainWindow", "address"))
+        item.setText(_translate("MainWindow", "contact"))
         item = self.resident_table.horizontalHeaderItem(6)
+        item.setText(_translate("MainWindow", "address"))
+        item = self.resident_table.horizontalHeaderItem(7)
         item.setText(_translate("MainWindow", "credentials"))
         self.updResBtn.setText(_translate("MainWindow", "Edit"))
         self.delResBtn.setText(_translate("MainWindow", "Delete"))
@@ -698,6 +702,20 @@ class Ui_MainWindow(object):
         self.label_13.setText(_translate("MainWindow", "  FAQ"))
         self.labelDateTime_7.setText(_translate("MainWindow", "TextLabel"))
 
+#changes made
+        self.resident_table.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+        self.complaint_table.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+        self.official_table.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Stretch)
+        SearchBtn_style = """
+    QPushButton {
+        background-color: white;
+        border-radius: 9px;
+    }
+    QPushButton:hover {
+        background-color: rgb(204, 204, 204);
+    }
+"""
+
         OtherBtn_style = """
     QPushButton {
         background-color: white;
@@ -726,7 +744,7 @@ class Ui_MainWindow(object):
             buttons = [self.homeBtn, self.resBtn, self.compBtn, self.offiBtn, self.exBtn, self.settBtn, self.abtBtn, self.faqBtn]
             for btn in buttons:
                 btn.setStyleSheet(OtherBtn_style)
-            button.setStyleSheet(OtherBtn_style + "QPushButton { border: 2px solid purple; }")
+                button.setStyleSheet(OtherBtn_style + "QPushButton { background-color: rgb(223, 212, 244); color: purple; font-weight: bold; }")
 
         self.homeBtn.clicked.connect(lambda: set_active_button(self.homeBtn))
         self.resBtn.clicked.connect(lambda: set_active_button(self.resBtn))
@@ -752,6 +770,9 @@ class Ui_MainWindow(object):
         self.updOffiBtn.setStyleSheet(MainBtn_style)
         self.refreshOffiBtn.setStyleSheet(MainBtn_style)
         self.saveOffiBtn.setStyleSheet(MainBtn_style)
+        self.searchResBtn.setStyleSheet(SearchBtn_style)
+        self.searchCompBtn.setStyleSheet(SearchBtn_style)
+        self.searchOffiBtn.setStyleSheet(SearchBtn_style)
         self.homeBtn.setStyleSheet(OtherBtn_style)
         self.resBtn.setStyleSheet(OtherBtn_style)
         self.compBtn.setStyleSheet(OtherBtn_style)

@@ -22,6 +22,8 @@ class MainClass(QMainWindow, Ui_MainWindow):
             custom_font = QFont(font_family, 12)
             app.setFont(custom_font)
 
+        #Automatic on dashboard button when load
+        QTimer.singleShot(0, self.homeBtn.click)
         self.homeBtn.clicked.connect(self.show_home)
         self.resBtn.clicked.connect(self.show_residents)
         self.compBtn.clicked.connect(self.show_complaints)
