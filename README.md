@@ -14,6 +14,6 @@ View trends, compare resolved vs. pending cases, and optionally export reports.
 Assign officials to complaints and view their case history (optional).
 
 ## Authors:
-Neil Balbutin  
+[@zzzeit](https://github.com/zzzeit)  
 [@LeaningwithMakikoy](https://github.com/LearningwithMakikoy)  
 [@mustafamclngn](https://github.com/mustafamclngn)
