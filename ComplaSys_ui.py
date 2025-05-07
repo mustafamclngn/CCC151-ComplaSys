@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-import resources_qrc
+from resources import resources_qrc
     
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):

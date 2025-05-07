@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
 from PyQt5.QtGui import QFontDatabase, QFont
 from PyQt5.QtCore import QTimer, QDateTime
 from PyQt5 import QtCore
-import resources_qrc
+from resources import resources_qrc
 
 from ComplaSys_ui import Ui_MainWindow
 
@@ -14,7 +14,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
 
         #Font
-        font_id = QFontDatabase.addApplicationFont("Gilroy-Medium.ttf")
+        font_id = QFontDatabase.addApplicationFont("resources/Gilroy-Medium.ttf")
         if font_id == -1:
             print("Failed to load font.")
         else:
