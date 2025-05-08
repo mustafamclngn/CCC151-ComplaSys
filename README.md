@@ -12,6 +12,6 @@ This project is developed in partial fulfillment to the requirement of the subje
 - Assign barangay officials to cases.
 
 # Authors:
-[@zzzeit](https://github.com/zzzeit)
-[@LearningwithMakikoy](https://github.com/LearningwithMakikoy)
-[@mustafamclngn](https://github.com/mustafamclngn)
+[@zzzeit](https://github.com/zzzeit)  
+[@LearningwithMakikoy](https://github.com/LearningwithMakikoy)  
+[@mustafamclngn](https://github.com/mustafamclngn)  
