@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1733</width>
+    <width>1769</width>
     <height>937</height>
    </rect>
   </property>
@@ -20,10 +20,10 @@
    <widget class="QWidget" name="fullMenu" native="true">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>0</y>
+      <x>30</x>
+      <y>20</y>
       <width>291</width>
-      <height>881</height>
+      <height>841</height>
      </rect>
     </property>
     <property name="font">
@@ -39,9 +39,9 @@ border-radius: 13px;</string>
     <widget class="QLabel" name="label_3">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>261</width>
+       <x>40</x>
+       <y>40</y>
+       <width>231</width>
        <height>51</height>
       </rect>
      </property>
@@ -160,9 +160,9 @@ text-align: left;</string>
     <widget class="QFrame" name="frame">
      <property name="geometry">
       <rect>
-       <x>-10</x>
-       <y>800</y>
-       <width>301</width>
+       <x>0</x>
+       <y>750</y>
+       <width>291</width>
        <height>91</height>
       </rect>
      </property>
@@ -179,20 +179,21 @@ text-align: left;</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>10</y>
+        <y>20</y>
         <width>61</width>
         <height>51</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(248,248,255);
-border-radius: 9px;</string>
+       <string notr="true">background-color: white;
+border-radius: 9px;
+border: 2px solid grey;</string>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/user-4-64.ico</normaloff>:/icon/icons/user-4-64.ico</iconset>
       </property>
      </widget>
@@ -200,7 +201,7 @@ border-radius: 9px;</string>
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>20</y>
+        <y>30</y>
         <width>81</width>
         <height>16</height>
        </rect>
@@ -208,8 +209,8 @@ border-radius: 9px;</string>
       <property name="font">
        <font>
         <pointsize>12</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="text">
@@ -220,7 +221,7 @@ border-radius: 9px;</string>
       <property name="geometry">
        <rect>
         <x>100</x>
-        <y>40</y>
+        <y>50</y>
         <width>181</width>
         <height>16</height>
        </rect>
@@ -241,7 +242,7 @@ border-radius: 9px;</string>
      <property name="geometry">
       <rect>
        <x>20</x>
-       <y>730</y>
+       <y>670</y>
        <width>241</width>
        <height>51</height>
       </rect>
@@ -339,7 +340,7 @@ text-align: left;</string>
     <widget class="QLabel" name="label_4">
      <property name="geometry">
       <rect>
-       <x>40</x>
+       <x>60</x>
        <y>90</y>
        <width>201</width>
        <height>16</height>
@@ -360,24 +361,24 @@ text-align: left;</string>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
      <rect>
-      <x>310</x>
-      <y>0</y>
-      <width>1401</width>
-      <height>881</height>
+      <x>360</x>
+      <y>20</y>
+      <width>1381</width>
+      <height>841</height>
      </rect>
     </property>
     <property name="font">
      <font>
       <family>System</family>
-      <weight>75</weight>
-      <bold>true</bold>
+      <weight>50</weight>
+      <bold>false</bold>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(242,243,244);</string>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QLabel" name="label_7">
@@ -385,7 +386,7 @@ text-align: left;</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1391</width>
+        <width>1431</width>
         <height>101</height>
        </rect>
       </property>
@@ -405,6 +406,27 @@ border-radius: 13px;</string>
        <string>  Dashboard</string>
       </property>
      </widget>
+     <widget class="QLabel" name="labelDateTime1">
+      <property name="geometry">
+       <rect>
+        <x>1200</x>
+        <y>30</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="page_2">
      <widget class="QLabel" name="label_8">
@@ -412,7 +434,7 @@ border-radius: 13px;</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1401</width>
+        <width>1431</width>
         <height>101</height>
        </rect>
       </property>
@@ -434,10 +456,10 @@ border-radius: 13px;</string>
      <widget class="QTableWidget" name="resident_table">
       <property name="geometry">
        <rect>
-        <x>60</x>
+        <x>40</x>
         <y>190</y>
-        <width>1271</width>
-        <height>601</height>
+        <width>1311</width>
+        <height>581</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -485,16 +507,16 @@ border-radius: 13px;</string>
      <widget class="QPushButton" name="updResBtn">
       <property name="geometry">
        <rect>
-        <x>1100</x>
-        <y>820</y>
+        <x>1130</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -506,23 +528,23 @@ border-radius: 13px;</string>
        <string>Edit</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/edit-2-64.ico</normaloff>:/icon/icons/edit-2-64.ico</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="delResBtn">
       <property name="geometry">
        <rect>
-        <x>980</x>
-        <y>820</y>
+        <x>1010</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -534,23 +556,23 @@ border-radius: 13px;</string>
        <string>Delete</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/minus-64.ico</normaloff>:/icon/icons/minus-64.ico</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="addResBtn">
       <property name="geometry">
        <rect>
-        <x>1220</x>
-        <y>820</y>
+        <x>1250</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -562,7 +584,7 @@ border-radius: 13px;</string>
        <string>Add</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/plus-64.ico</normaloff>:/icon/icons/plus-64.ico</iconset>
       </property>
      </widget>
@@ -600,15 +622,15 @@ border-radius: 9px;</string>
        <string/>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/search-12-64.ico</normaloff>:/icon/icons/search-12-64.ico</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="refreshResBtn">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>820</y>
+        <x>100</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -616,8 +638,8 @@ border-radius: 9px;</string>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -629,15 +651,15 @@ border-radius: 13px;</string>
        <string>Refresh</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/available-updates-64.ico</normaloff>:/icon/icons/available-updates-64.ico</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="saveResBtn">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>820</y>
+        <x>220</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -645,8 +667,8 @@ border-radius: 13px;</string>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -658,8 +680,29 @@ border-radius: 13px;</string>
        <string>Save</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/save-64.ico</normaloff>:/icon/icons/save-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelDateTime2">
+      <property name="geometry">
+       <rect>
+        <x>1200</x>
+        <y>30</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
       </property>
      </widget>
     </widget>
@@ -669,7 +712,7 @@ border-radius: 13px;</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1401</width>
+        <width>1431</width>
         <height>101</height>
        </rect>
       </property>
@@ -691,10 +734,10 @@ border-radius: 13px;</string>
      <widget class="QTableWidget" name="complaint_table">
       <property name="geometry">
        <rect>
-        <x>60</x>
+        <x>40</x>
         <y>190</y>
-        <width>1271</width>
-        <height>601</height>
+        <width>1311</width>
+        <height>581</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -739,8 +782,8 @@ border-radius: 13px;</string>
      <widget class="QPushButton" name="delCompBtn">
       <property name="geometry">
        <rect>
-        <x>980</x>
-        <y>820</y>
+        <x>1010</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -748,8 +791,8 @@ border-radius: 13px;</string>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -761,15 +804,15 @@ border-radius: 13px;</string>
        <string>Delete</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/minus-64.ico</normaloff>:/icon/icons/minus-64.ico</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="updCompBtn">
       <property name="geometry">
        <rect>
-        <x>1100</x>
-        <y>820</y>
+        <x>1130</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -777,8 +820,8 @@ border-radius: 13px;</string>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -790,15 +833,15 @@ border-radius: 13px;</string>
        <string>Edit</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/edit-2-64.ico</normaloff>:/icon/icons/edit-2-64.ico</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="addCompBtn">
       <property name="geometry">
        <rect>
-        <x>1220</x>
-        <y>820</y>
+        <x>1250</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -806,8 +849,8 @@ border-radius: 13px;</string>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -819,7 +862,7 @@ border-radius: 13px;</string>
        <string>Add</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/plus-64.ico</normaloff>:/icon/icons/plus-64.ico</iconset>
       </property>
      </widget>
@@ -857,15 +900,15 @@ border-radius: 9px;</string>
        <string/>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/search-12-64.ico</normaloff>:/icon/icons/search-12-64.ico</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="refreshCompBtn">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>820</y>
+        <x>100</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -873,8 +916,8 @@ border-radius: 9px;</string>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -886,15 +929,15 @@ border-radius: 13px;</string>
        <string>Refresh</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/available-updates-64.ico</normaloff>:/icon/icons/available-updates-64.ico</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="saveCompBtn">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>820</y>
+        <x>220</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -902,8 +945,8 @@ border-radius: 13px;</string>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -915,16 +958,16 @@ border-radius: 13px;</string>
        <string>Save</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/save-64.ico</normaloff>:/icon/icons/save-64.ico</iconset>
       </property>
      </widget>
-     <widget class="QLabel" name="labelDateTime">
+     <widget class="QLabel" name="labelDateTime3">
       <property name="geometry">
        <rect>
-        <x>1250</x>
-        <y>20</y>
-        <width>131</width>
+        <x>1200</x>
+        <y>30</y>
+        <width>181</width>
         <height>51</height>
        </rect>
       </property>
@@ -947,7 +990,7 @@ border-radius: 13px;</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1401</width>
+        <width>1431</width>
         <height>101</height>
        </rect>
       </property>
@@ -969,10 +1012,10 @@ border-radius: 13px;</string>
      <widget class="QTableWidget" name="official_table">
       <property name="geometry">
        <rect>
-        <x>60</x>
+        <x>40</x>
         <y>190</y>
-        <width>1271</width>
-        <height>601</height>
+        <width>1311</width>
+        <height>581</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1007,8 +1050,8 @@ border-radius: 13px;</string>
      <widget class="QPushButton" name="updOffiBtn">
       <property name="geometry">
        <rect>
-        <x>1100</x>
-        <y>820</y>
+        <x>1130</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -1016,8 +1059,8 @@ border-radius: 13px;</string>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -1029,15 +1072,15 @@ border-radius: 13px;</string>
        <string>Edit</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/edit-2-64.ico</normaloff>:/icon/icons/edit-2-64.ico</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="delOffiBtn">
       <property name="geometry">
        <rect>
-        <x>980</x>
-        <y>820</y>
+        <x>1010</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -1045,8 +1088,8 @@ border-radius: 13px;</string>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -1058,15 +1101,15 @@ border-radius: 13px;</string>
        <string>Delete</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/minus-64.ico</normaloff>:/icon/icons/minus-64.ico</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="addOffiBtn">
       <property name="geometry">
        <rect>
-        <x>1220</x>
-        <y>820</y>
+        <x>1250</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -1074,8 +1117,8 @@ border-radius: 13px;</string>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -1087,7 +1130,7 @@ border-radius: 13px;</string>
        <string>Add</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/plus-64.ico</normaloff>:/icon/icons/plus-64.ico</iconset>
       </property>
      </widget>
@@ -1125,15 +1168,15 @@ border-radius: 9px;</string>
        <string/>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/search-12-64.ico</normaloff>:/icon/icons/search-12-64.ico</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="refreshOffiBtn">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>820</y>
+        <x>100</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -1141,8 +1184,8 @@ border-radius: 9px;</string>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -1154,15 +1197,15 @@ border-radius: 13px;</string>
        <string>Refresh</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/available-updates-64.ico</normaloff>:/icon/icons/available-updates-64.ico</iconset>
       </property>
      </widget>
      <widget class="QPushButton" name="saveOffiBtn">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>820</y>
+        <x>220</x>
+        <y>790</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -1170,8 +1213,8 @@ border-radius: 13px;</string>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>75</weight>
-        <bold>true</bold>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -1183,8 +1226,173 @@ border-radius: 13px;</string>
        <string>Save</string>
       </property>
       <property name="icon">
-       <iconset resource="resource.qrc">
+       <iconset resource="CCC151-ComplaSys/resources/resource.qrc">
         <normaloff>:/icon/icons/save-64.ico</normaloff>:/icon/icons/save-64.ico</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelDateTime4">
+      <property name="geometry">
+       <rect>
+        <x>1200</x>
+        <y>30</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_5">
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1431</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>24</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>  Settings</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelDateTime5">
+      <property name="geometry">
+       <rect>
+        <x>1200</x>
+        <y>30</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_6">
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1431</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>24</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>  About</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelDateTime6">
+      <property name="geometry">
+       <rect>
+        <x>1200</x>
+        <y>30</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_7">
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1431</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>24</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>  FAQ</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelDateTime7">
+      <property name="geometry">
+       <rect>
+        <x>1200</x>
+        <y>30</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
       </property>
      </widget>
     </widget>
@@ -1195,15 +1403,15 @@ border-radius: 13px;</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1733</width>
-     <height>26</height>
+     <width>1769</width>
+     <height>21</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
-  <include location="resource.qrc"/>
+  <include location="CCC151-ComplaSys/resources/resource.qrc"/>
  </resources>
  <connections/>
 </ui>

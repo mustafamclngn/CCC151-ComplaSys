@@ -5,6 +5,7 @@ from PyQt5.QtGui import QFontDatabase, QFont
 from PyQt5.QtCore import QTimer, QDateTime
 from PyQt5 import QtCore
 from resources import resources_qrc
+from addresidentui import Ui_addResidentDialog
 
 from ComplaSys_ui import Ui_MainWindow
 
@@ -32,6 +33,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.abtBtn.clicked.connect(self.show_about)
         self.faqBtn.clicked.connect(self.show_faq)
         self.exBtn.clicked.connect(self.show_exit_message)
+        self.addResBtn.clicked.connect(self.add_residents)
         
         #Datettime
         self.timer = QTimer(self)
@@ -41,15 +43,20 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
     def updateDateTime(self):
         current = QDateTime.currentDateTime()
-        formatted = current.toString("dddd, MMMM d, h:mm AP")
-        self.labelDateTime.setText(formatted)
-        self.labelDateTime_3.setText(formatted)
-        self.labelDateTime_2.setText(formatted)
-        self.labelDateTime_4.setText(formatted)
-        self.labelDateTime_5.setText(formatted)
-        self.labelDateTime_6.setText(formatted)
-        self.labelDateTime_7.setText(formatted)
+        formatted = current.toString("ddd, MMM d, h:mm AP")
+        self.labelDateTime1.setText(formatted)
+        self.labelDateTime2.setText(formatted)
+        self.labelDateTime3.setText(formatted)
+        self.labelDateTime4.setText(formatted)
+        self.labelDateTime5.setText(formatted)
+        self.labelDateTime6.setText(formatted)
+        self.labelDateTime7.setText(formatted)
 
+    def add_residents(self):
+        dialog = QDialog(self)
+        ui = Ui_addResidentDialog()
+        ui.setupUi(dialog)
+        dialog.exec_()
 
     def show_exit_message(self):
         reply = QMessageBox.question(self, 'Exit', 'Are you sure you want to exit?', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
