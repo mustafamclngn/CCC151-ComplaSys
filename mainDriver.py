@@ -6,6 +6,7 @@ from PyQt5.QtCore import QTimer, QDateTime
 from PyQt5 import QtCore
 from resources import resources_qrc
 from addresidentui import Ui_addResidentDialog
+from addcomplaintui import Ui_addComplaintDialog
 
 from ComplaSys_ui import Ui_MainWindow
 
@@ -33,7 +34,10 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.abtBtn.clicked.connect(self.show_about)
         self.faqBtn.clicked.connect(self.show_faq)
         self.exBtn.clicked.connect(self.show_exit_message)
+
+        #add dialogs (to be changed)
         self.addResBtn.clicked.connect(self.add_residents)
+        self.addCompBtn.clicked.connect(self.add_complaints)
         
         #Datettime
         self.timer = QTimer(self)
@@ -51,6 +55,12 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.labelDateTime5.setText(formatted)
         self.labelDateTime6.setText(formatted)
         self.labelDateTime7.setText(formatted)
+
+    def add_complaints(self):
+        dialog = QDialog(self)
+        ui = Ui_addComplaintDialog()
+        ui.setupUi(dialog)
+        dialog.exec_()
 
     def add_residents(self):
         dialog = QDialog(self)
