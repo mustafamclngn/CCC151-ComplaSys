@@ -22,24 +22,24 @@ class Ui_addResidentDialog(object):
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
-        self.cancel_button = QtWidgets.QPushButton(self.frame)
-        self.cancel_button.setGeometry(QtCore.QRect(540, 800, 93, 28))
+        self.addresident_cancel_button = QtWidgets.QPushButton(self.frame)
+        self.addresident_cancel_button.setGeometry(QtCore.QRect(540, 800, 93, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.cancel_button.setFont(font)
-        self.cancel_button.setStyleSheet("background-color: white;\n"
+        self.addresident_cancel_button.setFont(font)
+        self.addresident_cancel_button.setStyleSheet("background-color: white;\n"
 "border: 2px solid grey;\n"
 "border-radius: 13px;")
-        self.cancel_button.setObjectName("cancel_button")
-        self.save_button = QtWidgets.QPushButton(self.frame)
-        self.save_button.setGeometry(QtCore.QRect(360, 800, 93, 28))
+        self.addresident_cancel_button.setObjectName("addresident_cancel_button")
+        self.addresident_save_button = QtWidgets.QPushButton(self.frame)
+        self.addresident_save_button.setGeometry(QtCore.QRect(360, 800, 93, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.save_button.setFont(font)
-        self.save_button.setStyleSheet("background-color: white;\n"
+        self.addresident_save_button.setFont(font)
+        self.addresident_save_button.setStyleSheet("background-color: white;\n"
 "border: 2px solid grey;\n"
 "border-radius: 13px;")
-        self.save_button.setObjectName("save_button")
+        self.addresident_save_button.setObjectName("addresident_save_button")
         self.label_8 = QtWidgets.QLabel(self.frame)
         self.label_8.setGeometry(QtCore.QRect(0, 0, 1401, 101))
         font = QtGui.QFont()
@@ -65,15 +65,15 @@ class Ui_addResidentDialog(object):
         self.label_resident_id.setFont(font)
         self.label_resident_id.setStyleSheet("border: 0px")
         self.label_resident_id.setObjectName("label_resident_id")
-        self.first_name_input = QtWidgets.QLineEdit(self.frame_2)
-        self.first_name_input.setGeometry(QtCore.QRect(70, 157, 311, 28))
+        self.addresident_firstname_input = QtWidgets.QLineEdit(self.frame_2)
+        self.addresident_firstname_input.setGeometry(QtCore.QRect(70, 157, 311, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.first_name_input.setFont(font)
-        self.first_name_input.setStyleSheet("background-color: white;\n"
+        self.addresident_firstname_input.setFont(font)
+        self.addresident_firstname_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.first_name_input.setObjectName("first_name_input")
+        self.addresident_firstname_input.setObjectName("addresident_firstname_input")
         self.label_first_name = QtWidgets.QLabel(self.frame_2)
         self.label_first_name.setGeometry(QtCore.QRect(70, 126, 111, 24))
         font = QtGui.QFont()
@@ -81,15 +81,15 @@ class Ui_addResidentDialog(object):
         self.label_first_name.setFont(font)
         self.label_first_name.setStyleSheet("border: 0px")
         self.label_first_name.setObjectName("label_first_name")
-        self.resident_id_input = QtWidgets.QLineEdit(self.frame_2)
-        self.resident_id_input.setGeometry(QtCore.QRect(70, 91, 311, 28))
+        self.addresident_residentID_input = QtWidgets.QLineEdit(self.frame_2)
+        self.addresident_residentID_input.setGeometry(QtCore.QRect(70, 91, 311, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.resident_id_input.setFont(font)
-        self.resident_id_input.setStyleSheet("background-color: white;\n"
+        self.addresident_residentID_input.setFont(font)
+        self.addresident_residentID_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.resident_id_input.setObjectName("resident_id_input")
+        self.addresident_residentID_input.setObjectName("addresident_residentID_input")
         self.label_last_name = QtWidgets.QLabel(self.frame_2)
         self.label_last_name.setGeometry(QtCore.QRect(70, 192, 121, 24))
         font = QtGui.QFont()
@@ -97,15 +97,15 @@ class Ui_addResidentDialog(object):
         self.label_last_name.setFont(font)
         self.label_last_name.setStyleSheet("border: 0px")
         self.label_last_name.setObjectName("label_last_name")
-        self.first_name_input_2 = QtWidgets.QLineEdit(self.frame_2)
-        self.first_name_input_2.setGeometry(QtCore.QRect(70, 223, 311, 28))
+        self.addresident_lastname_input = QtWidgets.QLineEdit(self.frame_2)
+        self.addresident_lastname_input.setGeometry(QtCore.QRect(70, 223, 311, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.first_name_input_2.setFont(font)
-        self.first_name_input_2.setStyleSheet("background-color: white;\n"
+        self.addresident_lastname_input.setFont(font)
+        self.addresident_lastname_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.first_name_input_2.setObjectName("first_name_input_2")
+        self.addresident_lastname_input.setObjectName("addresident_lastname_input")
         self.frame_3 = QtWidgets.QFrame(self.frame)
         self.frame_3.setGeometry(QtCore.QRect(40, 470, 441, 311))
         self.frame_3.setStyleSheet("background-color: white;\n"
@@ -121,17 +121,17 @@ class Ui_addResidentDialog(object):
         self.label_sex.setFont(font)
         self.label_sex.setStyleSheet("border: 0px")
         self.label_sex.setObjectName("label_sex")
-        self.sex_input = QtWidgets.QComboBox(self.frame_3)
-        self.sex_input.setGeometry(QtCore.QRect(70, 81, 121, 28))
+        self.addresident_sex_input = QtWidgets.QComboBox(self.frame_3)
+        self.addresident_sex_input.setGeometry(QtCore.QRect(70, 81, 121, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.sex_input.setFont(font)
-        self.sex_input.setStyleSheet("background-color: white;\n"
+        self.addresident_sex_input.setFont(font)
+        self.addresident_sex_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.sex_input.setObjectName("sex_input")
-        self.sex_input.addItem("")
-        self.sex_input.addItem("")
+        self.addresident_sex_input.setObjectName("addresident_sex_input")
+        self.addresident_sex_input.addItem("")
+        self.addresident_sex_input.addItem("")
         self.label_contact_3 = QtWidgets.QLabel(self.frame_3)
         self.label_contact_3.setGeometry(QtCore.QRect(70, 116, 61, 24))
         font = QtGui.QFont()
@@ -139,16 +139,16 @@ class Ui_addResidentDialog(object):
         self.label_contact_3.setFont(font)
         self.label_contact_3.setStyleSheet("border: 0px")
         self.label_contact_3.setObjectName("label_contact_3")
-        self.dob_input = QtWidgets.QDateEdit(self.frame_3)
-        self.dob_input.setGeometry(QtCore.QRect(70, 213, 121, 25))
+        self.addresident_dob_input = QtWidgets.QDateEdit(self.frame_3)
+        self.addresident_dob_input.setGeometry(QtCore.QRect(70, 213, 121, 25))
         font = QtGui.QFont()
         font.setPointSize(10)
-        self.dob_input.setFont(font)
-        self.dob_input.setStyleSheet("background-color: white;\n"
+        self.addresident_dob_input.setFont(font)
+        self.addresident_dob_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.dob_input.setCalendarPopup(True)
-        self.dob_input.setObjectName("dob_input")
+        self.addresident_dob_input.setCalendarPopup(True)
+        self.addresident_dob_input.setObjectName("addresident_dob_input")
         self.label_dob = QtWidgets.QLabel(self.frame_3)
         self.label_dob.setGeometry(QtCore.QRect(70, 182, 141, 24))
         font = QtGui.QFont()
@@ -156,15 +156,15 @@ class Ui_addResidentDialog(object):
         self.label_dob.setFont(font)
         self.label_dob.setStyleSheet("border: 0px")
         self.label_dob.setObjectName("label_dob")
-        self.resident_id_input_2 = QtWidgets.QLineEdit(self.frame_3)
-        self.resident_id_input_2.setGeometry(QtCore.QRect(70, 147, 176, 28))
+        self.addresident_age_input = QtWidgets.QLineEdit(self.frame_3)
+        self.addresident_age_input.setGeometry(QtCore.QRect(70, 147, 176, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.resident_id_input_2.setFont(font)
-        self.resident_id_input_2.setStyleSheet("background-color: white;\n"
+        self.addresident_age_input.setFont(font)
+        self.addresident_age_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.resident_id_input_2.setObjectName("resident_id_input_2")
+        self.addresident_age_input.setObjectName("addresident_age_input")
         self.frame_4 = QtWidgets.QFrame(self.frame)
         self.frame_4.setGeometry(QtCore.QRect(500, 130, 441, 651))
         self.frame_4.setStyleSheet("background-color: white;\n"
@@ -173,15 +173,15 @@ class Ui_addResidentDialog(object):
         self.frame_4.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_4.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_4.setObjectName("frame_4")
-        self.upload_button = QtWidgets.QPushButton(self.frame_4)
-        self.upload_button.setGeometry(QtCore.QRect(290, 500, 121, 31))
+        self.addresident_upload_button = QtWidgets.QPushButton(self.frame_4)
+        self.addresident_upload_button.setGeometry(QtCore.QRect(290, 500, 121, 31))
         font = QtGui.QFont()
         font.setPointSize(10)
-        self.upload_button.setFont(font)
-        self.upload_button.setStyleSheet("background-color: white;\n"
+        self.addresident_upload_button.setFont(font)
+        self.addresident_upload_button.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.upload_button.setObjectName("upload_button")
+        self.addresident_upload_button.setObjectName("addresident_upload_button")
         self.label_contact_2 = QtWidgets.QLabel(self.frame_4)
         self.label_contact_2.setGeometry(QtCore.QRect(100, 370, 191, 24))
         font = QtGui.QFont()
@@ -196,24 +196,24 @@ class Ui_addResidentDialog(object):
         self.label_contact.setFont(font)
         self.label_contact.setStyleSheet("border: 0px")
         self.label_contact.setObjectName("label_contact")
-        self.address_input = QtWidgets.QTextEdit(self.frame_4)
-        self.address_input.setGeometry(QtCore.QRect(81, 141, 256, 192))
+        self.addresident_address_input = QtWidgets.QTextEdit(self.frame_4)
+        self.addresident_address_input.setGeometry(QtCore.QRect(81, 141, 256, 192))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.address_input.setFont(font)
-        self.address_input.setStyleSheet("background-color: white;\n"
+        self.addresident_address_input.setFont(font)
+        self.addresident_address_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.address_input.setObjectName("address_input")
-        self.contact_input = QtWidgets.QLineEdit(self.frame_4)
-        self.contact_input.setGeometry(QtCore.QRect(81, 75, 311, 28))
+        self.addresident_address_input.setObjectName("addresident_address_input")
+        self.addresident_contact_input = QtWidgets.QLineEdit(self.frame_4)
+        self.addresident_contact_input.setGeometry(QtCore.QRect(81, 75, 311, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.contact_input.setFont(font)
-        self.contact_input.setStyleSheet("background-color: white;\n"
+        self.addresident_contact_input.setFont(font)
+        self.addresident_contact_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.contact_input.setObjectName("contact_input")
+        self.addresident_contact_input.setObjectName("addresident_contact_input")
         self.label_address = QtWidgets.QLabel(self.frame_4)
         self.label_address.setGeometry(QtCore.QRect(81, 110, 111, 24))
         font = QtGui.QFont()
@@ -221,17 +221,17 @@ class Ui_addResidentDialog(object):
         self.label_address.setFont(font)
         self.label_address.setStyleSheet("border: 0px")
         self.label_address.setObjectName("label_address")
-        self.photo_label = QtWidgets.QLabel(self.frame_4)
-        self.photo_label.setGeometry(QtCore.QRect(20, 410, 261, 211))
-        self.photo_label.setMinimumSize(QtCore.QSize(100, 100))
+        self.addresident_photo_label = QtWidgets.QLabel(self.frame_4)
+        self.addresident_photo_label.setGeometry(QtCore.QRect(20, 410, 261, 211))
+        self.addresident_photo_label.setMinimumSize(QtCore.QSize(100, 100))
         font = QtGui.QFont()
         font.setPointSize(10)
-        self.photo_label.setFont(font)
-        self.photo_label.setStyleSheet("background-color: white;\n"
+        self.addresident_photo_label.setFont(font)
+        self.addresident_photo_label.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 13px;")
-        self.photo_label.setScaledContents(True)
-        self.photo_label.setObjectName("photo_label")
+        self.addresident_photo_label.setScaledContents(True)
+        self.addresident_photo_label.setObjectName("addresident_photo_label")
 
         self.retranslateUi(addResidentDialog)
         QtCore.QMetaObject.connectSlotsByName(addResidentDialog)
@@ -239,22 +239,22 @@ class Ui_addResidentDialog(object):
     def retranslateUi(self, addResidentDialog):
         _translate = QtCore.QCoreApplication.translate
         addResidentDialog.setWindowTitle(_translate("addResidentDialog", "Add New Resident"))
-        self.cancel_button.setText(_translate("addResidentDialog", "Cancel"))
-        self.save_button.setText(_translate("addResidentDialog", "Add"))
+        self.addresident_cancel_button.setText(_translate("addResidentDialog", "Cancel"))
+        self.addresident_save_button.setText(_translate("addResidentDialog", "Add"))
         self.label_8.setText(_translate("addResidentDialog", "  Add Residents"))
         self.label_resident_id.setText(_translate("addResidentDialog", "Resident ID:"))
         self.label_first_name.setText(_translate("addResidentDialog", "First Name:"))
         self.label_last_name.setText(_translate("addResidentDialog", "Last Name:"))
         self.label_sex.setText(_translate("addResidentDialog", "Sex:"))
-        self.sex_input.setItemText(0, _translate("addResidentDialog", "Male"))
-        self.sex_input.setItemText(1, _translate("addResidentDialog", "Female"))
+        self.addresident_sex_input.setItemText(0, _translate("addResidentDialog", "Male"))
+        self.addresident_sex_input.setItemText(1, _translate("addResidentDialog", "Female"))
         self.label_contact_3.setText(_translate("addResidentDialog", "Age:"))
         self.label_dob.setText(_translate("addResidentDialog", "Date of Birth:"))
-        self.upload_button.setText(_translate("addResidentDialog", "Upload Photo"))
+        self.addresident_upload_button.setText(_translate("addResidentDialog", "Upload Photo"))
         self.label_contact_2.setText(_translate("addResidentDialog", "Photo Credentials:"))
         self.label_contact.setText(_translate("addResidentDialog", "Contact:"))
         self.label_address.setText(_translate("addResidentDialog", "Address:"))
-        self.photo_label.setText(_translate("addResidentDialog", "No photo selected"))
+        self.addresident_photo_label.setText(_translate("addResidentDialog", "No photo selected"))
 
 
 if __name__ == "__main__":

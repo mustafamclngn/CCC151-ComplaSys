@@ -34,7 +34,7 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
-   <widget class="QPushButton" name="cancel_button">
+   <widget class="QPushButton" name="addresident_cancel_button">
     <property name="geometry">
      <rect>
       <x>540</x>
@@ -57,7 +57,7 @@ border-radius: 13px;</string>
      <string>Cancel</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="save_button">
+   <widget class="QPushButton" name="addresident_save_button">
     <property name="geometry">
      <rect>
       <x>360</x>
@@ -145,7 +145,7 @@ border-radius: 13px;</string>
       <string>Resident ID:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="first_name_input">
+    <widget class="QLineEdit" name="addresident_firstname_input">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -186,7 +186,7 @@ border-radius: 13px;</string>
       <string>First Name:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="resident_id_input">
+    <widget class="QLineEdit" name="addresident_residentID_input">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -227,7 +227,7 @@ border-radius: 13px;</string>
       <string>Last Name:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="first_name_input_2">
+    <widget class="QLineEdit" name="addresident_lastname_input">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -289,7 +289,7 @@ border-radius: 13px;</string>
       <string>Sex:</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="sex_input">
+    <widget class="QComboBox" name="addresident_sex_input">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -340,7 +340,7 @@ border-radius: 13px;</string>
       <string>Age:</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="dob_input">
+    <widget class="QDateEdit" name="addresident_dob_input">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -384,7 +384,7 @@ border-radius: 13px;</string>
       <string>Date of Birth:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="resident_id_input_2">
+    <widget class="QLineEdit" name="addresident_age_input">
      <property name="geometry">
       <rect>
        <x>70</x>
@@ -425,7 +425,7 @@ border-radius: 13px;</string>
     <property name="frameShadow">
      <enum>QFrame::Raised</enum>
     </property>
-    <widget class="QPushButton" name="upload_button">
+    <widget class="QPushButton" name="addresident_upload_button">
      <property name="geometry">
       <rect>
        <x>290</x>
@@ -490,7 +490,7 @@ border-radius: 13px;</string>
       <string>Contact:</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="address_input">
+    <widget class="QTextEdit" name="addresident_address_input">
      <property name="geometry">
       <rect>
        <x>81</x>
@@ -510,7 +510,7 @@ border: 1px solid grey;
 border-radius: 13px;</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="contact_input">
+    <widget class="QLineEdit" name="addresident_contact_input">
      <property name="geometry">
       <rect>
        <x>81</x>
@@ -551,7 +551,7 @@ border-radius: 13px;</string>
       <string>Address:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="photo_label">
+    <widget class="QLabel" name="addresident_photo_label">
      <property name="geometry">
       <rect>
        <x>20</x>
