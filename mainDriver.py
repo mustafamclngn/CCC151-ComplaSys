@@ -8,9 +8,47 @@ from resources import resources_qrc
 from addresidentui import Ui_addResidentDialog
 from addcomplaintui import Ui_addComplaintDialog
 from addofficialui import Ui_addOfficialDialog
-
+from database.database import Database
 from ComplaSys_ui import Ui_MainWindow
 
+class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
+    def __init__(self, parent = None):
+        super().__init__( parent)
+        self.setupUi(self)
+        self.db = Database()
+        self.addcomplaint_save_button.clicked.connect(self.save_complaint)
+        self.addcomplaint_cancel_button.clicked.connect(self.reject)
+    
+    def save_complaint(self):
+        try:
+            complaint_id = self.addcomplaint_complaintID_input.text()
+            resident_id = self.addcomplaint_residentID_input.text()
+            category = self.addcomplaint_category_box.currentText()
+            date = self.addcomplaint_date_box.date().toString("yyyy-dd-MM")
+            description = self.addcomplaint_description_input.toPlainText()
+            location = self.addcomplaint_location_input.text()
+            status = self.addcomplaint_satus_box.currentText()
+            
+            complaint = (
+                complaint_id,
+                date,
+                description,
+                resident_id,
+                category,
+                status,
+                location
+            )
+            sql = '''INSERT INTO complaints
+                (complaint_id, date_time, complaint_desc, resident_id, complaint_category, complaint_status, location)
+                VALUES (%s, %s, %s, %s, %s, %s, %s)'''
+            self.db.cursor.execute(sql,complaint)
+            self.db.conn.commit()
+            QMessageBox.information(self, "Success", "Complaint added successfully!")
+            self.accept()
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to add complaint:\n{e}")
+
+            
 class MainClass(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
