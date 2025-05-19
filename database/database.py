@@ -16,6 +16,7 @@ class Database:
         """ create a database connection to a MySQL database """
         conn = None
         try:
+            print("Connecting")
             conn = mysql.connector.connect(
                 host=host,
                 database=database,
@@ -48,20 +49,20 @@ class Database:
                 );
             ''')
 
-            # # --- Create Complaint Table ---
-            # cursor.execute('''
-            #     CREATE TABLE IF NOT EXISTS complaints (
-            #         complaint_id VARCHAR(8) PRIMARY KEY,
-            #         date_time DATETIME NOT NULL,
-            #         complaint_desc VARCHAR(120) NOT NULL,
-            #         resident_id VARCHAR(8),
-            #         complaint_category VARCHAR(64) NOT NULL,
-            #         complaint_status VARCHAR(8) NOT NULL,
-            #         location VARCHAR(255),
-            #         FOREIGN KEY (resident_id) REFERENCES residents(resident_id)
-            #             ON DELETE SET NULL
-            #     );
-            # ''')
+            # --- Create Complaint Table ---
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS complaints (
+                    complaint_id VARCHAR(8) PRIMARY KEY,
+                    date_time DATETIME NOT NULL,
+                    complaint_desc VARCHAR(120) NOT NULL,
+                    resident_id VARCHAR(8),
+                    complaint_category VARCHAR(64) NOT NULL,
+                    complaint_status VARCHAR(8) NOT NULL,
+                    location VARCHAR(255),
+                    FOREIGN KEY (resident_id) REFERENCES residents(resident_id)
+                        ON DELETE SET NULL
+                );
+            ''')
 
             # # --- Create BarangayOfficials Table ---
             # cursor.execute('''
@@ -117,6 +118,18 @@ class Database:
     #             return None
     #     except Error as e:
     #         print(f"Error: {e}")
+
+    def insert_complaint(self, complaint):
+        """ insert a new complaint into the complaints table """
+        sql = ''' INSERT INTO complaints(complaint_id, date_time, complaint_desc, resident_id, complaint_category, complaint_status, location)
+                  VALUES (%s, %s, %s, %s, %s, %s, %s) '''
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute(sql, complaint)
+            self.conn.commit()
+            print(f"Complaint {complaint[2]} inserted successfully")
+        except Error as e:
+            print(f"Error: {e}")
 
     # For multiple elements of a given table
     def get_elements(self, table="residents", column="last_name", order="ASC", page=1, limit=15):

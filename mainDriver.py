@@ -1,6 +1,6 @@
 import sys
 from PyQt5.QtWidgets import *
-from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout, QMessageBox
 from PyQt5.QtGui import QFontDatabase, QFont
 from PyQt5.QtCore import QTimer, QDateTime
 from PyQt5 import QtCore
@@ -12,10 +12,10 @@ from database.database import Database
 from ComplaSys_ui import Ui_MainWindow
 
 class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
-    def __init__(self,parent = None):
+    def __init__(self, parent = None, db = None):
         super().__init__(parent)
         self.setupUi(self)
-        self.db = Database()
+        self.DB = db
         self.addofficial_save_button.clicked.connect(self.save_official)
         self.addofficial_cancel_button.clicked.connect(self.reject)
 
@@ -38,18 +38,18 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
             sql = '''INSERT INTO barangay_officials
                 (official_id, first_name, last_name, contact, position)
                 VALUES (%s, %s, %s, %s, %s)'''
-            self.db.cursor.execute(sql, official)
-            self.db.conn.commit()
+            self.DB.cursor.execute(sql, official)
+            self.DB.conn.commit()
             QMessageBox.information(self, "Success", "Official added successfully!")
             self.accept()
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Failed to add official:\n{e}")
         
 class AddResidentDialog(QDialog, Ui_addResidentDialog):
-    def __init__(self,parent = None):
+    def __init__(self, parent=None, db=None):
         super().__init__(parent)
         self.setupUi(self)
-        self.db = Database()
+        self.DB = db
         self.addresident_save_button.clicked.connect(self.save_resident)
         self.addresident_cancel_button.clicked.connect(self.reject)
     
@@ -81,8 +81,8 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
             sql = '''INSERT INTO residents
                 (resident_id, first_name, last_name, birth_date, age, photo_cred, address, contact, sex)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)'''
-            self.db.cursor.execute(sql, resident)
-            self.db.conn.commit()
+            self.DB.cursor.execute(sql, resident)
+            self.DB.conn.commit()
             QMessageBox.information(self, "Success", "Resident added successfully!")
             self.accept()
         except Exception as e:
@@ -91,10 +91,10 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
 
 
 class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
-    def __init__(self, parent = None):
+    def __init__(self, parent=None, db=None):
         super().__init__(parent)
         self.setupUi(self)
-        self.db = Database()
+        self.DB = db
         self.addcomplaint_save_button.clicked.connect(self.save_complaint)
         self.addcomplaint_cancel_button.clicked.connect(self.reject)
     
@@ -120,8 +120,8 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
             sql = '''INSERT INTO complaints
                 (complaint_id, date_time, complaint_desc, resident_id, complaint_category, complaint_status, location)
                 VALUES (%s, %s, %s, %s, %s, %s, %s)'''
-            self.db.cursor.execute(sql,complaint)
-            self.db.conn.commit()
+            self.DB.cursor.execute(sql,complaint)
+            self.DB.conn.commit()
             QMessageBox.information(self, "Success", "Complaint added successfully!")
             self.accept()
         except Exception as e:
@@ -132,7 +132,10 @@ class MainClass(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
-
+        try:
+            self.DB = Database()
+        except Exception as e:
+            QMessageBox.critical(self, "Database Error", f"Failed to connect to database:\n{e}")
         #Font
         font_id = QFontDatabase.addApplicationFont("resources/Gilroy-Medium.ttf")
         if font_id == -1:
@@ -177,20 +180,21 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
 #add dialogs
     def add_residents(self):
-        dialog = AddResidentDialog(self)
+        dialog = AddResidentDialog(self, db=self.DB)
         dialog.exec_()
         
     def add_complaints(self):
-        dialog = AddComplaintDialog(self)
+        dialog = AddComplaintDialog(self, db=self.DB)
         dialog.exec_()
 
     def add_officials(self):
-        dialog = AddOfficialDialog(self)
+        dialog = AddOfficialDialog(self, self.DB)
         dialog.exec_()
 
     def show_exit_message(self):
         reply = QMessageBox.question(self, 'Exit', 'Are you sure you want to exit?', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
         if reply == QMessageBox.Yes:
+            self.DB.close_connection()
             self.close()
             
     def show_home(self):
