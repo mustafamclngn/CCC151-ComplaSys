@@ -7,7 +7,6 @@ class Database:
         self.conn = self.create_connection()
         self.cursor = self.conn.cursor()
 
-
         if self.conn is not None:
             self.create_table()
         else:
@@ -102,22 +101,42 @@ class Database:
         except Error as e:
             print(f"Error: {e}")
 
-    def get_resident(self, resident_id):
-        """ get a resident from the residents table """
-        sql = ''' SELECT * FROM residents WHERE resident_id = %s '''
+    # For a singular resident
+    # def get_resident(self, resident_id):
+    #     """ get a resident from the residents table """
+    #     sql = ''' SELECT * FROM residents WHERE resident_id = %s '''
+    #     try:
+    #         cursor = self.cursor
+    #         cursor.execute(sql, (resident_id,))
+    #         result = cursor.fetchone()
+    #         if result:
+    #             print(f"Resident {resident_id} found: {result}")
+    #             return result
+    #         else:
+    #             print(f"Resident {resident_id} not found")
+    #             return None
+    #     except Error as e:
+    #         print(f"Error: {e}")
+
+    # For multiple elements of a given table
+    def get_elements(self, table="residents", column="last_name", order="ASC", page=1, limit=15):
+        """ get elements from the specified table """
+
+        print(f"Fetching elements from {table} table, ordered by {column} in {order} order, page {page}, limit {limit}")
+        offset = (page - 1) * limit     # Calculate offset for pagination
+        sql = f''' SELECT * FROM {table} ORDER BY {column} {order} LIMIT {limit} OFFSET {offset} '''
         try:
             cursor = self.cursor
-            cursor.execute(sql, (resident_id,))
-            result = cursor.fetchone()
-            if result:
-                print(f"Resident {resident_id} found: {result}")
-                return result
+            cursor.execute(sql)
+            results = cursor.fetchall()
+            if results:
+                print(f"{len(results)} residents found")
+                return results
             else:
-                print(f"Resident {resident_id} not found")
-                return None
+                print("No residents found")
+                return []
         except Error as e:
             print(f"Error: {e}")
-
 
     def close_connection(self):
         """ close the database connection """
