@@ -11,9 +11,85 @@ from addofficialui import Ui_addOfficialDialog
 from database.database import Database
 from ComplaSys_ui import Ui_MainWindow
 
+class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
+    def __init__(self,parent = None):
+        super().__init__(parent)
+        self.setupUi(self)
+        self.db = Database()
+        self.addofficial_save_button.clicked.connect(self.save_official)
+        self.addofficial_cancel_button.clicked.connect(self.reject)
+
+    def save_official(self):
+        try:
+            official_id = self.addofficial_officialID_input.text()
+            first_name = self.addofficial_firstname_input.text()
+            last_name = self.addofficial_lastname_input.text()
+            contact = self.addofficial_contact_input.text()
+            position = self.addofficial_position_box.currentText()
+
+            official = (
+                official_id,
+                first_name,
+                last_name,
+                contact,
+                position
+            )
+
+            sql = '''INSERT INTO barangay_officials
+                (official_id, first_name, last_name, contact, position)
+                VALUES (%s, %s, %s, %s, %s)'''
+            self.db.cursor.execute(sql, official)
+            self.db.conn.commit()
+            QMessageBox.information(self, "Success", "Official added successfully!")
+            self.accept()
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to add official:\n{e}")
+        
+class AddResidentDialog(QDialog, Ui_addResidentDialog):
+    def __init__(self,parent = None):
+        super().__init__(parent)
+        self.setupUi(self)
+        self.db = Database()
+        self.addresident_save_button.clicked.connect(self.save_resident)
+        self.addresident_cancel_button.clicked.connect(self.reject)
+    
+    def save_resident(self):
+        try:
+            resident_id = self.addresident_residentID_input.text()
+            first_name = self.addresident_firstname_input.text()
+            last_name = self.addresident_lastname_input.text()
+            birth_date = self.addresident_dob_input.date().toString("yyyy-MM-dd")
+            photo_cred = self.addresident_photo_label.text() #may be changed depends on testing
+            address = self.addresident_address_input.toPlainText()
+            contact = self.addresident_contact_input.text()
+            sex = self.addresident_sex_input.currentText()
+
+            resident = (
+                resident_id,
+                first_name,
+                last_name,
+                birth_date,
+                photo_cred,
+                address,
+                contact,
+                sex
+            )
+
+            sql = '''INSERT INTO residents
+                (resident_id, first_name, last_name, birth_date, photo_cred, address, contact, sex)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)'''
+            self.db.cursor.execute(sql, resident)
+            self.db.conn.commit()
+            QMessageBox.information(self, "Success", "Resident added successfully!")
+            self.accept()
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to add resident:\n{e}")
+
+
+
 class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
     def __init__(self, parent = None):
-        super().__init__( parent)
+        super().__init__(parent)
         self.setupUi(self)
         self.db = Database()
         self.addcomplaint_save_button.clicked.connect(self.save_complaint)
@@ -24,7 +100,7 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
             complaint_id = self.addcomplaint_complaintID_input.text()
             resident_id = self.addcomplaint_residentID_input.text()
             category = self.addcomplaint_category_box.currentText()
-            date = self.addcomplaint_date_box.date().toString("yyyy-dd-MM")
+            date = self.addcomplaint_date_box.date().toString("yyyy-MM-dd")
             description = self.addcomplaint_description_input.toPlainText()
             location = self.addcomplaint_location_input.text()
             status = self.addcomplaint_satus_box.currentText()
@@ -98,21 +174,15 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
 #add dialogs
     def add_residents(self):
-        dialog = QDialog(self)
-        ui = Ui_addResidentDialog()
-        ui.setupUi(dialog)
+        dialog = AddResidentDialog(self)
         dialog.exec_()
         
     def add_complaints(self):
-        dialog = QDialog(self)
-        ui = Ui_addComplaintDialog()
-        ui.setupUi(dialog)
+        dialog = AddComplaintDialog(self)
         dialog.exec_()
 
     def add_officials(self):
-        dialog = QDialog(self)
-        ui = Ui_addOfficialDialog()
-        ui.setupUi(dialog)
+        dialog = AddOfficialDialog(self)
         dialog.exec_()
 
     def show_exit_message(self):
