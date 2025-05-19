@@ -59,16 +59,19 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
             first_name = self.addresident_firstname_input.text()
             last_name = self.addresident_lastname_input.text()
             birth_date = self.addresident_dob_input.date().toString("yyyy-MM-dd")
+            age = self.addresident_age_input.text()
             photo_cred = self.addresident_photo_label.text() #may be changed depends on testing
             address = self.addresident_address_input.toPlainText()
             contact = self.addresident_contact_input.text()
             sex = self.addresident_sex_input.currentText()
-
+            
+            
             resident = (
                 resident_id,
                 first_name,
                 last_name,
                 birth_date,
+                age,
                 photo_cred,
                 address,
                 contact,
@@ -76,8 +79,8 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
             )
 
             sql = '''INSERT INTO residents
-                (resident_id, first_name, last_name, birth_date, photo_cred, address, contact, sex)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s)'''
+                (resident_id, first_name, last_name, birth_date, age, photo_cred, address, contact, sex)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)'''
             self.db.cursor.execute(sql, resident)
             self.db.conn.commit()
             QMessageBox.information(self, "Success", "Resident added successfully!")
