@@ -55,7 +55,7 @@ class Database:
                     complaint_id VARCHAR(8) PRIMARY KEY,
                     date_time DATETIME NOT NULL,
                     complaint_desc VARCHAR(120) NOT NULL,
-                    resident_id VARCHAR(8),
+                    resident_id VARCHAR(8) NULL,
                     complaint_category VARCHAR(64) NOT NULL,
                     complaint_status VARCHAR(8) NOT NULL,
                     location VARCHAR(255),
@@ -102,23 +102,6 @@ class Database:
         except Error as e:
             print(f"Error: {e}")
 
-    # For a singular resident
-    # def get_resident(self, resident_id):
-    #     """ get a resident from the residents table """
-    #     sql = ''' SELECT * FROM residents WHERE resident_id = %s '''
-    #     try:
-    #         cursor = self.cursor
-    #         cursor.execute(sql, (resident_id,))
-    #         result = cursor.fetchone()
-    #         if result:
-    #             print(f"Resident {resident_id} found: {result}")
-    #             return result
-    #         else:
-    #             print(f"Resident {resident_id} not found")
-    #             return None
-    #     except Error as e:
-    #         print(f"Error: {e}")
-
     def insert_complaint(self, complaint):
         """ insert a new complaint into the complaints table """
         sql = ''' INSERT INTO complaints(complaint_id, date_time, complaint_desc, resident_id, complaint_category, complaint_status, location)
@@ -128,6 +111,17 @@ class Database:
             cursor.execute(sql, complaint)
             self.conn.commit()
             print(f"Complaint {complaint[2]} inserted successfully")
+        except Error as e:
+            print(f"Error: {e}")
+
+    def remove_complaint(self, complaint_id):
+        """ remove a complaint from the complaints table """
+        sql = ''' DELETE FROM complaints WHERE complaint_id = %s '''
+        try:
+            cursor = self.cursor
+            cursor.execute(sql, (complaint_id,))
+            self.conn.commit()
+            print(f"Complaint {complaint_id} removed successfully")
         except Error as e:
             print(f"Error: {e}")
 
