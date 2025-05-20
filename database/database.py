@@ -64,16 +64,16 @@ class Database:
                 );
             ''')
 
-            # # --- Create BarangayOfficials Table ---
-            # cursor.execute('''
-            #     CREATE TABLE IF NOT EXISTS barangay_officials (
-            #         official_id INT PRIMARY KEY,
-            #         first_name VARCHAR(64) NOT NULL,
-            #         last_name VARCHAR(64) NOT NULL,
-            #         contact VARCHAR(11) NOT NULL,
-            #         position VARCHAR(64) NOT NULL
-            #     );
-            # ''')
+            # --- Create BarangayOfficials Table ---
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS barangay_officials (
+                    official_id VARCHAR(8) PRIMARY KEY,
+                    first_name VARCHAR(64) NOT NULL,
+                    last_name VARCHAR(64) NOT NULL,
+                    contact VARCHAR(11) NOT NULL,
+                    position VARCHAR(64) NOT NULL
+                );
+            ''')
 
             self.conn.commit()
         except Error as e:
@@ -122,6 +122,29 @@ class Database:
             cursor.execute(sql, (complaint_id,))
             self.conn.commit()
             print(f"Complaint {complaint_id} removed successfully")
+        except Error as e:
+            print(f"Error: {e}")
+
+    def insert_barangay_official(self, official):
+        """ insert a new barangay official into the barangay_officials table """
+        sql = ''' INSERT INTO barangay_officials(official_id, first_name, last_name, contact, position)
+                  VALUES (%s, %s, %s, %s, %s) '''
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute(sql, official)
+            self.conn.commit()
+            print(f"Barangay Official {official[1]} inserted successfully")
+        except Error as e:
+            print(f"Error: {e}")
+    
+    def remove_barangay_official(self, official_id):
+        """ remove a barangay official from the barangay_officials table """
+        sql = ''' DELETE FROM barangay_officials WHERE official_id = %s '''
+        try:
+            cursor = self.cursor
+            cursor.execute(sql, (official_id,))
+            self.conn.commit()
+            print(f"Barangay Official {official_id} removed successfully")
         except Error as e:
             print(f"Error: {e}")
 
