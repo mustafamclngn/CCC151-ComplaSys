@@ -75,6 +75,32 @@ class Database:
                 );
             ''')
 
+
+            # --- Create Accuses Table ---
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS accuses (
+                    resident_id VARCHAR(8) NOT NULL,
+                    complaint_id VARCHAR(8) NOT NULL,
+                    PRIMARY KEY (resident_id, complaint_id),
+                    FOREIGN KEY (resident_id) REFERENCES residents(resident_id) ON DELETE CASCADE,
+                    FOREIGN KEY (complaint_id) REFERENCES complaints(complaint_id) ON DELETE CASCADE
+                );
+            ''')
+
+
+            # --- Handles table ---
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS handles (
+                    official_id VARCHAR(8) NOT NULL,
+                    complaint_id VARCHAR(8) NOT NULL,
+                    handle_datetime DATETIME NOT NULL,
+                    PRIMARY KEY (official_id, complaint_id),
+                    FOREIGN KEY (official_id) REFERENCES barangay_officials(official_id) ON DELETE CASCADE,
+                    FOREIGN KEY (complaint_id) REFERENCES complaints(complaint_id) ON DELETE CASCADE
+                );
+            ''')
+
+
             self.conn.commit()
         except Error as e:
             print(f"Error: {e}")
@@ -145,6 +171,40 @@ class Database:
             cursor.execute(sql, (official_id,))
             self.conn.commit()
             print(f"Barangay Official {official_id} removed successfully")
+        except Error as e:
+            print(f"Error: {e}")
+
+
+
+    def insert_accuse(self, accuse):
+        """
+        Probably magamit rani sa definition UI sa isa ka element sa complaint
+        Args:
+            accuse (tuple): tuple(resident_id, complaint_id)
+        """        
+        sql = ''' INSERT INTO accuses(resident_id, complaint_id)
+                  VALUES (%s, %s) '''
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute(sql, accuse)
+            self.conn.commit()
+            print(f"Accuse {accuse[0]} inserted successfully")
+        except Error as e:
+            print(f"Error: {e}")
+
+    def insert_handle(self, handle):
+        """
+        Probably magamit rani sa definition UI sa isa ka element sa complaint
+        Args:
+            handle (tuple): tuple(official_id, complaint_id, handle_datetime)
+        """        
+        sql = ''' INSERT INTO handles(official_id, complaint_id, handle_datetime)
+                  VALUES (%s, %s, %s) '''
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute(sql, handle)
+            self.conn.commit()
+            print(f"Handle {handle[0]} inserted successfully")
         except Error as e:
             print(f"Error: {e}")
 
