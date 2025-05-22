@@ -1,15 +1,18 @@
 import sys
+
 from PyQt5.QtWidgets import *
 from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
 from PyQt5.QtGui import QFontDatabase, QFont
 from PyQt5.QtCore import QTimer, QDateTime
 from PyQt5 import QtCore
+
 from resources import resource_qrc
-from uipyfiles.addresidentui import Ui_addResidentDialog
-from uipyfiles.addcomplaintui import Ui_addComplaintDialog
-from uipyfiles.addofficialui import Ui_addOfficialDialog
 from database.database import Database
-from uipyfiles.ComplaSys_ui import Ui_MainWindow
+
+from uipyfiles.addresidentui_new import Ui_addResidentDialog
+from uipyfiles.addcomplaintui_new import Ui_addComplaintDialog
+from uipyfiles.addofficialui_new import Ui_addOfficialDialog
+from complasys_new4 import Ui_MainWindow
 
 class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
     def __init__(self, parent = None):
@@ -69,9 +72,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.resBtn.clicked.connect(self.show_residents)
         self.compBtn.clicked.connect(self.show_complaints)
         self.offiBtn.clicked.connect(self.show_officials)
-        self.settBtn.clicked.connect(self.show_settings)
         self.abtBtn.clicked.connect(self.show_about)
-        self.faqBtn.clicked.connect(self.show_faq)
         self.exBtn.clicked.connect(self.show_exit_message)
 
         #add dialogs (to be changed)
@@ -92,9 +93,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.labelDateTime2.setText(formatted)
         self.labelDateTime3.setText(formatted)
         self.labelDateTime4.setText(formatted)
-        self.labelDateTime5.setText(formatted)
-        self.labelDateTime6.setText(formatted)
-        self.labelDateTime7.setText(formatted)
 
 #add dialogs
     def add_residents(self):
@@ -132,14 +130,8 @@ class MainClass(QMainWindow, Ui_MainWindow):
     def show_officials(self):
         self.stackedWidget.setCurrentIndex(3)
 
-    def show_settings(self):
-        self.stackedWidget.setCurrentIndex(4)
-
     def show_about(self):
-        self.stackedWidget.setCurrentIndex(5)
-    
-    def show_faq(self):
-        self.stackedWidget.setCurrentIndex(6)
+        self.stackedWidget.setCurrentIndex(4)
 
 
 if __name__ == '__main__':
