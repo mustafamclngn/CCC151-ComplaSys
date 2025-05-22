@@ -285,12 +285,12 @@ border-radius: 0px;</string>
      </item>
      <item>
       <property name="text">
-       <string>Barangay Councilors</string>
+       <string>Barangay Councilor</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>SK Officals</string>
+       <string>SK Offical</string>
       </property>
      </item>
      <item>
@@ -305,7 +305,7 @@ border-radius: 0px;</string>
      </item>
      <item>
       <property name="text">
-       <string>Barangay Health Workers</string>
+       <string>Barangay Health Worker</string>
       </property>
      </item>
      <item>

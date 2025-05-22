@@ -98,8 +98,8 @@ border-radius: 13px;</string>
     <widget class="QLabel" name="label_resident_id">
      <property name="geometry">
       <rect>
-       <x>31</x>
-       <y>32</y>
+       <x>21</x>
+       <y>33</y>
        <width>124</width>
        <height>24</height>
       </rect>
@@ -119,8 +119,8 @@ border-radius: 13px;</string>
     <widget class="QLineEdit" name="addcomplaint_complaintID_input">
      <property name="geometry">
       <rect>
-       <x>31</x>
-       <y>63</y>
+       <x>21</x>
+       <y>64</y>
        <width>361</width>
        <height>28</height>
       </rect>
@@ -139,8 +139,8 @@ border-radius: 0px;</string>
     <widget class="QLabel" name="label_first_name">
      <property name="geometry">
       <rect>
-       <x>31</x>
-       <y>98</y>
+       <x>21</x>
+       <y>99</y>
        <width>111</width>
        <height>24</height>
       </rect>
@@ -160,8 +160,8 @@ border-radius: 0px;</string>
     <widget class="QLineEdit" name="addcomplaint_residentID_input">
      <property name="geometry">
       <rect>
-       <x>31</x>
-       <y>129</y>
+       <x>21</x>
+       <y>130</y>
        <width>361</width>
        <height>28</height>
       </rect>
@@ -180,8 +180,8 @@ border-radius: 0px;</string>
     <widget class="QLabel" name="label_dob">
      <property name="geometry">
       <rect>
-       <x>31</x>
-       <y>230</y>
+       <x>21</x>
+       <y>550</y>
        <width>50</width>
        <height>24</height>
       </rect>
@@ -198,34 +198,11 @@ border-radius: 0px;</string>
       <string>Date:</string>
      </property>
     </widget>
-    <widget class="QDateEdit" name="addcomplaint_date_input">
-     <property name="geometry">
-      <rect>
-       <x>31</x>
-       <y>261</y>
-       <width>361</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;
-border: 1px solid grey;
-border-radius: 0px;</string>
-     </property>
-     <property name="calendarPopup">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_address">
      <property name="geometry">
       <rect>
-       <x>31</x>
-       <y>293</y>
+       <x>21</x>
+       <y>630</y>
        <width>82</width>
        <height>24</height>
       </rect>
@@ -242,31 +219,11 @@ border-radius: 0px;</string>
       <string>Location:</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="addcomplaint_location_input">
-     <property name="geometry">
-      <rect>
-       <x>31</x>
-       <y>324</y>
-       <width>361</width>
-       <height>451</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;
-border: 1px solid grey;
-border-radius: 0px;</string>
-     </property>
-    </widget>
     <widget class="QComboBox" name="addcomplaint_category_input">
      <property name="geometry">
       <rect>
-       <x>31</x>
-       <y>195</y>
+       <x>21</x>
+       <y>196</y>
        <width>361</width>
        <height>28</height>
       </rect>
@@ -325,8 +282,8 @@ border-radius: 0px;</string>
     <widget class="QLabel" name="label_first_name_2">
      <property name="geometry">
       <rect>
-       <x>31</x>
-       <y>164</y>
+       <x>21</x>
+       <y>165</y>
        <width>87</width>
        <height>24</height>
       </rect>
@@ -346,8 +303,8 @@ border-radius: 0px;</string>
     <widget class="QLabel" name="label_first_name_3">
      <property name="geometry">
       <rect>
-       <x>31</x>
-       <y>792</y>
+       <x>21</x>
+       <y>820</y>
        <width>63</width>
        <height>24</height>
       </rect>
@@ -367,8 +324,8 @@ border-radius: 0px;</string>
     <widget class="QComboBox" name="addcomplaint_status_input">
      <property name="geometry">
       <rect>
-       <x>31</x>
-       <y>823</y>
+       <x>21</x>
+       <y>850</y>
        <width>361</width>
        <height>28</height>
       </rect>
@@ -398,6 +355,90 @@ border-radius: 0px;</string>
        <string>Cancelled</string>
       </property>
      </item>
+    </widget>
+    <widget class="QLabel" name="label_address_2">
+     <property name="geometry">
+      <rect>
+       <x>21</x>
+       <y>231</y>
+       <width>107</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px</string>
+     </property>
+     <property name="text">
+      <string>Description:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="addcomplaint_location_input">
+     <property name="geometry">
+      <rect>
+       <x>21</x>
+       <y>660</y>
+       <width>361</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="addcomplaint_description_input">
+     <property name="geometry">
+      <rect>
+       <x>21</x>
+       <y>262</y>
+       <width>361</width>
+       <height>281</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="addcomplaint_date_input">
+     <property name="geometry">
+      <rect>
+       <x>21</x>
+       <y>580</y>
+       <width>361</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
     </widget>
    </widget>
    <widget class="QLabel" name="label_8">
