@@ -34,12 +34,7 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
                 contact,
                 position
             )
-
-            sql = '''INSERT INTO barangay_officials
-                (official_id, first_name, last_name, contact, position)
-                VALUES (%s, %s, %s, %s, %s)'''
-            self.DB.cursor.execute(sql, official)
-            self.DB.conn.commit()
+            self.DB.insert_barangay_official(official)
             QMessageBox.information(self, "Success", "Official added successfully!")
             self.accept()
         except Exception as e:
@@ -78,11 +73,7 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
                 sex
             )
 
-            sql = '''INSERT INTO residents
-                (resident_id, first_name, last_name, birth_date, age, photo_cred, address, contact, sex)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)'''
-            self.DB.cursor.execute(sql, resident)
-            self.DB.conn.commit()
+            self.DB.insert_resident(resident)
             QMessageBox.information(self, "Success", "Resident added successfully!")
             self.accept()
         except Exception as e:
@@ -117,11 +108,7 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
                 status,
                 location
             )
-            sql = '''INSERT INTO complaints
-                (complaint_id, date_time, complaint_desc, resident_id, complaint_category, complaint_status, location)
-                VALUES (%s, %s, %s, %s, %s, %s, %s)'''
-            self.DB.cursor.execute(sql,complaint)
-            self.DB.conn.commit()
+            self.DB.insert_complaint(complaint)
             QMessageBox.information(self, "Success", "Complaint added successfully!")
             self.accept()
         except Exception as e:
