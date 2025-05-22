@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>addOfficialDialog</class>
+ <widget class="QDialog" name="addOfficialDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>532</width>
+    <height>695</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Add New Official</string>
+  </property>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>20</y>
+     <width>491</width>
+     <height>661</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(237, 237, 255);</string>
+   </property>
+   <property name="frameShape">
+    <enum>QFrame::StyledPanel</enum>
+   </property>
+   <property name="frameShadow">
+    <enum>QFrame::Raised</enum>
+   </property>
+   <widget class="QPushButton" name="addofficial_cancel_button">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>590</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 13px;</string>
+    </property>
+    <property name="text">
+     <string>Cancel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="addofficial_save_button">
+    <property name="geometry">
+     <rect>
+      <x>110</x>
+      <y>590</y>
+      <width>111</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 13px;</string>
+    </property>
+    <property name="text">
+     <string>Add</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame_2">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>120</y>
+      <width>431</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 13px;</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
+    </property>
+    <widget class="QLabel" name="label_resident_id">
+     <property name="geometry">
+      <rect>
+       <x>32</x>
+       <y>35</y>
+       <width>95</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px</string>
+     </property>
+     <property name="text">
+      <string>Official ID:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="addofficial_officialID_input">
+     <property name="geometry">
+      <rect>
+       <x>32</x>
+       <y>66</y>
+       <width>361</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_first_name_2">
+     <property name="geometry">
+      <rect>
+       <x>32</x>
+       <y>190</y>
+       <width>103</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px</string>
+     </property>
+     <property name="text">
+      <string>First Name:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="addofficial_firstname_input">
+     <property name="geometry">
+      <rect>
+       <x>32</x>
+       <y>220</y>
+       <width>361</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_last_name">
+     <property name="geometry">
+      <rect>
+       <x>32</x>
+       <y>270</y>
+       <width>102</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px</string>
+     </property>
+     <property name="text">
+      <string>Last Name:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="addofficial_lastname_input">
+     <property name="geometry">
+      <rect>
+       <x>32</x>
+       <y>300</y>
+       <width>361</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_contact">
+     <property name="geometry">
+      <rect>
+       <x>32</x>
+       <y>340</y>
+       <width>75</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px</string>
+     </property>
+     <property name="text">
+      <string>Contact:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="addofficial_contact_input">
+     <property name="geometry">
+      <rect>
+       <x>32</x>
+       <y>370</y>
+       <width>361</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="addofficial_position_input">
+     <property name="geometry">
+      <rect>
+       <x>32</x>
+       <y>140</y>
+       <width>361</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Barangay Captain</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Barangay Councilors</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>SK Officals</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Barangay Secretary</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Barangay Treasurer</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Barangay Health Workers</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Barangay Tanod</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_sex">
+     <property name="geometry">
+      <rect>
+       <x>32</x>
+       <y>110</y>
+       <width>77</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px</string>
+     </property>
+     <property name="text">
+      <string>Position:</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>491</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>24</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;</string>
+    </property>
+    <property name="text">
+     <string>  Add Official</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

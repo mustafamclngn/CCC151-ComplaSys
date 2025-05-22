@@ -1,0 +1,1862 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1752</width>
+    <height>950</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(250, 250, 255);
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QWidget" name="fullMenu" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>281</width>
+      <height>911</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <weight>75</weight>
+      <bold>true</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(212, 212, 255);
+border-radius: 13px;
+color: black;</string>
+    </property>
+    <widget class="QPushButton" name="homeBtn">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>210</y>
+       <width>251</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;
+text-align: left;
+color:black;</string>
+     </property>
+     <property name="text">
+      <string>Dashboard</string>
+     </property>
+     <property name="icon">
+      <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+       <normaloff>:/icons/icons-flat/home.png</normaloff>:/icons/icons-flat/home.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="resBtn">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>280</y>
+       <width>251</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;
+text-align: left;
+color:black;</string>
+     </property>
+     <property name="text">
+      <string>Residents</string>
+     </property>
+     <property name="icon">
+      <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+       <normaloff>:/icons/icons-flat/users-alt.png</normaloff>:/icons/icons-flat/users-alt.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="compBtn">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>350</y>
+       <width>251</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;
+text-align: left;
+color:black;</string>
+     </property>
+     <property name="text">
+      <string>Complaints</string>
+     </property>
+     <property name="icon">
+      <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+       <normaloff>:/icons/icons-flat/document.png</normaloff>:/icons/icons-flat/document.png</iconset>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="offiBtn">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>420</y>
+       <width>251</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;
+text-align: left;
+color:black;</string>
+     </property>
+     <property name="text">
+      <string>Officials</string>
+     </property>
+     <property name="icon">
+      <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+       <normaloff>:/icons/icons-flat/briefcase.png</normaloff>:/icons/icons-flat/briefcase.png</iconset>
+     </property>
+    </widget>
+    <widget class="QFrame" name="frame">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>810</y>
+       <width>281</width>
+       <height>101</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: rgb(237, 237, 255);
+color: black;</string>
+     </property>
+     <property name="frameShape">
+      <enum>QFrame::StyledPanel</enum>
+     </property>
+     <property name="frameShadow">
+      <enum>QFrame::Raised</enum>
+     </property>
+     <widget class="QPushButton" name="accBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>71</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 9px;
+border: 2px solid grey;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+        <normaloff>:/icons/icons-flat/user.png</normaloff>:/icons/icons-flat/user.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>30</y>
+        <width>81</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>ADMIN</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>50</y>
+        <width>201</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>8</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Del Carmen Complaint System</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QPushButton" name="exBtn">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>620</y>
+       <width>251</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;
+color:black;</string>
+     </property>
+     <property name="text">
+      <string>Exit</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="abtBtn">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>490</y>
+       <width>251</width>
+       <height>61</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;
+text-align: left;
+color:black;</string>
+     </property>
+     <property name="text">
+      <string>About</string>
+     </property>
+     <property name="icon">
+      <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+       <normaloff>:/icons/icons-flat/interrogation.png</normaloff>:/icons/icons-flat/interrogation.png</iconset>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>90</y>
+       <width>251</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>9</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 0px;
+border: 0px;</string>
+     </property>
+     <property name="text">
+      <string>Del Carmen Complaint System</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>40</y>
+       <width>261</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MS Sans Serif</family>
+       <pointsize>30</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border-radius: 0px;
+border: 0px;</string>
+     </property>
+     <property name="text">
+      <string>ComplaSys</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>320</x>
+      <y>20</y>
+      <width>1411</width>
+      <height>911</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>System</family>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(212, 212, 255);
+border-radius: 13px;</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="page">
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1431</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>24</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+color: black;
+border-radius: 0px;</string>
+      </property>
+      <property name="text">
+       <string>  Welcome ADMIN!</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelDateTime1">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>30</y>
+        <width>261</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+color: black;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_2">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>460</y>
+        <width>241</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 179, 179);
+border-radius: 13px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="lineEdit">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>241</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>  Total Complaints:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="totalComp_line">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>241</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_4">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>730</y>
+        <width>241</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(148, 255, 148);
+border-radius: 13px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="lineEdit_3">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>241</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>  Completed Complaints:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="lineEdit_7">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>140</y>
+         <width>401</width>
+         <height>71</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="completeComp_line">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>241</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_3">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>600</y>
+        <width>241</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 217, 148);
+border-radius: 13px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="lineEdit_2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>241</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>  Pending Complaints:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="pendingComp_line">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>241</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_6">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>320</y>
+        <width>241</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 171);
+border-radius: 13px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="lineEdit_5">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>241</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>  Total Residents:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="totalRes_line">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>241</width>
+         <height>71</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_7">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>190</y>
+        <width>241</width>
+        <height>111</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(184, 184, 255);
+border-radius: 13px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="lineEdit_6">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>241</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>  Total Officials:</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="totalOffi_line">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>50</y>
+         <width>241</width>
+         <height>61</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTableWidget" name="pendingComp_table">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>200</y>
+        <width>1091</width>
+        <height>641</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 1px;</string>
+      </property>
+      <column>
+       <property name="text">
+        <string>COMPLAINTID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>RESIDENTID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>CATEGORY</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>DESCRIPTION</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>DATETIME</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>LOCATION</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>STATUS</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QComboBox" name="sortBy_box">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>140</y>
+        <width>161</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 9px;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>SORT BY:</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>ASCENDING</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>DESCENDING</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="column_box">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>140</y>
+        <width>181</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 9px;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>COLUMN:</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>COMPLAINTID</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RESIDENTID</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CATEGORY</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>DESCRIPTION</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>DATETIME</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>LOCATION</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>STATUS</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QLineEdit" name="filter_line">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>140</y>
+        <width>361</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 13px;</string>
+      </property>
+      <property name="placeholderText">
+       <string>  Filter:</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="column2_box">
+      <property name="geometry">
+       <rect>
+        <x>930</x>
+        <y>140</y>
+        <width>181</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 9px;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>COULMN:</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>COMPLAINTID</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RESIDENTID</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CATEGORY</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>DESCRIPTION</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>DATETIME</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>LOCATION</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>STATUS</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="filterPendComp_button">
+      <property name="geometry">
+       <rect>
+        <x>860</x>
+        <y>140</y>
+        <width>51</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+        <normaloff>:/icons/icons-flat/search.png</normaloff>:/icons/icons-flat/search.png</iconset>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_2">
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1431</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>24</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(48, 52, 63);
+color: white;
+border-radius: 0px;</string>
+      </property>
+      <property name="text">
+       <string>  Residents</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="resident_table">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>190</y>
+        <width>1351</width>
+        <height>651</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 1px;</string>
+      </property>
+      <attribute name="horizontalHeaderStretchLastSection">
+       <bool>false</bool>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>RESIDENTID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>FIRSTNAME</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>LASTNAME</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>AGE</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>SEX</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>BIRTHDATE</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>CONTACT</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>ADDRESS</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>CREDENTIALS</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="updResBtn">
+      <property name="geometry">
+       <rect>
+        <x>1280</x>
+        <y>850</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Edit</string>
+      </property>
+      <property name="icon">
+       <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+        <normaloff>:/icons/icons-flat/pencil.png</normaloff>:/icons/icons-flat/pencil.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delResBtn">
+      <property name="geometry">
+       <rect>
+        <x>1170</x>
+        <y>850</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+      <property name="icon">
+       <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+        <normaloff>:/icons/icons-flat/trash.png</normaloff>:/icons/icons-flat/trash.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addResBtn">
+      <property name="geometry">
+       <rect>
+        <x>1200</x>
+        <y>120</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Add Resident</string>
+      </property>
+      <property name="icon">
+       <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+        <normaloff>:/icons/icons-flat/plus.png</normaloff>:/icons/icons-flat/plus.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="searchRes_line">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>120</y>
+        <width>421</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 13px;</string>
+      </property>
+      <property name="placeholderText">
+       <string>    Search Residents...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="searchResBtn">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>130</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+        <normaloff>:/icons/icons-flat/search.png</normaloff>:/icons/icons-flat/search.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="refreshResBtn">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>850</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Refresh</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveResBtn">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>850</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelDateTime2">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>30</y>
+        <width>261</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(48, 52, 63);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_3">
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1461</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>24</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(48, 52, 63);
+color: white;
+border-radius: 0px;</string>
+      </property>
+      <property name="text">
+       <string>  Complaints</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="complaint_table">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>190</y>
+        <width>1351</width>
+        <height>651</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 1px;</string>
+      </property>
+      <column>
+       <property name="text">
+        <string>COMPLAINTID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>RESIDENTID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>CATEGORY</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>DESCRIPTION</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>DATETIME</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>LOCATION</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>STATUS</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="delCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>1170</x>
+        <y>850</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+      <property name="icon">
+       <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+        <normaloff>:/icons/icons-flat/trash.png</normaloff>:/icons/icons-flat/trash.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="updCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>1280</x>
+        <y>850</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Edit</string>
+      </property>
+      <property name="icon">
+       <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+        <normaloff>:/icons/icons-flat/pencil.png</normaloff>:/icons/icons-flat/pencil.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>1200</x>
+        <y>120</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Add Complaint</string>
+      </property>
+      <property name="icon">
+       <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+        <normaloff>:/icons/icons-flat/plus.png</normaloff>:/icons/icons-flat/plus.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="searchComp_line">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>120</y>
+        <width>421</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 13px;</string>
+      </property>
+      <property name="placeholderText">
+       <string>    Search Complaints...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="searchCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>130</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+        <normaloff>:/icons/icons-flat/search.png</normaloff>:/icons/icons-flat/search.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="refreshCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>850</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Refresh</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>850</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelDateTime3">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>30</y>
+        <width>261</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(48, 52, 63);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_4">
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1471</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>24</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(48, 52, 63);
+color: white;
+border-radius: 0px;</string>
+      </property>
+      <property name="text">
+       <string>  Officials</string>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="official_table">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>190</y>
+        <width>1351</width>
+        <height>651</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 1px;</string>
+      </property>
+      <column>
+       <property name="text">
+        <string>OFFICIALID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>POSITION</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>FIRSTNAME</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>LASTNAME</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>CONTACT</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="updOffiBtn">
+      <property name="geometry">
+       <rect>
+        <x>1270</x>
+        <y>850</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Edit</string>
+      </property>
+      <property name="icon">
+       <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+        <normaloff>:/icons/icons-flat/pencil.png</normaloff>:/icons/icons-flat/pencil.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delOffiBtn">
+      <property name="geometry">
+       <rect>
+        <x>1160</x>
+        <y>850</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+      <property name="icon">
+       <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+        <normaloff>:/icons/icons-flat/trash.png</normaloff>:/icons/icons-flat/trash.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="addOffiBtn">
+      <property name="geometry">
+       <rect>
+        <x>1200</x>
+        <y>120</y>
+        <width>181</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Add Official</string>
+      </property>
+      <property name="icon">
+       <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+        <normaloff>:/icons/icons-flat/plus.png</normaloff>:/icons/icons-flat/plus.png</iconset>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="searchOffi_line">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>120</y>
+        <width>421</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 13px;</string>
+      </property>
+      <property name="placeholderText">
+       <string>    Search Officials...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="searchOffiBtn">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>130</y>
+        <width>41</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 9px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="CCC151-ComplaSys-neil/resources/resource.qrc">
+        <normaloff>:/icons/icons-flat/search.png</normaloff>:/icons/icons-flat/search.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="refreshOffiBtn">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>850</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Refresh</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveOffiBtn">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>850</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelDateTime4">
+      <property name="geometry">
+       <rect>
+        <x>1150</x>
+        <y>30</y>
+        <width>261</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(48, 52, 63);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="page_6">
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1471</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MS Shell Dlg 2</family>
+        <pointsize>24</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(48, 52, 63);
+color: white;
+border-radius: 0px;</string>
+      </property>
+      <property name="text">
+       <string>  About</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_5">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>150</y>
+        <width>1271</width>
+        <height>651</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border-radius: 13px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="CCC151-ComplaSys-neil/resources/resource.qrc"/>
+ </resources>
+ <connections/>
+</ui>
