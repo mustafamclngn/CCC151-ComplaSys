@@ -1,5 +1,4 @@
 import sys
-
 from PyQt5.QtWidgets import *
 from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
 from PyQt5.QtGui import QFontDatabase, QFont
@@ -17,6 +16,88 @@ from uipyfiles.mainui import Ui_MainWindow
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
+class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
+    def __init__(self,parent = None):
+        super().__init__(parent)
+        self.setupUi(self)
+        self.db = Database()
+        self.addofficial_save_button.clicked.connect(self.save_official)
+        self.addofficial_cancel_button.clicked.connect(self.reject)
+
+    def save_official(self):
+        try:
+            official_id = self.addofficial_officialID_input.text().strip()
+            if not official_id.isdigit():
+                QMessageBox.warning(self, "Input Error", "Official ID must be an integer and not empty.")
+                return
+            official_id = int(official_id)
+            first_name = self.addofficial_firstname_input.text()
+            last_name = self.addofficial_lastname_input.text()
+            contact = self.addofficial_contact_input.text()
+            position = self.addofficial_position_input.currentText()
+
+            official = (
+                official_id,
+                first_name,
+                last_name,
+                contact,
+                position
+            )
+
+            sql = '''INSERT INTO BarangayOfficials
+                (official_id, first_name, last_name, contact, position)
+                VALUES (%s, %s, %s, %s, %s)'''
+            self.db.cursor.execute(sql, official)
+            self.db.conn.commit()
+            QMessageBox.information(self, "Success", "Official added successfully!")
+            self.accept()
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to add official:\n{e}")
+
+class AddResidentDialog(QDialog, Ui_addResidentDialog):
+    def __init__(self,parent = None):
+        print("Opening AddOfficialDialog")  # Debug print
+        super().__init__(parent)
+        self.setupUi(self)
+        self.db = Database()
+        self.addresident_save_button.clicked.connect(self.save_resident)
+        self.addresident_cancel_button.clicked.connect(self.reject)
+    
+    def save_resident(self):
+        try:
+            resident_id = self.addresident_residentID_input.text()
+            first_name = self.addresident_firstname_input.text()
+            last_name = self.addresident_lastname_input.text()
+            birth_date = self.addresident_dob_input.date().toString("yyyy-MM-dd")
+            age = self.addresident_age_input.text()
+            photo_cred = self.addresident_photo_label.text() #may be changed depends on testing
+            address = self.addresident_address_input.toPlainText()
+            contact = self.addresident_contact_input.text()
+            sex = self.addresident_sex_input.currentText()
+            
+            
+            resident = (
+                resident_id,
+                first_name,
+                last_name,
+                birth_date,
+                age,
+                photo_cred,
+                address,
+                contact,
+                sex
+            )
+
+            sql = '''INSERT INTO Resident
+                (resident_id, first_name, last_name, birth_date, age, photo_cred, address, contact, sex)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)'''
+            self.db.cursor.execute(sql, resident)
+            self.db.conn.commit()
+            QMessageBox.information(self, "Success", "Resident added successfully!")
+            self.accept()
+        except Exception as e:
+            QMessageBox.critical(self, "Error", f"Failed to add resident:\n{e}")
+          
 
 class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
     def __init__(self, parent = None):
@@ -45,7 +126,7 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
                 status,
                 location
             )
-            sql = '''INSERT INTO complaints
+            sql = '''INSERT INTO Complaint
                 (complaint_id, date_time, complaint_desc, resident_id, complaint_category, complaint_status, location)
                 VALUES (%s, %s, %s, %s, %s, %s, %s)'''
             self.db.cursor.execute(sql,complaint)
@@ -98,22 +179,29 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
 #add dialogs
     def add_residents(self):
-        dialog = QDialog(self)
-        ui = Ui_addResidentDialog()
-        ui.setupUi(dialog)
+        dialog = AddResidentDialog(self)
         dialog.exec_()
         
     def add_complaints(self):
-        dialog = QDialog(self)
-        ui = Ui_addComplaintDialog()
-        ui.setupUi(dialog)
+        dialog = AddComplaintDialog(self)
         dialog.exec_()
 
     def add_officials(self):
-        dialog = QDialog(self)
-        ui = Ui_addOfficialDialog()
-        ui.setupUi(dialog)
+        dialog = AddOfficialDialog(self)
         dialog.exec_()
+
+    def load_officials(self):
+        db = Database()  # Create a new Database instance
+        self.official_table.setRowCount(0)
+        db.cursor.execute("SELECT * FROM BarangayOfficials")
+        officials = db.cursor.fetchall()
+        for row_num, row_data in enumerate(officials):
+            self.official_table.insertRow(row_num)
+            self.official_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # OFFICIALID
+            self.official_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[4])))  # POSITION
+            self.official_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[1])))  # FIRSTNAME
+            self.official_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[2])))  # LASTNAME
+            self.official_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[3])))  # CONTACT
 
     def show_exit_message(self):
         reply = QMessageBox.question(self, 'Exit', 'Are you sure you want to exit?', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
@@ -131,7 +219,8 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
     def show_officials(self):
         self.stackedWidget.setCurrentIndex(3)
-
+        self.load_officials()
+        
     def show_about(self):
         self.stackedWidget.setCurrentIndex(4)
 
