@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1473</width>
-    <height>751</height>
+    <height>740</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,28 +33,28 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 0, 50);
+     <string notr="true">background-color: rgb(0, 0, 35);
 border-radius: 13px;
 color: white;</string>
     </property>
     <widget class="QPushButton" name="homeBtn">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>140</y>
-       <width>201</width>
+       <x>10</x>
+       <y>160</y>
+       <width>221</width>
        <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>11</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 55);
+      <string notr="true">background-color: rgb(0, 0, 40);
 border-radius: 13px;
 text-align: left;
 color: white;</string>
@@ -63,28 +63,28 @@ color: white;</string>
       <string>Dashboard</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="../resource/resource.qrc">
        <normaloff>:/icons/icons/home.svg</normaloff>:/icons/icons/home.svg</iconset>
      </property>
     </widget>
     <widget class="QPushButton" name="resBtn">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>190</y>
-       <width>201</width>
+       <x>10</x>
+       <y>210</y>
+       <width>221</width>
        <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>11</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 55);
+      <string notr="true">background-color: rgb(0, 0, 40);
 border-radius: 13px;
 text-align: left;
 color: white;</string>
@@ -93,28 +93,28 @@ color: white;</string>
       <string>Residents</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="../resource/resource.qrc">
        <normaloff>:/icons/icons/users-alt.svg</normaloff>:/icons/icons/users-alt.svg</iconset>
      </property>
     </widget>
     <widget class="QPushButton" name="compBtn">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>240</y>
-       <width>201</width>
+       <x>10</x>
+       <y>260</y>
+       <width>221</width>
        <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>11</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 55);
+      <string notr="true">background-color: rgb(0, 0, 40);
 border-radius: 13px;
 text-align: left;
 color: white;</string>
@@ -123,28 +123,28 @@ color: white;</string>
       <string>Complaints</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="../resource/resource.qrc">
        <normaloff>:/icons/icons/document.svg</normaloff>:/icons/icons/document.svg</iconset>
      </property>
     </widget>
     <widget class="QPushButton" name="offiBtn">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>290</y>
-       <width>201</width>
+       <x>10</x>
+       <y>310</y>
+       <width>221</width>
        <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>11</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 55);
+      <string notr="true">background-color: rgb(0, 0, 40);
 border-radius: 13px;
 text-align: left;
 color: white;</string>
@@ -153,28 +153,28 @@ color: white;</string>
       <string>Officials</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="../resource/resource.qrc">
        <normaloff>:/icons/icons/briefcase.svg</normaloff>:/icons/icons/briefcase.svg</iconset>
      </property>
     </widget>
     <widget class="QPushButton" name="exBtn">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>390</y>
-       <width>201</width>
+       <x>10</x>
+       <y>580</y>
+       <width>221</width>
        <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>11</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 55);
+      <string notr="true">background-color: rgb(0, 0, 40);
 border-radius: 13px;
 text-align: left;
 color: white;</string>
@@ -186,21 +186,21 @@ color: white;</string>
     <widget class="QPushButton" name="abtBtn">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>340</y>
-       <width>201</width>
+       <x>10</x>
+       <y>360</y>
+       <width>221</width>
        <height>41</height>
       </rect>
      </property>
      <property name="font">
       <font>
-       <pointsize>10</pointsize>
+       <pointsize>11</pointsize>
        <weight>50</weight>
        <bold>false</bold>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 55);
+      <string notr="true">background-color: rgb(0, 0, 40);
 border-radius: 13px;
 text-align: left;
 color: white;</string>
@@ -209,7 +209,7 @@ color: white;</string>
       <string>About</string>
      </property>
      <property name="icon">
-      <iconset>
+      <iconset resource="../resource/resource.qrc">
        <normaloff>:/icons/icons/interrogation.svg</normaloff>:/icons/icons/interrogation.svg</iconset>
      </property>
     </widget>
@@ -260,6 +260,22 @@ border: 0px;</string>
       </property>
      </widget>
     </widget>
+    <widget class="QLabel" name="label_4">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>130</y>
+       <width>241</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color: grey;</string>
+     </property>
+     <property name="text">
+      <string>   Case Management</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QStackedWidget" name="stackedWidget">
     <property name="geometry">
@@ -274,7 +290,7 @@ border: 0px;</string>
      <string notr="true">background-color: white;</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>3</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QFrame" name="frame_2">
@@ -335,7 +351,7 @@ border: 0px;</string>
 border-radius: 13px;</string>
        </property>
        <property name="placeholderText">
-        <string>  Filter:</string>
+        <string>  Filter</string>
        </property>
       </widget>
       <widget class="QPushButton" name="filterPendComp_button">
@@ -355,8 +371,87 @@ border-radius: 9px;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../resource/resource.qrc">
          <normaloff>:/icons/icons/search.svg</normaloff>:/icons/icons/search.svg</iconset>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="column2_box">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>20</y>
+         <width>141</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>COULMN</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>COMPLAINTID</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>CATEGORY</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DATETIME</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>LOCATION</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>STATUS</string>
+        </property>
+       </item>
+      </widget>
+      <widget class="QPushButton" name="refreshPendingCompBtn">
+       <property name="geometry">
+        <rect>
+         <x>1090</x>
+         <y>30</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>System</family>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource/resource.qrc">
+         <normaloff>:/icons/icons/refresh.svg</normaloff>:/icons/icons/refresh.svg</iconset>
        </property>
       </widget>
      </widget>
@@ -382,7 +477,7 @@ border-radius: 9px;</string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>260</y>
+        <y>280</y>
         <width>811</width>
         <height>411</height>
        </rect>
@@ -418,32 +513,11 @@ border-radius: 2px;</string>
        </property>
       </column>
      </widget>
-     <widget class="QLabel" name="labelDateTime1">
-      <property name="geometry">
-       <rect>
-        <x>920</x>
-        <y>110</y>
-        <width>261</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border: 0px;</string>
-      </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
      <widget class="QFrame" name="frame_7">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>170</y>
+        <x>30</x>
+        <y>190</y>
         <width>181</width>
         <height>81</height>
        </rect>
@@ -498,8 +572,8 @@ border-radius: 13px;</string>
      <widget class="QFrame" name="frame_8">
       <property name="geometry">
        <rect>
-        <x>260</x>
-        <y>170</y>
+        <x>240</x>
+        <y>190</y>
         <width>181</width>
         <height>81</height>
        </rect>
@@ -554,8 +628,8 @@ border-radius: 13px;</string>
      <widget class="QFrame" name="frame_9">
       <property name="geometry">
        <rect>
-        <x>470</x>
-        <y>170</y>
+        <x>450</x>
+        <y>190</y>
         <width>181</width>
         <height>81</height>
        </rect>
@@ -620,8 +694,8 @@ border-radius: 13px;</string>
      <widget class="QFrame" name="frame_10">
       <property name="geometry">
        <rect>
-        <x>680</x>
-        <y>170</y>
+        <x>660</x>
+        <y>190</y>
         <width>181</width>
         <height>81</height>
        </rect>
@@ -679,8 +753,8 @@ border-radius: 13px;</string>
      <widget class="QFrame" name="frame_11">
       <property name="geometry">
        <rect>
-        <x>890</x>
-        <y>170</y>
+        <x>870</x>
+        <y>190</y>
         <width>181</width>
         <height>81</height>
        </rect>
@@ -736,7 +810,7 @@ border-radius: 13px;</string>
       <property name="geometry">
        <rect>
         <x>850</x>
-        <y>260</y>
+        <y>300</y>
         <width>311</width>
         <height>201</height>
        </rect>
@@ -756,6 +830,48 @@ border-radius: 13px;</string>
       </property>
       <property name="navigationBarVisible">
        <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>140</y>
+        <width>381</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: grey;</string>
+      </property>
+      <property name="text">
+       <string>Let's make today efficient and resident-friendly.</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelDateTime1">
+      <property name="geometry">
+       <rect>
+        <x>970</x>
+        <y>110</y>
+        <width>221</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 0px;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
       </property>
      </widget>
     </widget>
@@ -816,7 +932,7 @@ border-radius: 9px;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../resource/resource.qrc">
          <normaloff>:/icons/icons/search.svg</normaloff>:/icons/icons/search.svg</iconset>
        </property>
       </widget>
@@ -842,17 +958,47 @@ border-radius: 13px;</string>
         <string>    Search Residents...</string>
        </property>
       </widget>
+      <widget class="QPushButton" name="refreshResBtn">
+       <property name="geometry">
+        <rect>
+         <x>1090</x>
+         <y>30</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>System</family>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource/resource.qrc">
+         <normaloff>:/icons/icons/refresh.svg</normaloff>:/icons/icons/refresh.svg</iconset>
+       </property>
+      </widget>
       <zorder>label_2</zorder>
       <zorder>searchRes_line</zorder>
       <zorder>searchResBtn</zorder>
+      <zorder>refreshResBtn</zorder>
      </widget>
      <widget class="QTableWidget" name="resident_table">
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>170</y>
+        <y>160</y>
         <width>1141</width>
-        <height>531</height>
+        <height>501</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -912,10 +1058,10 @@ border-radius: 1px;</string>
      <widget class="QPushButton" name="addResBtn">
       <property name="geometry">
        <rect>
-        <x>1000</x>
-        <y>100</y>
-        <width>181</width>
-        <height>51</height>
+        <x>1010</x>
+        <y>110</y>
+        <width>151</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -929,14 +1075,147 @@ border-radius: 1px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 13px;</string>
+border-radius: 4px;</string>
       </property>
       <property name="text">
        <string>Add Resident</string>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="../resource/resource.qrc">
         <normaloff>:/icons/icons/plus.svg</normaloff>:/icons/icons/plus.svg</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveResBtn">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>110</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="sortRes_box">
+      <property name="geometry">
+       <rect>
+        <x>860</x>
+        <y>110</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>SORT BY</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>COMPLAINTID</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CATEGORY</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>DATETIME</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>LOCATION</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>STATUS</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="updResBtn">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>670</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
+      </property>
+      <property name="text">
+       <string>Edit</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/icons/pencil.png</normaloff>:/icons/pencil.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delResBtn">
+      <property name="geometry">
+       <rect>
+        <x>1060</x>
+        <y>670</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/icons/trash.png</normaloff>:/icons/trash.png</iconset>
       </property>
      </widget>
     </widget>
@@ -1019,8 +1298,37 @@ border-radius: 9px;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../resource/resource.qrc">
          <normaloff>:/icons/icons/search.svg</normaloff>:/icons/icons/search.svg</iconset>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="refreshCompBtn">
+       <property name="geometry">
+        <rect>
+         <x>1090</x>
+         <y>30</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>System</family>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource/resource.qrc">
+         <normaloff>:/icons/icons/refresh.svg</normaloff>:/icons/icons/refresh.svg</iconset>
        </property>
       </widget>
      </widget>
@@ -1028,9 +1336,9 @@ border-radius: 9px;</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>170</y>
+        <y>160</y>
         <width>1141</width>
-        <height>531</height>
+        <height>501</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1077,10 +1385,10 @@ border-radius: 1px;</string>
      <widget class="QPushButton" name="addCompBtn">
       <property name="geometry">
        <rect>
-        <x>1000</x>
-        <y>100</y>
-        <width>181</width>
-        <height>51</height>
+        <x>1010</x>
+        <y>110</y>
+        <width>151</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -1093,14 +1401,147 @@ border-radius: 1px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 13px;</string>
+border-radius: 4px;</string>
       </property>
       <property name="text">
        <string>Add Complaint</string>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="../resource/resource.qrc">
         <normaloff>:/icons/icons/plus.svg</normaloff>:/icons/icons/plus.svg</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>110</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="sortComp_box">
+      <property name="geometry">
+       <rect>
+        <x>860</x>
+        <y>110</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>SORT BY</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>COMPLAINTID</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CATEGORY</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>DATETIME</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>LOCATION</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>STATUS</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="delCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>1060</x>
+        <y>670</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/icons/trash.png</normaloff>:/icons/trash.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="updCompBtn">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>670</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
+      </property>
+      <property name="text">
+       <string>Edit</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/icons/pencil.png</normaloff>:/icons/pencil.png</iconset>
       </property>
      </widget>
     </widget>
@@ -1183,8 +1624,37 @@ border-radius: 9px;</string>
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="../resource/resource.qrc">
          <normaloff>:/icons/icons/search.svg</normaloff>:/icons/icons/search.svg</iconset>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="refreshOffiBtn">
+       <property name="geometry">
+        <rect>
+         <x>1090</x>
+         <y>30</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>System</family>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource/resource.qrc">
+         <normaloff>:/icons/icons/refresh.svg</normaloff>:/icons/icons/refresh.svg</iconset>
        </property>
       </widget>
      </widget>
@@ -1192,9 +1662,9 @@ border-radius: 9px;</string>
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>170</y>
+        <y>160</y>
         <width>1141</width>
-        <height>531</height>
+        <height>501</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1231,10 +1701,10 @@ border-radius: 1px;</string>
      <widget class="QPushButton" name="addOffiBtn">
       <property name="geometry">
        <rect>
-        <x>1000</x>
-        <y>100</y>
-        <width>181</width>
-        <height>51</height>
+        <x>1010</x>
+        <y>110</y>
+        <width>151</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -1247,14 +1717,147 @@ border-radius: 1px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 13px;</string>
+border-radius: 4px;</string>
       </property>
       <property name="text">
        <string>Add Official</string>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="../resource/resource.qrc">
         <normaloff>:/icons/icons/plus.svg</normaloff>:/icons/icons/plus.svg</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="saveOffiBtn">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>110</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
+      </property>
+      <property name="text">
+       <string>Save</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="sortOff_box">
+      <property name="geometry">
+       <rect>
+        <x>860</x>
+        <y>110</y>
+        <width>141</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>SORT BY</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>COMPLAINTID</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>CATEGORY</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>DATETIME</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>LOCATION</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>STATUS</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="updOffiBtn_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>670</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
+      </property>
+      <property name="text">
+       <string>Edit</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/icons/pencil.png</normaloff>:/icons/pencil.png</iconset>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="delOffiBtn_2">
+      <property name="geometry">
+       <rect>
+        <x>1060</x>
+        <y>670</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <weight>50</weight>
+        <bold>false</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>:/icons/trash.png</normaloff>:/icons/trash.png</iconset>
       </property>
      </widget>
     </widget>
