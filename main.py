@@ -65,12 +65,19 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
         super().__init__(parent)
         self.setupUi(self)
         self.db = Database()
+        #Restrict Resident ID to ####-####
+        regex = QRegExp(r"^\d{4}-\d{4}$")
+        validator = QRegExpValidator(regex)
+        self.addofficial_residentID_input.setValidator(validator)
         self.addresident_save_button.clicked.connect(self.save_resident)
         self.addresident_cancel_button.clicked.connect(self.reject)
     
     def save_resident(self):
         try:
             resident_id = self.addresident_residentID_input.text()
+            if not resident_id or not self.addofficial_residentID_input.hasAcceptableInput():
+                QMessageBox.warning(self, "Input Error", "Resident ID must be in the format ####-#### (8 digits).")
+                return
             first_name = self.addresident_firstname_input.text()
             last_name = self.addresident_lastname_input.text()
             birth_date = self.addresident_dob_input.date().toString("yyyy-MM-dd")
@@ -94,7 +101,7 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
             )
 
             sql = '''INSERT INTO Resident
-                (resident_id, first_name, last_name, birth_date, age, photo_cred, address, contact, sex)
+                (resident_id, first_name, last_name, age, birth_date, photo_cred, address, contact, sex)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)'''
             self.db.cursor.execute(sql, resident)
             self.db.conn.commit()
@@ -105,22 +112,39 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
           
 
 class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
-    def __init__(self, parent = None):
-        super().__init__( parent)
+    def __init__(self, parent=None):
+        super().__init__(parent)
         self.setupUi(self)
         self.db = Database()
+        # Restrict Complaint ID to ####-####
+        regex = QRegExp(r"^\d{4}-\d{4}$")
+        validator = QRegExpValidator(regex)
+        self.addcomplaint_complaintID_input.setValidator(validator)
         self.addcomplaint_save_button.clicked.connect(self.save_complaint)
         self.addcomplaint_cancel_button.clicked.connect(self.reject)
-    
+
+        # Populate resident ID combo box
+        self.populate_resident_ids()
+
+    def populate_resident_ids(self):
+        self.addcomplaint_residentID_input.clear()
+        self.db.cursor.execute("SELECT resident_id FROM Resident")
+        resident_ids = self.db.cursor.fetchall()
+        for rid in resident_ids:
+            self.addcomplaint_residentID_input.addItem(str(rid[0]))
+
     def save_complaint(self):
         try:
             complaint_id = self.addcomplaint_complaintID_input.text()
-            resident_id = self.addcomplaint_residentID_input.text()
+            if not complaint_id or not self.addofficial_complaintID_input.hasAcceptableInput():
+                QMessageBox.warning(self, "Input Error", "Complaint ID must be in the format ####-#### (8 digits).")
+                return
+            resident_id = self.addcomplaint_residentID_input.currentText()
             category = self.addcomplaint_category_box.currentText()
             date = self.addcomplaint_date_box.date().toString("yyyy-dd-MM")
             description = self.addcomplaint_description_input.toPlainText()
             location = self.addcomplaint_location_input.text()
-            status = self.addcomplaint_satus_box.currentText()
+            status = self.addcomplaint_status_input.currentText()
             
             complaint = (
                 complaint_id,
@@ -195,6 +219,38 @@ class MainClass(QMainWindow, Ui_MainWindow):
         dialog = AddOfficialDialog(self)
         dialog.exec_()
 
+    def load_residents(self):
+        db = Database() # Create a new Database instance
+        self.official_table.setRowCount(0)
+        db.cursor.execute("SELECT * FROM Resident")
+        residents = db.cursor.fetchall()
+        for row_num, row_data in enumerate(residents):
+            self.resident_table.insertRow(row_num)
+            self.resident_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0]))) #ResidentID
+            self.resident_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[1]))) #FirstName
+            self.resident_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[2]))) #LastName
+            self.resident_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[3]))) #Age
+            self.resident_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[4]))) #Sex
+            self.resident_table.setItem(row_num, 5, QTableWidgetItem(str(row_data[5]))) #Birthdate
+            self.resident_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[6]))) #Contact
+            self.resident_table.setItem(row_num, 7, QTableWidgetItem(str(row_data[7]))) #Address
+            self.resident_table.setItem(row_num, 8, QTableWidgetItem(str(row_data[8]))) #Credentials
+   
+    def load_complaints(self):
+        db = Database() # Create a new Database instance
+        self.official_table.setRowCount(0)
+        db.cursor.execute("SELECT * FROM Complaint")
+        complaints = db.cursor.fetchall()
+        for row_num, row_data in enumerate(complaints):
+            self.complaint_table.insertRow(row_num)
+            self.complaint_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0]))) #ComplaintID
+            self.complaint_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[1]))) #ResidentID
+            self.complaint_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[2]))) #Category
+            self.complaint_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[3]))) #Description
+            self.complaint_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[4]))) #DateTime
+            self.complaint_table.setItem(row_num, 5, QTableWidgetItem(str(row_data[5]))) #Location
+            self.complaint_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[6]))) #Status
+
     def load_officials(self):
         db = Database()  # Create a new Database instance
         self.official_table.setRowCount(0)
@@ -218,9 +274,11 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
     def show_residents(self):
         self.stackedWidget.setCurrentIndex(1)
+        self.load_residents()
 
     def show_complaints(self):
         self.stackedWidget.setCurrentIndex(2)
+        self.load_complaints()
 
     def show_officials(self):
         self.stackedWidget.setCurrentIndex(3)
