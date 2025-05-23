@@ -57,7 +57,7 @@ class Database:
                     complaint_desc VARCHAR(120) NOT NULL,
                     resident_id VARCHAR(8) NULL,
                     complaint_category VARCHAR(64) NOT NULL,
-                    complaint_status VARCHAR(8) NOT NULL,
+                    complaint_status ENUM('Completed', 'Pending', 'Cancelled') NOT NULL,
                     location VARCHAR(255),
                     FOREIGN KEY (resident_id) REFERENCES residents(resident_id)
                         ON DELETE SET NULL
@@ -174,8 +174,6 @@ class Database:
         except Error as e:
             print(f"Error: {e}")
 
-
-
     def insert_accuse(self, accuse):
         """
         Probably magamit rani sa definition UI sa isa ka element sa complaint
@@ -192,6 +190,17 @@ class Database:
         except Error as e:
             print(f"Error: {e}")
 
+    def remove_accuse(self, resident_id, complaint_id):
+        """ remove an accuse from the accuses table """
+        sql = ''' DELETE FROM accuses WHERE resident_id = %s AND complaint_id = %s '''
+        try:
+            cursor = self.cursor
+            cursor.execute(sql, (resident_id, complaint_id))
+            self.conn.commit()
+            print(f"Accuse {resident_id} removed successfully")
+        except Error as e:
+            print(f"Error: {e}")
+
     def insert_handle(self, handle):
         """
         Probably magamit rani sa definition UI sa isa ka element sa complaint
@@ -205,6 +214,17 @@ class Database:
             cursor.execute(sql, handle)
             self.conn.commit()
             print(f"Handle {handle[0]} inserted successfully")
+        except Error as e:
+            print(f"Error: {e}")
+
+    def remove_handle(self, official_id, complaint_id):
+        """ remove a handle from the handles table """
+        sql = ''' DELETE FROM handles WHERE official_id = %s AND complaint_id = %s '''
+        try:
+            cursor = self.cursor
+            cursor.execute(sql, (official_id, complaint_id))
+            self.conn.commit()
+            print(f"Handle {official_id} removed successfully")
         except Error as e:
             print(f"Error: {e}")
 
