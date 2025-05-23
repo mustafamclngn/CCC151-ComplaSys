@@ -4,7 +4,8 @@ from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
 from PyQt5.QtGui import QFontDatabase, QFont
 from PyQt5.QtCore import QTimer, QDateTime
 from PyQt5 import QtCore
-
+from PyQt5.QtGui import QRegExpValidator
+from PyQt5.QtCore import QRegExp
 from database.database import Database
 from resource import resource_qrc
 
@@ -21,6 +22,10 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
         super().__init__(parent)
         self.setupUi(self)
         self.db = Database()
+        #Restrict Official ID to ####-####
+        regex = QRegExp(r"^\d{4}-\d{4}$")
+        validator = QRegExpValidator(regex)
+        self.addofficial_officialID_input.setValidator(validator)
         self.addofficial_save_button.clicked.connect(self.save_official)
         self.addofficial_cancel_button.clicked.connect(self.reject)
 
@@ -28,7 +33,7 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
         try:
             official_id = self.addofficial_officialID_input.text().strip()
             if not official_id.isdigit():
-                QMessageBox.warning(self, "Input Error", "Official ID must be an integer and not empty.")
+                QMessageBox.warning(self, "Input Error", "Official ID must be in the format ####-#### or of 8 digits")
                 return
             official_id = int(official_id)
             first_name = self.addofficial_firstname_input.text()
@@ -220,7 +225,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
     def show_officials(self):
         self.stackedWidget.setCurrentIndex(3)
         self.load_officials()
-        
+
     def show_about(self):
         self.stackedWidget.setCurrentIndex(4)
 
