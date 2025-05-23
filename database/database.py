@@ -228,6 +228,25 @@ class Database:
         except Error as e:
             print(f"Error: {e}")
 
+
+    def count_complaints_status(self):
+        """ count the number of complaints with each status """
+        values = []
+        sql = ''' SELECT COUNT(*) FROM complaints WHERE complaint_status = %s '''
+        try:
+            cursor = self.cursor
+            cursor.execute('SELECT COUNT(*) FROM complaints')
+            values.append(cursor.fetchone())
+            cursor.execute(sql, ('Completed',))
+            values.append(cursor.fetchone())
+            cursor.execute(sql, ('Pending',))
+            values.append(cursor.fetchone())
+            cursor.execute(sql, ('Cancelled',))
+            values.append(cursor.fetchone())
+            return values
+        except Error as e:
+            print(f"Error: {e}")
+
     # For multiple elements of a given table
     def get_elements(self, table="residents", column="last_name", order="ASC", page=1, limit=15):
         """ get elements from the specified table """
