@@ -12,7 +12,7 @@ class Database:
         else:
             print("Error! Cannot create the database connection.")
 
-    def create_connection(self, host="127.0.0.1", database="ssis", user="root", password="admin"):
+    def create_connection(self, host="127.0.0.1", database="delcarmencomplaintmanagement", user="root", password="hello1234"):
         """ create a database connection to a MySQL database """
         conn = None
         try:
@@ -30,84 +30,9 @@ class Database:
             print(f"Error: {e}")
         return conn
 
-    def create_table(self):
-        """ create tables in the MySQL database """
-        try:
-            cursor = self.cursor
-
-            # --- Create Resident Table ---
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS residents (
-                    resident_id VARCHAR(8) PRIMARY KEY,
-                    first_name VARCHAR(64) NOT NULL,
-                    last_name VARCHAR(64) NOT NULL,
-                    birth_date DATE NOT NULL,
-                    photo_cred VARCHAR(255) NOT NULL,
-                    address VARCHAR(255) NOT NULL,
-                    contact VARCHAR(11) NOT NULL,
-                    sex ENUM('Male', 'Female') NOT NULL
-                );
-            ''')
-
-            # --- Create Complaint Table ---
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS complaints (
-                    complaint_id VARCHAR(8) PRIMARY KEY,
-                    date_time DATETIME NOT NULL,
-                    complaint_desc VARCHAR(120) NOT NULL,
-                    resident_id VARCHAR(8) NULL,
-                    complaint_category VARCHAR(64) NOT NULL,
-                    complaint_status ENUM('Completed', 'Pending', 'Cancelled') NOT NULL,
-                    location VARCHAR(255),
-                    FOREIGN KEY (resident_id) REFERENCES residents(resident_id)
-                        ON DELETE SET NULL
-                );
-            ''')
-
-            # --- Create BarangayOfficials Table ---
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS barangay_officials (
-                    official_id VARCHAR(8) PRIMARY KEY,
-                    first_name VARCHAR(64) NOT NULL,
-                    last_name VARCHAR(64) NOT NULL,
-                    contact VARCHAR(11) NOT NULL,
-                    position VARCHAR(64) NOT NULL
-                );
-            ''')
-
-
-            # --- Create Accuses Table ---
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS accuses (
-                    resident_id VARCHAR(8) NOT NULL,
-                    complaint_id VARCHAR(8) NOT NULL,
-                    PRIMARY KEY (resident_id, complaint_id),
-                    FOREIGN KEY (resident_id) REFERENCES residents(resident_id) ON DELETE CASCADE,
-                    FOREIGN KEY (complaint_id) REFERENCES complaints(complaint_id) ON DELETE CASCADE
-                );
-            ''')
-
-
-            # --- Handles table ---
-            cursor.execute('''
-                CREATE TABLE IF NOT EXISTS handles (
-                    official_id VARCHAR(8) NOT NULL,
-                    complaint_id VARCHAR(8) NOT NULL,
-                    handle_datetime DATETIME NOT NULL,
-                    PRIMARY KEY (official_id, complaint_id),
-                    FOREIGN KEY (official_id) REFERENCES barangay_officials(official_id) ON DELETE CASCADE,
-                    FOREIGN KEY (complaint_id) REFERENCES complaints(complaint_id) ON DELETE CASCADE
-                );
-            ''')
-
-
-            self.conn.commit()
-        except Error as e:
-            print(f"Error: {e}")
-
     def insert_resident(self, resident):
         """ insert a new resident into the residents table """
-        sql = ''' INSERT INTO residents(resident_id, first_name, last_name, birth_date, photo_cred, address, contact, sex)
+        sql = ''' INSERT INTO Resident(resident_id, first_name, last_name, birth_date, photo_cred, address, contact, sex)
                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s) '''
         try:
             cursor = self.conn.cursor()
