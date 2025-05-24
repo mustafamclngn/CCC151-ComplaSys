@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'addresidentui_new.ui'
+# Form implementation generated from reading ui file 'addresidentui.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -14,16 +14,16 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_addResidentDialog(object):
     def setupUi(self, addResidentDialog):
         addResidentDialog.setObjectName("addResidentDialog")
-        addResidentDialog.resize(482, 959)
+        addResidentDialog.resize(482, 883)
         addResidentDialog.setStyleSheet("background-color: rgb(0, 0, 25);")
         self.frame = QtWidgets.QFrame(addResidentDialog)
-        self.frame.setGeometry(QtCore.QRect(20, 20, 441, 921))
+        self.frame.setGeometry(QtCore.QRect(20, 20, 441, 841))
         self.frame.setStyleSheet("background-color: rgb(0, 0, 50);")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.addresident_cancel_button = QtWidgets.QPushButton(self.frame)
-        self.addresident_cancel_button.setGeometry(QtCore.QRect(250, 870, 111, 41))
+        self.addresident_cancel_button.setGeometry(QtCore.QRect(250, 790, 101, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.addresident_cancel_button.setFont(font)
@@ -31,7 +31,7 @@ class Ui_addResidentDialog(object):
 "border-radius: 13px;")
         self.addresident_cancel_button.setObjectName("addresident_cancel_button")
         self.addresident_save_button = QtWidgets.QPushButton(self.frame)
-        self.addresident_save_button.setGeometry(QtCore.QRect(80, 870, 111, 41))
+        self.addresident_save_button.setGeometry(QtCore.QRect(90, 790, 101, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.addresident_save_button.setFont(font)
@@ -39,7 +39,7 @@ class Ui_addResidentDialog(object):
 "border-radius: 13px;")
         self.addresident_save_button.setObjectName("addresident_save_button")
         self.frame_2 = QtWidgets.QFrame(self.frame)
-        self.frame_2.setGeometry(QtCore.QRect(20, 90, 401, 771))
+        self.frame_2.setGeometry(QtCore.QRect(20, 10, 401, 771))
         self.frame_2.setStyleSheet("background-color: white;\n"
 "border-radius: 13px;")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -144,7 +144,7 @@ class Ui_addResidentDialog(object):
         self.addresident_dob_input = QtWidgets.QDateEdit(self.frame_2)
         self.addresident_dob_input.setGeometry(QtCore.QRect(20, 340, 361, 28))
         font = QtGui.QFont()
-        font.setPointSize(-1)
+        font.setPointSize(12)
         self.addresident_dob_input.setFont(font)
         self.addresident_dob_input.setStyleSheet("background-color: white;\n"
 "font-size: 12px;\n"
@@ -204,15 +204,6 @@ class Ui_addResidentDialog(object):
 "border-radius: 13px;")
         self.addresident_photo_label.setScaledContents(True)
         self.addresident_photo_label.setObjectName("addresident_photo_label")
-        self.label_8 = QtWidgets.QLabel(self.frame)
-        self.label_8.setGeometry(QtCore.QRect(0, 0, 441, 81))
-        font = QtGui.QFont()
-        font.setPointSize(24)
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_8.setFont(font)
-        self.label_8.setStyleSheet("background-color: white;")
-        self.label_8.setObjectName("label_8")
 
         self.retranslateUi(addResidentDialog)
         QtCore.QMetaObject.connectSlotsByName(addResidentDialog)
@@ -235,4 +226,3 @@ class Ui_addResidentDialog(object):
         self.label_contact_2.setText(_translate("addResidentDialog", "Photo Credentials:"))
         self.addresident_upload_button.setText(_translate("addResidentDialog", "Upload Photo"))
         self.addresident_photo_label.setText(_translate("addResidentDialog", "No photo selected"))
-        self.label_8.setText(_translate("addResidentDialog", "  Add Resident"))

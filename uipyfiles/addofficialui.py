@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'addofficialui_new.ui'
+# Form implementation generated from reading ui file 'addofficialui.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -14,16 +14,16 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_addOfficialDialog(object):
     def setupUi(self, addOfficialDialog):
         addOfficialDialog.setObjectName("addOfficialDialog")
-        addOfficialDialog.resize(512, 521)
+        addOfficialDialog.resize(512, 418)
         addOfficialDialog.setStyleSheet("background-color: rgb(0, 0, 25);")
         self.frame = QtWidgets.QFrame(addOfficialDialog)
-        self.frame.setGeometry(QtCore.QRect(20, 20, 471, 481))
+        self.frame.setGeometry(QtCore.QRect(20, 20, 471, 381))
         self.frame.setStyleSheet("background-color: rgb(0, 0, 50);")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.addofficial_cancel_button = QtWidgets.QPushButton(self.frame)
-        self.addofficial_cancel_button.setGeometry(QtCore.QRect(270, 430, 111, 41))
+        self.addofficial_cancel_button.setGeometry(QtCore.QRect(270, 340, 101, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.addofficial_cancel_button.setFont(font)
@@ -31,7 +31,7 @@ class Ui_addOfficialDialog(object):
 "border-radius: 13px;")
         self.addofficial_cancel_button.setObjectName("addofficial_cancel_button")
         self.addofficial_save_button = QtWidgets.QPushButton(self.frame)
-        self.addofficial_save_button.setGeometry(QtCore.QRect(110, 430, 111, 41))
+        self.addofficial_save_button.setGeometry(QtCore.QRect(110, 340, 101, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.addofficial_save_button.setFont(font)
@@ -39,7 +39,7 @@ class Ui_addOfficialDialog(object):
 "border-radius: 13px;")
         self.addofficial_save_button.setObjectName("addofficial_save_button")
         self.frame_2 = QtWidgets.QFrame(self.frame)
-        self.frame_2.setGeometry(QtCore.QRect(20, 100, 431, 321))
+        self.frame_2.setGeometry(QtCore.QRect(20, 10, 431, 321))
         self.frame_2.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 13px;")
@@ -133,15 +133,6 @@ class Ui_addOfficialDialog(object):
         self.label_sex.setFont(font)
         self.label_sex.setStyleSheet("border: 0px")
         self.label_sex.setObjectName("label_sex")
-        self.label_8 = QtWidgets.QLabel(self.frame)
-        self.label_8.setGeometry(QtCore.QRect(0, 0, 471, 91))
-        font = QtGui.QFont()
-        font.setPointSize(24)
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_8.setFont(font)
-        self.label_8.setStyleSheet("background-color: white;")
-        self.label_8.setObjectName("label_8")
 
         self.retranslateUi(addOfficialDialog)
         QtCore.QMetaObject.connectSlotsByName(addOfficialDialog)
@@ -163,4 +154,3 @@ class Ui_addOfficialDialog(object):
         self.addofficial_position_input.setItemText(5, _translate("addOfficialDialog", "Barangay Health Worker"))
         self.addofficial_position_input.setItemText(6, _translate("addOfficialDialog", "Barangay Tanod"))
         self.label_sex.setText(_translate("addOfficialDialog", "Position:"))
-        self.label_8.setText(_translate("addOfficialDialog", "  Add Official"))
