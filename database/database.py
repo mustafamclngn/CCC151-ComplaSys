@@ -12,7 +12,7 @@ class Database:
         else:
             print("Error! Cannot create the database connection.")
 
-    def create_connection(self, host="127.0.0.1", database="ssis", user="root", password="admin"):
+    def create_connection(self, host="127.0.0.1", database="delcarmencomplaintmanagement", user="root", password="hello1234"):
         """ create a database connection to a MySQL database """
         conn = None
         try:
@@ -37,7 +37,7 @@ class Database:
 
             # --- Create Resident Table ---
             cursor.execute('''
-                CREATE TABLE IF NOT EXISTS residents (
+                CREATE TABLE IF NOT EXISTS Resident (
                     resident_id VARCHAR(8) PRIMARY KEY,
                     first_name VARCHAR(64) NOT NULL,
                     last_name VARCHAR(64) NOT NULL,
@@ -48,6 +48,33 @@ class Database:
                     sex ENUM('Male', 'Female') NOT NULL
                 );
             ''')
+
+
+            # # --- Create Complaint Table ---
+            cursor.execute('''
+                CREATE TABLE IF NOT EXISTS Complaint (
+                    complaint_id VARCHAR(8) PRIMARY KEY,
+                    date_time DATETIME NOT NULL,
+                    complaint_desc VARCHAR(120) NOT NULL,
+                    resident_id VARCHAR(8),
+                    complaint_category VARCHAR(64) NOT NULL,
+                    complaint_status VARCHAR(8) NOT NULL,
+                    location VARCHAR(255),
+                    FOREIGN KEY (resident_id) REFERENCES residents(resident_id)
+                         ON DELETE SET NULL
+                 );
+             ''')
+
+            # # --- Create BarangayOfficials Table ---
+            cursor.execute('''
+             CREATE TABLE IF NOT EXISTS BarangayOfficials (
+                    official_id INT PRIMARY KEY,
+                    first_name VARCHAR(64) NOT NULL,
+                     last_name VARCHAR(64) NOT NULL,
+                     contact VARCHAR(11) NOT NULL,
+                     position VARCHAR(64) NOT NULL
+                 );
+             ''')
 
             # --- Create Complaint Table ---
             cursor.execute('''
@@ -99,6 +126,7 @@ class Database:
                     FOREIGN KEY (complaint_id) REFERENCES complaints(complaint_id) ON DELETE CASCADE
                 );
             ''')
+
 
 
             self.conn.commit()

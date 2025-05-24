@@ -53,6 +53,16 @@ class Ui_addComplaintDialog(object):
         self.label_first_name.setFont(font)
         self.label_first_name.setStyleSheet("border: 0px")
         self.label_first_name.setObjectName("label_first_name")
+
+        self.addcomplaint_residentID_input = QtWidgets.QComboBox(self.frame_2)
+        self.addcomplaint_residentID_input.setGeometry(QtCore.QRect(21, 100, 361, 28))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.addcomplaint_residentID_input.setFont(font)
+        self.addcomplaint_residentID_input.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 0px;")
+        self.addcomplaint_residentID_input.setObjectName("addcomplaint_residentID_input")
         self.label_dob = QtWidgets.QLabel(self.frame_2)
         self.label_dob.setGeometry(QtCore.QRect(21, 350, 50, 24))
         font = QtGui.QFont()
