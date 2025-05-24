@@ -15,6 +15,9 @@ from resource import resource_qrc
 from uipyfiles.addresidentui import Ui_addResidentDialog
 from uipyfiles.addcomplaintui import Ui_addComplaintDialog
 from uipyfiles.addofficialui import Ui_addOfficialDialog
+from uipyfiles.editcomplaintui import Ui_editComplaintDialog
+from uipyfiles.editofficialui import Ui_editOfficialDialog
+from uipyfiles.editresidentui import Ui_editResidentDialog
 from uipyfiles.mainui import Ui_MainWindow
 
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -137,6 +140,7 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
         if file_path:
             self.addresident_photo_label.setText(file_path)
 
+
 class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
     def __init__(self, parent=None):
         super().__init__(parent)
@@ -219,7 +223,12 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.addResBtn.clicked.connect(self.add_residents)
         self.addCompBtn.clicked.connect(self.add_complaints)
         self.addOffiBtn.clicked.connect(self.add_officials)
-        
+
+        #edit dialogs (to be changed)
+        self.updResBtn.clicked.connect(self.edit_residents)
+        self.updCompBtn.clicked.connect(self.edit_complaints)
+        self.updOffiBtn.clicked.connect(self.edit_officials)
+
         #Datettime
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.updateDateTime)
@@ -238,9 +247,28 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
     def updateDateTime(self):
         current = QDateTime.currentDateTime()
-        formatted = current.toString("ddd, MMM d, h:mm AP")
+        formatted = current.toString("dddd, MMM d, h:mm AP")
         self.labelDateTime1.setText(formatted)
         self.labelDateTime2.setText(formatted)
+
+#edit dialogs
+    def edit_residents(self):
+        dialog = QDialog(self)
+        ui = Ui_editResidentDialog()
+        ui.setupUi(dialog)
+        dialog.exec_()
+
+    def edit_complaints(self):
+        dialog = QDialog(self)
+        ui = Ui_editComplaintDialog()
+        ui.setupUi(dialog)
+        dialog.exec_()
+
+    def edit_officials(self):
+        dialog = QDialog(self)
+        ui = Ui_editOfficialDialog()
+        ui.setupUi(dialog)
+        dialog.exec_()
 
 #add dialogs
     def add_residents(self):

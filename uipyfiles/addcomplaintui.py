@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'addcomplaintui_new.ui'
+# Form implementation generated from reading ui file 'addcomplaintui.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #
@@ -14,16 +14,16 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_addComplaintDialog(object):
     def setupUi(self, addComplaintDialog):
         addComplaintDialog.setObjectName("addComplaintDialog")
-        addComplaintDialog.resize(458, 822)
+        addComplaintDialog.resize(458, 732)
         addComplaintDialog.setStyleSheet("background-color: rgb(0, 0, 25);")
         self.frame = QtWidgets.QFrame(addComplaintDialog)
-        self.frame.setGeometry(QtCore.QRect(20, 20, 421, 781))
+        self.frame.setGeometry(QtCore.QRect(20, 20, 421, 691))
         self.frame.setStyleSheet("background-color: rgb(0, 0, 50);")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.frame_2 = QtWidgets.QFrame(self.frame)
-        self.frame_2.setGeometry(QtCore.QRect(10, 90, 401, 631))
+        self.frame_2.setGeometry(QtCore.QRect(10, 10, 401, 631))
         self.frame_2.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 13px;")
@@ -53,6 +53,7 @@ class Ui_addComplaintDialog(object):
         self.label_first_name.setFont(font)
         self.label_first_name.setStyleSheet("border: 0px")
         self.label_first_name.setObjectName("label_first_name")
+
         self.addcomplaint_residentID_input = QtWidgets.QComboBox(self.frame_2)
         self.addcomplaint_residentID_input.setGeometry(QtCore.QRect(21, 100, 361, 28))
         font = QtGui.QFont()
@@ -154,17 +155,17 @@ class Ui_addComplaintDialog(object):
 "border-radius: 0px;")
         self.addcomplaint_date_input.setCalendarPopup(True)
         self.addcomplaint_date_input.setObjectName("addcomplaint_date_input")
-        self.label_8 = QtWidgets.QLabel(self.frame)
-        self.label_8.setGeometry(QtCore.QRect(0, 0, 421, 81))
+        self.addcomplaint_residentID_input = QtWidgets.QComboBox(self.frame_2)
+        self.addcomplaint_residentID_input.setGeometry(QtCore.QRect(20, 100, 361, 28))
         font = QtGui.QFont()
-        font.setPointSize(24)
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_8.setFont(font)
-        self.label_8.setStyleSheet("background-color: white;")
-        self.label_8.setObjectName("label_8")
+        font.setPointSize(12)
+        self.addcomplaint_residentID_input.setFont(font)
+        self.addcomplaint_residentID_input.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 0px;")
+        self.addcomplaint_residentID_input.setObjectName("addcomplaint_residentID_input")
         self.addcomplaint_save_button = QtWidgets.QPushButton(self.frame)
-        self.addcomplaint_save_button.setGeometry(QtCore.QRect(80, 730, 111, 41))
+        self.addcomplaint_save_button.setGeometry(QtCore.QRect(90, 650, 101, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.addcomplaint_save_button.setFont(font)
@@ -172,7 +173,7 @@ class Ui_addComplaintDialog(object):
 "border-radius: 13px;")
         self.addcomplaint_save_button.setObjectName("addcomplaint_save_button")
         self.addcomplaint_cancel_button = QtWidgets.QPushButton(self.frame)
-        self.addcomplaint_cancel_button.setGeometry(QtCore.QRect(230, 730, 111, 41))
+        self.addcomplaint_cancel_button.setGeometry(QtCore.QRect(230, 650, 101, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.addcomplaint_cancel_button.setFont(font)
@@ -204,6 +205,5 @@ class Ui_addComplaintDialog(object):
         self.addcomplaint_status_input.setItemText(1, _translate("addComplaintDialog", "Completed"))
         self.addcomplaint_status_input.setItemText(2, _translate("addComplaintDialog", "Cancelled"))
         self.label_address_2.setText(_translate("addComplaintDialog", "Description:"))
-        self.label_8.setText(_translate("addComplaintDialog", "  Add Complaint"))
         self.addcomplaint_save_button.setText(_translate("addComplaintDialog", "Add"))
         self.addcomplaint_cancel_button.setText(_translate("addComplaintDialog", "Cancel"))

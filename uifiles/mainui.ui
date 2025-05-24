@@ -6,15 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1473</width>
-    <height>740</height>
+    <width>1580</width>
+    <height>792</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(0, 0, 25);</string>
+   <string notr="true">background-color: rgb(0, 0, 10);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="fullMenu" native="true">
@@ -23,7 +23,7 @@
       <x>10</x>
       <y>10</y>
       <width>241</width>
-      <height>721</height>
+      <height>771</height>
      </rect>
     </property>
     <property name="font">
@@ -33,7 +33,7 @@
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(0, 0, 35);
+     <string notr="true">background-color: rgb(0, 0, 25);
 border-radius: 13px;
 color: white;</string>
     </property>
@@ -54,7 +54,7 @@ color: white;</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 40);
+      <string notr="true">background-color: rgb(0, 0, 30);
 border-radius: 13px;
 text-align: left;
 color: white;</string>
@@ -84,7 +84,7 @@ color: white;</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 40);
+      <string notr="true">background-color: rgb(0, 0, 30);
 border-radius: 13px;
 text-align: left;
 color: white;</string>
@@ -114,7 +114,7 @@ color: white;</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 40);
+      <string notr="true">background-color: rgb(0, 0, 30);
 border-radius: 13px;
 text-align: left;
 color: white;</string>
@@ -144,7 +144,7 @@ color: white;</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 40);
+      <string notr="true">background-color: rgb(0, 0, 30);
 border-radius: 13px;
 text-align: left;
 color: white;</string>
@@ -174,7 +174,7 @@ color: white;</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 40);
+      <string notr="true">background-color: rgb(0, 0, 30);
 border-radius: 13px;
 text-align: left;
 color: white;</string>
@@ -200,7 +200,7 @@ color: white;</string>
       </font>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 40);
+      <string notr="true">background-color: rgb(0, 0, 30);
 border-radius: 13px;
 text-align: left;
 color: white;</string>
@@ -282,15 +282,16 @@ border: 0px;</string>
      <rect>
       <x>260</x>
       <y>10</y>
-      <width>1201</width>
-      <height>721</height>
+      <width>1311</width>
+      <height>771</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: white;</string>
+     <string notr="true">background-color: rgb(245, 245, 245);
+border-radius: 13px;</string>
     </property>
     <property name="currentIndex">
-     <number>3</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QFrame" name="frame_2">
@@ -298,12 +299,14 @@ border: 0px;</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1201</width>
+        <width>1311</width>
         <height>91</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: 1px solid rgb(230, 230, 230);</string>
+       <string notr="true">background-color: white;
+border: 1px solid rgb(230, 230, 230);
+border_radius: 13px;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -314,7 +317,7 @@ border: 0px;</string>
       <widget class="QLabel" name="label">
        <property name="geometry">
         <rect>
-         <x>16</x>
+         <x>20</x>
          <y>10</y>
          <width>371</width>
          <height>71</height>
@@ -332,11 +335,472 @@ border: 0px;</string>
         <string>Dashboard</string>
        </property>
       </widget>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>100</y>
+        <width>371</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Welcome back, Admin!</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_7">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>190</y>
+        <width>171</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 217, 148);
+border-radius: 13px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="pendingComp_line">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>171</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>-1</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>  Pending Cases</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_8">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>190</y>
+        <width>171</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 179, 179);
+border-radius: 13px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="totalComp_line">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>171</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_12">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>  Cancelled Cases:</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_9">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>190</y>
+        <width>171</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(148, 255, 148);
+border-radius: 13px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="lineEdit_7">
+       <property name="geometry">
+        <rect>
+         <x>140</x>
+         <y>140</y>
+         <width>401</width>
+         <height>71</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="completeComp_line">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>171</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_13">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>  Completed Cases:</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_10">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>190</y>
+        <width>171</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(184, 184, 255);
+border-radius: 13px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="totalOffi_line">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>171</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>  Total Officials:</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_11">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>190</y>
+        <width>171</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 171);
+border-radius: 13px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="totalRes_line">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>30</y>
+         <width>171</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>161</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>  Total Residents:</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>140</y>
+        <width>451</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: grey;</string>
+      </property>
+      <property name="text">
+       <string>Let's make today efficient and resident-friendly.</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="labelDateTime1">
+      <property name="geometry">
+       <rect>
+        <x>1070</x>
+        <y>30</y>
+        <width>221</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: 0px;
+background-color: white;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QFrame" name="frame_12">
+      <property name="geometry">
+       <rect>
+        <x>950</x>
+        <y>190</y>
+        <width>341</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 1px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QCalendarWidget" name="calendarWidget">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>321</width>
+         <height>181</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 0px;
+color: black;
+
+QCalendarWidget QToolButton {
+    color: black;
+    font-size: 7;
+}
+</string>
+       </property>
+       <property name="horizontalHeaderFormat">
+        <enum>QCalendarWidget::ShortDayNames</enum>
+       </property>
+       <property name="verticalHeaderFormat">
+        <enum>QCalendarWidget::ISOWeekNumbers</enum>
+       </property>
+       <property name="navigationBarVisible">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="frame_13">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>280</y>
+        <width>911</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 1px solid rgb(230, 230, 230);
+border-radius: 10px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QTableWidget" name="pendingComp_table">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>70</y>
+         <width>871</width>
+         <height>371</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border: 0px;
+border-radius: 0px;</string>
+       </property>
+       <column>
+        <property name="text">
+         <string>COMPLAINTID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>CATEGORY</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>DATETIME</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>LOCATION</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>STATUS</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>181</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 0px;</string>
+       </property>
+       <property name="text">
+        <string>Pending Cases</string>
+       </property>
+      </widget>
       <widget class="QLineEdit" name="filter_line">
        <property name="geometry">
         <rect>
-         <x>770</x>
-         <y>20</y>
+         <x>470</x>
+         <y>10</y>
          <width>421</width>
          <height>51</height>
         </rect>
@@ -354,11 +818,40 @@ border-radius: 13px;</string>
         <string>  Filter</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="filterPendComp_button">
+      <widget class="QPushButton" name="refreshPendCompBtn">
        <property name="geometry">
         <rect>
-         <x>1140</x>
-         <y>30</y>
+         <x>790</x>
+         <y>20</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>System</family>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource/resource.qrc">
+         <normaloff>:/icons/icons/refresh.svg</normaloff>:/icons/icons/refresh.svg</iconset>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="filterPendCompBtn">
+       <property name="geometry">
+        <rect>
+         <x>840</x>
+         <y>20</y>
          <width>41</width>
          <height>31</height>
         </rect>
@@ -375,13 +868,13 @@ border-radius: 9px;</string>
          <normaloff>:/icons/icons/search.svg</normaloff>:/icons/icons/search.svg</iconset>
        </property>
       </widget>
-      <widget class="QComboBox" name="column2_box">
+      <widget class="QComboBox" name="filterPendComp_box">
        <property name="geometry">
         <rect>
-         <x>610</x>
+         <x>330</x>
          <y>20</y>
-         <width>141</width>
-         <height>51</height>
+         <width>131</width>
+         <height>31</height>
         </rect>
        </property>
        <property name="font">
@@ -391,12 +884,11 @@ border-radius: 9px;</string>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: white;
-border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border: 2px solid rgb(230, 230, 230);</string>
        </property>
        <item>
         <property name="text">
-         <string>COULMN</string>
+         <string> FILTER</string>
         </property>
        </item>
        <item>
@@ -425,105 +917,19 @@ border-radius: 4px;</string>
         </property>
        </item>
       </widget>
-      <widget class="QPushButton" name="refreshPendingCompBtn">
-       <property name="geometry">
-        <rect>
-         <x>1090</x>
-         <y>30</y>
-         <width>41</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>System</family>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: white;
-border: 2px solid rgb(230, 230, 230);
-border-radius: 13px;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="../resource/resource.qrc">
-         <normaloff>:/icons/icons/refresh.svg</normaloff>:/icons/icons/refresh.svg</iconset>
-       </property>
-      </widget>
      </widget>
-     <widget class="QLabel" name="label_8">
+     <widget class="QFrame" name="frame_14">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>100</y>
-        <width>371</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>20</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Welcome back, Admin!</string>
-      </property>
-     </widget>
-     <widget class="QTableWidget" name="pendingComp_table">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>280</y>
-        <width>811</width>
-        <height>411</height>
+        <x>950</x>
+        <y>400</y>
+        <width>341</width>
+        <height>351</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 1px solid rgb(230, 230, 230);
-border-radius: 2px;</string>
-      </property>
-      <column>
-       <property name="text">
-        <string>COMPLAINTID</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>CATEGORY</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>DATETIME</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>LOCATION</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>STATUS</string>
-       </property>
-      </column>
-     </widget>
-     <widget class="QFrame" name="frame_7">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>190</y>
-        <width>181</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 217, 148);
 border-radius: 13px;</string>
       </property>
       <property name="frameShape">
@@ -532,333 +938,13 @@ border-radius: 13px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QLineEdit" name="lineEdit_2">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>181</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>  Pending Complaints:</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="pendingComp_line">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>30</y>
-         <width>181</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>24</pointsize>
-        </font>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
      </widget>
-     <widget class="QFrame" name="frame_8">
+     <widget class="QComboBox" name="sortCases_box">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>190</y>
-        <width>181</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 179, 179);
-border-radius: 13px;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLineEdit" name="lineEdit">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>181</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>  Total Complaints:</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="totalComp_line">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>30</y>
-         <width>181</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>24</pointsize>
-        </font>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QFrame" name="frame_9">
-      <property name="geometry">
-       <rect>
-        <x>450</x>
-        <y>190</y>
-        <width>181</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(148, 255, 148);
-border-radius: 13px;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLineEdit" name="lineEdit_3">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>181</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>  Completed Complaints:</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="lineEdit_7">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>140</y>
-         <width>401</width>
-         <height>71</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="completeComp_line">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>30</y>
-         <width>181</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>24</pointsize>
-        </font>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QFrame" name="frame_10">
-      <property name="geometry">
-       <rect>
-        <x>660</x>
-        <y>190</y>
-        <width>181</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(184, 184, 255);
-border-radius: 13px;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLineEdit" name="lineEdit_6">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>181</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>  Total Officials:</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="totalOffi_line">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>30</y>
-         <width>181</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>24</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QFrame" name="frame_11">
-      <property name="geometry">
-       <rect>
-        <x>870</x>
-        <y>190</y>
-        <width>181</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 171);
-border-radius: 13px;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLineEdit" name="lineEdit_5">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>181</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>  Total Residents:</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="totalRes_line">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>30</y>
-         <width>181</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>24</pointsize>
-        </font>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QCalendarWidget" name="calendarWidget">
-      <property name="geometry">
-       <rect>
-        <x>850</x>
-        <y>300</y>
-        <width>311</width>
-        <height>201</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">QCalendarWidget QToolButton {
-    color: black;
-    font-size: 7;
-}
-</string>
-      </property>
-      <property name="horizontalHeaderFormat">
-       <enum>QCalendarWidget::ShortDayNames</enum>
-      </property>
-      <property name="verticalHeaderFormat">
-       <enum>QCalendarWidget::ISOWeekNumbers</enum>
-      </property>
-      <property name="navigationBarVisible">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_9">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>140</y>
-        <width>381</width>
-        <height>21</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <pointsize>12</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: grey;</string>
-      </property>
-      <property name="text">
-       <string>Let's make today efficient and resident-friendly.</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="labelDateTime1">
-      <property name="geometry">
-       <rect>
-        <x>970</x>
-        <y>110</y>
-        <width>221</width>
+        <x>1010</x>
+        <y>120</y>
+        <width>111</width>
         <height>41</height>
        </rect>
       </property>
@@ -868,10 +954,95 @@ border-radius: 13px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: 0px;</string>
+       <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>Month</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>January</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Februrary</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>March</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>April</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>May</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>June</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>July</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>August</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>September</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>October</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>December</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="refreshCasesBtn">
+      <property name="geometry">
+       <rect>
+        <x>1130</x>
+        <y>120</y>
+        <width>111</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <pointsize>7</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: blue;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 10px;
+color: white;</string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>Refresh</string>
       </property>
      </widget>
     </widget>
@@ -881,12 +1052,13 @@ border-radius: 13px;</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1201</width>
+        <width>1311</width>
         <height>91</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: 1px solid rgb(230, 230, 230);</string>
+       <string notr="true">background-color: white;
+border: 1px solid rgb(230, 230, 230);</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -897,7 +1069,7 @@ border-radius: 13px;</string>
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>16</x>
+         <x>20</x>
          <y>10</y>
          <width>361</width>
          <height>71</height>
@@ -918,7 +1090,7 @@ border-radius: 13px;</string>
       <widget class="QPushButton" name="searchResBtn">
        <property name="geometry">
         <rect>
-         <x>1140</x>
+         <x>1230</x>
          <y>30</y>
          <width>41</width>
          <height>31</height>
@@ -939,7 +1111,7 @@ border-radius: 9px;</string>
       <widget class="QLineEdit" name="searchRes_line">
        <property name="geometry">
         <rect>
-         <x>770</x>
+         <x>860</x>
          <y>20</y>
          <width>421</width>
          <height>51</height>
@@ -961,7 +1133,7 @@ border-radius: 13px;</string>
       <widget class="QPushButton" name="refreshResBtn">
        <property name="geometry">
         <rect>
-         <x>1090</x>
+         <x>1180</x>
          <y>30</y>
          <width>41</width>
          <height>31</height>
@@ -987,24 +1159,80 @@ border-radius: 13px;</string>
          <normaloff>:/icons/icons/refresh.svg</normaloff>:/icons/icons/refresh.svg</iconset>
        </property>
       </widget>
+      <widget class="QComboBox" name="searchbyRes_box">
+       <property name="geometry">
+        <rect>
+         <x>720</x>
+         <y>30</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 10px;</string>
+       </property>
+       <item>
+        <property name="text">
+         <string> SORT BY</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string> RESIDENTID</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string> FIRSTNAME</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string> LASTNAME</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string> AGE</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string> SEX</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string> CONTACT</string>
+        </property>
+       </item>
+      </widget>
       <zorder>label_2</zorder>
       <zorder>searchRes_line</zorder>
       <zorder>searchResBtn</zorder>
       <zorder>refreshResBtn</zorder>
+      <zorder>searchbyRes_box</zorder>
      </widget>
      <widget class="QTableWidget" name="resident_table">
       <property name="geometry">
        <rect>
         <x>30</x>
         <y>160</y>
-        <width>1141</width>
-        <height>501</height>
+        <width>1251</width>
+        <height>531</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 1px solid rgb(230, 230, 230);
-border-radius: 1px;</string>
+border-radius: 0px;</string>
       </property>
       <attribute name="horizontalHeaderStretchLastSection">
        <bool>false</bool>
@@ -1036,31 +1264,16 @@ border-radius: 1px;</string>
       </column>
       <column>
        <property name="text">
-        <string>BIRTHDATE</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
         <string>CONTACT</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>ADDRESS</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>CREDENTIALS</string>
        </property>
       </column>
      </widget>
      <widget class="QPushButton" name="addResBtn">
       <property name="geometry">
        <rect>
-        <x>1010</x>
+        <x>1110</x>
         <y>110</y>
-        <width>151</width>
+        <width>161</width>
         <height>41</height>
        </rect>
       </property>
@@ -1073,9 +1286,10 @@ border-radius: 1px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
+       <string notr="true">background-color: blue;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;
+color: white;</string>
       </property>
       <property name="text">
        <string>Add Resident</string>
@@ -1104,7 +1318,7 @@ border-radius: 4px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;</string>
       </property>
       <property name="text">
        <string>Save</string>
@@ -1113,9 +1327,9 @@ border-radius: 4px;</string>
      <widget class="QComboBox" name="sortRes_box">
       <property name="geometry">
        <rect>
-        <x>860</x>
+        <x>960</x>
         <y>110</y>
-        <width>141</width>
+        <width>131</width>
         <height>41</height>
        </rect>
       </property>
@@ -1127,36 +1341,41 @@ border-radius: 4px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;</string>
       </property>
       <item>
        <property name="text">
-        <string>SORT BY</string>
+        <string> SORT BY</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>COMPLAINTID</string>
+        <string> RESIDENTID</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>CATEGORY</string>
+        <string> FIRSTNAME</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>DATETIME</string>
+        <string> LASTNAME</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>LOCATION</string>
+        <string> AGE</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>STATUS</string>
+        <string> SEX</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string> CONTACT</string>
        </property>
       </item>
      </widget>
@@ -1164,7 +1383,7 @@ border-radius: 4px;</string>
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>670</y>
+        <y>700</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -1179,7 +1398,7 @@ border-radius: 4px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;</string>
       </property>
       <property name="text">
        <string>Edit</string>
@@ -1192,8 +1411,8 @@ border-radius: 4px;</string>
      <widget class="QPushButton" name="delResBtn">
       <property name="geometry">
        <rect>
-        <x>1060</x>
-        <y>670</y>
+        <x>1150</x>
+        <y>700</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -1208,7 +1427,7 @@ border-radius: 4px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;</string>
       </property>
       <property name="text">
        <string>Delete</string>
@@ -1225,12 +1444,13 @@ border-radius: 4px;</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1201</width>
+        <width>1311</width>
         <height>91</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: 1px solid rgb(230, 230, 230);</string>
+       <string notr="true">background-color: white;
+border: 1px solid rgb(230, 230, 230);</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -1241,7 +1461,7 @@ border-radius: 4px;</string>
       <widget class="QLabel" name="label_5">
        <property name="geometry">
         <rect>
-         <x>16</x>
+         <x>20</x>
          <y>10</y>
          <width>361</width>
          <height>71</height>
@@ -1262,7 +1482,7 @@ border-radius: 4px;</string>
       <widget class="QLineEdit" name="searchComp_line">
        <property name="geometry">
         <rect>
-         <x>770</x>
+         <x>860</x>
          <y>20</y>
          <width>421</width>
          <height>51</height>
@@ -1284,7 +1504,7 @@ border-radius: 13px;</string>
       <widget class="QPushButton" name="searchCompBtn">
        <property name="geometry">
         <rect>
-         <x>1140</x>
+         <x>1230</x>
          <y>30</y>
          <width>41</width>
          <height>31</height>
@@ -1305,7 +1525,7 @@ border-radius: 9px;</string>
       <widget class="QPushButton" name="refreshCompBtn">
        <property name="geometry">
         <rect>
-         <x>1090</x>
+         <x>1180</x>
          <y>30</y>
          <width>41</width>
          <height>31</height>
@@ -1331,20 +1551,70 @@ border-radius: 13px;</string>
          <normaloff>:/icons/icons/refresh.svg</normaloff>:/icons/icons/refresh.svg</iconset>
        </property>
       </widget>
+      <widget class="QComboBox" name="searchbyComp_box">
+       <property name="geometry">
+        <rect>
+         <x>720</x>
+         <y>30</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 10px;</string>
+       </property>
+       <item>
+        <property name="text">
+         <string> SORT BY</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>COMPLAINTID</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>RESIDENTID</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>CATEGORY</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DATETIME</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>STATUS</string>
+        </property>
+       </item>
+      </widget>
      </widget>
      <widget class="QTableWidget" name="complaint_table">
       <property name="geometry">
        <rect>
         <x>30</x>
         <y>160</y>
-        <width>1141</width>
-        <height>501</height>
+        <width>1251</width>
+        <height>531</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 1px solid rgb(230, 230, 230);
-border-radius: 1px;</string>
+border-radius: 0px;</string>
       </property>
       <column>
        <property name="text">
@@ -1363,17 +1633,7 @@ border-radius: 1px;</string>
       </column>
       <column>
        <property name="text">
-        <string>DESCRIPTION</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
         <string>DATETIME</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>LOCATION</string>
        </property>
       </column>
       <column>
@@ -1385,9 +1645,9 @@ border-radius: 1px;</string>
      <widget class="QPushButton" name="addCompBtn">
       <property name="geometry">
        <rect>
-        <x>1010</x>
+        <x>1110</x>
         <y>110</y>
-        <width>151</width>
+        <width>161</width>
         <height>41</height>
        </rect>
       </property>
@@ -1399,9 +1659,10 @@ border-radius: 1px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
+       <string notr="true">background-color: blue;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;
+color: white;</string>
       </property>
       <property name="text">
        <string>Add Complaint</string>
@@ -1430,7 +1691,7 @@ border-radius: 4px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;</string>
       </property>
       <property name="text">
        <string>Save</string>
@@ -1439,9 +1700,9 @@ border-radius: 4px;</string>
      <widget class="QComboBox" name="sortComp_box">
       <property name="geometry">
        <rect>
-        <x>860</x>
+        <x>960</x>
         <y>110</y>
-        <width>141</width>
+        <width>131</width>
         <height>41</height>
        </rect>
       </property>
@@ -1453,16 +1714,21 @@ border-radius: 4px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;</string>
       </property>
       <item>
        <property name="text">
-        <string>SORT BY</string>
+        <string> SORT BY</string>
        </property>
       </item>
       <item>
        <property name="text">
         <string>COMPLAINTID</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>RESIDENTID</string>
        </property>
       </item>
       <item>
@@ -1477,11 +1743,6 @@ border-radius: 4px;</string>
       </item>
       <item>
        <property name="text">
-        <string>LOCATION</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
         <string>STATUS</string>
        </property>
       </item>
@@ -1489,8 +1750,8 @@ border-radius: 4px;</string>
      <widget class="QPushButton" name="delCompBtn">
       <property name="geometry">
        <rect>
-        <x>1060</x>
-        <y>670</y>
+        <x>1150</x>
+        <y>700</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -1505,7 +1766,7 @@ border-radius: 4px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;</string>
       </property>
       <property name="text">
        <string>Delete</string>
@@ -1519,7 +1780,7 @@ border-radius: 4px;</string>
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>670</y>
+        <y>700</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -1534,7 +1795,7 @@ border-radius: 4px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;</string>
       </property>
       <property name="text">
        <string>Edit</string>
@@ -1551,12 +1812,13 @@ border-radius: 4px;</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1201</width>
+        <width>1311</width>
         <height>91</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: 1px solid rgb(230, 230, 230);</string>
+       <string notr="true">background-color: white;
+border: 1px solid rgb(230, 230, 230);</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -1567,7 +1829,7 @@ border-radius: 4px;</string>
       <widget class="QLabel" name="label_6">
        <property name="geometry">
         <rect>
-         <x>16</x>
+         <x>20</x>
          <y>10</y>
          <width>361</width>
          <height>71</height>
@@ -1588,7 +1850,7 @@ border-radius: 4px;</string>
       <widget class="QLineEdit" name="searchOffi_line">
        <property name="geometry">
         <rect>
-         <x>770</x>
+         <x>860</x>
          <y>20</y>
          <width>421</width>
          <height>51</height>
@@ -1610,7 +1872,7 @@ border-radius: 13px;</string>
       <widget class="QPushButton" name="searchOffiBtn">
        <property name="geometry">
         <rect>
-         <x>1140</x>
+         <x>1230</x>
          <y>30</y>
          <width>41</width>
          <height>31</height>
@@ -1631,7 +1893,7 @@ border-radius: 9px;</string>
       <widget class="QPushButton" name="refreshOffiBtn">
        <property name="geometry">
         <rect>
-         <x>1090</x>
+         <x>1180</x>
          <y>30</y>
          <width>41</width>
          <height>31</height>
@@ -1657,20 +1919,70 @@ border-radius: 13px;</string>
          <normaloff>:/icons/icons/refresh.svg</normaloff>:/icons/icons/refresh.svg</iconset>
        </property>
       </widget>
+      <widget class="QComboBox" name="searchbyOff_box">
+       <property name="geometry">
+        <rect>
+         <x>720</x>
+         <y>30</y>
+         <width>131</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 10px;</string>
+       </property>
+       <item>
+        <property name="text">
+         <string> SORT BY</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string> OFFICIALID</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string> POSITION</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string> FIRSTNAME</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string> LASTNAME</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string> CONTACT</string>
+        </property>
+       </item>
+      </widget>
      </widget>
      <widget class="QTableWidget" name="official_table">
       <property name="geometry">
        <rect>
         <x>30</x>
         <y>160</y>
-        <width>1141</width>
-        <height>501</height>
+        <width>1251</width>
+        <height>531</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 1px solid rgb(230, 230, 230);
-border-radius: 1px;</string>
+border-radius: 0px;</string>
       </property>
       <column>
        <property name="text">
@@ -1701,9 +2013,9 @@ border-radius: 1px;</string>
      <widget class="QPushButton" name="addOffiBtn">
       <property name="geometry">
        <rect>
-        <x>1010</x>
+        <x>1110</x>
         <y>110</y>
-        <width>151</width>
+        <width>161</width>
         <height>41</height>
        </rect>
       </property>
@@ -1715,9 +2027,10 @@ border-radius: 1px;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
+       <string notr="true">background-color: blue;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;
+color: white;</string>
       </property>
       <property name="text">
        <string>Add Official</string>
@@ -1746,7 +2059,7 @@ border-radius: 4px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;</string>
       </property>
       <property name="text">
        <string>Save</string>
@@ -1755,9 +2068,9 @@ border-radius: 4px;</string>
      <widget class="QComboBox" name="sortOff_box">
       <property name="geometry">
        <rect>
-        <x>860</x>
+        <x>960</x>
         <y>110</y>
-        <width>141</width>
+        <width>131</width>
         <height>41</height>
        </rect>
       </property>
@@ -1769,44 +2082,44 @@ border-radius: 4px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;</string>
       </property>
       <item>
        <property name="text">
-        <string>SORT BY</string>
+        <string> SORT BY</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>COMPLAINTID</string>
+        <string> OFFICIALID</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>CATEGORY</string>
+        <string> POSITION</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>DATETIME</string>
+        <string> FIRSTNAME</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>LOCATION</string>
+        <string> LASTNAME</string>
        </property>
       </item>
       <item>
        <property name="text">
-        <string>STATUS</string>
+        <string> CONTACT</string>
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="updOffiBtn_2">
+     <widget class="QPushButton" name="updOffiBtn">
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>670</y>
+        <y>700</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -1821,7 +2134,7 @@ border-radius: 4px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;</string>
       </property>
       <property name="text">
        <string>Edit</string>
@@ -1831,11 +2144,11 @@ border-radius: 4px;</string>
         <normaloff>:/icons/pencil.png</normaloff>:/icons/pencil.png</iconset>
       </property>
      </widget>
-     <widget class="QPushButton" name="delOffiBtn_2">
+     <widget class="QPushButton" name="delOffiBtn">
       <property name="geometry">
        <rect>
-        <x>1060</x>
-        <y>670</y>
+        <x>1150</x>
+        <y>700</y>
         <width>101</width>
         <height>41</height>
        </rect>
@@ -1850,7 +2163,7 @@ border-radius: 4px;</string>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 4px;</string>
+border-radius: 10px;</string>
       </property>
       <property name="text">
        <string>Delete</string>
@@ -1867,12 +2180,13 @@ border-radius: 4px;</string>
        <rect>
         <x>0</x>
         <y>0</y>
-        <width>1201</width>
+        <width>1311</width>
         <height>91</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border: 1px solid rgb(230, 230, 230);</string>
+       <string notr="true">background-color: white;
+border: 1px solid rgb(230, 230, 230);</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -1904,10 +2218,10 @@ border-radius: 4px;</string>
       <widget class="QLabel" name="labelDateTime2">
        <property name="geometry">
         <rect>
-         <x>930</x>
-         <y>20</y>
-         <width>261</width>
-         <height>51</height>
+         <x>1070</x>
+         <y>30</y>
+         <width>221</width>
+         <height>41</height>
         </rect>
        </property>
        <property name="font">
