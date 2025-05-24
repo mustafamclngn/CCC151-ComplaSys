@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>addOfficialDialog</class>
- <widget class="QDialog" name="addOfficialDialog">
+ <class>editOfficialDialog</class>
+ <widget class="QDialog" name="editOfficialDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>512</width>
-    <height>418</height>
+    <width>510</width>
+    <height>429</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Add New Official</string>
+   <string>Edit Official</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(0, 0, 25);</string>
@@ -22,7 +22,7 @@
      <x>20</x>
      <y>20</y>
      <width>471</width>
-     <height>381</height>
+     <height>391</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -37,9 +37,9 @@
    <widget class="QPushButton" name="addofficial_cancel_button">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>340</y>
-      <width>101</width>
+      <x>260</x>
+      <y>350</y>
+      <width>91</width>
       <height>31</height>
      </rect>
     </property>
@@ -59,9 +59,9 @@ border-radius: 13px;</string>
    <widget class="QPushButton" name="addofficial_save_button">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>340</y>
-      <width>101</width>
+      <x>120</x>
+      <y>350</y>
+      <width>91</width>
       <height>31</height>
      </rect>
     </property>
@@ -75,7 +75,7 @@ border-radius: 13px;</string>
 border-radius: 13px;</string>
     </property>
     <property name="text">
-     <string>Add</string>
+     <string>Edit</string>
     </property>
    </widget>
    <widget class="QFrame" name="frame_2">
@@ -119,7 +119,7 @@ border-radius: 13px;</string>
       <string>Official ID:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="addofficial_officialID_input">
+    <widget class="QLineEdit" name="editofficial_officialID_input">
      <property name="geometry">
       <rect>
        <x>32</x>
@@ -160,7 +160,7 @@ border-radius: 0px;</string>
       <string>First Name:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="addofficial_firstname_input">
+    <widget class="QLineEdit" name="editofficial_firstname_input">
      <property name="geometry">
       <rect>
        <x>32</x>
@@ -201,7 +201,7 @@ border-radius: 0px;</string>
       <string>Last Name:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="addofficial_lastname_input">
+    <widget class="QLineEdit" name="editofficial_lastname_input">
      <property name="geometry">
       <rect>
        <x>32</x>
@@ -242,7 +242,7 @@ border-radius: 0px;</string>
       <string>Contact:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="addofficial_contact_input">
+    <widget class="QLineEdit" name="editofficial_contact_input">
      <property name="geometry">
       <rect>
        <x>32</x>
@@ -262,7 +262,7 @@ border: 1px solid grey;
 border-radius: 0px;</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="addofficial_position_input">
+    <widget class="QComboBox" name="editofficial_position_input">
      <property name="geometry">
       <rect>
        <x>32</x>

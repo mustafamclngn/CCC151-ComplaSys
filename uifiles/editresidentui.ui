@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>addComplaintDialog</class>
- <widget class="QDialog" name="addComplaintDialog">
+ <class>editResidentDialog</class>
+ <widget class="QDialog" name="editResidentDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>458</width>
-    <height>732</height>
+    <width>481</width>
+    <height>862</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Add New Complaint</string>
+   <string>Edit Resident</string>
   </property>
   <property name="styleSheet">
    <string notr="true">background-color: rgb(0, 0, 25);</string>
@@ -21,8 +21,8 @@
     <rect>
      <x>20</x>
      <y>20</y>
-     <width>421</width>
-     <height>691</height>
+     <width>441</width>
+     <height>821</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -34,18 +34,61 @@
    <property name="frameShadow">
     <enum>QFrame::Raised</enum>
    </property>
+   <widget class="QPushButton" name="editresident_cancel_button">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>780</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 13px;</string>
+    </property>
+    <property name="text">
+     <string>Cancel</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="editresident_save_button">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>780</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: white;
+border-radius: 13px;</string>
+    </property>
+    <property name="text">
+     <string>Edit</string>
+    </property>
+   </widget>
    <widget class="QFrame" name="frame_2">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
+      <x>20</x>
+      <y>0</y>
       <width>401</width>
-      <height>631</height>
+      <height>771</height>
      </rect>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: white;
-border: 1px solid grey;
 border-radius: 13px;</string>
     </property>
     <property name="frameShape">
@@ -57,9 +100,9 @@ border-radius: 13px;</string>
     <widget class="QLabel" name="label_resident_id">
      <property name="geometry">
       <rect>
-       <x>21</x>
+       <x>20</x>
        <y>10</y>
-       <width>124</width>
+       <width>141</width>
        <height>24</height>
       </rect>
      </property>
@@ -72,13 +115,13 @@ border-radius: 13px;</string>
       <string notr="true">border: 0px</string>
      </property>
      <property name="text">
-      <string>Complaint ID:</string>
+      <string>Resident ID:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="addcomplaint_complaintID_input">
+    <widget class="QLineEdit" name="editresident_residentID_input">
      <property name="geometry">
       <rect>
-       <x>21</x>
+       <x>20</x>
        <y>40</y>
        <width>361</width>
        <height>28</height>
@@ -98,209 +141,9 @@ border-radius: 0px;</string>
     <widget class="QLabel" name="label_first_name">
      <property name="geometry">
       <rect>
-       <x>21</x>
-       <y>70</y>
-       <width>111</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 0px</string>
-     </property>
-     <property name="text">
-      <string>Resident ID:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_dob">
-     <property name="geometry">
-      <rect>
-       <x>21</x>
-       <y>350</y>
-       <width>50</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 0px</string>
-     </property>
-     <property name="text">
-      <string>Date:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_address">
-     <property name="geometry">
-      <rect>
-       <x>21</x>
-       <y>410</y>
-       <width>82</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 0px</string>
-     </property>
-     <property name="text">
-      <string>Location:</string>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="addcomplaint_category_input">
-     <property name="geometry">
-      <rect>
-       <x>21</x>
-       <y>160</y>
-       <width>361</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;
-border: 1px solid grey;
-border-radius: 0px;</string>
-     </property>
-     <item>
-      <property name="text">
-       <string>Domestic Issues</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Community Disputes</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Public Disturbance</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Business and Livelihood Issues</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Environmental Concerns</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Traffic and Road Issues</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Criminal Activities</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Barangay Ordinance Violations</string>
-      </property>
-     </item>
-    </widget>
-    <widget class="QLabel" name="label_first_name_2">
-     <property name="geometry">
-      <rect>
-       <x>21</x>
-       <y>130</y>
-       <width>87</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 0px</string>
-     </property>
-     <property name="text">
-      <string>Category:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_first_name_3">
-     <property name="geometry">
-      <rect>
-       <x>21</x>
-       <y>560</y>
-       <width>63</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 0px</string>
-     </property>
-     <property name="text">
-      <string>Status:</string>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="addcomplaint_status_input">
-     <property name="geometry">
-      <rect>
        <x>20</x>
-       <y>590</y>
-       <width>361</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;
-border: 1px solid grey;
-border-radius: 0px;</string>
-     </property>
-     <item>
-      <property name="text">
-       <string>Pending</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Completed</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Cancelled</string>
-      </property>
-     </item>
-    </widget>
-    <widget class="QLabel" name="label_address_2">
-     <property name="geometry">
-      <rect>
-       <x>21</x>
-       <y>190</y>
-       <width>107</width>
+       <y>70</y>
+       <width>131</width>
        <height>24</height>
       </rect>
      </property>
@@ -313,73 +156,10 @@ border-radius: 0px;</string>
       <string notr="true">border: 0px</string>
      </property>
      <property name="text">
-      <string>Description:</string>
+      <string>First Name:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="addcomplaint_location_input">
-     <property name="geometry">
-      <rect>
-       <x>21</x>
-       <y>440</y>
-       <width>361</width>
-       <height>121</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;
-border: 1px solid grey;
-border-radius: 0px;</string>
-     </property>
-    </widget>
-    <widget class="QLineEdit" name="addcomplaint_description_input">
-     <property name="geometry">
-      <rect>
-       <x>21</x>
-       <y>220</y>
-       <width>361</width>
-       <height>131</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;
-border: 1px solid grey;
-border-radius: 0px;</string>
-     </property>
-    </widget>
-    <widget class="QDateEdit" name="addcomplaint_date_input">
-     <property name="geometry">
-      <rect>
-       <x>21</x>
-       <y>380</y>
-       <width>361</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;
-border: 1px solid grey;
-border-radius: 0px;</string>
-     </property>
-     <property name="calendarPopup">
-      <bool>true</bool>
-     </property>
-    </widget>
-    <widget class="QComboBox" name="addcomplaint_residentID_input">
+    <widget class="QLineEdit" name="editresident_firstname_input">
      <property name="geometry">
       <rect>
        <x>20</x>
@@ -399,50 +179,342 @@ border: 1px solid grey;
 border-radius: 0px;</string>
      </property>
     </widget>
-   </widget>
-   <widget class="QPushButton" name="addcomplaint_save_button">
-    <property name="geometry">
-     <rect>
-      <x>90</x>
-      <y>650</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: white;
+    <widget class="QLabel" name="label_last_name">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>130</y>
+       <width>131</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px</string>
+     </property>
+     <property name="text">
+      <string>Last Name:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="editresident_lastname_input">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>160</y>
+       <width>361</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_sex">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>190</y>
+       <width>141</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px</string>
+     </property>
+     <property name="text">
+      <string>Sex:</string>
+     </property>
+    </widget>
+    <widget class="QComboBox" name="editresident_sex_input">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>220</y>
+       <width>361</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+     <item>
+      <property name="text">
+       <string>Male</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Female</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="label_contact_3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>250</y>
+       <width>131</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px</string>
+     </property>
+     <property name="text">
+      <string>Age:</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_dob">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>310</y>
+       <width>121</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px</string>
+     </property>
+     <property name="text">
+      <string>Date of Birth:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="editresident_age_input">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>280</y>
+       <width>361</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_contact">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>370</y>
+       <width>141</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px</string>
+     </property>
+     <property name="text">
+      <string>Contact:</string>
+     </property>
+    </widget>
+    <widget class="QDateEdit" name="editresident_dob_input">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>340</y>
+       <width>361</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>-1</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+font-size: 12px;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+     <property name="calendarPopup">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="editresident_contact_input">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>400</y>
+       <width>361</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_address">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>430</y>
+       <width>161</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px</string>
+     </property>
+     <property name="text">
+      <string>Address:</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="editresident_address_input">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>460</y>
+       <width>361</width>
+       <height>91</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_contact_2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>560</y>
+       <width>201</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 0px</string>
+     </property>
+     <property name="text">
+      <string>Photo Credentials:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="editresident_upload_button">
+     <property name="geometry">
+      <rect>
+       <x>130</x>
+       <y>730</y>
+       <width>131</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
 border-radius: 13px;</string>
-    </property>
-    <property name="text">
-     <string>Add</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="addcomplaint_cancel_button">
-    <property name="geometry">
-     <rect>
-      <x>230</x>
-      <y>650</y>
-      <width>101</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>12</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: white;
+     </property>
+     <property name="text">
+      <string>Upload Photo</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="editresident_photo_label">
+     <property name="geometry">
+      <rect>
+       <x>80</x>
+       <y>590</y>
+       <width>241</width>
+       <height>131</height>
+      </rect>
+     </property>
+     <property name="minimumSize">
+      <size>
+       <width>100</width>
+       <height>100</height>
+      </size>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>10</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
 border-radius: 13px;</string>
-    </property>
-    <property name="text">
-     <string>Cancel</string>
-    </property>
+     </property>
+     <property name="text">
+      <string>No photo selected</string>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
    </widget>
   </widget>
  </widget>
