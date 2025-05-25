@@ -133,6 +133,19 @@ class Database:
         except Error as e:
             print(f"Error: {e}")
 
+    def update_resident_age(self, resident_id, age):
+        """ update the age of an existing resident in the residents table using resident_id """
+        sql = ''' UPDATE residents
+                  SET age = %s
+                  WHERE resident_id = %s '''
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute(sql, (age, resident_id))
+            self.conn.commit()
+            print(f"Resident {resident_id} age updated successfully")
+        except Error as e:
+            print(f"Error: {e}")
+
     def remove_resident(self, resident_id):
         """ remove a resident from the residents table """
         sql = ''' DELETE FROM residents WHERE resident_id = %s '''

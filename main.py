@@ -20,6 +20,7 @@ from uipyfiles.addofficialui import Ui_addOfficialDialog
 from functions.classcomplaint import AddComplaintDialog
 from functions.classofficial import AddOfficialDialog
 from functions.classresident import AddResidentDialog
+from datetime import datetime
             
 class MainClass(QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -167,16 +168,28 @@ class MainClass(QMainWindow, Ui_MainWindow):
     def load_residents(self):
         self.resident_table.setRowCount(0)
         for row_num, row_data in enumerate(self.db.get_elements()):
+            birth_year = None
+            try:
+                birth_date = row_data[7]
+                if birth_date:
+                    birth_year = int(str(birth_date)[:4])
+            except Exception:
+                birth_year = None
+            age = ""
+            if birth_year:
+                age = str(datetime.now().year - birth_year)
+            self.db.update_resident_age(row_data[0], age)  # Update age based on birth date
             self.resident_table.insertRow(row_num)
             self.resident_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # ResidentID
             self.resident_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[1])))  # FirstName
             self.resident_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[2])))  # LastName
             self.resident_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[3])))  # Age
             self.resident_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[8])))  # Sex
-            self.resident_table.setItem(row_num, 5, QTableWidgetItem(str(row_data[4])))  # Birthdate
-            self.resident_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[7])))  # Contact
+            self.resident_table.setItem(row_num, 5, QTableWidgetItem(str(row_data[7])))  # Birthdate
+            self.resident_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[4])))  # Contact
             self.resident_table.setItem(row_num, 7, QTableWidgetItem(str(row_data[6])))  # Address
             self.resident_table.setItem(row_num, 8, QTableWidgetItem(str(row_data[5])))  # Credentials (photo_cred)
+        
 
     def edit_official(self):
         selected = self.official_table.currentRow()
