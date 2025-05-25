@@ -12,7 +12,7 @@ class Database:
         else:
             print("Error! Cannot create the database connection.")
 
-    def create_connection(self, host="127.0.0.1", database="delcarmencomplaint", user="root", password="admin"):
+    def create_connection(self, host="127.0.0.1", database="delcarmencomplaint", user="root", password="password"):
         """ create a database connection to a MySQL database """
         conn = None
         try:
