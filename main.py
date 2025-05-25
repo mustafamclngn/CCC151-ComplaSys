@@ -84,14 +84,17 @@ class MainClass(QMainWindow, Ui_MainWindow):
     def add_residents(self):
         dialog = AddResidentDialog(self, db=self.db)
         dialog.exec_()
+        self.load_residents()
         
     def add_complaints(self):
         dialog = AddComplaintDialog(self, db=self.db)
         dialog.exec_()
+        self.load_complaints()
 
     def add_officials(self):
         dialog = AddOfficialDialog(self, db=self.db)
         dialog.exec_()
+        self.load_officials()
 
     def show_exit_message(self):
         reply = QMessageBox.question(self, 'Exit', 'Are you sure you want to exit?', QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
