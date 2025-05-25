@@ -21,6 +21,8 @@ from functions.classcomplaint import AddComplaintDialog
 from functions.classofficial import AddOfficialDialog
 from functions.classresident import AddResidentDialog
 from functions.inforesidentdialog import InfoResidentDialog
+from functions.infocomplaintdialog import InfoComplaintDialog
+# from functions.infoofficialdialog import InfoOfficialDialog
 from datetime import datetime
             
 class MainClass(QMainWindow, Ui_MainWindow):
@@ -69,6 +71,8 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
         self.db = Database()
         self.resident_table.itemClicked.connect(self.on_resident_item_clicked)
+        self.official_table.itemClicked.connect(self.on_official_item_clicked)
+        self.complaint_table.itemClicked.connect(self.on_complaint_item_clicked)
 
     def updateDateTime(self):
         current = QDateTime.currentDateTime()
@@ -259,6 +263,16 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.official_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[2])))  # LASTNAME
             self.official_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[3])))  # CONTACT
 
+    def on_official_item_clicked(self, item):
+        row = item.row()
+        col = item.column()
+        value = item.text()
+        row_values = [self.official_table.item(row, c).text() for c in range(self.official_table.columnCount())]
+        print("Full row data:", row_values)
+        dialog = Ui_infoOfficialDialog(self.db.get_element_by_id("barangay_officials", row_values[0]))
+        dialog.display_info()
+        dialog.exec_()
+
     def edit_complaint(self):
         selected = self.complaint_table.currentRow()
         if selected < 0:
@@ -322,6 +336,17 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.complaint_table.setItem(row_num, 5, QTableWidgetItem(str(row_data[6])))  # Location
             self.complaint_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[5])))  # Status
             
+
+    def on_complaint_item_clicked(self, item):
+        row = item.row()
+        col = item.column()
+        value = item.text()
+        row_values = self.db.get_element_by_id("complaints", self.complaint_table.item(row, 0).text())
+        print("Full row data:", row_values)
+        dialog = InfoComplaintDialog(row_values)
+        dialog.display_info()
+        dialog.exec_()
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     main = MainClass()
