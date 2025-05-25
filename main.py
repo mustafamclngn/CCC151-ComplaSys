@@ -170,7 +170,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         for row_num, row_data in enumerate(self.db.get_elements()):
             birth_year = None
             try:
-                birth_date = row_data[7]
+                birth_date = row_data[4]
                 if birth_date:
                     birth_year = int(str(birth_date)[:4])
             except Exception:
