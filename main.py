@@ -22,7 +22,7 @@ from functions.classofficial import AddOfficialDialog
 from functions.classresident import AddResidentDialog
 from functions.inforesidentdialog import InfoResidentDialog
 from functions.infocomplaintdialog import InfoComplaintDialog
-# from functions.infoofficialdialog import InfoOfficialDialog
+from functions.infoofficialdialog import InfoOfficialDialog
 from datetime import datetime
             
 class MainClass(QMainWindow, Ui_MainWindow):
@@ -144,18 +144,16 @@ class MainClass(QMainWindow, Ui_MainWindow):
         if dialog.exec_() == QDialog.Accepted:
             # Update the record
             updated = (
+                resident_id,
                 dialog.addresident_firstname_input.text(),
                 dialog.addresident_lastname_input.text(),
-                dialog.addresident_age_input.text(),
                 dialog.addresident_dob_input.date().toString("yyyy-MM-dd"),
                 dialog.addresident_photo_label.text(),
                 dialog.addresident_address_input.toPlainText(),
                 dialog.addresident_contact_input.text(),
-                dialog.addresident_sex_input.currentText(),
-                resident_id
+                dialog.addresident_sex_input.currentText()
             )
-            db.cursor.execute('''UPDATE residents SET first_name=%s, last_name=%s, age=%s, birth_date=%s, photo_cred=%s, address=%s, contact=%s, sex=%s WHERE resident_id=%s''', updated)
-            db.conn.commit()
+            db.update_resident(updated)
             self.load_residents()
 
     def delete_resident(self):
@@ -166,9 +164,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         resident_id = self.resident_table.item(selected, 0).text()
         reply = QMessageBox.question(self, "Delete Resident", f"Delete resident {resident_id}?", QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
-            db = self.db
-            db.cursor.execute("DELETE FROM residents WHERE resident_id = %s", (resident_id,))
-            db.conn.commit()
+            self.db.remove_resident(resident_id)
             self.load_residents()
 
     def load_residents(self):
@@ -213,8 +209,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
             return
         official_id = self.official_table.item(selected, 0).text()
         db = self.db 
-        db.cursor.execute("SELECT * FROM barangay_officials WHERE official_id = %s", (official_id,))
-        data = db.cursor.fetchone()
+        data = db.get_element_by_id("barangay_officials", official_id)
         if not data:
             QMessageBox.warning(self, "Edit Official", "Official not found.")
             return
@@ -229,14 +224,13 @@ class MainClass(QMainWindow, Ui_MainWindow):
         dialog.addofficial_officialID_input.setEnabled(False)
         if dialog.exec_() == QDialog.Accepted:
             updated = (
+                official_id,
                 dialog.addofficial_firstname_input.text(),
                 dialog.addofficial_lastname_input.text(),
                 dialog.addofficial_contact_input.text(),
-                dialog.addofficial_position_input.currentText(),
-                official_id
+                dialog.addofficial_position_input.currentText()
             )
-            db.cursor.execute('''UPDATE BarangayOfficials SET first_name=%s, last_name=%s, contact=%s, position=%s WHERE official_id=%s''', updated)
-            db.conn.commit()
+            db.update_barangay_official(updated)
             self.load_officials()
 
     def delete_official(self):
@@ -247,9 +241,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         official_id = self.official_table.item(selected, 0).text()
         reply = QMessageBox.question(self, "Delete Official", f"Delete official {official_id}?", QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
-            db = self.db
-            db.cursor.execute("DELETE FROM BarangayOfficials WHERE official_id = %s", (official_id,))
-            db.conn.commit()
+            self.db.remove_official(official_id)
             self.load_officials()
 
     def load_officials(self):
@@ -269,7 +261,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         value = item.text()
         row_values = [self.official_table.item(row, c).text() for c in range(self.official_table.columnCount())]
         print("Full row data:", row_values)
-        dialog = Ui_infoOfficialDialog(self.db.get_element_by_id("barangay_officials", row_values[0]))
+        dialog = InfoOfficialDialog(self.db.get_barangay_official(row_values[0]))
         dialog.display_info()
         dialog.exec_()
 
@@ -298,17 +290,15 @@ class MainClass(QMainWindow, Ui_MainWindow):
         dialog.addcomplaint_complaintID_input.setEnabled(False)
         if dialog.exec_() == QDialog.Accepted:
             updated = (
+                complaint_id,
                 dialog.addcomplaint_date_input.date().toString("yyyy-MM-dd"),
                 dialog.addcomplaint_description_input.text(),
                 dialog.addcomplaint_residentID_input.currentText(),
                 dialog.addcomplaint_category_input.currentText(),
                 dialog.addcomplaint_status_input.currentText(),
-                dialog.addcomplaint_location_input.text(),
-                complaint_id
+                dialog.addcomplaint_location_input.text()
             )
-            db.cursor.execute('''UPDATE Complaint SET date_time=%s, complaint_desc=%s, resident_id=%s, complaint_category=%s, complaint_status=%s, location=%s WHERE complaint_id=%s''', updated)
-            db.conn.commit()
-            self.load_complaints()
+            db.update_complaint(updated)
 
     def delete_complaint(self):
         selected = self.complaint_table.currentRow()
@@ -318,9 +308,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         complaint_id = self.complaint_table.item(selected, 0).text()
         reply = QMessageBox.question(self, "Delete Complaint", f"Delete complaint {complaint_id}?", QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
-            db = self.db
-            db.cursor.execute("DELETE FROM Complaint WHERE complaint_id = %s", (complaint_id,))
-            db.conn.commit()
+            self.db.remove_complaint(complaint_id)
             self.load_complaints()
 
     def load_complaints(self):
@@ -331,11 +319,10 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.complaint_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # ComplaintID
             self.complaint_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[3])))  # ResidentID
             self.complaint_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[4])))  # Category
-            self.complaint_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[2])))  # Description
-            self.complaint_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[1])))  # DateTime
+            self.complaint_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[1])))  # DateTime
+            self.complaint_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[5])))  # Status
             self.complaint_table.setItem(row_num, 5, QTableWidgetItem(str(row_data[6])))  # Location
-            self.complaint_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[5])))  # Status
-            
+            self.complaint_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[2])))  # Description
 
     def on_complaint_item_clicked(self, item):
         row = item.row()

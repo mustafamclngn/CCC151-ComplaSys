@@ -287,6 +287,23 @@ class Database:
         except Error as e:
             print(f"Error: {e}")
 
+    def get_barangay_official(self, official_id):
+        """ get a single barangay official by their ID """
+        print(f"Fetching barangay official with ID {official_id}")
+        sql = ''' SELECT * FROM barangay_officials WHERE official_id = %s '''
+        try:
+            cursor = self.cursor
+            cursor.execute(sql, (official_id,))
+            result = cursor.fetchone()
+            if result:
+                print(f"Barangay Official found: {result}")
+                return result
+            else:
+                print("Barangay Official not found")
+                return None
+        except Error as e:
+            print(f"Error: {e}")
+
     def get_element_by_id(self, table, element_id):
         """ get a single element from the specified table by its ID """
         print(f"Fetching element with ID {element_id} from {table} table")

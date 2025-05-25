@@ -18,3 +18,13 @@ class InfoComplaintDialog(QDialog, Ui_infoComplaintDialog):
         self.infocomplaint_status_input.setCurrentText(self.complaint[5])
         self.infocomplaint_location_input.setText(self.complaint[6])
 
+        # Make input fields not editable
+        self.infocomplaint_complaintID_input.setReadOnly(True)
+        self.infocomplaint_date_input.setEnabled(False)
+        self.infocomplaint_description_input.setReadOnly(True)
+        self.infocomplaint_residentID_input.setEnabled(False)
+        self.infocomplaint_category_input.setEnabled(False)
+        self.infocomplaint_status_input.setEnabled(False)
+        self.infocomplaint_location_input.setReadOnly(True)
+        self.infocomplaint_accuses_input.setReadOnly(True)
+        self.infocomplaint_handledby_input.setReadOnly(True)
