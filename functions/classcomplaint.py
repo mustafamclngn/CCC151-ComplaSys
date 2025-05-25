@@ -53,7 +53,7 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
             status = self.addcomplaint_status_input.currentText()
             
             complaint = (
-                complaint_id.replace("-", ""),
+                complaint_id,
                 date,
                 description,
                 resident_id,

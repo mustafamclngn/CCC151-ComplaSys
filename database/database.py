@@ -38,7 +38,7 @@ class Database:
             # --- Create Resident Table ---
             cursor.execute('''
                 CREATE TABLE IF NOT EXISTS residents (
-                    resident_id VARCHAR(8) PRIMARY KEY,
+                    resident_id VARCHAR(9) PRIMARY KEY,
                     first_name VARCHAR(64) NOT NULL,
                     last_name VARCHAR(64) NOT NULL,
                     age INT UNSIGNED,
@@ -53,10 +53,10 @@ class Database:
             # --- Create Complaint Table ---
             cursor.execute('''
                 CREATE TABLE IF NOT EXISTS complaints (
-                    complaint_id VARCHAR(8) PRIMARY KEY,
+                    complaint_id VARCHAR(9) PRIMARY KEY,
                     date_time DATETIME NOT NULL,
                     complaint_desc VARCHAR(120) NOT NULL,
-                    resident_id VARCHAR(8) NULL,
+                    resident_id VARCHAR(9) NULL,
                     complaint_category VARCHAR(64) NOT NULL,
                     complaint_status ENUM('Completed', 'Pending', 'Cancelled') NOT NULL,
                     location VARCHAR(255),
@@ -68,7 +68,7 @@ class Database:
             # --- Create BarangayOfficials Table ---
             cursor.execute('''
                 CREATE TABLE IF NOT EXISTS barangay_officials (
-                    official_id VARCHAR(8) PRIMARY KEY,
+                    official_id VARCHAR(9) PRIMARY KEY,
                     first_name VARCHAR(64) NOT NULL,
                     last_name VARCHAR(64) NOT NULL,
                     contact VARCHAR(11) NOT NULL,
@@ -80,8 +80,8 @@ class Database:
             # --- Create Accuses Table ---
             cursor.execute('''
                 CREATE TABLE IF NOT EXISTS accuses (
-                    resident_id VARCHAR(8) NOT NULL,
-                    complaint_id VARCHAR(8) NOT NULL,
+                    resident_id VARCHAR(9) NOT NULL,
+                    complaint_id VARCHAR(9) NOT NULL,
                     PRIMARY KEY (resident_id, complaint_id),
                     FOREIGN KEY (resident_id) REFERENCES residents(resident_id) ON DELETE CASCADE,
                     FOREIGN KEY (complaint_id) REFERENCES complaints(complaint_id) ON DELETE CASCADE
@@ -92,8 +92,8 @@ class Database:
             # --- Handles table ---
             cursor.execute('''
                 CREATE TABLE IF NOT EXISTS handles (
-                    official_id VARCHAR(8) NOT NULL,
-                    complaint_id VARCHAR(8) NOT NULL,
+                    official_id VARCHAR(9) NOT NULL,
+                    complaint_id VARCHAR(9) NOT NULL,
                     handle_datetime DATETIME NOT NULL,
                     PRIMARY KEY (official_id, complaint_id),
                     FOREIGN KEY (official_id) REFERENCES barangay_officials(official_id) ON DELETE CASCADE,

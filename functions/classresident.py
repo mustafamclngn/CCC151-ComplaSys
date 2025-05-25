@@ -54,7 +54,7 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
             
             
             resident = (
-                resident_id.replace("-", ""),  # Remove hyphens for database storage
+                resident_id,
                 first_name,
                 last_name,
                 birth_date,
