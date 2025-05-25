@@ -123,8 +123,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
             return
         resident_id = self.resident_table.item(selected, 0).text()
         db = self.db
-        db.cursor.execute("SELECT * FROM residents WHERE resident_id = %s", (resident_id,))
-        data = db.cursor.fetchone()
+        data = db.get_element_by_id("residents", resident_id)
         if not data:
             QMessageBox.warning(self, "Edit Resident", "Resident not found.")
             return
