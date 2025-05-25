@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1203</width>
+    <width>878</width>
     <height>507</height>
    </rect>
   </property>
@@ -21,7 +21,7 @@
     <rect>
      <x>20</x>
      <y>20</y>
-     <width>1161</width>
+     <width>841</width>
      <height>471</height>
     </rect>
    </property>
@@ -40,7 +40,7 @@ border-radius: 13px;</string>
      <rect>
       <x>20</x>
       <y>60</y>
-      <width>1121</width>
+      <width>801</width>
       <height>391</height>
      </rect>
     </property>
@@ -360,48 +360,6 @@ border: 1px solid grey;
 border-radius: 4px;</string>
      </property>
     </widget>
-    <widget class="QLabel" name="label_address_3">
-     <property name="geometry">
-      <rect>
-       <x>810</x>
-       <y>160</y>
-       <width>107</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 0px</string>
-     </property>
-     <property name="text">
-      <string>Handled By:</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_address_4">
-     <property name="geometry">
-      <rect>
-       <x>810</x>
-       <y>20</y>
-       <width>107</width>
-       <height>24</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">border: 0px</string>
-     </property>
-     <property name="text">
-      <string>Accuses:</string>
-     </property>
-    </widget>
     <widget class="QTextEdit" name="addcomplaint_description_input">
      <property name="geometry">
       <rect>
@@ -446,55 +404,11 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
-    <widget class="QTextEdit" name="addcomplaint_accuses_input">
-     <property name="geometry">
-      <rect>
-       <x>810</x>
-       <y>50</y>
-       <width>291</width>
-       <height>101</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;
-border: 1px solid grey;
-border-radius: 4px;</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
-    <widget class="QTextEdit" name="addcomplaint_handledby_input">
-     <property name="geometry">
-      <rect>
-       <x>810</x>
-       <y>190</y>
-       <width>291</width>
-       <height>111</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;
-border: 1px solid grey;
-border-radius: 4px;</string>
-     </property>
-     <property name="html">
-      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-     </property>
-    </widget>
    </widget>
    <widget class="QPushButton" name="addcomplaint_addentry_button">
     <property name="geometry">
      <rect>
-      <x>910</x>
+      <x>590</x>
       <y>20</y>
       <width>111</width>
       <height>31</height>
@@ -519,7 +433,7 @@ color: black;</string>
    <widget class="QPushButton" name="addcomplaint_cancel_button">
     <property name="geometry">
      <rect>
-      <x>1030</x>
+      <x>710</x>
       <y>20</y>
       <width>91</width>
       <height>31</height>
