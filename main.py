@@ -238,12 +238,12 @@ class MainClass(QMainWindow, Ui_MainWindow):
         #Delete Buttons
         self.delResBtn.clicked.connect(self.delete_resident)
         self.delCompBtn.clicked.connect(self.delete_complaint)
-        self.delOffiBtn.clicked.connect(self.delete_official)
+        self.delOffiBtn_2.clicked.connect(self.delete_official)
 
         #Edit Buttons
         self.updResBtn.clicked.connect(self.edit_resident)
         self.updCompBtn.clicked.connect(self.edit_complaint)
-        self.updOffiBtn.clicked.connect(self.edit_official)
+        self.updOffiBtn_2.clicked.connect(self.edit_official)
 
     def updateDateTime(self):
         current = QDateTime.currentDateTime()
