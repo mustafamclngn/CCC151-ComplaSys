@@ -26,8 +26,7 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
         regex = QRegExp(r"^\d{4}-\d{4}$")
         validator = QRegExpValidator(regex)
         self.addcomplaint_complaintID_input.setValidator(validator)
-        self.addcomplaint_save_button.clicked.connect(self.save_complaint)
-        self.addcomplaint_cancel_button.clicked.connect(self.reject)
+        self.addcomplaint_addentry_button.clicked.connect(self.save_complaint)
 
         # Populate resident ID combo box
         self.populate_resident_ids()
@@ -48,8 +47,8 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
             resident_id = self.addcomplaint_residentID_input.currentText()
             category = self.addcomplaint_category_input.currentText()
             date = self.addcomplaint_date_input.date().toString("yyyy-dd-MM")
-            description = self.addcomplaint_description_input.text()
-            location = self.addcomplaint_location_input.text()
+            description = self.addcomplaint_description_input.toPlaintext()
+            location = self.addcomplaint_location_input.toPlaintext()
             status = self.addcomplaint_status_input.currentText()
             
             complaint = (
@@ -71,67 +70,4 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Failed to add complaint:\n{e}")
 
-    def edit_complaint(self):
-        selected = self.complaint_table.currentRow()
-        if selected < 0:
-            QMessageBox.warning(self, "Edit Complaint", "Please select a complaint to edit.")
-            return
-        complaint_id = self.complaint_table.item(selected, 0).text()
-        db = Database()
-        db.cursor.execute("SELECT * FROM Complaint WHERE complaint_id = %s", (complaint_id,))
-        data = db.cursor.fetchone()
-        if not data:
-            QMessageBox.warning(self, "Edit Complaint", "Complaint not found.")
-            return
-        dialog = AddComplaintDialog(self)
-        # Pre-fill dialog fields
-        dialog.addcomplaint_complaintID_input.setText(str(data[0]))
-        dialog.addcomplaint_date_input.setDate(QtCore.QDate.fromString(str(data[1]), "yyyy-MM-dd"))
-        dialog.addcomplaint_description_input.setText(str(data[2]))
-        dialog.addcomplaint_residentID_input.setCurrentText(str(data[3]))
-        dialog.addcomplaint_category_input.setCurrentText(str(data[4]))
-        dialog.addcomplaint_status_input.setCurrentText(str(data[5]))
-        dialog.addcomplaint_location_input.setText(str(data[6]))
-        # Disable editing of complaint_id
-        dialog.addcomplaint_complaintID_input.setEnabled(False)
-        if dialog.exec_() == QDialog.Accepted:
-            updated = (
-                dialog.addcomplaint_date_input.date().toString("yyyy-MM-dd"),
-                dialog.addcomplaint_description_input.text(),
-                dialog.addcomplaint_residentID_input.currentText(),
-                dialog.addcomplaint_category_input.currentText(),
-                dialog.addcomplaint_status_input.currentText(),
-                dialog.addcomplaint_location_input.text(),
-                complaint_id
-            )
-            db.cursor.execute('''UPDATE Complaint SET date_time=%s, complaint_desc=%s, resident_id=%s, complaint_category=%s, complaint_status=%s, location=%s WHERE complaint_id=%s''', updated)
-            db.conn.commit()
-            self.load_complaints()
 
-    def delete_complaint(self):
-        selected = self.complaint_table.currentRow()
-        if selected < 0:
-            QMessageBox.warning(self, "Delete Complaint", "Please select a complaint to delete.")
-            return
-        complaint_id = self.complaint_table.item(selected, 0).text()
-        reply = QMessageBox.question(self, "Delete Complaint", f"Delete complaint {complaint_id}?", QMessageBox.Yes | QMessageBox.No)
-        if reply == QMessageBox.Yes:
-            db = Database()
-            db.cursor.execute("DELETE FROM Complaint WHERE complaint_id = %s", (complaint_id,))
-            db.conn.commit()
-            self.load_complaints()
-
-    def load_complaints(self):
-        db = Database()  # Create a new Database instance
-        self.complaint_table.setRowCount(0)
-        db.cursor.execute("SELECT * FROM Complaint")
-        complaints = db.cursor.fetchall()
-        for row_num, row_data in enumerate(complaints):
-            self.complaint_table.insertRow(row_num)
-            self.complaint_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # ComplaintID
-            self.complaint_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[3])))  # ResidentID
-            self.complaint_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[4])))  # Category
-            self.complaint_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[2])))  # Description
-            self.complaint_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[1])))  # DateTime
-            self.complaint_table.setItem(row_num, 5, QTableWidgetItem(str(row_data[6])))  # Location
-            self.complaint_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[5])))  # Status

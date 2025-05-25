@@ -22,8 +22,7 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
         regex = QRegExp(r"^\d{4}-\d{4}$")
         validator = QRegExpValidator(regex)
         self.addofficial_officialID_input.setValidator(validator)
-        self.addofficial_save_button.clicked.connect(self.save_official)
-        self.addofficial_cancel_button.clicked.connect(self.reject)
+        self.addofficial_addentry_button.clicked.connect(self.save_official)
         # Contact number validation
         contact_regex = QRegExp(r"^\d{11}$")
         contact_validator = QRegExpValidator(contact_regex)
@@ -58,62 +57,5 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Failed to add official:\n{e}")
 
-    def edit_official(self):
-        selected = self.official_table.currentRow()
-        if selected < 0:
-            QMessageBox.warning(self, "Edit Official", "Please select an official to edit.")
-            return
-        official_id = self.official_table.item(selected, 0).text()
-        db = Database()
-        db.cursor.execute("SELECT * FROM BarangayOfficials WHERE official_id = %s", (official_id,))
-        data = db.cursor.fetchone()
-        if not data:
-            QMessageBox.warning(self, "Edit Official", "Official not found.")
-            return
-        dialog = AddOfficialDialog(self)
-        # Pre-fill dialog fields
-        dialog.addofficial_officialID_input.setText(str(data[0]))
-        dialog.addofficial_firstname_input.setText(str(data[1]))
-        dialog.addofficial_lastname_input.setText(str(data[2]))
-        dialog.addofficial_contact_input.setText(str(data[3]))
-        dialog.addofficial_position_input.setCurrentText(str(data[4]))
-        # Disable editing of official_id
-        dialog.addofficial_officialID_input.setEnabled(False)
-        if dialog.exec_() == QDialog.Accepted:
-            updated = (
-                dialog.addofficial_firstname_input.text(),
-                dialog.addofficial_lastname_input.text(),
-                dialog.addofficial_contact_input.text(),
-                dialog.addofficial_position_input.currentText(),
-                official_id
-            )
-            db.cursor.execute('''UPDATE BarangayOfficials SET first_name=%s, last_name=%s, contact=%s, position=%s WHERE official_id=%s''', updated)
-            db.conn.commit()
-            self.load_officials()
 
-    def delete_official(self):
-        selected = self.official_table.currentRow()
-        if selected < 0:
-            QMessageBox.warning(self, "Delete Official", "Please select an official to delete.")
-            return
-        official_id = self.official_table.item(selected, 0).text()
-        reply = QMessageBox.question(self, "Delete Official", f"Delete official {official_id}?", QMessageBox.Yes | QMessageBox.No)
-        if reply == QMessageBox.Yes:
-            db = Database()
-            db.cursor.execute("DELETE FROM BarangayOfficials WHERE official_id = %s", (official_id,))
-            db.conn.commit()
-            self.load_officials()
-
-    def load_officials(self):
-        db = Database()  # Create a new Database instance
-        self.official_table.setRowCount(0)
-        db.cursor.execute("SELECT * FROM BarangayOfficials")
-        officials = db.cursor.fetchall()
-        for row_num, row_data in enumerate(officials):
-            self.official_table.insertRow(row_num)
-            self.official_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # OFFICIALID
-            self.official_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[4])))  # POSITION
-            self.official_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[1])))  # FIRSTNAME
-            self.official_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[2])))  # LASTNAME
-            self.official_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[3])))  # CONTACT
 
