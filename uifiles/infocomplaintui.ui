@@ -508,7 +508,7 @@ p, li { white-space: pre-wrap; }
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(148, 255, 148);
+     <string notr="true">background-color: rgb(230, 230, 230);
 border-radius: 10px;
 color: black;</string>
     </property>
@@ -562,7 +562,7 @@ color: black;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 179, 179);
+     <string notr="true">background-color: rgb(230, 230, 230);
 border-radius: 10px;
 color: black;</string>
     </property>
