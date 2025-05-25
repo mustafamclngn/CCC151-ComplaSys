@@ -32,7 +32,7 @@ class Ui_MainWindow(object):
 "color: white;")
         self.fullMenu.setObjectName("fullMenu")
         self.homeBtn = QtWidgets.QPushButton(self.fullMenu)
-        self.homeBtn.setGeometry(QtCore.QRect(10, 160, 221, 41))
+        self.homeBtn.setGeometry(QtCore.QRect(10, 170, 221, 41))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(False)
@@ -47,7 +47,7 @@ class Ui_MainWindow(object):
         self.homeBtn.setIcon(icon)
         self.homeBtn.setObjectName("homeBtn")
         self.resBtn = QtWidgets.QPushButton(self.fullMenu)
-        self.resBtn.setGeometry(QtCore.QRect(10, 210, 221, 41))
+        self.resBtn.setGeometry(QtCore.QRect(10, 220, 221, 41))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(False)
@@ -62,7 +62,7 @@ class Ui_MainWindow(object):
         self.resBtn.setIcon(icon1)
         self.resBtn.setObjectName("resBtn")
         self.compBtn = QtWidgets.QPushButton(self.fullMenu)
-        self.compBtn.setGeometry(QtCore.QRect(10, 260, 221, 41))
+        self.compBtn.setGeometry(QtCore.QRect(10, 270, 221, 41))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(False)
@@ -77,7 +77,7 @@ class Ui_MainWindow(object):
         self.compBtn.setIcon(icon2)
         self.compBtn.setObjectName("compBtn")
         self.offiBtn = QtWidgets.QPushButton(self.fullMenu)
-        self.offiBtn.setGeometry(QtCore.QRect(10, 310, 221, 41))
+        self.offiBtn.setGeometry(QtCore.QRect(10, 320, 221, 41))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(False)
@@ -104,7 +104,7 @@ class Ui_MainWindow(object):
 "color: white;")
         self.exBtn.setObjectName("exBtn")
         self.abtBtn = QtWidgets.QPushButton(self.fullMenu)
-        self.abtBtn.setGeometry(QtCore.QRect(10, 360, 221, 41))
+        self.abtBtn.setGeometry(QtCore.QRect(10, 370, 221, 41))
         font = QtGui.QFont()
         font.setPointSize(11)
         font.setBold(False)
@@ -137,7 +137,7 @@ class Ui_MainWindow(object):
         self.label_3.setAlignment(QtCore.Qt.AlignCenter)
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.fullMenu)
-        self.label_4.setGeometry(QtCore.QRect(0, 130, 241, 20))
+        self.label_4.setGeometry(QtCore.QRect(0, 140, 241, 20))
         self.label_4.setStyleSheet("color: grey;")
         self.label_4.setObjectName("label_4")
         self.stackedWidget = QtWidgets.QStackedWidget(self.centralwidget)
@@ -338,7 +338,7 @@ class Ui_MainWindow(object):
         self.refreshPendCompBtn = QtWidgets.QPushButton(self.frame_13)
         self.refreshPendCompBtn.setGeometry(QtCore.QRect(790, 20, 41, 31))
         font = QtGui.QFont()
-#
+#("System")
         font.setBold(False)
         font.setWeight(50)
         self.refreshPendCompBtn.setFont(font)
@@ -404,10 +404,10 @@ class Ui_MainWindow(object):
         self.refreshCasesBtn = QtWidgets.QPushButton(self.page)
         self.refreshCasesBtn.setGeometry(QtCore.QRect(1130, 120, 111, 41))
         font = QtGui.QFont()
-#
+#("System")
         font.setPointSize(7)
-        font.setBold(False)
-        font.setWeight(50)
+        font.setBold(True)
+        font.setWeight(75)
         self.refreshCasesBtn.setFont(font)
         self.refreshCasesBtn.setStyleSheet("background-color: blue;\n"
 "border: 2px solid rgb(230, 230, 230);\n"
@@ -449,7 +449,7 @@ class Ui_MainWindow(object):
         self.refreshResBtn = QtWidgets.QPushButton(self.frame_3)
         self.refreshResBtn.setGeometry(QtCore.QRect(1180, 30, 41, 31))
         font = QtGui.QFont()
-#
+#("System")
         font.setBold(False)
         font.setWeight(50)
         self.refreshResBtn.setFont(font)
@@ -460,7 +460,7 @@ class Ui_MainWindow(object):
         self.refreshResBtn.setIcon(icon5)
         self.refreshResBtn.setObjectName("refreshResBtn")
         self.searchbyRes_box = QtWidgets.QComboBox(self.frame_3)
-        self.searchbyRes_box.setGeometry(QtCore.QRect(720, 30, 131, 31))
+        self.searchbyRes_box.setGeometry(QtCore.QRect(710, 30, 131, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.searchbyRes_box.setFont(font)
@@ -481,7 +481,7 @@ class Ui_MainWindow(object):
         self.refreshResBtn.raise_()
         self.searchbyRes_box.raise_()
         self.resident_table = QtWidgets.QTableWidget(self.page_3)
-        self.resident_table.setGeometry(QtCore.QRect(30, 160, 1251, 531))
+        self.resident_table.setGeometry(QtCore.QRect(30, 160, 1251, 581))
         self.resident_table.setStyleSheet("background-color: white;\n"
 "border: 1px solid rgb(230, 230, 230);\n"
 "border-radius: 0px;")
@@ -504,7 +504,7 @@ class Ui_MainWindow(object):
         self.addResBtn = QtWidgets.QPushButton(self.page_3)
         self.addResBtn.setGeometry(QtCore.QRect(1110, 110, 161, 41))
         font = QtGui.QFont()
-#
+#("System")
         font.setPointSize(7)
         font.setBold(False)
         font.setWeight(50)
@@ -517,19 +517,8 @@ class Ui_MainWindow(object):
         icon7.addPixmap(QtGui.QPixmap(":/icons/icons/plus.svg"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.addResBtn.setIcon(icon7)
         self.addResBtn.setObjectName("addResBtn")
-        self.saveResBtn = QtWidgets.QPushButton(self.page_3)
-        self.saveResBtn.setGeometry(QtCore.QRect(40, 110, 101, 41))
-        font = QtGui.QFont()
-#
-        font.setBold(False)
-        font.setWeight(50)
-        self.saveResBtn.setFont(font)
-        self.saveResBtn.setStyleSheet("background-color: white;\n"
-"border: 2px solid rgb(230, 230, 230);\n"
-"border-radius: 10px;")
-        self.saveResBtn.setObjectName("saveResBtn")
         self.sortRes_box = QtWidgets.QComboBox(self.page_3)
-        self.sortRes_box.setGeometry(QtCore.QRect(960, 110, 131, 41))
+        self.sortRes_box.setGeometry(QtCore.QRect(40, 110, 131, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.sortRes_box.setFont(font)
@@ -544,34 +533,19 @@ class Ui_MainWindow(object):
         self.sortRes_box.addItem("")
         self.sortRes_box.addItem("")
         self.sortRes_box.addItem("")
-        self.updResBtn = QtWidgets.QPushButton(self.page_3)
-        self.updResBtn.setGeometry(QtCore.QRect(40, 700, 101, 41))
+        self.refreshResBtn_2 = QtWidgets.QPushButton(self.page_3)
+        self.refreshResBtn_2.setGeometry(QtCore.QRect(180, 110, 111, 41))
         font = QtGui.QFont()
-#
+#("System")
+        font.setPointSize(12)
         font.setBold(False)
         font.setWeight(50)
-        self.updResBtn.setFont(font)
-        self.updResBtn.setStyleSheet("background-color: white;\n"
+        self.refreshResBtn_2.setFont(font)
+        self.refreshResBtn_2.setStyleSheet("background-color: rgb(255, 255, 171);\n"
 "border: 2px solid rgb(230, 230, 230);\n"
-"border-radius: 10px;")
-        icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap(":/icons/pencil.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.updResBtn.setIcon(icon8)
-        self.updResBtn.setObjectName("updResBtn")
-        self.delResBtn = QtWidgets.QPushButton(self.page_3)
-        self.delResBtn.setGeometry(QtCore.QRect(1150, 700, 101, 41))
-        font = QtGui.QFont()
-#
-        font.setBold(False)
-        font.setWeight(50)
-        self.delResBtn.setFont(font)
-        self.delResBtn.setStyleSheet("background-color: white;\n"
-"border: 2px solid rgb(230, 230, 230);\n"
-"border-radius: 10px;")
-        icon9 = QtGui.QIcon()
-        icon9.addPixmap(QtGui.QPixmap(":/icons/trash.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
-        self.delResBtn.setIcon(icon9)
-        self.delResBtn.setObjectName("delResBtn")
+"border-radius: 10px;\n"
+"color: black;")
+        self.refreshResBtn_2.setObjectName("refreshResBtn_2")
         self.stackedWidget.addWidget(self.page_3)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
@@ -607,7 +581,7 @@ class Ui_MainWindow(object):
         self.refreshCompBtn = QtWidgets.QPushButton(self.frame_4)
         self.refreshCompBtn.setGeometry(QtCore.QRect(1180, 30, 41, 31))
         font = QtGui.QFont()
-#
+#("System")
         font.setBold(False)
         font.setWeight(50)
         self.refreshCompBtn.setFont(font)
@@ -618,7 +592,7 @@ class Ui_MainWindow(object):
         self.refreshCompBtn.setIcon(icon5)
         self.refreshCompBtn.setObjectName("refreshCompBtn")
         self.searchbyComp_box = QtWidgets.QComboBox(self.frame_4)
-        self.searchbyComp_box.setGeometry(QtCore.QRect(720, 30, 131, 31))
+        self.searchbyComp_box.setGeometry(QtCore.QRect(710, 30, 131, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.searchbyComp_box.setFont(font)
@@ -633,7 +607,7 @@ class Ui_MainWindow(object):
         self.searchbyComp_box.addItem("")
         self.searchbyComp_box.addItem("")
         self.complaint_table = QtWidgets.QTableWidget(self.page_2)
-        self.complaint_table.setGeometry(QtCore.QRect(30, 160, 1251, 531))
+        self.complaint_table.setGeometry(QtCore.QRect(30, 160, 1251, 581))
         self.complaint_table.setStyleSheet("background-color: white;\n"
 "border: 1px solid rgb(230, 230, 230);\n"
 "border-radius: 0px;")
@@ -653,7 +627,7 @@ class Ui_MainWindow(object):
         self.addCompBtn = QtWidgets.QPushButton(self.page_2)
         self.addCompBtn.setGeometry(QtCore.QRect(1110, 110, 161, 41))
         font = QtGui.QFont()
-#
+#("System")
         font.setBold(False)
         font.setWeight(50)
         self.addCompBtn.setFont(font)
@@ -663,19 +637,8 @@ class Ui_MainWindow(object):
 "color: white;")
         self.addCompBtn.setIcon(icon7)
         self.addCompBtn.setObjectName("addCompBtn")
-        self.saveCompBtn = QtWidgets.QPushButton(self.page_2)
-        self.saveCompBtn.setGeometry(QtCore.QRect(40, 110, 101, 41))
-        font = QtGui.QFont()
-#
-        font.setBold(False)
-        font.setWeight(50)
-        self.saveCompBtn.setFont(font)
-        self.saveCompBtn.setStyleSheet("background-color: white;\n"
-"border: 2px solid rgb(230, 230, 230);\n"
-"border-radius: 10px;")
-        self.saveCompBtn.setObjectName("saveCompBtn")
         self.sortComp_box = QtWidgets.QComboBox(self.page_2)
-        self.sortComp_box.setGeometry(QtCore.QRect(960, 110, 131, 41))
+        self.sortComp_box.setGeometry(QtCore.QRect(40, 110, 131, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.sortComp_box.setFont(font)
@@ -689,30 +652,19 @@ class Ui_MainWindow(object):
         self.sortComp_box.addItem("")
         self.sortComp_box.addItem("")
         self.sortComp_box.addItem("")
-        self.delCompBtn = QtWidgets.QPushButton(self.page_2)
-        self.delCompBtn.setGeometry(QtCore.QRect(1150, 700, 101, 41))
+        self.refreshCompBtn_2 = QtWidgets.QPushButton(self.page_2)
+        self.refreshCompBtn_2.setGeometry(QtCore.QRect(180, 110, 111, 41))
         font = QtGui.QFont()
-#
+#("System")
+        font.setPointSize(12)
         font.setBold(False)
         font.setWeight(50)
-        self.delCompBtn.setFont(font)
-        self.delCompBtn.setStyleSheet("background-color: white;\n"
+        self.refreshCompBtn_2.setFont(font)
+        self.refreshCompBtn_2.setStyleSheet("background-color: rgb(255, 255, 171);\n"
 "border: 2px solid rgb(230, 230, 230);\n"
-"border-radius: 10px;")
-        self.delCompBtn.setIcon(icon9)
-        self.delCompBtn.setObjectName("delCompBtn")
-        self.updCompBtn = QtWidgets.QPushButton(self.page_2)
-        self.updCompBtn.setGeometry(QtCore.QRect(40, 700, 101, 41))
-        font = QtGui.QFont()
-#
-        font.setBold(False)
-        font.setWeight(50)
-        self.updCompBtn.setFont(font)
-        self.updCompBtn.setStyleSheet("background-color: white;\n"
-"border: 2px solid rgb(230, 230, 230);\n"
-"border-radius: 10px;")
-        self.updCompBtn.setIcon(icon8)
-        self.updCompBtn.setObjectName("updCompBtn")
+"border-radius: 10px;\n"
+"color: black;")
+        self.refreshCompBtn_2.setObjectName("refreshCompBtn_2")
         self.stackedWidget.addWidget(self.page_2)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
@@ -748,7 +700,7 @@ class Ui_MainWindow(object):
         self.refreshOffiBtn = QtWidgets.QPushButton(self.frame_5)
         self.refreshOffiBtn.setGeometry(QtCore.QRect(1180, 30, 41, 31))
         font = QtGui.QFont()
-#
+#("System")
         font.setBold(False)
         font.setWeight(50)
         self.refreshOffiBtn.setFont(font)
@@ -759,7 +711,7 @@ class Ui_MainWindow(object):
         self.refreshOffiBtn.setIcon(icon5)
         self.refreshOffiBtn.setObjectName("refreshOffiBtn")
         self.searchbyOff_box = QtWidgets.QComboBox(self.frame_5)
-        self.searchbyOff_box.setGeometry(QtCore.QRect(720, 30, 131, 31))
+        self.searchbyOff_box.setGeometry(QtCore.QRect(710, 30, 131, 31))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.searchbyOff_box.setFont(font)
@@ -773,8 +725,13 @@ class Ui_MainWindow(object):
         self.searchbyOff_box.addItem("")
         self.searchbyOff_box.addItem("")
         self.searchbyOff_box.addItem("")
+        self.label_6.raise_()
+        self.searchOffi_line.raise_()
+        self.searchbyOff_box.raise_()
+        self.refreshOffiBtn.raise_()
+        self.searchOffiBtn.raise_()
         self.official_table = QtWidgets.QTableWidget(self.page_4)
-        self.official_table.setGeometry(QtCore.QRect(30, 160, 1251, 531))
+        self.official_table.setGeometry(QtCore.QRect(30, 160, 1251, 581))
         self.official_table.setStyleSheet("background-color: white;\n"
 "border: 1px solid rgb(230, 230, 230);\n"
 "border-radius: 0px;")
@@ -794,7 +751,7 @@ class Ui_MainWindow(object):
         self.addOffiBtn = QtWidgets.QPushButton(self.page_4)
         self.addOffiBtn.setGeometry(QtCore.QRect(1110, 110, 161, 41))
         font = QtGui.QFont()
-#
+#("System")
         font.setBold(False)
         font.setWeight(50)
         self.addOffiBtn.setFont(font)
@@ -804,19 +761,8 @@ class Ui_MainWindow(object):
 "color: white;")
         self.addOffiBtn.setIcon(icon7)
         self.addOffiBtn.setObjectName("addOffiBtn")
-        self.saveOffiBtn = QtWidgets.QPushButton(self.page_4)
-        self.saveOffiBtn.setGeometry(QtCore.QRect(40, 110, 101, 41))
-        font = QtGui.QFont()
-#
-        font.setBold(False)
-        font.setWeight(50)
-        self.saveOffiBtn.setFont(font)
-        self.saveOffiBtn.setStyleSheet("background-color: white;\n"
-"border: 2px solid rgb(230, 230, 230);\n"
-"border-radius: 10px;")
-        self.saveOffiBtn.setObjectName("saveOffiBtn")
         self.sortOff_box = QtWidgets.QComboBox(self.page_4)
-        self.sortOff_box.setGeometry(QtCore.QRect(960, 110, 131, 41))
+        self.sortOff_box.setGeometry(QtCore.QRect(40, 110, 131, 41))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.sortOff_box.setFont(font)
@@ -830,30 +776,19 @@ class Ui_MainWindow(object):
         self.sortOff_box.addItem("")
         self.sortOff_box.addItem("")
         self.sortOff_box.addItem("")
-        self.updOffiBtn = QtWidgets.QPushButton(self.page_4)
-        self.updOffiBtn.setGeometry(QtCore.QRect(40, 700, 101, 41))
+        self.refreshOffiBtn_2 = QtWidgets.QPushButton(self.page_4)
+        self.refreshOffiBtn_2.setGeometry(QtCore.QRect(180, 110, 111, 41))
         font = QtGui.QFont()
-#
+#("System")
+        font.setPointSize(12)
         font.setBold(False)
         font.setWeight(50)
-        self.updOffiBtn.setFont(font)
-        self.updOffiBtn.setStyleSheet("background-color: white;\n"
+        self.refreshOffiBtn_2.setFont(font)
+        self.refreshOffiBtn_2.setStyleSheet("background-color: rgb(255, 255, 171);\n"
 "border: 2px solid rgb(230, 230, 230);\n"
-"border-radius: 10px;")
-        self.updOffiBtn.setIcon(icon8)
-        self.updOffiBtn.setObjectName("updOffiBtn")
-        self.delOffiBtn = QtWidgets.QPushButton(self.page_4)
-        self.delOffiBtn.setGeometry(QtCore.QRect(1150, 700, 101, 41))
-        font = QtGui.QFont()
-#
-        font.setBold(False)
-        font.setWeight(50)
-        self.delOffiBtn.setFont(font)
-        self.delOffiBtn.setStyleSheet("background-color: white;\n"
-"border: 2px solid rgb(230, 230, 230);\n"
-"border-radius: 10px;")
-        self.delOffiBtn.setIcon(icon9)
-        self.delOffiBtn.setObjectName("delOffiBtn")
+"border-radius: 10px;\n"
+"color: black;")
+        self.refreshOffiBtn_2.setObjectName("refreshOffiBtn_2")
         self.stackedWidget.addWidget(self.page_4)
         self.page_5 = QtWidgets.QWidget()
         self.page_5.setObjectName("page_5")
@@ -882,7 +817,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.stackedWidget.setCurrentIndex(0)
+        self.stackedWidget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -938,7 +873,7 @@ class Ui_MainWindow(object):
         self.refreshCasesBtn.setText(_translate("MainWindow", "Refresh"))
         self.label_2.setText(_translate("MainWindow", "Residents"))
         self.searchRes_line.setPlaceholderText(_translate("MainWindow", "    Search Residents..."))
-        self.searchbyRes_box.setItemText(0, _translate("MainWindow", " SORT BY"))
+        self.searchbyRes_box.setItemText(0, _translate("MainWindow", " SEARCH BY"))
         self.searchbyRes_box.setItemText(1, _translate("MainWindow", " RESIDENTID"))
         self.searchbyRes_box.setItemText(2, _translate("MainWindow", " FIRSTNAME"))
         self.searchbyRes_box.setItemText(3, _translate("MainWindow", " LASTNAME"))
@@ -958,19 +893,17 @@ class Ui_MainWindow(object):
         item = self.resident_table.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "CONTACT"))
         self.addResBtn.setText(_translate("MainWindow", "Add Resident"))
-        self.saveResBtn.setText(_translate("MainWindow", "Save"))
-        self.sortRes_box.setItemText(0, _translate("MainWindow", " SORT BY"))
+        self.sortRes_box.setItemText(0, _translate("MainWindow", " SORT"))
         self.sortRes_box.setItemText(1, _translate("MainWindow", " RESIDENTID"))
         self.sortRes_box.setItemText(2, _translate("MainWindow", " FIRSTNAME"))
         self.sortRes_box.setItemText(3, _translate("MainWindow", " LASTNAME"))
         self.sortRes_box.setItemText(4, _translate("MainWindow", " AGE"))
         self.sortRes_box.setItemText(5, _translate("MainWindow", " SEX"))
         self.sortRes_box.setItemText(6, _translate("MainWindow", " CONTACT"))
-        self.updResBtn.setText(_translate("MainWindow", "Edit"))
-        self.delResBtn.setText(_translate("MainWindow", "Delete"))
+        self.refreshResBtn_2.setText(_translate("MainWindow", "Refresh"))
         self.label_5.setText(_translate("MainWindow", "Complaints"))
         self.searchComp_line.setPlaceholderText(_translate("MainWindow", "    Search Complaints..."))
-        self.searchbyComp_box.setItemText(0, _translate("MainWindow", " SORT BY"))
+        self.searchbyComp_box.setItemText(0, _translate("MainWindow", " SEARCH BY"))
         self.searchbyComp_box.setItemText(1, _translate("MainWindow", "COMPLAINTID"))
         self.searchbyComp_box.setItemText(2, _translate("MainWindow", "RESIDENTID"))
         self.searchbyComp_box.setItemText(3, _translate("MainWindow", "CATEGORY"))
@@ -987,18 +920,16 @@ class Ui_MainWindow(object):
         item = self.complaint_table.horizontalHeaderItem(4)
         item.setText(_translate("MainWindow", "STATUS"))
         self.addCompBtn.setText(_translate("MainWindow", "Add Complaint"))
-        self.saveCompBtn.setText(_translate("MainWindow", "Save"))
-        self.sortComp_box.setItemText(0, _translate("MainWindow", " SORT BY"))
+        self.sortComp_box.setItemText(0, _translate("MainWindow", " SORT"))
         self.sortComp_box.setItemText(1, _translate("MainWindow", "COMPLAINTID"))
         self.sortComp_box.setItemText(2, _translate("MainWindow", "RESIDENTID"))
         self.sortComp_box.setItemText(3, _translate("MainWindow", "CATEGORY"))
         self.sortComp_box.setItemText(4, _translate("MainWindow", "DATETIME"))
         self.sortComp_box.setItemText(5, _translate("MainWindow", "STATUS"))
-        self.delCompBtn.setText(_translate("MainWindow", "Delete"))
-        self.updCompBtn.setText(_translate("MainWindow", "Edit"))
+        self.refreshCompBtn_2.setText(_translate("MainWindow", "Refresh"))
         self.label_6.setText(_translate("MainWindow", "Officials"))
         self.searchOffi_line.setPlaceholderText(_translate("MainWindow", "    Search Officials..."))
-        self.searchbyOff_box.setItemText(0, _translate("MainWindow", " SORT BY"))
+        self.searchbyOff_box.setItemText(0, _translate("MainWindow", " SEARCH BY"))
         self.searchbyOff_box.setItemText(1, _translate("MainWindow", " OFFICIALID"))
         self.searchbyOff_box.setItemText(2, _translate("MainWindow", " POSITION"))
         self.searchbyOff_box.setItemText(3, _translate("MainWindow", " FIRSTNAME"))
@@ -1015,19 +946,17 @@ class Ui_MainWindow(object):
         item = self.official_table.horizontalHeaderItem(4)
         item.setText(_translate("MainWindow", "CONTACT"))
         self.addOffiBtn.setText(_translate("MainWindow", "Add Official"))
-        self.saveOffiBtn.setText(_translate("MainWindow", "Save"))
-        self.sortOff_box.setItemText(0, _translate("MainWindow", " SORT BY"))
+        self.sortOff_box.setItemText(0, _translate("MainWindow", " SORT"))
         self.sortOff_box.setItemText(1, _translate("MainWindow", " OFFICIALID"))
         self.sortOff_box.setItemText(2, _translate("MainWindow", " POSITION"))
         self.sortOff_box.setItemText(3, _translate("MainWindow", " FIRSTNAME"))
         self.sortOff_box.setItemText(4, _translate("MainWindow", " LASTNAME"))
         self.sortOff_box.setItemText(5, _translate("MainWindow", " CONTACT"))
-        self.updOffiBtn.setText(_translate("MainWindow", "Edit"))
-        self.delOffiBtn.setText(_translate("MainWindow", "Delete"))
+        self.refreshOffiBtn_2.setText(_translate("MainWindow", "Refresh"))
         self.label_7.setText(_translate("MainWindow", "About"))
         self.labelDateTime2.setText(_translate("MainWindow", "TextLabel"))
 
-                #CHANGES
+        #CHANGES
         #removed font family(system)
         #removed font family (MS System)
         #addResBtn font sizxe to 12 and bold to false
@@ -1166,7 +1095,6 @@ class Ui_MainWindow(object):
                 border-top-right-radius: 3px;
                 border-bottom-right-radius: 3px;
                 background-color: white;
-                image: url(:/icons/icons/angle-small-down.svg);
             }
 
             QComboBox::down-arrow {
@@ -1176,6 +1104,29 @@ class Ui_MainWindow(object):
             }
         """
 
+        filterBoxStyle = """
+                QComboBox {
+                        background-color: white;
+                        border: 2px solid rgb(230, 230, 230);
+                        border-radius: 10px;
+                }
+                QComboBox::drop-down {
+                        subcontrol-origin: padding;
+                        subcontrol-position: top right;
+                        width: 25px;
+                        border-left-width: 0px;
+                        border-top-right-radius: 3px;
+                        border-bottom-right-radius: 3px;
+                        background-color: white;
+                }
+                QComboBox::down-arrow {
+                        image: url(:/icons/icons/filter.svg);
+                        width: 16px;
+                        height: 16px;
+                }
+        """
+
+        self.filterPendComp_box.setStyleSheet(filterBoxStyle)
         #apply to all combo box
         self.sortRes_box.setStyleSheet(comboBoxStyle)
         self.sortComp_box.setStyleSheet(comboBoxStyle)

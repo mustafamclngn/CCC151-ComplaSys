@@ -41,7 +41,7 @@ color: white;</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>160</y>
+       <y>170</y>
        <width>221</width>
        <height>41</height>
       </rect>
@@ -71,7 +71,7 @@ color: white;</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>210</y>
+       <y>220</y>
        <width>221</width>
        <height>41</height>
       </rect>
@@ -101,7 +101,7 @@ color: white;</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>260</y>
+       <y>270</y>
        <width>221</width>
        <height>41</height>
       </rect>
@@ -131,7 +131,7 @@ color: white;</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>310</y>
+       <y>320</y>
        <width>221</width>
        <height>41</height>
       </rect>
@@ -187,7 +187,7 @@ color: white;</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>360</y>
+       <y>370</y>
        <width>221</width>
        <height>41</height>
       </rect>
@@ -264,7 +264,7 @@ border: 0px;</string>
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>130</y>
+       <y>140</y>
        <width>241</width>
        <height>20</height>
       </rect>
@@ -291,7 +291,7 @@ border: 0px;</string>
 border-radius: 13px;</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QFrame" name="frame_2">
@@ -1162,7 +1162,7 @@ border-radius: 13px;</string>
       <widget class="QComboBox" name="searchbyRes_box">
        <property name="geometry">
         <rect>
-         <x>720</x>
+         <x>710</x>
          <y>30</y>
          <width>131</width>
          <height>31</height>
@@ -1180,7 +1180,7 @@ border-radius: 10px;</string>
        </property>
        <item>
         <property name="text">
-         <string> SORT BY</string>
+         <string> SEARCH BY</string>
         </property>
        </item>
        <item>
@@ -1226,7 +1226,7 @@ border-radius: 10px;</string>
         <x>30</x>
         <y>160</y>
         <width>1251</width>
-        <height>531</height>
+        <height>581</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1299,35 +1299,10 @@ color: white;</string>
         <normaloff>:/icons/icons/plus.svg</normaloff>:/icons/icons/plus.svg</iconset>
       </property>
      </widget>
-     <widget class="QPushButton" name="saveResBtn">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>110</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>System</family>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: white;
-border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
-      </property>
-      <property name="text">
-       <string>Save</string>
-      </property>
-     </widget>
      <widget class="QComboBox" name="sortRes_box">
       <property name="geometry">
        <rect>
-        <x>960</x>
+        <x>40</x>
         <y>110</y>
         <width>131</width>
         <height>41</height>
@@ -1345,7 +1320,7 @@ border-radius: 10px;</string>
       </property>
       <item>
        <property name="text">
-        <string> SORT BY</string>
+        <string> SORT</string>
        </property>
       </item>
       <item>
@@ -1379,62 +1354,31 @@ border-radius: 10px;</string>
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="updResBtn">
+     <widget class="QPushButton" name="refreshResBtn_2">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>700</y>
-        <width>101</width>
+        <x>180</x>
+        <y>110</y>
+        <width>111</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>50</weight>
-        <bold>false</bold>
+        <pointsize>7</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
+       <string notr="true">background-color: rgb(255, 255, 171);
 border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
+border-radius: 10px;
+color: black;</string>
       </property>
       <property name="text">
-       <string>Edit</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>:/icons/pencil.png</normaloff>:/icons/pencil.png</iconset>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="delResBtn">
-      <property name="geometry">
-       <rect>
-        <x>1150</x>
-        <y>700</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>System</family>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: white;
-border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
-      </property>
-      <property name="text">
-       <string>Delete</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>:/icons/trash.png</normaloff>:/icons/trash.png</iconset>
+       <string>Refresh</string>
       </property>
      </widget>
     </widget>
@@ -1554,7 +1498,7 @@ border-radius: 13px;</string>
       <widget class="QComboBox" name="searchbyComp_box">
        <property name="geometry">
         <rect>
-         <x>720</x>
+         <x>710</x>
          <y>30</y>
          <width>131</width>
          <height>31</height>
@@ -1572,7 +1516,7 @@ border-radius: 10px;</string>
        </property>
        <item>
         <property name="text">
-         <string> SORT BY</string>
+         <string> SEARCH BY</string>
         </property>
        </item>
        <item>
@@ -1608,7 +1552,7 @@ border-radius: 10px;</string>
         <x>30</x>
         <y>160</y>
         <width>1251</width>
-        <height>531</height>
+        <height>581</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1672,35 +1616,10 @@ color: white;</string>
         <normaloff>:/icons/icons/plus.svg</normaloff>:/icons/icons/plus.svg</iconset>
       </property>
      </widget>
-     <widget class="QPushButton" name="saveCompBtn">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>110</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>System</family>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: white;
-border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
-      </property>
-      <property name="text">
-       <string>Save</string>
-      </property>
-     </widget>
      <widget class="QComboBox" name="sortComp_box">
       <property name="geometry">
        <rect>
-        <x>960</x>
+        <x>40</x>
         <y>110</y>
         <width>131</width>
         <height>41</height>
@@ -1718,7 +1637,7 @@ border-radius: 10px;</string>
       </property>
       <item>
        <property name="text">
-        <string> SORT BY</string>
+        <string> SORT</string>
        </property>
       </item>
       <item>
@@ -1747,62 +1666,31 @@ border-radius: 10px;</string>
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="delCompBtn">
+     <widget class="QPushButton" name="refreshCompBtn_2">
       <property name="geometry">
        <rect>
-        <x>1150</x>
-        <y>700</y>
-        <width>101</width>
+        <x>180</x>
+        <y>110</y>
+        <width>111</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>50</weight>
-        <bold>false</bold>
+        <pointsize>7</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
+       <string notr="true">background-color: rgb(255, 255, 171);
 border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
+border-radius: 10px;
+color: black;</string>
       </property>
       <property name="text">
-       <string>Delete</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>:/icons/trash.png</normaloff>:/icons/trash.png</iconset>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="updCompBtn">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>700</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>System</family>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: white;
-border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
-      </property>
-      <property name="text">
-       <string>Edit</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>:/icons/pencil.png</normaloff>:/icons/pencil.png</iconset>
+       <string>Refresh</string>
       </property>
      </widget>
     </widget>
@@ -1922,7 +1810,7 @@ border-radius: 13px;</string>
       <widget class="QComboBox" name="searchbyOff_box">
        <property name="geometry">
         <rect>
-         <x>720</x>
+         <x>710</x>
          <y>30</y>
          <width>131</width>
          <height>31</height>
@@ -1940,7 +1828,7 @@ border-radius: 10px;</string>
        </property>
        <item>
         <property name="text">
-         <string> SORT BY</string>
+         <string> SEARCH BY</string>
         </property>
        </item>
        <item>
@@ -1969,6 +1857,11 @@ border-radius: 10px;</string>
         </property>
        </item>
       </widget>
+      <zorder>label_6</zorder>
+      <zorder>searchOffi_line</zorder>
+      <zorder>searchbyOff_box</zorder>
+      <zorder>refreshOffiBtn</zorder>
+      <zorder>searchOffiBtn</zorder>
      </widget>
      <widget class="QTableWidget" name="official_table">
       <property name="geometry">
@@ -1976,7 +1869,7 @@ border-radius: 10px;</string>
         <x>30</x>
         <y>160</y>
         <width>1251</width>
-        <height>531</height>
+        <height>581</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -2040,35 +1933,10 @@ color: white;</string>
         <normaloff>:/icons/icons/plus.svg</normaloff>:/icons/icons/plus.svg</iconset>
       </property>
      </widget>
-     <widget class="QPushButton" name="saveOffiBtn">
-      <property name="geometry">
-       <rect>
-        <x>40</x>
-        <y>110</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>System</family>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: white;
-border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
-      </property>
-      <property name="text">
-       <string>Save</string>
-      </property>
-     </widget>
      <widget class="QComboBox" name="sortOff_box">
       <property name="geometry">
        <rect>
-        <x>960</x>
+        <x>40</x>
         <y>110</y>
         <width>131</width>
         <height>41</height>
@@ -2086,7 +1954,7 @@ border-radius: 10px;</string>
       </property>
       <item>
        <property name="text">
-        <string> SORT BY</string>
+        <string> SORT</string>
        </property>
       </item>
       <item>
@@ -2115,62 +1983,31 @@ border-radius: 10px;</string>
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="updOffiBtn">
+     <widget class="QPushButton" name="refreshOffiBtn_2">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>700</y>
-        <width>101</width>
+        <x>180</x>
+        <y>110</y>
+        <width>111</width>
         <height>41</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>System</family>
-        <weight>50</weight>
-        <bold>false</bold>
+        <pointsize>7</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
+       <string notr="true">background-color: rgb(255, 255, 171);
 border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
+border-radius: 10px;
+color: black;</string>
       </property>
       <property name="text">
-       <string>Edit</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>:/icons/pencil.png</normaloff>:/icons/pencil.png</iconset>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="delOffiBtn">
-      <property name="geometry">
-       <rect>
-        <x>1150</x>
-        <y>700</y>
-        <width>101</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>System</family>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: white;
-border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
-      </property>
-      <property name="text">
-       <string>Delete</string>
-      </property>
-      <property name="icon">
-       <iconset>
-        <normaloff>:/icons/trash.png</normaloff>:/icons/trash.png</iconset>
+       <string>Refresh</string>
       </property>
      </widget>
     </widget>

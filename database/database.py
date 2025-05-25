@@ -109,7 +109,7 @@ class Database:
     #--------------------------------------------------------------------------- RESIDENTS TABLE OPERATIONS
     def insert_resident(self, resident):
         """ insert a new resident into the residents table """
-        sql = ''' INSERT INTO residents(resident_id, first_name, last_name, birth_date, photo_cred, address, contact, sex)
+        sql = ''' INSERT INTO Resident(resident_id, first_name, last_name, birth_date, photo_cred, address, contact, sex)
                   VALUES (%s, %s, %s, %s, %s, %s, %s, %s) '''
         try:
             cursor = self.conn.cursor()

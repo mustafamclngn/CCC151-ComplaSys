@@ -14,34 +14,19 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_addOfficialDialog(object):
     def setupUi(self, addOfficialDialog):
         addOfficialDialog.setObjectName("addOfficialDialog")
-        addOfficialDialog.resize(512, 418)
+        addOfficialDialog.resize(501, 541)
         addOfficialDialog.setStyleSheet("background-color: rgb(0, 0, 25);")
         self.frame = QtWidgets.QFrame(addOfficialDialog)
-        self.frame.setGeometry(QtCore.QRect(20, 20, 471, 381))
-        self.frame.setStyleSheet("background-color: rgb(0, 0, 50);")
+        self.frame.setGeometry(QtCore.QRect(20, 20, 461, 501))
+        self.frame.setStyleSheet("background-color: rgb(245, 245, 245);\n"
+"border-radius: 13px;")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
-        self.addofficial_cancel_button = QtWidgets.QPushButton(self.frame)
-        self.addofficial_cancel_button.setGeometry(QtCore.QRect(270, 340, 101, 31))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.addofficial_cancel_button.setFont(font)
-        self.addofficial_cancel_button.setStyleSheet("background-color: white;\n"
-"border-radius: 13px;")
-        self.addofficial_cancel_button.setObjectName("addofficial_cancel_button")
-        self.addofficial_save_button = QtWidgets.QPushButton(self.frame)
-        self.addofficial_save_button.setGeometry(QtCore.QRect(110, 340, 101, 31))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.addofficial_save_button.setFont(font)
-        self.addofficial_save_button.setStyleSheet("background-color: white;\n"
-"border-radius: 13px;")
-        self.addofficial_save_button.setObjectName("addofficial_save_button")
         self.frame_2 = QtWidgets.QFrame(self.frame)
-        self.frame_2.setGeometry(QtCore.QRect(20, 10, 431, 321))
+        self.frame_2.setGeometry(QtCore.QRect(20, 60, 421, 431))
         self.frame_2.setStyleSheet("background-color: white;\n"
-"border: 1px solid grey;\n"
+"border: 1px solid rgb(230, 230, 230);\n"
 "border-radius: 13px;")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -60,7 +45,7 @@ class Ui_addOfficialDialog(object):
         self.addofficial_officialID_input.setFont(font)
         self.addofficial_officialID_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.addofficial_officialID_input.setObjectName("addofficial_officialID_input")
         self.label_first_name_2 = QtWidgets.QLabel(self.frame_2)
         self.label_first_name_2.setGeometry(QtCore.QRect(32, 130, 103, 24))
@@ -76,7 +61,7 @@ class Ui_addOfficialDialog(object):
         self.addofficial_firstname_input.setFont(font)
         self.addofficial_firstname_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.addofficial_firstname_input.setObjectName("addofficial_firstname_input")
         self.label_last_name = QtWidgets.QLabel(self.frame_2)
         self.label_last_name.setGeometry(QtCore.QRect(32, 190, 102, 24))
@@ -92,7 +77,7 @@ class Ui_addOfficialDialog(object):
         self.addofficial_lastname_input.setFont(font)
         self.addofficial_lastname_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.addofficial_lastname_input.setObjectName("addofficial_lastname_input")
         self.label_contact = QtWidgets.QLabel(self.frame_2)
         self.label_contact.setGeometry(QtCore.QRect(32, 250, 75, 24))
@@ -108,7 +93,7 @@ class Ui_addOfficialDialog(object):
         self.addofficial_contact_input.setFont(font)
         self.addofficial_contact_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.addofficial_contact_input.setObjectName("addofficial_contact_input")
         self.addofficial_position_input = QtWidgets.QComboBox(self.frame_2)
         self.addofficial_position_input.setGeometry(QtCore.QRect(32, 100, 361, 28))
@@ -117,7 +102,7 @@ class Ui_addOfficialDialog(object):
         self.addofficial_position_input.setFont(font)
         self.addofficial_position_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.addofficial_position_input.setObjectName("addofficial_position_input")
         self.addofficial_position_input.addItem("")
         self.addofficial_position_input.addItem("")
@@ -133,6 +118,44 @@ class Ui_addOfficialDialog(object):
         self.label_sex.setFont(font)
         self.label_sex.setStyleSheet("border: 0px")
         self.label_sex.setObjectName("label_sex")
+        self.label_address_3 = QtWidgets.QLabel(self.frame_2)
+        self.label_address_3.setGeometry(QtCore.QRect(30, 310, 107, 24))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.label_address_3.setFont(font)
+        self.label_address_3.setStyleSheet("border: 0px")
+        self.label_address_3.setObjectName("label_address_3")
+        self.addofficial_caseshandled_input = QtWidgets.QTextEdit(self.frame_2)
+        self.addofficial_caseshandled_input.setGeometry(QtCore.QRect(30, 340, 361, 71))
+        self.addofficial_caseshandled_input.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 4px;")
+        self.addofficial_caseshandled_input.setObjectName("addofficial_caseshandled_input")
+        self.addofficial_addentry_button = QtWidgets.QPushButton(self.frame)
+        self.addofficial_addentry_button.setGeometry(QtCore.QRect(210, 20, 111, 31))
+        font = QtGui.QFont()
+        font.setFamily("System")
+        font.setBold(False)
+        font.setWeight(50)
+        self.addofficial_addentry_button.setFont(font)
+        self.addofficial_addentry_button.setStyleSheet("background-color: rgb(148, 255, 148);\n"
+"border-radius: 10px;\n"
+"color: black;")
+        self.addofficial_addentry_button.setObjectName("addofficial_addentry_button")
+        self.addofficial_cancel_button = QtWidgets.QPushButton(self.frame)
+        self.addofficial_cancel_button.setGeometry(QtCore.QRect(330, 20, 91, 31))
+        font = QtGui.QFont()
+        font.setFamily("System")
+        font.setBold(False)
+        font.setWeight(50)
+        self.addofficial_cancel_button.setFont(font)
+        self.addofficial_cancel_button.setStyleSheet("background-color: rgb(255, 179, 179);\n"
+"border-radius: 10px;\n"
+"color: black;")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/icons/trash.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        self.addofficial_cancel_button.setIcon(icon)
+        self.addofficial_cancel_button.setObjectName("addofficial_cancel_button")
 
         self.retranslateUi(addOfficialDialog)
         QtCore.QMetaObject.connectSlotsByName(addOfficialDialog)
@@ -140,8 +163,6 @@ class Ui_addOfficialDialog(object):
     def retranslateUi(self, addOfficialDialog):
         _translate = QtCore.QCoreApplication.translate
         addOfficialDialog.setWindowTitle(_translate("addOfficialDialog", "Add New Official"))
-        self.addofficial_cancel_button.setText(_translate("addOfficialDialog", "Cancel"))
-        self.addofficial_save_button.setText(_translate("addOfficialDialog", "Add"))
         self.label_resident_id.setText(_translate("addOfficialDialog", "Official ID:"))
         self.label_first_name_2.setText(_translate("addOfficialDialog", "First Name:"))
         self.label_last_name.setText(_translate("addOfficialDialog", "Last Name:"))
@@ -154,3 +175,11 @@ class Ui_addOfficialDialog(object):
         self.addofficial_position_input.setItemText(5, _translate("addOfficialDialog", "Barangay Health Worker"))
         self.addofficial_position_input.setItemText(6, _translate("addOfficialDialog", "Barangay Tanod"))
         self.label_sex.setText(_translate("addOfficialDialog", "Position:"))
+        self.label_address_3.setText(_translate("addOfficialDialog", "Cases Handled:"))
+        self.addofficial_caseshandled_input.setHtml(_translate("addOfficialDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.addofficial_addentry_button.setText(_translate("addOfficialDialog", "Add Entry"))
+        self.addofficial_cancel_button.setText(_translate("addOfficialDialog", "Cancel"))

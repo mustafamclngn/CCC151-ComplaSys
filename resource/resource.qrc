@@ -1,7 +1,10 @@
 <RCC>
   <qresource prefix="icons">
+    <file>icons/angle-small-down.svg</file>
     <file>icons/briefcase.svg</file>
+    <file>icons/disk.svg</file>
     <file>icons/document.svg</file>
+    <file>icons/filter.svg</file>
     <file>icons/home.svg</file>
     <file>icons/interrogation.svg</file>
     <file>icons/moon.svg</file>
@@ -9,6 +12,7 @@
     <file>icons/plus.svg</file>
     <file>icons/refresh.svg</file>
     <file>icons/search.svg</file>
+    <file>icons/sort.svg</file>
     <file>icons/trash.svg</file>
     <file>icons/user.svg</file>
     <file>icons/users-alt.svg</file>
