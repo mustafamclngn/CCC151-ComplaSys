@@ -14,17 +14,17 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_addOfficialDialog(object):
     def setupUi(self, addOfficialDialog):
         addOfficialDialog.setObjectName("addOfficialDialog")
-        addOfficialDialog.resize(501, 541)
+        addOfficialDialog.resize(501, 449)
         addOfficialDialog.setStyleSheet("background-color: rgb(0, 0, 25);")
         self.frame = QtWidgets.QFrame(addOfficialDialog)
-        self.frame.setGeometry(QtCore.QRect(20, 20, 461, 501))
+        self.frame.setGeometry(QtCore.QRect(20, 20, 461, 411))
         self.frame.setStyleSheet("background-color: rgb(245, 245, 245);\n"
 "border-radius: 13px;")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.frame_2 = QtWidgets.QFrame(self.frame)
-        self.frame_2.setGeometry(QtCore.QRect(20, 60, 421, 431))
+        self.frame_2.setGeometry(QtCore.QRect(20, 60, 421, 331))
         self.frame_2.setStyleSheet("background-color: white;\n"
 "border: 1px solid rgb(230, 230, 230);\n"
 "border-radius: 13px;")
@@ -118,19 +118,6 @@ class Ui_addOfficialDialog(object):
         self.label_sex.setFont(font)
         self.label_sex.setStyleSheet("border: 0px")
         self.label_sex.setObjectName("label_sex")
-        self.label_address_3 = QtWidgets.QLabel(self.frame_2)
-        self.label_address_3.setGeometry(QtCore.QRect(30, 310, 107, 24))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.label_address_3.setFont(font)
-        self.label_address_3.setStyleSheet("border: 0px")
-        self.label_address_3.setObjectName("label_address_3")
-        self.addofficial_caseshandled_input = QtWidgets.QTextEdit(self.frame_2)
-        self.addofficial_caseshandled_input.setGeometry(QtCore.QRect(30, 340, 361, 71))
-        self.addofficial_caseshandled_input.setStyleSheet("background-color: white;\n"
-"border: 1px solid grey;\n"
-"border-radius: 4px;")
-        self.addofficial_caseshandled_input.setObjectName("addofficial_caseshandled_input")
         self.addofficial_addentry_button = QtWidgets.QPushButton(self.frame)
         self.addofficial_addentry_button.setGeometry(QtCore.QRect(210, 20, 111, 31))
         font = QtGui.QFont()
@@ -175,11 +162,5 @@ class Ui_addOfficialDialog(object):
         self.addofficial_position_input.setItemText(5, _translate("addOfficialDialog", "Barangay Health Worker"))
         self.addofficial_position_input.setItemText(6, _translate("addOfficialDialog", "Barangay Tanod"))
         self.label_sex.setText(_translate("addOfficialDialog", "Position:"))
-        self.label_address_3.setText(_translate("addOfficialDialog", "Cases Handled:"))
-        self.addofficial_caseshandled_input.setHtml(_translate("addOfficialDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.addofficial_addentry_button.setText(_translate("addOfficialDialog", "Add Entry"))
         self.addofficial_cancel_button.setText(_translate("addOfficialDialog", "Cancel"))
