@@ -20,6 +20,7 @@ from uipyfiles.addofficialui import Ui_addOfficialDialog
 from functions.classcomplaint import AddComplaintDialog
 from functions.classofficial import AddOfficialDialog
 from functions.classresident import AddResidentDialog
+from functions.classinforesidentdialog import InfoResidentDialog
 from datetime import datetime
             
 class MainClass(QMainWindow, Ui_MainWindow):
@@ -67,6 +68,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         #self.updOffiBtn_2.clicked.connect(self.edit_official)
 
         self.db = Database()
+        self.resident_table.itemClicked.connect(self.on_resident_item_clicked)
 
     def updateDateTime(self):
         current = QDateTime.currentDateTime()
@@ -190,6 +192,15 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.resident_table.setItem(row_num, 7, QTableWidgetItem(str(row_data[6])))  # Address
             self.resident_table.setItem(row_num, 8, QTableWidgetItem(str(row_data[5])))  # Credentials (photo_cred)
         
+    def on_resident_item_clicked(self, item):
+        row = item.row()
+        col = item.column()
+        value = item.text()
+        row_values = [self.resident_table.item(row, c).text() for c in range(self.resident_table.columnCount())]
+        print("Full row data:", row_values)
+        dialog = InfoResidentDialog(self.db.get_element_by_id("residents", row_values[0]))
+        dialog.display_info()
+        dialog.exec_()  
 
     def edit_official(self):
         selected = self.official_table.currentRow()
