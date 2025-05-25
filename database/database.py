@@ -12,7 +12,7 @@ class Database:
         else:
             print("Error! Cannot create the database connection.")
 
-    def create_connection(self, host="127.0.0.1", database="delcarmencomplaintmanagement", user="root", password="admin"):
+    def create_connection(self, host="127.0.0.1", database="delcarmencomplaint", user="root", password="admin"):
         """ create a database connection to a MySQL database """
         conn = None
         try:
@@ -105,6 +105,8 @@ class Database:
         except Error as e:
             print(f"Error: {e}")
 
+
+    #--------------------------------------------------------------------------- RESIDENTS TABLE OPERATIONS
     def insert_resident(self, resident):
         """ insert a new resident into the residents table """
         sql = ''' INSERT INTO residents(resident_id, first_name, last_name, birth_date, photo_cred, address, contact, sex)
@@ -114,6 +116,19 @@ class Database:
             cursor.execute(sql, resident)
             self.conn.commit()
             print(f"Resident {resident[1]} inserted successfully")
+        except Error as e:
+            print(f"Error: {e}")
+
+    def update_resident(self, new_resident):
+        """ update an existing resident in the residents table using resident_id """
+        sql = ''' UPDATE residents
+                  SET first_name = %s, last_name = %s, birth_date = %s, photo_cred = %s, address = %s, contact = %s, sex = %s
+                  WHERE resident_id = %s '''
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute(sql, (*new_resident[1:8], new_resident[0]))
+            self.conn.commit()
+            print(f"Resident {new_resident[0]} updated successfully")
         except Error as e:
             print(f"Error: {e}")
 
@@ -128,6 +143,7 @@ class Database:
         except Error as e:
             print(f"Error: {e}")
 
+    #--------------------------------------------------------------------------- COMPLAINTS TABLE OPERATIONS
     def insert_complaint(self, complaint):
         """ insert a new complaint into the complaints table """
         sql = ''' INSERT INTO complaints(complaint_id, date_time, complaint_desc, resident_id, complaint_category, complaint_status, location)
@@ -137,6 +153,19 @@ class Database:
             cursor.execute(sql, complaint)
             self.conn.commit()
             print(f"Complaint {complaint[2]} inserted successfully")
+        except Error as e:
+            print(f"Error: {e}")
+
+    def update_complaint(self, new_complaint):
+        """ update an existing complaint in the complaints table using complaint_id """
+        sql = ''' UPDATE complaints
+                  SET date_time = %s, complaint_desc = %s, resident_id = %s, complaint_category = %s, complaint_status = %s, location = %s
+                  WHERE complaint_id = %s '''
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute(sql, (*new_complaint[1:7], new_complaint[0]))
+            self.conn.commit()
+            print(f"Complaint {new_complaint[0]} updated successfully")
         except Error as e:
             print(f"Error: {e}")
 
@@ -151,6 +180,7 @@ class Database:
         except Error as e:
             print(f"Error: {e}")
 
+    #--------------------------------------------------------------------------- BARANGAY OFFICIALS TABLE OPERATIONS
     def insert_barangay_official(self, official):
         """ insert a new barangay official into the barangay_officials table """
         sql = ''' INSERT INTO barangay_officials(official_id, first_name, last_name, contact, position)
@@ -163,6 +193,19 @@ class Database:
         except Error as e:
             print(f"Error: {e}")
     
+    def update_barangay_official(self, new_official):
+        """ update an existing barangay official in the barangay_officials table using official_id """
+        sql = ''' UPDATE barangay_officials
+                  SET first_name = %s, last_name = %s, contact = %s, position = %s
+                  WHERE official_id = %s '''
+        try:
+            cursor = self.conn.cursor()
+            cursor.execute(sql, (*new_official[1:5], new_official[0]))
+            self.conn.commit()
+            print(f"Barangay Official {new_official[0]} updated successfully")
+        except Error as e:
+            print(f"Error: {e}")
+
     def remove_barangay_official(self, official_id):
         """ remove a barangay official from the barangay_officials table """
         sql = ''' DELETE FROM barangay_officials WHERE official_id = %s '''
@@ -174,6 +217,7 @@ class Database:
         except Error as e:
             print(f"Error: {e}")
 
+    #--------------------------------------------------------------------------- ACCUSES AND HANDLES TABLE OPERATIONS
     def insert_accuse(self, accuse):
         """
         Probably magamit rani sa definition UI sa isa ka element sa complaint
@@ -201,6 +245,7 @@ class Database:
         except Error as e:
             print(f"Error: {e}")
 
+    #--------------------------------------------------------------------------- HANDLES TABLE OPERATIONS
     def insert_handle(self, handle):
         """
         Probably magamit rani sa definition UI sa isa ka element sa complaint
@@ -228,6 +273,22 @@ class Database:
         except Error as e:
             print(f"Error: {e}")
 
+    def get_element_by_id(self, table, element_id):
+        """ get a single element from the specified table by its ID """
+        print(f"Fetching element with ID {element_id} from {table} table")
+        sql = f''' SELECT * FROM {table} WHERE {table[:-1]}_id = %s '''
+        try:
+            cursor = self.cursor
+            cursor.execute(sql, (element_id,))
+            result = cursor.fetchone()
+            if result:
+                print(f"Element found: {result}")
+                return result
+            else:
+                print("Element not found")
+                return None
+        except Error as e:
+            print(f"Error: {e}")
 
     def count_complaints_status(self):
         """ count the number of complaints with each status """
