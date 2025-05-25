@@ -7,11 +7,6 @@ class Database:
         self.conn = self.create_connection()
         self.cursor = self.conn.cursor()
 
-        if self.conn is not None:
-            self.create_table()
-        else:
-            print("Error! Cannot create the database connection.")
-
     def create_connection(self, host="127.0.0.1", database="delcarmencomplaintmanagement", user="root", password="hello1234"):
         """ create a database connection to a MySQL database """
         conn = None

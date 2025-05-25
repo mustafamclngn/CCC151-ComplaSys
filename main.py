@@ -26,8 +26,6 @@ from functions.classofficial import AddOfficialDialog
 from functions.classresident import AddResidentDialog
 
 
-
-
 class MainClass(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
@@ -51,27 +49,17 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.abtBtn.clicked.connect(self.show_about)
         self.exBtn.clicked.connect(self.show_exit_message)
 
-        #add dialogs (to be changed)
+        # Add Dialogs
         self.addResBtn.clicked.connect(self.add_residents)
         self.addCompBtn.clicked.connect(self.add_complaints)
         self.addOffiBtn.clicked.connect(self.add_officials)
-        
+
         #Datettime
         self.timer = QTimer(self)
         self.timer.timeout.connect(self.updateDateTime)
         self.timer.start(1000)
         self.updateDateTime()
         
-        #Delete Buttons
-        self.delResBtn.clicked.connect(self.delete_resident)
-        self.delCompBtn.clicked.connect(self.delete_complaint)
-        self.delOffiBtn_2.clicked.connect(self.delete_official)
-
-        #Edit Buttons
-        self.updResBtn.clicked.connect(self.edit_resident)
-        self.updCompBtn.clicked.connect(self.edit_complaint)
-        self.updOffiBtn_2.clicked.connect(self.edit_official)
-
     def updateDateTime(self):
         current = QDateTime.currentDateTime()
         formatted = current.toString("ddd, MMM d, h:mm AP")
@@ -80,16 +68,19 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
 #add dialogs
     def add_residents(self):
-        dialog = Ui_infoResidentDialog(self)
-        dialog.exec_()
+        dialog = AddResidentDialog(self)
+        if dialog.exec_() == QDialog.Accepted:
+            self.load_residents() #Refresh after adding
         
     def add_complaints(self):
-        dialog = Ui_infoComplaintDialog(self)
-        dialog.exec_()
+        dialog = AddComplaintDialog(self)
+        if dialog.exec_() == QDialog.Accepted:
+            self.load_complaints() #Refresh after adding
 
     def add_officials(self):
-        dialog = Ui_infoOfficialDialog(self)
-        dialog.exec_()
+        dialog = AddOfficialDialog(self)
+        if dialog.exec_() == QDialog.Accepted:
+            self.load_officials() #Refresh after adding
 
     def load_residents(self):
         db = Database()  # Create a new Database instance
@@ -158,157 +149,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
     def show_about(self):
         self.stackedWidget.setCurrentIndex(4)
-
-    def delete_resident(self):
-        selected = self.resident_table.currentRow()
-        if selected < 0:
-            QMessageBox.warning(self, "Delete Resident", "Please select a resident to delete.")
-            return
-        resident_id = self.resident_table.item(selected, 0).text()
-        reply = QMessageBox.question(self, "Delete Resident", f"Delete resident {resident_id}?", QMessageBox.Yes | QMessageBox.No)
-        if reply == QMessageBox.Yes:
-            db = Database()
-            db.cursor.execute("DELETE FROM Resident WHERE resident_id = %s", (resident_id,))
-            db.conn.commit()
-            self.load_residents()
-
-    def delete_complaint(self):
-        selected = self.complaint_table.currentRow()
-        if selected < 0:
-            QMessageBox.warning(self, "Delete Complaint", "Please select a complaint to delete.")
-            return
-        complaint_id = self.complaint_table.item(selected, 0).text()
-        reply = QMessageBox.question(self, "Delete Complaint", f"Delete complaint {complaint_id}?", QMessageBox.Yes | QMessageBox.No)
-        if reply == QMessageBox.Yes:
-            db = Database()
-            db.cursor.execute("DELETE FROM Complaint WHERE complaint_id = %s", (complaint_id,))
-            db.conn.commit()
-            self.load_complaints()
-    
-    def delete_official(self):
-        selected = self.official_table.currentRow()
-        if selected < 0:
-            QMessageBox.warning(self, "Delete Official", "Please select an official to delete.")
-            return
-        official_id = self.official_table.item(selected, 0).text()
-        reply = QMessageBox.question(self, "Delete Official", f"Delete official {official_id}?", QMessageBox.Yes | QMessageBox.No)
-        if reply == QMessageBox.Yes:
-            db = Database()
-            db.cursor.execute("DELETE FROM BarangayOfficials WHERE official_id = %s", (official_id,))
-            db.conn.commit()
-            self.load_officials()
-    
-    def edit_resident(self):
-        selected = self.resident_table.currentRow()
-        if selected < 0:
-            QMessageBox.warning(self, "Edit Resident", "Please select a resident to edit.")
-            return
-        resident_id = self.resident_table.item(selected, 0).text()
-        db = Database()
-        db.cursor.execute("SELECT * FROM Resident WHERE resident_id = %s", (resident_id,))
-        data = db.cursor.fetchone()
-        if not data:
-            QMessageBox.warning(self, "Edit Resident", "Resident not found.")
-            return
-        dialog = Ui_infoResidentDialog(self)
-        # Pre-fill dialog fields
-        dialog.addresident_residentID_input.setText(str(data[0]))
-        dialog.addresident_firstname_input.setText(str(data[1]))
-        dialog.addresident_lastname_input.setText(str(data[2]))
-        dialog.addresident_age_input.setText(str(data[3]))
-        dialog.addresident_dob_input.setDate(QtCore.QDate.fromString(str(data[4]), "yyyy-MM-dd"))
-        dialog.addresident_photo_label.setText(str(data[5]))
-        dialog.addresident_address_input.setPlainText(str(data[6]))
-        dialog.addresident_contact_input.setText(str(data[7]))
-        dialog.addresident_sex_input.setCurrentText(str(data[8]))
-        # Disable editing of resident_id
-        dialog.addresident_residentID_input.setEnabled(False)
-        if dialog.exec_() == QDialog.Accepted:
-            # Update the record
-            updated = (
-                dialog.addresident_firstname_input.text(),
-                dialog.addresident_lastname_input.text(),
-                dialog.addresident_age_input.text(),
-                dialog.addresident_dob_input.date().toString("yyyy-MM-dd"),
-                dialog.addresident_photo_label.text(),
-                dialog.addresident_address_input.toPlainText(),
-                dialog.addresident_contact_input.text(),
-                dialog.addresident_sex_input.currentText(),
-                resident_id
-            )
-            db.cursor.execute('''UPDATE Resident SET first_name=%s, last_name=%s, age=%s, birth_date=%s, photo_cred=%s, address=%s, contact=%s, sex=%s WHERE resident_id=%s''', updated)
-            db.conn.commit()
-            self.load_residents()
-
-    def edit_complaint(self):
-        selected = self.complaint_table.currentRow()
-        if selected < 0:
-            QMessageBox.warning(self, "Edit Complaint", "Please select a complaint to edit.")
-            return
-        complaint_id = self.complaint_table.item(selected, 0).text()
-        db = Database()
-        db.cursor.execute("SELECT * FROM Complaint WHERE complaint_id = %s", (complaint_id,))
-        data = db.cursor.fetchone()
-        if not data:
-            QMessageBox.warning(self, "Edit Complaint", "Complaint not found.")
-            return
-        dialog = AddComplaintDialog(self)
-        # Pre-fill dialog fields
-        dialog.addcomplaint_complaintID_input.setText(str(data[0]))
-        dialog.addcomplaint_date_input.setDate(QtCore.QDate.fromString(str(data[1]), "yyyy-MM-dd"))
-        dialog.addcomplaint_description_input.setText(str(data[2]))
-        dialog.addcomplaint_residentID_input.setCurrentText(str(data[3]))
-        dialog.addcomplaint_category_input.setCurrentText(str(data[4]))
-        dialog.addcomplaint_status_input.setCurrentText(str(data[5]))
-        dialog.addcomplaint_location_input.setText(str(data[6]))
-        # Disable editing of complaint_id
-        dialog.addcomplaint_complaintID_input.setEnabled(False)
-        if dialog.exec_() == QDialog.Accepted:
-            updated = (
-                dialog.addcomplaint_date_input.date().toString("yyyy-MM-dd"),
-                dialog.addcomplaint_description_input.text(),
-                dialog.addcomplaint_residentID_input.currentText(),
-                dialog.addcomplaint_category_input.currentText(),
-                dialog.addcomplaint_status_input.currentText(),
-                dialog.addcomplaint_location_input.text(),
-                complaint_id
-            )
-            db.cursor.execute('''UPDATE Complaint SET date_time=%s, complaint_desc=%s, resident_id=%s, complaint_category=%s, complaint_status=%s, location=%s WHERE complaint_id=%s''', updated)
-            db.conn.commit()
-            self.load_complaints()
-
-    def edit_official(self):
-        selected = self.official_table.currentRow()
-        if selected < 0:
-            QMessageBox.warning(self, "Edit Official", "Please select an official to edit.")
-            return
-        official_id = self.official_table.item(selected, 0).text()
-        db = Database()
-        db.cursor.execute("SELECT * FROM BarangayOfficials WHERE official_id = %s", (official_id,))
-        data = db.cursor.fetchone()
-        if not data:
-            QMessageBox.warning(self, "Edit Official", "Official not found.")
-            return
-        dialog = AddOfficialDialog(self)
-        # Pre-fill dialog fields
-        dialog.addofficial_officialID_input.setText(str(data[0]))
-        dialog.addofficial_firstname_input.setText(str(data[1]))
-        dialog.addofficial_lastname_input.setText(str(data[2]))
-        dialog.addofficial_contact_input.setText(str(data[3]))
-        dialog.addofficial_position_input.setCurrentText(str(data[4]))
-        # Disable editing of official_id
-        dialog.addofficial_officialID_input.setEnabled(False)
-        if dialog.exec_() == QDialog.Accepted:
-            updated = (
-                dialog.addofficial_firstname_input.text(),
-                dialog.addofficial_lastname_input.text(),
-                dialog.addofficial_contact_input.text(),
-                dialog.addofficial_position_input.currentText(),
-                official_id
-            )
-            db.cursor.execute('''UPDATE BarangayOfficials SET first_name=%s, last_name=%s, contact=%s, position=%s WHERE official_id=%s''', updated)
-            db.conn.commit()
-            self.load_officials()
 
 
 if __name__ == '__main__':
