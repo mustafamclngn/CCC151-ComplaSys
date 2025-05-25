@@ -41,6 +41,7 @@ class Database:
                     resident_id VARCHAR(8) PRIMARY KEY,
                     first_name VARCHAR(64) NOT NULL,
                     last_name VARCHAR(64) NOT NULL,
+                    age INT UNSIGNED,
                     birth_date DATE NOT NULL,
                     photo_cred VARCHAR(255) NOT NULL,
                     address VARCHAR(255) NOT NULL,
@@ -109,8 +110,8 @@ class Database:
     #--------------------------------------------------------------------------- RESIDENTS TABLE OPERATIONS
     def insert_resident(self, resident):
         """ insert a new resident into the residents table """
-        sql = ''' INSERT INTO Resident(resident_id, first_name, last_name, birth_date, photo_cred, address, contact, sex)
-                  VALUES (%s, %s, %s, %s, %s, %s, %s, %s) '''
+        sql = ''' INSERT INTO residents(resident_id, first_name, last_name, age, birth_date, photo_cred, address, contact, sex)
+                  VALUES (%s, %s, %s, 0, %s, %s, %s, %s, %s) '''
         try:
             cursor = self.conn.cursor()
             cursor.execute(sql, resident)

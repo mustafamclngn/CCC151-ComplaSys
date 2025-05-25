@@ -46,12 +46,7 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
                 contact,
                 position
             )
-
-            sql = '''INSERT INTO BarangayOfficials
-                (official_id, first_name, last_name, contact, position)
-                VALUES (%s, %s, %s, %s, %s)'''
-            self.db.cursor.execute(sql, official)
-            self.db.conn.commit()
+            self.db.insert_barangay_official(official)
             QMessageBox.information(self, "Success", "Official added successfully!")
             self.accept()
         except Exception as e:

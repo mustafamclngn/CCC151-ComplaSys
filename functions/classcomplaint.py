@@ -33,7 +33,7 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
 
     def populate_resident_ids(self):
         self.addcomplaint_residentID_input.clear()
-        self.db.cursor.execute("SELECT resident_id FROM Resident")
+        self.db.cursor.execute("SELECT resident_id FROM residents")
         resident_ids = self.db.cursor.fetchall()
         for rid in resident_ids:
             self.addcomplaint_residentID_input.addItem(str(rid[0]))

@@ -46,7 +46,7 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
             first_name = self.addresident_firstname_input.text()
             last_name = self.addresident_lastname_input.text()
             birth_date = self.addresident_dob_input.date().toString("yyyy-MM-dd")
-            age = self.addresident_age_input.text()
+            #age = self.addresident_age_input.text()
             photo_cred = self.addresident_photo_label.text() #may be changed depends on testing
             address = self.addresident_address_input.toPlainText()
             contact = self.addresident_contact_input.text()
@@ -54,22 +54,16 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
             
             
             resident = (
-                resident_id,
+                resident_id.replace("-", ""),  # Remove hyphens for database storage
                 first_name,
                 last_name,
-                age,
                 birth_date,
                 photo_cred,
                 address,
                 contact,
                 sex
             )
-
-            sql = '''INSERT INTO Resident
-                (resident_id, first_name, last_name, age, birth_date, photo_cred, address, contact, sex)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)'''
-            self.db.cursor.execute(sql, resident)
-            self.db.conn.commit()
+            self.db.insert_resident(resident)  # Insert into the database
             QMessageBox.information(self, "Success", "Resident added successfully!")
             self.accept()
         except Exception as e:

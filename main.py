@@ -116,7 +116,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
             return
         resident_id = self.resident_table.item(selected, 0).text()
         db = self.db
-        db.cursor.execute("SELECT * FROM Resident WHERE resident_id = %s", (resident_id,))
+        db.cursor.execute("SELECT * FROM residents WHERE resident_id = %s", (resident_id,))
         data = db.cursor.fetchone()
         if not data:
             QMessageBox.warning(self, "Edit Resident", "Resident not found.")
@@ -147,7 +147,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
                 dialog.addresident_sex_input.currentText(),
                 resident_id
             )
-            db.cursor.execute('''UPDATE Resident SET first_name=%s, last_name=%s, age=%s, birth_date=%s, photo_cred=%s, address=%s, contact=%s, sex=%s WHERE resident_id=%s''', updated)
+            db.cursor.execute('''UPDATE residents SET first_name=%s, last_name=%s, age=%s, birth_date=%s, photo_cred=%s, address=%s, contact=%s, sex=%s WHERE resident_id=%s''', updated)
             db.conn.commit()
             self.load_residents()
 
@@ -160,16 +160,13 @@ class MainClass(QMainWindow, Ui_MainWindow):
         reply = QMessageBox.question(self, "Delete Resident", f"Delete resident {resident_id}?", QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
             db = self.db
-            db.cursor.execute("DELETE FROM Resident WHERE resident_id = %s", (resident_id,))
+            db.cursor.execute("DELETE FROM residents WHERE resident_id = %s", (resident_id,))
             db.conn.commit()
             self.load_residents()
 
     def load_residents(self):
-        db = self.db  # Create a new Database instance
         self.resident_table.setRowCount(0)
-        db.cursor.execute("SELECT * FROM Resident")
-        residents = db.cursor.fetchall()
-        for row_num, row_data in enumerate(residents):
+        for row_num, row_data in enumerate(self.db.get_elements()):
             self.resident_table.insertRow(row_num)
             self.resident_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # ResidentID
             self.resident_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[1])))  # FirstName
@@ -188,7 +185,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
             return
         official_id = self.official_table.item(selected, 0).text()
         db = self.db 
-        db.cursor.execute("SELECT * FROM BarangayOfficials WHERE official_id = %s", (official_id,))
+        db.cursor.execute("SELECT * FROM barangay_officials WHERE official_id = %s", (official_id,))
         data = db.cursor.fetchone()
         if not data:
             QMessageBox.warning(self, "Edit Official", "Official not found.")
@@ -230,9 +227,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
     def load_officials(self):
         db = self.db 
         self.official_table.setRowCount(0)
-        db.cursor.execute("SELECT * FROM BarangayOfficials")
-        officials = db.cursor.fetchall()
-        for row_num, row_data in enumerate(officials):
+        for row_num, row_data in enumerate(db.get_elements(table="barangay_officials", column="last_name", order="ASC")):
             self.official_table.insertRow(row_num)
             self.official_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # OFFICIALID
             self.official_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[4])))  # POSITION
@@ -293,9 +288,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
     def load_complaints(self):
         db = self.db  # Create a new Database instance
         self.complaint_table.setRowCount(0)
-        db.cursor.execute("SELECT * FROM Complaint")
-        complaints = db.cursor.fetchall()
-        for row_num, row_data in enumerate(complaints):
+        for row_num, row_data in enumerate(db.get_elements(table="complaints", column="date_time", order="DESC")):
             self.complaint_table.insertRow(row_num)
             self.complaint_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # ComplaintID
             self.complaint_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[3])))  # ResidentID
