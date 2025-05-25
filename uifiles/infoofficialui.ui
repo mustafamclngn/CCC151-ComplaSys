@@ -40,7 +40,7 @@
       <x>20</x>
       <y>60</y>
       <width>431</width>
-      <height>421</height>
+      <height>431</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -75,7 +75,7 @@ border-radius: 13px;</string>
       <string>Official ID:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="addofficial_officialID_input">
+    <widget class="QLineEdit" name="infoofficial_officialID_input">
      <property name="geometry">
       <rect>
        <x>32</x>
@@ -116,7 +116,7 @@ border-radius: 0px;</string>
       <string>First Name:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="addofficial_firstname_input">
+    <widget class="QLineEdit" name="infoofficial_firstname_input">
      <property name="geometry">
       <rect>
        <x>32</x>
@@ -157,7 +157,7 @@ border-radius: 0px;</string>
       <string>Last Name:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="addofficial_lastname_input">
+    <widget class="QLineEdit" name="infoofficial_lastname_input">
      <property name="geometry">
       <rect>
        <x>32</x>
@@ -198,7 +198,7 @@ border-radius: 0px;</string>
       <string>Contact:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="addofficial_contact_input">
+    <widget class="QLineEdit" name="infoofficial_contact_input">
      <property name="geometry">
       <rect>
        <x>32</x>
@@ -218,7 +218,7 @@ border: 1px solid grey;
 border-radius: 0px;</string>
      </property>
     </widget>
-    <widget class="QComboBox" name="addofficial_position_input">
+    <widget class="QComboBox" name="infoofficial_position_input">
      <property name="geometry">
       <rect>
        <x>32</x>
@@ -294,26 +294,6 @@ border-radius: 0px;</string>
       <string>Position:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="addcomplaint_description_input_2">
-     <property name="geometry">
-      <rect>
-       <x>30</x>
-       <y>340</y>
-       <width>361</width>
-       <height>61</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;
-border: 1px solid grey;
-border-radius: 0px;</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_address_3">
      <property name="geometry">
       <rect>
@@ -333,6 +313,28 @@ border-radius: 0px;</string>
      </property>
      <property name="text">
       <string>Cases Handled:</string>
+     </property>
+    </widget>
+    <widget class="QTextEdit" name="infoofficial_caseshandled_input">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>340</y>
+       <width>361</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 0px;</string>
+     </property>
+     <property name="html">
+      <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </widget>

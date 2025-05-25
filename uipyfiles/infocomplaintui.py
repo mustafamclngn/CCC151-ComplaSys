@@ -38,15 +38,15 @@ class Ui_infoComplaintDialog(object):
         self.label_resident_id.setFont(font)
         self.label_resident_id.setStyleSheet("border: 0px")
         self.label_resident_id.setObjectName("label_resident_id")
-        self.addcomplaint_complaintID_input = QtWidgets.QLineEdit(self.frame_2)
-        self.addcomplaint_complaintID_input.setGeometry(QtCore.QRect(21, 40, 361, 28))
+        self.infocomplaint_complaintID_input = QtWidgets.QLineEdit(self.frame_2)
+        self.infocomplaint_complaintID_input.setGeometry(QtCore.QRect(21, 40, 361, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.addcomplaint_complaintID_input.setFont(font)
-        self.addcomplaint_complaintID_input.setStyleSheet("background-color: white;\n"
+        self.infocomplaint_complaintID_input.setFont(font)
+        self.infocomplaint_complaintID_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 0px;")
-        self.addcomplaint_complaintID_input.setObjectName("addcomplaint_complaintID_input")
+        self.infocomplaint_complaintID_input.setObjectName("infocomplaint_complaintID_input")
         self.label_first_name = QtWidgets.QLabel(self.frame_2)
         self.label_first_name.setGeometry(QtCore.QRect(21, 70, 111, 24))
         font = QtGui.QFont()
@@ -68,23 +68,23 @@ class Ui_infoComplaintDialog(object):
         self.label_address.setFont(font)
         self.label_address.setStyleSheet("border: 0px")
         self.label_address.setObjectName("label_address")
-        self.addcomplaint_category_input = QtWidgets.QComboBox(self.frame_2)
-        self.addcomplaint_category_input.setGeometry(QtCore.QRect(21, 160, 361, 28))
+        self.infocomplaint_category_input = QtWidgets.QComboBox(self.frame_2)
+        self.infocomplaint_category_input.setGeometry(QtCore.QRect(21, 160, 361, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.addcomplaint_category_input.setFont(font)
-        self.addcomplaint_category_input.setStyleSheet("background-color: white;\n"
+        self.infocomplaint_category_input.setFont(font)
+        self.infocomplaint_category_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 0px;")
-        self.addcomplaint_category_input.setObjectName("addcomplaint_category_input")
-        self.addcomplaint_category_input.addItem("")
-        self.addcomplaint_category_input.addItem("")
-        self.addcomplaint_category_input.addItem("")
-        self.addcomplaint_category_input.addItem("")
-        self.addcomplaint_category_input.addItem("")
-        self.addcomplaint_category_input.addItem("")
-        self.addcomplaint_category_input.addItem("")
-        self.addcomplaint_category_input.addItem("")
+        self.infocomplaint_category_input.setObjectName("infocomplaint_category_input")
+        self.infocomplaint_category_input.addItem("")
+        self.infocomplaint_category_input.addItem("")
+        self.infocomplaint_category_input.addItem("")
+        self.infocomplaint_category_input.addItem("")
+        self.infocomplaint_category_input.addItem("")
+        self.infocomplaint_category_input.addItem("")
+        self.infocomplaint_category_input.addItem("")
+        self.infocomplaint_category_input.addItem("")
         self.label_first_name_2 = QtWidgets.QLabel(self.frame_2)
         self.label_first_name_2.setGeometry(QtCore.QRect(21, 130, 87, 24))
         font = QtGui.QFont()
@@ -93,24 +93,24 @@ class Ui_infoComplaintDialog(object):
         self.label_first_name_2.setStyleSheet("border: 0px")
         self.label_first_name_2.setObjectName("label_first_name_2")
         self.label_first_name_3 = QtWidgets.QLabel(self.frame_2)
-        self.label_first_name_3.setGeometry(QtCore.QRect(410, 270, 63, 24))
+        self.label_first_name_3.setGeometry(QtCore.QRect(410, 250, 63, 24))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_first_name_3.setFont(font)
         self.label_first_name_3.setStyleSheet("border: 0px")
         self.label_first_name_3.setObjectName("label_first_name_3")
-        self.addcomplaint_status_input = QtWidgets.QComboBox(self.frame_2)
-        self.addcomplaint_status_input.setGeometry(QtCore.QRect(409, 300, 361, 28))
+        self.infocomplaint_status_input = QtWidgets.QComboBox(self.frame_2)
+        self.infocomplaint_status_input.setGeometry(QtCore.QRect(409, 280, 361, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.addcomplaint_status_input.setFont(font)
-        self.addcomplaint_status_input.setStyleSheet("background-color: white;\n"
+        self.infocomplaint_status_input.setFont(font)
+        self.infocomplaint_status_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 0px;")
-        self.addcomplaint_status_input.setObjectName("addcomplaint_status_input")
-        self.addcomplaint_status_input.addItem("")
-        self.addcomplaint_status_input.addItem("")
-        self.addcomplaint_status_input.addItem("")
+        self.infocomplaint_status_input.setObjectName("infocomplaint_status_input")
+        self.infocomplaint_status_input.addItem("")
+        self.infocomplaint_status_input.addItem("")
+        self.infocomplaint_status_input.addItem("")
         self.label_address_2 = QtWidgets.QLabel(self.frame_2)
         self.label_address_2.setGeometry(QtCore.QRect(21, 190, 107, 24))
         font = QtGui.QFont()
@@ -118,75 +118,63 @@ class Ui_infoComplaintDialog(object):
         self.label_address_2.setFont(font)
         self.label_address_2.setStyleSheet("border: 0px")
         self.label_address_2.setObjectName("label_address_2")
-        self.addcomplaint_location_input = QtWidgets.QLineEdit(self.frame_2)
-        self.addcomplaint_location_input.setGeometry(QtCore.QRect(410, 130, 361, 121))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.addcomplaint_location_input.setFont(font)
-        self.addcomplaint_location_input.setStyleSheet("background-color: white;\n"
-"border: 1px solid grey;\n"
-"border-radius: 0px;")
-        self.addcomplaint_location_input.setObjectName("addcomplaint_location_input")
-        self.addcomplaint_description_input = QtWidgets.QLineEdit(self.frame_2)
-        self.addcomplaint_description_input.setGeometry(QtCore.QRect(21, 220, 361, 131))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.addcomplaint_description_input.setFont(font)
-        self.addcomplaint_description_input.setStyleSheet("background-color: white;\n"
-"border: 1px solid grey;\n"
-"border-radius: 0px;")
-        self.addcomplaint_description_input.setObjectName("addcomplaint_description_input")
-        self.addcomplaint_date_input = QtWidgets.QDateEdit(self.frame_2)
-        self.addcomplaint_date_input.setGeometry(QtCore.QRect(410, 50, 361, 28))
+        self.infocomplaint_date_input = QtWidgets.QDateEdit(self.frame_2)
+        self.infocomplaint_date_input.setGeometry(QtCore.QRect(410, 50, 361, 28))
         font = QtGui.QFont()
         font.setPointSize(10)
-        self.addcomplaint_date_input.setFont(font)
-        self.addcomplaint_date_input.setStyleSheet("background-color: white;\n"
+        self.infocomplaint_date_input.setFont(font)
+        self.infocomplaint_date_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 0px;")
-        self.addcomplaint_date_input.setCalendarPopup(True)
-        self.addcomplaint_date_input.setObjectName("addcomplaint_date_input")
-        self.addcomplaint_residentID_input = QtWidgets.QComboBox(self.frame_2)
-        self.addcomplaint_residentID_input.setGeometry(QtCore.QRect(20, 100, 361, 28))
+        self.infocomplaint_date_input.setCalendarPopup(True)
+        self.infocomplaint_date_input.setObjectName("infocomplaint_date_input")
+        self.infocomplaint_residentID_input = QtWidgets.QComboBox(self.frame_2)
+        self.infocomplaint_residentID_input.setGeometry(QtCore.QRect(20, 100, 361, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
-        self.addcomplaint_residentID_input.setFont(font)
-        self.addcomplaint_residentID_input.setStyleSheet("background-color: white;\n"
+        self.infocomplaint_residentID_input.setFont(font)
+        self.infocomplaint_residentID_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 0px;")
-        self.addcomplaint_residentID_input.setObjectName("addcomplaint_residentID_input")
+        self.infocomplaint_residentID_input.setObjectName("infocomplaint_residentID_input")
         self.label_address_3 = QtWidgets.QLabel(self.frame_2)
-        self.label_address_3.setGeometry(QtCore.QRect(810, 140, 107, 24))
+        self.label_address_3.setGeometry(QtCore.QRect(810, 170, 107, 24))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_address_3.setFont(font)
         self.label_address_3.setStyleSheet("border: 0px")
         self.label_address_3.setObjectName("label_address_3")
-        self.addcomplaint_description_input_2 = QtWidgets.QLineEdit(self.frame_2)
-        self.addcomplaint_description_input_2.setGeometry(QtCore.QRect(810, 170, 291, 71))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.addcomplaint_description_input_2.setFont(font)
-        self.addcomplaint_description_input_2.setStyleSheet("background-color: white;\n"
-"border: 1px solid grey;\n"
-"border-radius: 0px;")
-        self.addcomplaint_description_input_2.setObjectName("addcomplaint_description_input_2")
         self.label_address_4 = QtWidgets.QLabel(self.frame_2)
-        self.label_address_4.setGeometry(QtCore.QRect(810, 10, 107, 24))
+        self.label_address_4.setGeometry(QtCore.QRect(810, 20, 107, 24))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_address_4.setFont(font)
         self.label_address_4.setStyleSheet("border: 0px")
         self.label_address_4.setObjectName("label_address_4")
-        self.addcomplaint_description_input_3 = QtWidgets.QLineEdit(self.frame_2)
-        self.addcomplaint_description_input_3.setGeometry(QtCore.QRect(810, 40, 291, 71))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.addcomplaint_description_input_3.setFont(font)
-        self.addcomplaint_description_input_3.setStyleSheet("background-color: white;\n"
+        self.infocomplaint_description_input = QtWidgets.QTextEdit(self.frame_2)
+        self.infocomplaint_description_input.setGeometry(QtCore.QRect(20, 220, 361, 111))
+        self.infocomplaint_description_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 0px;")
-        self.addcomplaint_description_input_3.setObjectName("addcomplaint_description_input_3")
+        self.infocomplaint_description_input.setObjectName("infocomplaint_description_input")
+        self.infocomplaint_location_input = QtWidgets.QTextEdit(self.frame_2)
+        self.infocomplaint_location_input.setGeometry(QtCore.QRect(410, 130, 361, 101))
+        self.infocomplaint_location_input.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 0px;")
+        self.infocomplaint_location_input.setObjectName("infocomplaint_location_input")
+        self.infocomplaint_accuses_input = QtWidgets.QTextEdit(self.frame_2)
+        self.infocomplaint_accuses_input.setGeometry(QtCore.QRect(810, 50, 291, 111))
+        self.infocomplaint_accuses_input.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 0px;")
+        self.infocomplaint_accuses_input.setObjectName("infocomplaint_accuses_input")
+        self.infocomplaint_handledby_input = QtWidgets.QTextEdit(self.frame_2)
+        self.infocomplaint_handledby_input.setGeometry(QtCore.QRect(810, 200, 291, 111))
+        self.infocomplaint_handledby_input.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 0px;")
+        self.infocomplaint_handledby_input.setObjectName("infocomplaint_handledby_input")
         self.saveCompBtn = QtWidgets.QPushButton(self.frame)
         self.saveCompBtn.setGeometry(QtCore.QRect(800, 10, 101, 41))
         font = QtGui.QFont()
@@ -240,22 +228,42 @@ class Ui_infoComplaintDialog(object):
         self.label_first_name.setText(_translate("infoComplaintDialog", "Resident ID:"))
         self.label_dob.setText(_translate("infoComplaintDialog", "Date:"))
         self.label_address.setText(_translate("infoComplaintDialog", "Location:"))
-        self.addcomplaint_category_input.setItemText(0, _translate("infoComplaintDialog", "Domestic Issues"))
-        self.addcomplaint_category_input.setItemText(1, _translate("infoComplaintDialog", "Community Disputes"))
-        self.addcomplaint_category_input.setItemText(2, _translate("infoComplaintDialog", "Public Disturbance"))
-        self.addcomplaint_category_input.setItemText(3, _translate("infoComplaintDialog", "Business and Livelihood Issues"))
-        self.addcomplaint_category_input.setItemText(4, _translate("infoComplaintDialog", "Environmental Concerns"))
-        self.addcomplaint_category_input.setItemText(5, _translate("infoComplaintDialog", "Traffic and Road Issues"))
-        self.addcomplaint_category_input.setItemText(6, _translate("infoComplaintDialog", "Criminal Activities"))
-        self.addcomplaint_category_input.setItemText(7, _translate("infoComplaintDialog", "Barangay Ordinance Violations"))
+        self.infocomplaint_category_input.setItemText(0, _translate("infoComplaintDialog", "Domestic Issues"))
+        self.infocomplaint_category_input.setItemText(1, _translate("infoComplaintDialog", "Community Disputes"))
+        self.infocomplaint_category_input.setItemText(2, _translate("infoComplaintDialog", "Public Disturbance"))
+        self.infocomplaint_category_input.setItemText(3, _translate("infoComplaintDialog", "Business and Livelihood Issues"))
+        self.infocomplaint_category_input.setItemText(4, _translate("infoComplaintDialog", "Environmental Concerns"))
+        self.infocomplaint_category_input.setItemText(5, _translate("infoComplaintDialog", "Traffic and Road Issues"))
+        self.infocomplaint_category_input.setItemText(6, _translate("infoComplaintDialog", "Criminal Activities"))
+        self.infocomplaint_category_input.setItemText(7, _translate("infoComplaintDialog", "Barangay Ordinance Violations"))
         self.label_first_name_2.setText(_translate("infoComplaintDialog", "Category:"))
         self.label_first_name_3.setText(_translate("infoComplaintDialog", "Status:"))
-        self.addcomplaint_status_input.setItemText(0, _translate("infoComplaintDialog", "Pending"))
-        self.addcomplaint_status_input.setItemText(1, _translate("infoComplaintDialog", "Completed"))
-        self.addcomplaint_status_input.setItemText(2, _translate("infoComplaintDialog", "Cancelled"))
+        self.infocomplaint_status_input.setItemText(0, _translate("infoComplaintDialog", "Pending"))
+        self.infocomplaint_status_input.setItemText(1, _translate("infoComplaintDialog", "Completed"))
+        self.infocomplaint_status_input.setItemText(2, _translate("infoComplaintDialog", "Cancelled"))
         self.label_address_2.setText(_translate("infoComplaintDialog", "Description:"))
         self.label_address_3.setText(_translate("infoComplaintDialog", "Handled By:"))
         self.label_address_4.setText(_translate("infoComplaintDialog", "Accuses:"))
+        self.infocomplaint_description_input.setHtml(_translate("infoComplaintDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.infocomplaint_location_input.setHtml(_translate("infoComplaintDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.infocomplaint_accuses_input.setHtml(_translate("infoComplaintDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.infocomplaint_handledby_input.setHtml(_translate("infoComplaintDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.saveCompBtn.setText(_translate("infoComplaintDialog", "Save"))
         self.updCompBtn.setText(_translate("infoComplaintDialog", "Edit"))
         self.delCompBtn.setText(_translate("infoComplaintDialog", "Delete"))

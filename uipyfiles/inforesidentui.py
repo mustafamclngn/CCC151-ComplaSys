@@ -118,6 +118,7 @@ class Ui_infoResidentDialog(object):
         self.inforesident_age_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 0px;")
+        self.inforesident_age_input.setText("")
         self.inforesident_age_input.setObjectName("inforesident_age_input")
         self.label_contact = QtWidgets.QLabel(self.frame_2)
         self.label_contact.setGeometry(QtCore.QRect(430, 20, 141, 24))
@@ -180,6 +181,17 @@ class Ui_infoResidentDialog(object):
 "border-radius: 13px;")
         self.inforesident_photo_label.setScaledContents(True)
         self.inforesident_photo_label.setObjectName("inforesident_photo_label")
+        self.inforesident_photo_button = QtWidgets.QPushButton(self.frame_2)
+        self.inforesident_photo_button.setGeometry(QtCore.QRect(690, 290, 101, 41))
+        font = QtGui.QFont()
+        font.setFamily("System")
+        font.setPointSize(8)
+        font.setBold(False)
+        font.setWeight(50)
+        self.inforesident_photo_button.setFont(font)
+        self.inforesident_photo_button.setStyleSheet("border: 2px solid rgb(230, 230, 230);\n"
+"")
+        self.inforesident_photo_button.setObjectName("inforesident_photo_button")
         self.delResBtn = QtWidgets.QPushButton(self.frame)
         self.delResBtn.setGeometry(QtCore.QRect(720, 10, 101, 41))
         font = QtGui.QFont()
@@ -239,8 +251,14 @@ class Ui_infoResidentDialog(object):
         self.label_dob.setText(_translate("infoResidentDialog", "Date of Birth:"))
         self.label_contact.setText(_translate("infoResidentDialog", "Contact:"))
         self.label_address.setText(_translate("infoResidentDialog", "Address:"))
+        self.inforesident_address_input.setHtml(_translate("infoResidentDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.label_contact_2.setText(_translate("infoResidentDialog", "Photo Credentials:"))
         self.inforesident_photo_label.setText(_translate("infoResidentDialog", "No photo selected"))
+        self.inforesident_photo_button.setText(_translate("infoResidentDialog", "Upload"))
         self.delResBtn.setText(_translate("infoResidentDialog", "Delete"))
         self.updResBtn.setText(_translate("infoResidentDialog", "Edit"))
         self.saveResBtn.setText(_translate("infoResidentDialog", "Save"))
