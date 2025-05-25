@@ -18,11 +18,11 @@ from uipyfiles.addofficialui import Ui_addOfficialDialog
 from uipyfiles.mainui import Ui_MainWindow
 
 class AddResidentDialog(QDialog, Ui_addResidentDialog):
-    def __init__(self,parent = None):
+    def __init__(self,parent = None, db=None):
         print("Opening AddOfficialDialog")  # Debug print
         super().__init__(parent)
         self.setupUi(self)
-        self.db = Database()
+        self.db = db
         #Restrict Resident ID to ####-####
         regex = QRegExp(r"^\d{4}-\d{4}$")
         validator = QRegExpValidator(regex)

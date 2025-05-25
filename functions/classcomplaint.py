@@ -18,10 +18,10 @@ from uipyfiles.addofficialui import Ui_addOfficialDialog
 from uipyfiles.mainui import Ui_MainWindow
 
 class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
-    def __init__(self, parent=None):
+    def __init__(self, parent=None, db=None):
         super().__init__(parent)
         self.setupUi(self)
-        self.db = Database()
+        self.db = db
         # Restrict Complaint ID to ####-####
         regex = QRegExp(r"^\d{4}-\d{4}$")
         validator = QRegExpValidator(regex)

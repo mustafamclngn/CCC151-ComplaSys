@@ -14,10 +14,10 @@ from database.database import Database
 from resource import resource_qrc
 
 class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
-    def __init__(self,parent = None):
+    def __init__(self,parent = None, db=None):
         super().__init__(parent)
         self.setupUi(self)
-        self.db = Database()
+        self.db = db
         #Restrict Official ID to ####-####
         regex = QRegExp(r"^\d{4}-\d{4}$")
         validator = QRegExpValidator(regex)

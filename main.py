@@ -65,6 +65,8 @@ class MainClass(QMainWindow, Ui_MainWindow):
         #self.updCompBtn.clicked.connect(self.edit_complaint)
         #self.updOffiBtn_2.clicked.connect(self.edit_official)
 
+        self.db = Database()
+
     def updateDateTime(self):
         current = QDateTime.currentDateTime()
         formatted = current.toString("ddd, MMM d, h:mm AP")
@@ -73,15 +75,15 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
 #add dialogs
     def add_residents(self):
-        dialog = AddResidentDialog(self)
+        dialog = AddResidentDialog(self, db=self.db)
         dialog.exec_()
         
     def add_complaints(self):
-        dialog = AddComplaintDialog(self)
+        dialog = AddComplaintDialog(self, db=self.db)
         dialog.exec_()
 
     def add_officials(self):
-        dialog = AddOfficialDialog(self)
+        dialog = AddOfficialDialog(self, db=self.db)
         dialog.exec_()
 
     def show_exit_message(self):
@@ -113,7 +115,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
             QMessageBox.warning(self, "Edit Resident", "Please select a resident to edit.")
             return
         resident_id = self.resident_table.item(selected, 0).text()
-        db = Database()
+        db = self.db
         db.cursor.execute("SELECT * FROM Resident WHERE resident_id = %s", (resident_id,))
         data = db.cursor.fetchone()
         if not data:
@@ -157,13 +159,13 @@ class MainClass(QMainWindow, Ui_MainWindow):
         resident_id = self.resident_table.item(selected, 0).text()
         reply = QMessageBox.question(self, "Delete Resident", f"Delete resident {resident_id}?", QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
-            db = Database()
+            db = self.db
             db.cursor.execute("DELETE FROM Resident WHERE resident_id = %s", (resident_id,))
             db.conn.commit()
             self.load_residents()
 
     def load_residents(self):
-        db = Database()  # Create a new Database instance
+        db = self.db  # Create a new Database instance
         self.resident_table.setRowCount(0)
         db.cursor.execute("SELECT * FROM Resident")
         residents = db.cursor.fetchall()
@@ -185,7 +187,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
             QMessageBox.warning(self, "Edit Official", "Please select an official to edit.")
             return
         official_id = self.official_table.item(selected, 0).text()
-        db = Database()
+        db = self.db 
         db.cursor.execute("SELECT * FROM BarangayOfficials WHERE official_id = %s", (official_id,))
         data = db.cursor.fetchone()
         if not data:
@@ -220,13 +222,13 @@ class MainClass(QMainWindow, Ui_MainWindow):
         official_id = self.official_table.item(selected, 0).text()
         reply = QMessageBox.question(self, "Delete Official", f"Delete official {official_id}?", QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
-            db = Database()
+            db = self.db
             db.cursor.execute("DELETE FROM BarangayOfficials WHERE official_id = %s", (official_id,))
             db.conn.commit()
             self.load_officials()
 
     def load_officials(self):
-        db = Database()  # Create a new Database instance
+        db = self.db 
         self.official_table.setRowCount(0)
         db.cursor.execute("SELECT * FROM BarangayOfficials")
         officials = db.cursor.fetchall()
@@ -244,7 +246,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
             QMessageBox.warning(self, "Edit Complaint", "Please select a complaint to edit.")
             return
         complaint_id = self.complaint_table.item(selected, 0).text()
-        db = Database()
+        db = self.db
         db.cursor.execute("SELECT * FROM Complaint WHERE complaint_id = %s", (complaint_id,))
         data = db.cursor.fetchone()
         if not data:
@@ -283,13 +285,13 @@ class MainClass(QMainWindow, Ui_MainWindow):
         complaint_id = self.complaint_table.item(selected, 0).text()
         reply = QMessageBox.question(self, "Delete Complaint", f"Delete complaint {complaint_id}?", QMessageBox.Yes | QMessageBox.No)
         if reply == QMessageBox.Yes:
-            db = Database()
+            db = self.db
             db.cursor.execute("DELETE FROM Complaint WHERE complaint_id = %s", (complaint_id,))
             db.conn.commit()
             self.load_complaints()
 
     def load_complaints(self):
-        db = Database()  # Create a new Database instance
+        db = self.db  # Create a new Database instance
         self.complaint_table.setRowCount(0)
         db.cursor.execute("SELECT * FROM Complaint")
         complaints = db.cursor.fetchall()
