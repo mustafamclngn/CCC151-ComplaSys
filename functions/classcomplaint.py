@@ -30,6 +30,7 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
 
         # Populate resident ID combo box
         self.populate_resident_ids()
+        self.addcomplaint_date_input.setDateTime(QtCore.QDateTime.currentDateTime())
 
     def populate_resident_ids(self):
         self.addcomplaint_residentID_input.clear()
@@ -46,13 +47,13 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
                 return
             resident_id = self.addcomplaint_residentID_input.currentText()
             category = self.addcomplaint_category_input.currentText()
-            date = self.addcomplaint_date_input.date().toString("yyyy-dd-MM")
-            description = self.addcomplaint_description_input.toPlaintext()
-            location = self.addcomplaint_location_input.toPlaintext()
+            date = self.addcomplaint_date_input.date().toString("yyyy-MM-dd")
+            description = self.addcomplaint_description_input.toPlainText()
+            location = self.addcomplaint_location_input.toPlainText()
             status = self.addcomplaint_status_input.currentText()
             
             complaint = (
-                complaint_id,
+                complaint_id.replace("-", ""),
                 date,
                 description,
                 resident_id,
@@ -60,7 +61,7 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
                 status,
                 location
             )
-            sql = '''INSERT INTO Complaint
+            sql = '''INSERT INTO complaints
                 (complaint_id, date_time, complaint_desc, resident_id, complaint_category, complaint_status, location)
                 VALUES (%s, %s, %s, %s, %s, %s, %s)'''
             self.db.cursor.execute(sql,complaint)
@@ -69,5 +70,5 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
             self.accept()
         except Exception as e:
             QMessageBox.critical(self, "Error", f"Failed to add complaint:\n{e}")
-
+            print(f"Error: {e}")
 

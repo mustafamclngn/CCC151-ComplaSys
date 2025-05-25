@@ -20,7 +20,7 @@ from uipyfiles.addofficialui import Ui_addOfficialDialog
 from functions.classcomplaint import AddComplaintDialog
 from functions.classofficial import AddOfficialDialog
 from functions.classresident import AddResidentDialog
-from functions.classinforesidentdialog import InfoResidentDialog
+from functions.inforesidentdialog import InfoResidentDialog
 from datetime import datetime
             
 class MainClass(QMainWindow, Ui_MainWindow):
