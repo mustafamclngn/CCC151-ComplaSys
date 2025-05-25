@@ -337,4 +337,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     main = MainClass()
     main.show()
-    sys.exit(app.exec_())
+    exit_code = app.exec_()
+    main.db.close_connection()
+    print("Application closed and database connection closed.")
+    sys.exit(exit_code)
