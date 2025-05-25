@@ -1135,3 +1135,7 @@ class Ui_MainWindow(object):
         self.searchbyRes_box.setStyleSheet(comboBoxStyle)
         self.searchbyComp_box.setStyleSheet(comboBoxStyle)
         self.searchbyOff_box.setStyleSheet(comboBoxStyle)
+
+
+        # Make resident_table items read-only
+        self.resident_table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
