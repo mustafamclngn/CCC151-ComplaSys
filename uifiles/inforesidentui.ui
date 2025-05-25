@@ -26,7 +26,7 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 50);
+    <string notr="true">background-color: rgb(245, 245, 245);
 border-radius: 13px;</string>
    </property>
    <property name="frameShape">
@@ -92,7 +92,7 @@ border-radius: 13px;</string>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
-border-radius: 0px;</string>
+border-radius: 4px;</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_first_name">
@@ -133,7 +133,7 @@ border-radius: 0px;</string>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
-border-radius: 0px;</string>
+border-radius: 4px;</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_last_name">
@@ -174,7 +174,7 @@ border-radius: 0px;</string>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
-border-radius: 0px;</string>
+border-radius: 4px;</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_sex">
@@ -215,7 +215,7 @@ border-radius: 0px;</string>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
-border-radius: 0px;</string>
+border-radius: 4px;</string>
      </property>
      <item>
       <property name="text">
@@ -287,7 +287,7 @@ border-radius: 0px;</string>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
-border-radius: 0px;</string>
+border-radius: 4px;</string>
      </property>
      <property name="text">
       <string/>
@@ -297,7 +297,7 @@ border-radius: 0px;</string>
      <property name="geometry">
       <rect>
        <x>430</x>
-       <y>20</y>
+       <y>10</y>
        <width>141</width>
        <height>24</height>
       </rect>
@@ -324,15 +324,12 @@ border-radius: 0px;</string>
       </rect>
      </property>
      <property name="font">
-      <font>
-       <pointsize>-1</pointsize>
-      </font>
+      <font/>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: white;
-font-size: 12px;
 border: 1px solid grey;
-border-radius: 0px;</string>
+border-radius: 4px;</string>
      </property>
      <property name="calendarPopup">
       <bool>true</bool>
@@ -342,7 +339,7 @@ border-radius: 0px;</string>
      <property name="geometry">
       <rect>
        <x>430</x>
-       <y>50</y>
+       <y>40</y>
        <width>361</width>
        <height>28</height>
       </rect>
@@ -355,14 +352,14 @@ border-radius: 0px;</string>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
-border-radius: 0px;</string>
+border-radius: 4px;</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_address">
      <property name="geometry">
       <rect>
        <x>430</x>
-       <y>90</y>
+       <y>70</y>
        <width>161</width>
        <height>24</height>
       </rect>
@@ -383,7 +380,7 @@ border-radius: 0px;</string>
      <property name="geometry">
       <rect>
        <x>430</x>
-       <y>120</y>
+       <y>100</y>
        <width>361</width>
        <height>91</height>
       </rect>
@@ -396,7 +393,7 @@ border-radius: 0px;</string>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
-border-radius: 0px;</string>
+border-radius: 4px;</string>
      </property>
      <property name="html">
       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -410,7 +407,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>430</x>
-       <y>220</y>
+       <y>200</y>
        <width>201</width>
        <height>24</height>
       </rect>
@@ -431,9 +428,9 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>430</x>
-       <y>250</y>
-       <width>241</width>
-       <height>131</height>
+       <y>230</y>
+       <width>261</width>
+       <height>151</height>
       </rect>
      </property>
      <property name="minimumSize">
@@ -450,7 +447,7 @@ p, li { white-space: pre-wrap; }
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
-border-radius: 13px;</string>
+border-radius: 4px;</string>
      </property>
      <property name="text">
       <string>No photo selected</string>
@@ -462,10 +459,10 @@ border-radius: 13px;</string>
     <widget class="QPushButton" name="inforesident_photo_button">
      <property name="geometry">
       <rect>
-       <x>690</x>
-       <y>290</y>
-       <width>101</width>
-       <height>41</height>
+       <x>700</x>
+       <y>300</y>
+       <width>91</width>
+       <height>31</height>
       </rect>
      </property>
      <property name="font">
@@ -489,9 +486,9 @@ border-radius: 13px;</string>
     <property name="geometry">
      <rect>
       <x>720</x>
-      <y>10</y>
-      <width>101</width>
-      <height>41</height>
+      <y>20</y>
+      <width>91</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -503,7 +500,6 @@ border-radius: 13px;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 179, 179);
-border: 2px solid rgb(230, 230, 230);
 border-radius: 10px;
 color: black;</string>
     </property>
@@ -518,10 +514,10 @@ color: black;</string>
    <widget class="QPushButton" name="updResBtn">
     <property name="geometry">
      <rect>
-      <x>610</x>
-      <y>10</y>
-      <width>101</width>
-      <height>41</height>
+      <x>620</x>
+      <y>20</y>
+      <width>91</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -533,7 +529,6 @@ color: black;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 217, 148);
-border: 2px solid rgb(230, 230, 230);
 border-radius: 10px;
 color: black;</string>
     </property>
@@ -548,10 +543,10 @@ color: black;</string>
    <widget class="QPushButton" name="saveResBtn">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>10</y>
-      <width>101</width>
-      <height>41</height>
+      <x>520</x>
+      <y>20</y>
+      <width>91</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -563,7 +558,6 @@ color: black;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(148, 255, 148);
-border: 2px solid rgb(230, 230, 230);
 border-radius: 10px;
 color: black;</string>
     </property>

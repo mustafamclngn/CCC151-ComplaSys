@@ -26,7 +26,8 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">background-color: rgb(0, 0, 50);</string>
+    <string notr="true">background-color: rgb(245, 245, 245);
+border-radius: 13px;</string>
    </property>
    <property name="frameShape">
     <enum>QFrame::StyledPanel</enum>
@@ -45,7 +46,7 @@
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: white;
-border: 1px solid grey;
+border: 1px solid rgb(230, 230, 230);
 border-radius: 13px;</string>
     </property>
     <property name="frameShape">
@@ -92,7 +93,7 @@ border-radius: 13px;</string>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
-border-radius: 0px;</string>
+border-radius: 4px;</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_first_name_2">
@@ -133,7 +134,7 @@ border-radius: 0px;</string>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
-border-radius: 0px;</string>
+border-radius: 4px;</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_last_name">
@@ -174,7 +175,7 @@ border-radius: 0px;</string>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
-border-radius: 0px;</string>
+border-radius: 4px;</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_contact">
@@ -215,7 +216,7 @@ border-radius: 0px;</string>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
-border-radius: 0px;</string>
+border-radius: 4px;</string>
      </property>
     </widget>
     <widget class="QComboBox" name="infoofficial_position_input">
@@ -235,7 +236,7 @@ border-radius: 0px;</string>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
-border-radius: 0px;</string>
+border-radius: 4px;</string>
      </property>
      <item>
       <property name="text">
@@ -327,7 +328,7 @@ border-radius: 0px;</string>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
-border-radius: 0px;</string>
+border-radius: 4px;</string>
      </property>
      <property name="html">
       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
@@ -341,10 +342,10 @@ p, li { white-space: pre-wrap; }
    <widget class="QPushButton" name="saveOffiBtn">
     <property name="geometry">
      <rect>
-      <x>110</x>
-      <y>10</y>
-      <width>101</width>
-      <height>41</height>
+      <x>140</x>
+      <y>20</y>
+      <width>91</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -356,7 +357,6 @@ p, li { white-space: pre-wrap; }
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(148, 255, 148);
-border: 2px solid rgb(230, 230, 230);
 border-radius: 10px;
 color: black;</string>
     </property>
@@ -367,10 +367,10 @@ color: black;</string>
    <widget class="QPushButton" name="updOffiBtn">
     <property name="geometry">
      <rect>
-      <x>220</x>
-      <y>10</y>
-      <width>101</width>
-      <height>41</height>
+      <x>240</x>
+      <y>20</y>
+      <width>91</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -382,7 +382,6 @@ color: black;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 217, 148);
-border: 2px solid rgb(230, 230, 230);
 border-radius: 10px;
 color: black;</string>
     </property>
@@ -397,10 +396,10 @@ color: black;</string>
    <widget class="QPushButton" name="delOffiBtn">
     <property name="geometry">
      <rect>
-      <x>330</x>
-      <y>10</y>
-      <width>101</width>
-      <height>41</height>
+      <x>340</x>
+      <y>20</y>
+      <width>91</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="font">
@@ -412,7 +411,6 @@ color: black;</string>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 179, 179);
-border: 2px solid rgb(230, 230, 230);
 border-radius: 10px;
 color: black;</string>
     </property>

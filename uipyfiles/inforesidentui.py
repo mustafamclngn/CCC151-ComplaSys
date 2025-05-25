@@ -18,7 +18,7 @@ class Ui_infoResidentDialog(object):
         infoResidentDialog.setStyleSheet("background-color: rgb(0, 0, 25);")
         self.frame = QtWidgets.QFrame(infoResidentDialog)
         self.frame.setGeometry(QtCore.QRect(20, 20, 851, 481))
-        self.frame.setStyleSheet("background-color: rgb(0, 0, 50);\n"
+        self.frame.setStyleSheet("background-color: rgb(245, 245, 245);\n"
 "border-radius: 13px;")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -44,7 +44,7 @@ class Ui_infoResidentDialog(object):
         self.inforesident_residentID_input.setFont(font)
         self.inforesident_residentID_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.inforesident_residentID_input.setObjectName("inforesident_residentID_input")
         self.label_first_name = QtWidgets.QLabel(self.frame_2)
         self.label_first_name.setGeometry(QtCore.QRect(20, 70, 131, 24))
@@ -60,7 +60,7 @@ class Ui_infoResidentDialog(object):
         self.inforesident_firstname_input.setFont(font)
         self.inforesident_firstname_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.inforesident_firstname_input.setObjectName("inforesident_firstname_input")
         self.label_last_name = QtWidgets.QLabel(self.frame_2)
         self.label_last_name.setGeometry(QtCore.QRect(20, 130, 131, 24))
@@ -76,7 +76,7 @@ class Ui_infoResidentDialog(object):
         self.inforesident_lastname_input.setFont(font)
         self.inforesident_lastname_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.inforesident_lastname_input.setObjectName("inforesident_lastname_input")
         self.label_sex = QtWidgets.QLabel(self.frame_2)
         self.label_sex.setGeometry(QtCore.QRect(20, 190, 141, 24))
@@ -92,7 +92,7 @@ class Ui_infoResidentDialog(object):
         self.inforesident_sex_input.setFont(font)
         self.inforesident_sex_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.inforesident_sex_input.setObjectName("inforesident_sex_input")
         self.inforesident_sex_input.addItem("")
         self.inforesident_sex_input.addItem("")
@@ -117,11 +117,11 @@ class Ui_infoResidentDialog(object):
         self.inforesident_age_input.setFont(font)
         self.inforesident_age_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.inforesident_age_input.setText("")
         self.inforesident_age_input.setObjectName("inforesident_age_input")
         self.label_contact = QtWidgets.QLabel(self.frame_2)
-        self.label_contact.setGeometry(QtCore.QRect(430, 20, 141, 24))
+        self.label_contact.setGeometry(QtCore.QRect(430, 10, 141, 24))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_contact.setFont(font)
@@ -130,59 +130,57 @@ class Ui_infoResidentDialog(object):
         self.inforesident_dob_input = QtWidgets.QDateEdit(self.frame_2)
         self.inforesident_dob_input.setGeometry(QtCore.QRect(20, 350, 361, 28))
         font = QtGui.QFont()
-        font.setPointSize(-1)
         self.inforesident_dob_input.setFont(font)
         self.inforesident_dob_input.setStyleSheet("background-color: white;\n"
-"font-size: 12px;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.inforesident_dob_input.setCalendarPopup(True)
         self.inforesident_dob_input.setObjectName("inforesident_dob_input")
         self.inforesident_contact_input = QtWidgets.QLineEdit(self.frame_2)
-        self.inforesident_contact_input.setGeometry(QtCore.QRect(430, 50, 361, 28))
+        self.inforesident_contact_input.setGeometry(QtCore.QRect(430, 40, 361, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.inforesident_contact_input.setFont(font)
         self.inforesident_contact_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.inforesident_contact_input.setObjectName("inforesident_contact_input")
         self.label_address = QtWidgets.QLabel(self.frame_2)
-        self.label_address.setGeometry(QtCore.QRect(430, 90, 161, 24))
+        self.label_address.setGeometry(QtCore.QRect(430, 70, 161, 24))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_address.setFont(font)
         self.label_address.setStyleSheet("border: 0px")
         self.label_address.setObjectName("label_address")
         self.inforesident_address_input = QtWidgets.QTextEdit(self.frame_2)
-        self.inforesident_address_input.setGeometry(QtCore.QRect(430, 120, 361, 91))
+        self.inforesident_address_input.setGeometry(QtCore.QRect(430, 100, 361, 91))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.inforesident_address_input.setFont(font)
         self.inforesident_address_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.inforesident_address_input.setObjectName("inforesident_address_input")
         self.label_contact_2 = QtWidgets.QLabel(self.frame_2)
-        self.label_contact_2.setGeometry(QtCore.QRect(430, 220, 201, 24))
+        self.label_contact_2.setGeometry(QtCore.QRect(430, 200, 201, 24))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_contact_2.setFont(font)
         self.label_contact_2.setStyleSheet("border: 0px")
         self.label_contact_2.setObjectName("label_contact_2")
         self.inforesident_photo_label = QtWidgets.QLabel(self.frame_2)
-        self.inforesident_photo_label.setGeometry(QtCore.QRect(430, 250, 241, 131))
+        self.inforesident_photo_label.setGeometry(QtCore.QRect(430, 230, 261, 151))
         self.inforesident_photo_label.setMinimumSize(QtCore.QSize(100, 100))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.inforesident_photo_label.setFont(font)
         self.inforesident_photo_label.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 13px;")
+"border-radius: 4px;")
         self.inforesident_photo_label.setScaledContents(True)
         self.inforesident_photo_label.setObjectName("inforesident_photo_label")
         self.inforesident_photo_button = QtWidgets.QPushButton(self.frame_2)
-        self.inforesident_photo_button.setGeometry(QtCore.QRect(690, 290, 101, 41))
+        self.inforesident_photo_button.setGeometry(QtCore.QRect(700, 300, 91, 31))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setPointSize(8)
@@ -193,14 +191,13 @@ class Ui_infoResidentDialog(object):
 "")
         self.inforesident_photo_button.setObjectName("inforesident_photo_button")
         self.delResBtn = QtWidgets.QPushButton(self.frame)
-        self.delResBtn.setGeometry(QtCore.QRect(720, 10, 101, 41))
+        self.delResBtn.setGeometry(QtCore.QRect(720, 20, 91, 31))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setBold(False)
         font.setWeight(50)
         self.delResBtn.setFont(font)
         self.delResBtn.setStyleSheet("background-color: rgb(255, 179, 179);\n"
-"border: 2px solid rgb(230, 230, 230);\n"
 "border-radius: 10px;\n"
 "color: black;")
         icon = QtGui.QIcon()
@@ -208,14 +205,13 @@ class Ui_infoResidentDialog(object):
         self.delResBtn.setIcon(icon)
         self.delResBtn.setObjectName("delResBtn")
         self.updResBtn = QtWidgets.QPushButton(self.frame)
-        self.updResBtn.setGeometry(QtCore.QRect(610, 10, 101, 41))
+        self.updResBtn.setGeometry(QtCore.QRect(620, 20, 91, 31))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setBold(False)
         font.setWeight(50)
         self.updResBtn.setFont(font)
         self.updResBtn.setStyleSheet("background-color: rgb(255, 217, 148);\n"
-"border: 2px solid rgb(230, 230, 230);\n"
 "border-radius: 10px;\n"
 "color: black;")
         icon1 = QtGui.QIcon()
@@ -223,14 +219,13 @@ class Ui_infoResidentDialog(object):
         self.updResBtn.setIcon(icon1)
         self.updResBtn.setObjectName("updResBtn")
         self.saveResBtn = QtWidgets.QPushButton(self.frame)
-        self.saveResBtn.setGeometry(QtCore.QRect(500, 10, 101, 41))
+        self.saveResBtn.setGeometry(QtCore.QRect(520, 20, 91, 31))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setBold(False)
         font.setWeight(50)
         self.saveResBtn.setFont(font)
         self.saveResBtn.setStyleSheet("background-color: rgb(148, 255, 148);\n"
-"border: 2px solid rgb(230, 230, 230);\n"
 "border-radius: 10px;\n"
 "color: black;")
         self.saveResBtn.setObjectName("saveResBtn")

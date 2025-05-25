@@ -18,14 +18,15 @@ class Ui_infoOfficialDialog(object):
         infoOfficialDialog.setStyleSheet("background-color: rgb(0, 0, 25);")
         self.frame = QtWidgets.QFrame(infoOfficialDialog)
         self.frame.setGeometry(QtCore.QRect(20, 20, 471, 501))
-        self.frame.setStyleSheet("background-color: rgb(0, 0, 50);")
+        self.frame.setStyleSheet("background-color: rgb(245, 245, 245);\n"
+"border-radius: 13px;")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame.setObjectName("frame")
         self.frame_2 = QtWidgets.QFrame(self.frame)
         self.frame_2.setGeometry(QtCore.QRect(20, 60, 431, 431))
         self.frame_2.setStyleSheet("background-color: white;\n"
-"border: 1px solid grey;\n"
+"border: 1px solid rgb(230, 230, 230);\n"
 "border-radius: 13px;")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -44,7 +45,7 @@ class Ui_infoOfficialDialog(object):
         self.infoofficial_officialID_input.setFont(font)
         self.infoofficial_officialID_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.infoofficial_officialID_input.setObjectName("infoofficial_officialID_input")
         self.label_first_name_2 = QtWidgets.QLabel(self.frame_2)
         self.label_first_name_2.setGeometry(QtCore.QRect(32, 130, 103, 24))
@@ -60,7 +61,7 @@ class Ui_infoOfficialDialog(object):
         self.infoofficial_firstname_input.setFont(font)
         self.infoofficial_firstname_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.infoofficial_firstname_input.setObjectName("infoofficial_firstname_input")
         self.label_last_name = QtWidgets.QLabel(self.frame_2)
         self.label_last_name.setGeometry(QtCore.QRect(32, 190, 102, 24))
@@ -76,7 +77,7 @@ class Ui_infoOfficialDialog(object):
         self.infoofficial_lastname_input.setFont(font)
         self.infoofficial_lastname_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.infoofficial_lastname_input.setObjectName("infoofficial_lastname_input")
         self.label_contact = QtWidgets.QLabel(self.frame_2)
         self.label_contact.setGeometry(QtCore.QRect(32, 250, 75, 24))
@@ -92,7 +93,7 @@ class Ui_infoOfficialDialog(object):
         self.infoofficial_contact_input.setFont(font)
         self.infoofficial_contact_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.infoofficial_contact_input.setObjectName("infoofficial_contact_input")
         self.infoofficial_position_input = QtWidgets.QComboBox(self.frame_2)
         self.infoofficial_position_input.setGeometry(QtCore.QRect(32, 100, 361, 28))
@@ -101,7 +102,7 @@ class Ui_infoOfficialDialog(object):
         self.infoofficial_position_input.setFont(font)
         self.infoofficial_position_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.infoofficial_position_input.setObjectName("infoofficial_position_input")
         self.infoofficial_position_input.addItem("")
         self.infoofficial_position_input.addItem("")
@@ -128,29 +129,27 @@ class Ui_infoOfficialDialog(object):
         self.infoofficial_caseshandled_input.setGeometry(QtCore.QRect(30, 340, 361, 71))
         self.infoofficial_caseshandled_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.infoofficial_caseshandled_input.setObjectName("infoofficial_caseshandled_input")
         self.saveOffiBtn = QtWidgets.QPushButton(self.frame)
-        self.saveOffiBtn.setGeometry(QtCore.QRect(110, 10, 101, 41))
+        self.saveOffiBtn.setGeometry(QtCore.QRect(140, 20, 91, 31))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setBold(False)
         font.setWeight(50)
         self.saveOffiBtn.setFont(font)
         self.saveOffiBtn.setStyleSheet("background-color: rgb(148, 255, 148);\n"
-"border: 2px solid rgb(230, 230, 230);\n"
 "border-radius: 10px;\n"
 "color: black;")
         self.saveOffiBtn.setObjectName("saveOffiBtn")
         self.updOffiBtn = QtWidgets.QPushButton(self.frame)
-        self.updOffiBtn.setGeometry(QtCore.QRect(220, 10, 101, 41))
+        self.updOffiBtn.setGeometry(QtCore.QRect(240, 20, 91, 31))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setBold(False)
         font.setWeight(50)
         self.updOffiBtn.setFont(font)
         self.updOffiBtn.setStyleSheet("background-color: rgb(255, 217, 148);\n"
-"border: 2px solid rgb(230, 230, 230);\n"
 "border-radius: 10px;\n"
 "color: black;")
         icon = QtGui.QIcon()
@@ -158,14 +157,13 @@ class Ui_infoOfficialDialog(object):
         self.updOffiBtn.setIcon(icon)
         self.updOffiBtn.setObjectName("updOffiBtn")
         self.delOffiBtn = QtWidgets.QPushButton(self.frame)
-        self.delOffiBtn.setGeometry(QtCore.QRect(330, 10, 101, 41))
+        self.delOffiBtn.setGeometry(QtCore.QRect(340, 20, 91, 31))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setBold(False)
         font.setWeight(50)
         self.delOffiBtn.setFont(font)
         self.delOffiBtn.setStyleSheet("background-color: rgb(255, 179, 179);\n"
-"border: 2px solid rgb(230, 230, 230);\n"
 "border-radius: 10px;\n"
 "color: black;")
         icon1 = QtGui.QIcon()

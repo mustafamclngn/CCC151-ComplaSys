@@ -18,7 +18,7 @@ class Ui_addResidentDialog(object):
         addResidentDialog.setStyleSheet("background-color: rgb(0, 0, 25);")
         self.frame = QtWidgets.QFrame(addResidentDialog)
         self.frame.setGeometry(QtCore.QRect(20, 20, 851, 481))
-        self.frame.setStyleSheet("background-color: rgb(0, 0, 50);\n"
+        self.frame.setStyleSheet("background-color: rgb(245, 245, 245);\n"
 "border-radius: 13px;")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -26,6 +26,7 @@ class Ui_addResidentDialog(object):
         self.frame_2 = QtWidgets.QFrame(self.frame)
         self.frame_2.setGeometry(QtCore.QRect(20, 60, 811, 401))
         self.frame_2.setStyleSheet("background-color: white;\n"
+"border: 1px solid rgb(230, 230, 230);\n"
 "border-radius: 13px;")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
@@ -44,7 +45,7 @@ class Ui_addResidentDialog(object):
         self.addresident_residentID_input.setFont(font)
         self.addresident_residentID_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.addresident_residentID_input.setObjectName("addresident_residentID_input")
         self.label_first_name = QtWidgets.QLabel(self.frame_2)
         self.label_first_name.setGeometry(QtCore.QRect(20, 70, 131, 24))
@@ -60,7 +61,7 @@ class Ui_addResidentDialog(object):
         self.addresident_firstname_input.setFont(font)
         self.addresident_firstname_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.addresident_firstname_input.setObjectName("addresident_firstname_input")
         self.label_last_name = QtWidgets.QLabel(self.frame_2)
         self.label_last_name.setGeometry(QtCore.QRect(20, 130, 131, 24))
@@ -76,7 +77,7 @@ class Ui_addResidentDialog(object):
         self.addresident_lastname_input.setFont(font)
         self.addresident_lastname_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.addresident_lastname_input.setObjectName("addresident_lastname_input")
         self.label_sex = QtWidgets.QLabel(self.frame_2)
         self.label_sex.setGeometry(QtCore.QRect(20, 190, 141, 24))
@@ -92,7 +93,7 @@ class Ui_addResidentDialog(object):
         self.addresident_sex_input.setFont(font)
         self.addresident_sex_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.addresident_sex_input.setObjectName("addresident_sex_input")
         self.addresident_sex_input.addItem("")
         self.addresident_sex_input.addItem("")
@@ -117,11 +118,11 @@ class Ui_addResidentDialog(object):
         self.addresident_age_input.setFont(font)
         self.addresident_age_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.addresident_age_input.setText("")
         self.addresident_age_input.setObjectName("addresident_age_input")
         self.label_contact = QtWidgets.QLabel(self.frame_2)
-        self.label_contact.setGeometry(QtCore.QRect(430, 20, 141, 24))
+        self.label_contact.setGeometry(QtCore.QRect(430, 10, 141, 24))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_contact.setFont(font)
@@ -130,77 +131,74 @@ class Ui_addResidentDialog(object):
         self.addresident_dob_input = QtWidgets.QDateEdit(self.frame_2)
         self.addresident_dob_input.setGeometry(QtCore.QRect(20, 350, 361, 28))
         font = QtGui.QFont()
-        font.setPointSize(12)
         self.addresident_dob_input.setFont(font)
         self.addresident_dob_input.setStyleSheet("background-color: white;\n"
-"font-size: 12px;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.addresident_dob_input.setCalendarPopup(True)
         self.addresident_dob_input.setObjectName("addresident_dob_input")
         self.addresident_contact_input = QtWidgets.QLineEdit(self.frame_2)
-        self.addresident_contact_input.setGeometry(QtCore.QRect(430, 50, 361, 28))
+        self.addresident_contact_input.setGeometry(QtCore.QRect(430, 40, 361, 28))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.addresident_contact_input.setFont(font)
         self.addresident_contact_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.addresident_contact_input.setObjectName("addresident_contact_input")
         self.label_address = QtWidgets.QLabel(self.frame_2)
-        self.label_address.setGeometry(QtCore.QRect(430, 90, 161, 24))
+        self.label_address.setGeometry(QtCore.QRect(430, 70, 161, 24))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_address.setFont(font)
         self.label_address.setStyleSheet("border: 0px")
         self.label_address.setObjectName("label_address")
         self.addresident_address_input = QtWidgets.QTextEdit(self.frame_2)
-        self.addresident_address_input.setGeometry(QtCore.QRect(430, 120, 361, 91))
+        self.addresident_address_input.setGeometry(QtCore.QRect(430, 100, 361, 91))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.addresident_address_input.setFont(font)
         self.addresident_address_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 0px;")
+"border-radius: 4px;")
         self.addresident_address_input.setObjectName("addresident_address_input")
         self.label_contact_2 = QtWidgets.QLabel(self.frame_2)
-        self.label_contact_2.setGeometry(QtCore.QRect(430, 220, 201, 24))
+        self.label_contact_2.setGeometry(QtCore.QRect(430, 200, 201, 24))
         font = QtGui.QFont()
         font.setPointSize(12)
         self.label_contact_2.setFont(font)
         self.label_contact_2.setStyleSheet("border: 0px")
         self.label_contact_2.setObjectName("label_contact_2")
         self.addresident_photo_label = QtWidgets.QLabel(self.frame_2)
-        self.addresident_photo_label.setGeometry(QtCore.QRect(430, 250, 241, 131))
+        self.addresident_photo_label.setGeometry(QtCore.QRect(430, 230, 261, 151))
         self.addresident_photo_label.setMinimumSize(QtCore.QSize(100, 100))
         font = QtGui.QFont()
         font.setPointSize(10)
         self.addresident_photo_label.setFont(font)
         self.addresident_photo_label.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 13px;")
+"border-radius: 4px;")
         self.addresident_photo_label.setScaledContents(True)
         self.addresident_photo_label.setObjectName("addresident_photo_label")
         self.addresident_photo_button = QtWidgets.QPushButton(self.frame_2)
-        self.addresident_photo_button.setGeometry(QtCore.QRect(690, 290, 101, 41))
+        self.addresident_photo_button.setGeometry(QtCore.QRect(700, 300, 91, 31))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setPointSize(8)
         font.setBold(False)
         font.setWeight(50)
         self.addresident_photo_button.setFont(font)
-        self.addresident_photo_button.setStyleSheet("border: 2px solid rgb(230, 230, 230);\n"
+        self.addresident_photo_button.setStyleSheet("border: 1px solid rgb(230, 230, 230);\n"
 "")
         self.addresident_photo_button.setObjectName("addresident_photo_button")
         self.addresident_cancel_button = QtWidgets.QPushButton(self.frame)
-        self.addresident_cancel_button.setGeometry(QtCore.QRect(720, 10, 101, 41))
+        self.addresident_cancel_button.setGeometry(QtCore.QRect(720, 20, 91, 31))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setBold(False)
         font.setWeight(50)
         self.addresident_cancel_button.setFont(font)
         self.addresident_cancel_button.setStyleSheet("background-color: rgb(255, 179, 179);\n"
-"border: 2px solid rgb(230, 230, 230);\n"
 "border-radius: 10px;\n"
 "color: black;")
         icon = QtGui.QIcon()
@@ -208,14 +206,13 @@ class Ui_addResidentDialog(object):
         self.addresident_cancel_button.setIcon(icon)
         self.addresident_cancel_button.setObjectName("addresident_cancel_button")
         self.addresident_addentry_button = QtWidgets.QPushButton(self.frame)
-        self.addresident_addentry_button.setGeometry(QtCore.QRect(590, 10, 121, 41))
+        self.addresident_addentry_button.setGeometry(QtCore.QRect(600, 20, 111, 31))
         font = QtGui.QFont()
         font.setFamily("System")
         font.setBold(False)
         font.setWeight(50)
         self.addresident_addentry_button.setFont(font)
         self.addresident_addentry_button.setStyleSheet("background-color: rgb(148, 255, 148);\n"
-"border: 2px solid rgb(230, 230, 230);\n"
 "border-radius: 10px;\n"
 "color: black;")
         self.addresident_addentry_button.setObjectName("addresident_addentry_button")

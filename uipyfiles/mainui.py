@@ -1095,7 +1095,6 @@ class Ui_MainWindow(object):
                 border-top-right-radius: 3px;
                 border-bottom-right-radius: 3px;
                 background-color: white;
-                image: url(:/icons/icons/angle-small-down.svg);
             }
 
             QComboBox::down-arrow {
@@ -1105,6 +1104,29 @@ class Ui_MainWindow(object):
             }
         """
 
+        filterBoxStyle = """
+                QComboBox {
+                        background-color: white;
+                        border: 2px solid rgb(230, 230, 230);
+                        border-radius: 10px;
+                }
+                QComboBox::drop-down {
+                        subcontrol-origin: padding;
+                        subcontrol-position: top right;
+                        width: 25px;
+                        border-left-width: 0px;
+                        border-top-right-radius: 3px;
+                        border-bottom-right-radius: 3px;
+                        background-color: white;
+                }
+                QComboBox::down-arrow {
+                        image: url(:/icons/icons/filter.svg);
+                        width: 16px;
+                        height: 16px;
+                }
+        """
+
+        self.filterPendComp_box.setStyleSheet(filterBoxStyle)
         #apply to all combo box
         self.sortRes_box.setStyleSheet(comboBoxStyle)
         self.sortComp_box.setStyleSheet(comboBoxStyle)
