@@ -197,7 +197,7 @@ class Ui_infoResidentDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.delResBtn.setFont(font)
-        self.delResBtn.setStyleSheet("background-color: rgb(255, 179, 179);\n"
+        self.delResBtn.setStyleSheet("background-color: rgb(230, 230, 230);\n"
 "border-radius: 10px;\n"
 "color: black;")
         icon = QtGui.QIcon()
@@ -225,7 +225,7 @@ class Ui_infoResidentDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.saveResBtn.setFont(font)
-        self.saveResBtn.setStyleSheet("background-color: rgb(148, 255, 148);\n"
+        self.saveResBtn.setStyleSheet("background-color: rgb(230, 230, 230);\n"
 "border-radius: 10px;\n"
 "color: black;")
         self.saveResBtn.setObjectName("saveResBtn")

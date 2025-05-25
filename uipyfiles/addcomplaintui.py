@@ -128,15 +128,6 @@ class Ui_addComplaintDialog(object):
 "border-radius: 4px;")
         self.addcomplaint_date_input.setCalendarPopup(True)
         self.addcomplaint_date_input.setObjectName("addcomplaint_date_input")
-        self.addcomplaint_residentID_input = QtWidgets.QComboBox(self.frame_2)
-        self.addcomplaint_residentID_input.setGeometry(QtCore.QRect(20, 120, 361, 28))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.addcomplaint_residentID_input.setFont(font)
-        self.addcomplaint_residentID_input.setStyleSheet("background-color: white;\n"
-"border: 1px solid grey;\n"
-"border-radius: 4px;")
-        self.addcomplaint_residentID_input.setObjectName("addcomplaint_residentID_input")
         self.addcomplaint_description_input = QtWidgets.QTextEdit(self.frame_2)
         self.addcomplaint_description_input.setGeometry(QtCore.QRect(420, 190, 361, 171))
         self.addcomplaint_description_input.setStyleSheet("background-color: white;\n"
@@ -149,6 +140,15 @@ class Ui_addComplaintDialog(object):
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
         self.addcomplaint_location_input.setObjectName("addcomplaint_location_input")
+        self.addcomplaint_residentID_input = QtWidgets.QLineEdit(self.frame_2)
+        self.addcomplaint_residentID_input.setGeometry(QtCore.QRect(20, 120, 361, 28))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.addcomplaint_residentID_input.setFont(font)
+        self.addcomplaint_residentID_input.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 4px;")
+        self.addcomplaint_residentID_input.setObjectName("addcomplaint_residentID_input")
         self.addcomplaint_addentry_button = QtWidgets.QPushButton(self.frame)
         self.addcomplaint_addentry_button.setGeometry(QtCore.QRect(590, 20, 111, 31))
         font = QtGui.QFont()

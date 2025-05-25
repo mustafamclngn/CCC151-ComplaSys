@@ -182,7 +182,7 @@ class Ui_infoComplaintDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.saveCompBtn.setFont(font)
-        self.saveCompBtn.setStyleSheet("background-color: rgb(148, 255, 148);\n"
+        self.saveCompBtn.setStyleSheet("background-color: rgb(230, 230, 230);\n"
 "border-radius: 10px;\n"
 "color: black;")
         self.saveCompBtn.setObjectName("saveCompBtn")
@@ -207,7 +207,7 @@ class Ui_infoComplaintDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.delCompBtn.setFont(font)
-        self.delCompBtn.setStyleSheet("background-color: rgb(255, 179, 179);\n"
+        self.delCompBtn.setStyleSheet("background-color: rgb(230, 230, 230);\n"
 "border-radius: 10px;\n"
 "color: black;")
         icon1 = QtGui.QIcon()
