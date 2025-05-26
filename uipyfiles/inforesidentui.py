@@ -37,15 +37,6 @@ class Ui_infoResidentDialog(object):
         self.label_resident_id.setFont(font)
         self.label_resident_id.setStyleSheet("border: 0px")
         self.label_resident_id.setObjectName("label_resident_id")
-        self.inforesident_residentID_input = QtWidgets.QLineEdit(self.frame_2)
-        self.inforesident_residentID_input.setGeometry(QtCore.QRect(20, 40, 361, 28))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.inforesident_residentID_input.setFont(font)
-        self.inforesident_residentID_input.setStyleSheet("background-color: white;\n"
-"border: 1px solid grey;\n"
-"border-radius: 4px;")
-        self.inforesident_residentID_input.setObjectName("inforesident_residentID_input")
         self.label_first_name = QtWidgets.QLabel(self.frame_2)
         self.label_first_name.setGeometry(QtCore.QRect(20, 70, 131, 24))
         font = QtGui.QFont()
@@ -190,6 +181,15 @@ class Ui_infoResidentDialog(object):
         self.inforesident_photo_button.setStyleSheet("border: 2px solid rgb(230, 230, 230);\n"
 "")
         self.inforesident_photo_button.setObjectName("inforesident_photo_button")
+        self.inforesident_residentID_input = QtWidgets.QComboBox(self.frame_2)
+        self.inforesident_residentID_input.setGeometry(QtCore.QRect(20, 40, 361, 28))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.inforesident_residentID_input.setFont(font)
+        self.inforesident_residentID_input.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 4px;")
+        self.inforesident_residentID_input.setObjectName("inforesident_residentID_input")
         self.delResBtn = QtWidgets.QPushButton(self.frame)
         self.delResBtn.setGeometry(QtCore.QRect(720, 20, 91, 31))
         font = QtGui.QFont()
@@ -197,7 +197,7 @@ class Ui_infoResidentDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.delResBtn.setFont(font)
-        self.delResBtn.setStyleSheet("background-color: rgb(230, 230, 230);\n"
+        self.delResBtn.setStyleSheet("background-color: rgb(255, 179, 179);\n"
 "border-radius: 10px;\n"
 "color: black;")
         icon = QtGui.QIcon()
@@ -225,7 +225,7 @@ class Ui_infoResidentDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.saveResBtn.setFont(font)
-        self.saveResBtn.setStyleSheet("background-color: rgb(230, 230, 230);\n"
+        self.saveResBtn.setStyleSheet("background-color: rgb(148, 255, 148);\n"
 "border-radius: 10px;\n"
 "color: black;")
         self.saveResBtn.setObjectName("saveResBtn")
