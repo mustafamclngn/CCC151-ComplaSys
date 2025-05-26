@@ -35,6 +35,12 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
             if not official_id or not self.addofficial_officialID_input.hasAcceptableInput():
                 QMessageBox.warning(self, "Input Error", "Official ID must be in the format ####-#### (8 digits).")
                 return
+                    # --- Check if Official ID already exists ---
+            self.db.cursor.execute("SELECT 1 FROM barangay_officials WHERE barangay_official_id = %s", (official_id,))
+            if self.db.cursor.fetchone():
+                QMessageBox.warning(self, "Duplicate ID", "Official ID already exists. Please enter a unique ID.")
+                return
+        # -------------------------------------------
             first_name = self.addofficial_firstname_input.text()
             last_name = self.addofficial_lastname_input.text()
             contact = self.addofficial_contact_input.text()

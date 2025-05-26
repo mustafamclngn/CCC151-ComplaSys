@@ -29,15 +29,12 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
         regex = QRegExp(r"^\d{4}-\d{4}$")
         validator = QRegExpValidator(regex)
         self.addresident_residentID_input.setValidator(validator)
-        self.addresident_photo_button.clicked.connect(self.browse_photo)
+        self.addresident_upload_button.clicked.connect(self.browse_photo)
         self.addresident_addentry_button.clicked.connect(self.save_resident)
         # Contact number validation
         contact_regex = QRegExp(r"^\d{11}$")
         contact_validator = QRegExpValidator(contact_regex)
         self.addresident_contact_input.setValidator(contact_validator)
-         # Age validation: only 3 digits (0-999)
-        age_validator = QIntValidator(0, 122)
-        self.addresident_age_input.setValidator(age_validator)
 
         self.file_path = None
         self.photo_path = None
@@ -45,7 +42,7 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
     def save_resident(self):
         try:
             if self.file_path:
-                local_dir = '.\photos'
+                local_dir = r'.\photos'
                 if not os.path.exists(local_dir):
                     os.makedirs(local_dir)
                 ext = os.path.splitext(self.file_path)[1]
@@ -57,6 +54,13 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
             if not resident_id or not self.addresident_residentID_input.hasAcceptableInput():
                 QMessageBox.warning(self, "Input Error", "Resident ID must be in the format ####-#### (8 digits).")
                 return
+
+            # --- Check if Resident ID already exists ---
+            self.db.cursor.execute("SELECT 1 FROM residents WHERE resident_id = %s", (resident_id,))
+            if self.db.cursor.fetchone():
+                QMessageBox.warning(self, "Duplicate ID", "Resident ID already exists. Please enter a unique ID.")
+                return
+                    
             first_name = self.addresident_firstname_input.text()
             last_name = self.addresident_lastname_input.text()
             birth_date = self.addresident_dob_input.date().toString("yyyy-MM-dd")
