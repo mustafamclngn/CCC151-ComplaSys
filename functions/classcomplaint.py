@@ -19,6 +19,7 @@ from uipyfiles.mainui import Ui_MainWindow
 
 class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
     def __init__(self, parent=None, db=None):
+        print("Opening AddComplaintDialog")  # Debug print
         super().__init__(parent)
         self.setupUi(self)
         self.db = db
@@ -28,19 +29,18 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
         self.addcomplaint_complaintID_input.setValidator(validator)
         self.addcomplaint_addentry_button.clicked.connect(self.save_complaint)
 
-        # Populate resident ID combo box
-        self.populate_resident_ids()
-        self.addcomplaint_date_input.setDateTime(QtCore.QDateTime.currentDateTime())
-
-    def populate_resident_ids(self):
-        self.addcomplaint_residentID_input.clear()
-
     def save_complaint(self):
         try:
             complaint_id = self.addcomplaint_complaintID_input.text()
             if not complaint_id or not self.addcomplaint_complaintID_input.hasAcceptableInput():
                 QMessageBox.warning(self, "Input Error", "Complaint ID must be in the format ####-#### (8 digits).")
                 return
+
+            self.db.cursor.execute("SELECT 1 FROM complaints WHERE complaint_id = %s", (complaint_id,))
+            if self.db.cursor.fetchone():
+                QMessageBox.warning(self, "Duplicate ID", "Complaint ID already exists. Please enter a unique ID.")
+                return
+
             resident_id = self.addcomplaint_residentID_input.text()
             category = self.addcomplaint_category_input.currentText()
             date = self.addcomplaint_date_input.date().toString("yyyy-MM-dd")

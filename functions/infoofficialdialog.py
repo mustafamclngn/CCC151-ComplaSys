@@ -2,6 +2,7 @@
 
 from PyQt5.QtWidgets import QDialog  # or from PySide2.QtWidgets import QDialog, depending on your framework
 from uipyfiles.infoofficialui import Ui_infoOfficialDialog  # adjust the import path as needed
+from database.database import Database
 
 class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
     def __init__(self, official, db):
