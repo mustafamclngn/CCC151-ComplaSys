@@ -1,11 +1,23 @@
 import mysql.connector
 import datetime
 from mysql.connector import Error
+from PyQt5.QtWidgets import QMessageBox
 
 def printTime(message):
     """ print the current time with a message """
     now = datetime.datetime.now()
     print(f"[{now.strftime("%H:%M:%S.") + f"{int(now.microsecond/1000):03d}"}]  {message}")
+
+def qMessageBox(message, title="Message"):
+    """ Display a message box with the given message and title """
+
+    printTime(f"{title}: {message}")
+
+    msg = QMessageBox()
+    msg.setIcon(QMessageBox.Information)
+    msg.setText(message)
+    msg.setWindowTitle(title)
+    msg.exec_()
 
 class Database:
     def __init__(self):
@@ -17,7 +29,7 @@ class Database:
         else:
             printTime("Error! Cannot create the database connection.")
 
-    def create_connection(self, host="127.0.0.1", database="delcarmencomplaint", user="root", password="hello1234"):
+    def create_connection(self, host="127.0.0.1", database="delcarmencomplaint", user="root", password="password"):
         """ create a database connection to a MySQL database """
         conn = None
         try:
