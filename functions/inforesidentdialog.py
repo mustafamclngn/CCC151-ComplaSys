@@ -1,7 +1,8 @@
-from PyQt5.QtWidgets import QDialog, QMessageBox
+import shutil
+from PyQt5.QtWidgets import QDialog, QMessageBox, QFileDialog
 from uipyfiles.inforesidentui import Ui_infoResidentDialog
 from PyQt5.QtCore import QDate
-from database.database import printTime
+from database.database import printTime, warnMessageBox, infoMessageBox, errorMessageBox
 import os
 
 class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
@@ -17,6 +18,8 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
         self.saveResBtn.clicked.connect(self.saveButtonClicked)
         self.updResBtn.clicked.connect(self.editButtonClicked)
         self.delResBtn.clicked.connect(self.deleteButtonClicked)
+        self.inforesident_view_button.clicked.connect(self.view_photo)
+        self.inforesident_upload_button.clicked.connect(self.uploadPhotoButtonClicked)
 
 
     def display_info(self):
@@ -45,6 +48,21 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
         if self.edit_mode:
             self.edit_mode = False
             self.inputEnabled(False)
+
+            self.file_path = self.inforesident_photo_label.text()
+            if self.file_path != self.db.get_element_by_id('residents', self.inforesident_residentID_input.text())[5]:
+                local_dir = os.path.join('.', 'photos')
+                if not os.path.exists(local_dir):
+                    os.makedirs(local_dir)
+
+                ext = os.path.splitext(self.file_path)[1]
+                self.photo_path = os.path.join(local_dir, self.inforesident_residentID_input.text() + ext)
+
+                if self.photo_path != self.file_path:
+                    shutil.copy(self.file_path, self.photo_path)
+                    os.remove(self.db.get_element_by_id('residents', self.inforesident_residentID_input.text())[5])  # Remove old photo file
+                    self.inforesident_photo_label.setText(self.photo_path)
+
 
             # Change button color
             self.saveResBtn.setStyleSheet("background-color: rgb(230, 230, 230); color:black;")
@@ -104,4 +122,28 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
                 self.db.remove_resident(self.resident[0])
                 printTime("Resident deleted successfully")
                 self.accept()
+
+    def uploadPhotoButtonClicked(self):
+        if self.edit_mode:
+            printTime("Opening file dialog to select photo")
+            options = QFileDialog.Options()
+            file_path, _ = QFileDialog.getOpenFileName(
+                self,
+                "Select Photo",
+                "",
+                "Image Files (*.jpg *.jpeg *.png)",
+                options=options
+            )
+            if file_path:
+                self.inforesident_photo_label.setText(file_path)
+                self.file_path = file_path
+            else:
+                warnMessageBox(self, "No File Selected", "Please select a photo file.")
+
+    def view_photo(self):
+        file_path = self.inforesident_photo_label.text()
+        if os.path.isfile(file_path):
+            os.startfile(file_path)
+        else:
+            QMessageBox.warning(self, "File Not Found", "The photo file does not exist.")
 

@@ -11,7 +11,7 @@ from PyQt5.QtCore import QRegExp
 from PyQt5.QtWidgets import QFileDialog
 from PyQt5.QtGui import QIntValidator
 
-from database.database import Database
+from database.database import printTime, warnMessageBox, infoMessageBox, errorMessageBox
 from resource import resource_qrc
 
 from uipyfiles.addresidentui import Ui_addResidentDialog
@@ -21,7 +21,7 @@ from uipyfiles.mainui import Ui_MainWindow
 
 class AddResidentDialog(QDialog, Ui_addResidentDialog):
     def __init__(self,parent = None, db=None):
-        print("Opening AddResidentDialog")  # Debug print
+        printTime("Initializing add resident dialog")
         super().__init__(parent)
         self.setupUi(self)
         self.db = db
@@ -31,6 +31,7 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
         self.addresident_residentID_input.setValidator(validator)
         self.addresident_upload_button.clicked.connect(self.browse_photo)
         self.addresident_addentry_button.clicked.connect(self.save_resident)
+        self.addresident_view_button.clicked.connect(self.view_photo)
         # Contact number validation
         contact_regex = QRegExp(r"^\d{11}$")
         contact_validator = QRegExpValidator(contact_regex)
@@ -58,13 +59,13 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
 
             resident_id = self.addresident_residentID_input.text()
             if not resident_id or not self.addresident_residentID_input.hasAcceptableInput():
-                QMessageBox.warning(self, "Input Error", "Resident ID must be in the format ####-#### (8 digits).")
+                warnMessageBox(self, "Input Error", "Resident ID must be in the format ####-#### (8 digits).")
                 return
 
             # --- Check if Resident ID already exists ---
             self.db.cursor.execute("SELECT 1 FROM residents WHERE resident_id = %s", (resident_id,))
             if self.db.cursor.fetchone():
-                QMessageBox.warning(self, "Duplicate ID", "Resident ID already exists. Please enter a unique ID.")
+                warnMessageBox(self, "Duplicate ID", "Resident ID already exists. Please enter a unique ID.")
                 return
                     
             first_name = self.addresident_firstname_input.text()
@@ -88,13 +89,13 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
                 sex
             )
             self.db.insert_resident(resident)  # Insert into the database
-            QMessageBox.information(self, "Success", "Resident added successfully!")
+            infoMessageBox(self, "Success", "Resident added successfully!")
             self.accept()
         except Exception as e:
-            QMessageBox.critical(self, "Error", f"Failed to add resident:\n{e}")
+            errorMessageBox(self, "Error", f"Failed to add resident:\n{e}")
     
     def browse_photo(self):
-        print("Button Clicked")
+        printTime("Opening file dialog to select photo")
         options = QFileDialog.Options()
         file_path, _ = QFileDialog.getOpenFileName(
             self,
@@ -108,6 +109,12 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
             self.file_path = file_path
 
             
+    def view_photo(self):
+        file_path = self.addresident_photo_label.text()
+        if os.path.isfile(file_path):
+            os.startfile(file_path)
+        else:
+            warnMessageBox(self, "File Not Found", "The selected photo file does not exist.")
 
 
 
