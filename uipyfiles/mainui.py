@@ -1139,3 +1139,17 @@ class Ui_MainWindow(object):
 
         # Make resident_table items read-only
         self.resident_table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
+
+        self.pendingComp_table.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.pendingComp_table.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
+        self.resident_table.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.resident_table.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
+        self.complaint_table.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.complaint_table.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
+        self.official_table.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
+        self.official_table.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
+
+        self.pendingComp_table.verticalHeader().setVisible(False)
+        self.resident_table.verticalHeader().setVisible(False)
+        self.complaint_table.verticalHeader().setVisible(False)
+        self.official_table.verticalHeader().setVisible(False)

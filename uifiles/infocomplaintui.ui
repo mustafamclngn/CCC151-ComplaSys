@@ -340,26 +340,6 @@ border-radius: 4px;</string>
       <bool>true</bool>
      </property>
     </widget>
-    <widget class="QComboBox" name="infocomplaint_residentID_input">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>120</y>
-       <width>361</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;
-border: 1px solid grey;
-border-radius: 4px;</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_address_3">
      <property name="geometry">
       <rect>
@@ -490,6 +470,26 @@ p, li { white-space: pre-wrap; }
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="infocomplaint_residentID_input">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>120</y>
+       <width>361</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 4px;</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QPushButton" name="saveCompBtn">
     <property name="geometry">
@@ -562,7 +562,7 @@ color: black;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(230, 230, 230);
+     <string notr="true">background-color: rgb(255, 179, 179);
 border-radius: 10px;
 color: black;</string>
     </property>

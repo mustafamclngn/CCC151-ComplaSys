@@ -169,17 +169,6 @@ class Ui_addResidentDialog(object):
         self.label_contact_2.setFont(font)
         self.label_contact_2.setStyleSheet("border: 0px")
         self.label_contact_2.setObjectName("label_contact_2")
-        self.addresident_photo_label = QtWidgets.QLabel(self.frame_2)
-        self.addresident_photo_label.setGeometry(QtCore.QRect(430, 230, 261, 151))
-        self.addresident_photo_label.setMinimumSize(QtCore.QSize(100, 100))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.addresident_photo_label.setFont(font)
-        self.addresident_photo_label.setStyleSheet("background-color: white;\n"
-"border: 1px solid grey;\n"
-"border-radius: 4px;")
-        self.addresident_photo_label.setScaledContents(True)
-        self.addresident_photo_label.setObjectName("addresident_photo_label")
         self.addresident_photo_button = QtWidgets.QPushButton(self.frame_2)
         self.addresident_photo_button.setGeometry(QtCore.QRect(700, 300, 91, 31))
         font = QtGui.QFont()
@@ -191,6 +180,12 @@ class Ui_addResidentDialog(object):
         self.addresident_photo_button.setStyleSheet("border: 1px solid rgb(230, 230, 230);\n"
 "")
         self.addresident_photo_button.setObjectName("addresident_photo_button")
+        self.widget = QtWidgets.QWidget(self.frame_2)
+        self.widget.setGeometry(QtCore.QRect(430, 230, 261, 151))
+        self.widget.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 4px;")
+        self.widget.setObjectName("widget")
         self.addresident_cancel_button = QtWidgets.QPushButton(self.frame)
         self.addresident_cancel_button.setGeometry(QtCore.QRect(720, 20, 91, 31))
         font = QtGui.QFont()
@@ -239,7 +234,6 @@ class Ui_addResidentDialog(object):
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.label_contact_2.setText(_translate("addResidentDialog", "Photo Credentials:"))
-        self.addresident_photo_label.setText(_translate("addResidentDialog", "No photo selected"))
         self.addresident_photo_button.setText(_translate("addResidentDialog", "Upload"))
         self.addresident_cancel_button.setText(_translate("addResidentDialog", "Cancel"))
         self.addresident_addentry_button.setText(_translate("addResidentDialog", "Add Entry"))

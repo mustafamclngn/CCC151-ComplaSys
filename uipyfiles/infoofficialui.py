@@ -163,7 +163,7 @@ class Ui_infoOfficialDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.delOffiBtn.setFont(font)
-        self.delOffiBtn.setStyleSheet("background-color: rgb(230, 230, 230);\n"
+        self.delOffiBtn.setStyleSheet("background-color: rgb(255, 179, 179);\n"
 "border-radius: 10px;\n"
 "color: black;")
         icon1 = QtGui.QIcon()

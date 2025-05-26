@@ -425,38 +425,6 @@ p, li { white-space: pre-wrap; }
       <string>Photo Credentials:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="addresident_photo_label">
-     <property name="geometry">
-      <rect>
-       <x>430</x>
-       <y>230</y>
-       <width>261</width>
-       <height>151</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>100</width>
-       <height>100</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;
-border: 1px solid grey;
-border-radius: 4px;</string>
-     </property>
-     <property name="text">
-      <string>No photo selected</string>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QPushButton" name="addresident_photo_button">
      <property name="geometry">
       <rect>
@@ -480,6 +448,21 @@ border-radius: 4px;</string>
      </property>
      <property name="text">
       <string>Upload</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>230</y>
+       <width>261</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 4px;</string>
      </property>
     </widget>
    </widget>

@@ -410,7 +410,7 @@ color: black;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(230, 230, 230);
+     <string notr="true">background-color: rgb(255, 179, 179);
 border-radius: 10px;
 color: black;</string>
     </property>

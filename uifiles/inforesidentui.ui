@@ -75,26 +75,6 @@ border-radius: 13px;</string>
       <string>Resident ID:</string>
      </property>
     </widget>
-    <widget class="QLineEdit" name="inforesident_residentID_input">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>40</y>
-       <width>361</width>
-       <height>28</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>12</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;
-border: 1px solid grey;
-border-radius: 4px;</string>
-     </property>
-    </widget>
     <widget class="QLabel" name="label_first_name">
      <property name="geometry">
       <rect>
@@ -424,38 +404,6 @@ p, li { white-space: pre-wrap; }
       <string>Photo Credentials:</string>
      </property>
     </widget>
-    <widget class="QLabel" name="inforesident_photo_label">
-     <property name="geometry">
-      <rect>
-       <x>430</x>
-       <y>230</y>
-       <width>261</width>
-       <height>151</height>
-      </rect>
-     </property>
-     <property name="minimumSize">
-      <size>
-       <width>100</width>
-       <height>100</height>
-      </size>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>10</pointsize>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: white;
-border: 1px solid grey;
-border-radius: 4px;</string>
-     </property>
-     <property name="text">
-      <string>No photo selected</string>
-     </property>
-     <property name="scaledContents">
-      <bool>true</bool>
-     </property>
-    </widget>
     <widget class="QPushButton" name="inforesident_photo_button">
      <property name="geometry">
       <rect>
@@ -481,6 +429,41 @@ border-radius: 4px;</string>
       <string>Upload</string>
      </property>
     </widget>
+    <widget class="QLineEdit" name="inforesident_residentID_input">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>40</y>
+       <width>361</width>
+       <height>28</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 4px;</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>230</y>
+       <width>261</width>
+       <height>151</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: white;
+border: 1px solid grey;
+border-radius: 4px;</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QPushButton" name="delResBtn">
     <property name="geometry">
@@ -499,7 +482,7 @@ border-radius: 4px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(230, 230, 230);
+     <string notr="true">background-color: rgb(255, 179, 179);
 border-radius: 10px;
 color: black;</string>
     </property>
