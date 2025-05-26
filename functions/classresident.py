@@ -19,7 +19,7 @@ from uipyfiles.mainui import Ui_MainWindow
 
 class AddResidentDialog(QDialog, Ui_addResidentDialog):
     def __init__(self,parent = None, db=None):
-        print("Opening AddOfficialDialog")  # Debug print
+        print("Opening AddResidentDialog")  # Debug print
         super().__init__(parent)
         self.setupUi(self)
         self.db = db

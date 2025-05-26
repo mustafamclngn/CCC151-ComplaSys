@@ -15,6 +15,7 @@ from resource import resource_qrc
 
 class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
     def __init__(self,parent = None, db=None):
+        print("Opening AddOfficialDialog")  # Debug print
         super().__init__(parent)
         self.setupUi(self)
         self.db = db

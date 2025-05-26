@@ -19,6 +19,7 @@ from uipyfiles.mainui import Ui_MainWindow
 
 class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
     def __init__(self, parent=None, db=None):
+        print("Opening AddComplaintDialog")  # Debug print
         super().__init__(parent)
         self.setupUi(self)
         self.db = db
