@@ -200,9 +200,10 @@ class MainClass(QMainWindow, Ui_MainWindow):
         value = item.text()
         row_values = [self.resident_table.item(row, c).text() for c in range(self.resident_table.columnCount())]
         print("Full row data:", row_values)
-        dialog = InfoResidentDialog(self.db.get_element_by_id("residents", row_values[0]))
+        dialog = InfoResidentDialog(self.db.get_element_by_id("residents", row_values[0]), self.db)
         dialog.display_info()
-        dialog.exec_()  
+        dialog.exec_() 
+        self.load_residents()
 
     def edit_official(self):
         selected = self.official_table.currentRow()
