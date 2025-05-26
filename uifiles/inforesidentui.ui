@@ -339,7 +339,7 @@ border-radius: 4px;</string>
      <property name="geometry">
       <rect>
        <x>430</x>
-       <y>70</y>
+       <y>80</y>
        <width>161</width>
        <height>24</height>
       </rect>
@@ -360,9 +360,9 @@ border-radius: 4px;</string>
      <property name="geometry">
       <rect>
        <x>430</x>
-       <y>100</y>
+       <y>110</y>
        <width>361</width>
-       <height>91</height>
+       <height>141</height>
       </rect>
      </property>
      <property name="font">
@@ -387,7 +387,7 @@ p, li { white-space: pre-wrap; }
      <property name="geometry">
       <rect>
        <x>430</x>
-       <y>200</y>
+       <y>270</y>
        <width>201</width>
        <height>24</height>
       </rect>
@@ -404,11 +404,11 @@ p, li { white-space: pre-wrap; }
       <string>Photo Credentials:</string>
      </property>
     </widget>
-    <widget class="QPushButton" name="inforesident_photo_button">
+    <widget class="QPushButton" name="inforesident_upload_button">
      <property name="geometry">
       <rect>
-       <x>700</x>
-       <y>300</y>
+       <x>500</x>
+       <y>350</y>
        <width>91</width>
        <height>31</height>
       </rect>
@@ -449,19 +449,49 @@ border: 1px solid grey;
 border-radius: 4px;</string>
      </property>
     </widget>
-    <widget class="QWidget" name="widget" native="true">
+    <widget class="QLineEdit" name="inforesident_photo_label">
      <property name="geometry">
       <rect>
        <x>430</x>
-       <y>230</y>
-       <width>261</width>
-       <height>151</height>
+       <y>310</y>
+       <width>361</width>
+       <height>28</height>
       </rect>
+     </property>
+     <property name="font">
+      <font>
+       <pointsize>12</pointsize>
+      </font>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
 border-radius: 4px;</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="inforesident_view_button">
+     <property name="geometry">
+      <rect>
+       <x>610</x>
+       <y>350</y>
+       <width>91</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>System</family>
+       <pointsize>8</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">border: 2px solid rgb(230, 230, 230);
+</string>
+     </property>
+     <property name="text">
+      <string>View</string>
      </property>
     </widget>
    </widget>
