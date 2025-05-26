@@ -35,10 +35,6 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
 
     def populate_resident_ids(self):
         self.addcomplaint_residentID_input.clear()
-        self.db.cursor.execute("SELECT resident_id FROM residents")
-        resident_ids = self.db.cursor.fetchall()
-        for rid in resident_ids:
-            self.addcomplaint_residentID_input.addItem(str(rid[0]))
 
     def save_complaint(self):
         try:
@@ -46,7 +42,7 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
             if not complaint_id or not self.addcomplaint_complaintID_input.hasAcceptableInput():
                 QMessageBox.warning(self, "Input Error", "Complaint ID must be in the format ####-#### (8 digits).")
                 return
-            resident_id = self.addcomplaint_residentID_input.currentText()
+            resident_id = self.addcomplaint_residentID_input.text()
             category = self.addcomplaint_category_input.currentText()
             date = self.addcomplaint_date_input.date().toString("yyyy-MM-dd")
             description = self.addcomplaint_description_input.toPlainText()
@@ -62,11 +58,7 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
                 status,
                 location
             )
-            sql = '''INSERT INTO complaints
-                (complaint_id, date_time, complaint_desc, resident_id, complaint_category, complaint_status, location)
-                VALUES (%s, %s, %s, %s, %s, %s, %s)'''
-            self.db.cursor.execute(sql,complaint)
-            self.db.conn.commit()
+            self.db.insert_complaint(complaint)
             QMessageBox.information(self, "Success", "Complaint added successfully!")
             self.accept()
         except Exception as e:

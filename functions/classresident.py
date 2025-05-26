@@ -1,3 +1,5 @@
+import os
+import shutil
 import sys
 from PyQt5.QtWidgets import *
 from PyQt5.QtWidgets import QApplication, QLabel, QWidget, QVBoxLayout
@@ -36,9 +38,21 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
          # Age validation: only 3 digits (0-999)
         age_validator = QIntValidator(0, 122)
         self.addresident_age_input.setValidator(age_validator)
-    
+
+        self.file_path = None
+        self.photo_path = None
+
     def save_resident(self):
         try:
+            if self.file_path:
+                local_dir = '.\photos'
+                if not os.path.exists(local_dir):
+                    os.makedirs(local_dir)
+                ext = os.path.splitext(self.file_path)[1]
+                self.photo_path = os.path.join(local_dir, self.addresident_residentID_input.text() + ext)
+                shutil.copy(self.file_path, self.photo_path)
+
+
             resident_id = self.addresident_residentID_input.text()
             if not resident_id or not self.addresident_residentID_input.hasAcceptableInput():
                 QMessageBox.warning(self, "Input Error", "Resident ID must be in the format ####-#### (8 digits).")
@@ -47,7 +61,7 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
             last_name = self.addresident_lastname_input.text()
             birth_date = self.addresident_dob_input.date().toString("yyyy-MM-dd")
             #age = self.addresident_age_input.text()
-            photo_cred = self.addresident_photo_label.text() #may be changed depends on testing
+            photo_cred = self.photo_path
             address = self.addresident_address_input.toPlainText()
             contact = self.addresident_contact_input.text()
             sex = self.addresident_sex_input.currentText()
@@ -70,6 +84,7 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
             QMessageBox.critical(self, "Error", f"Failed to add resident:\n{e}")
     
     def browse_photo(self):
+        print("Button Clicked")
         options = QFileDialog.Options()
         file_path, _ = QFileDialog.getOpenFileName(
             self,
@@ -80,6 +95,9 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
         )
         if file_path:
             self.addresident_photo_label.setText(file_path)
+            self.file_path = file_path
+
+            
 
 
 
