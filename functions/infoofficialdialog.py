@@ -1,6 +1,6 @@
 
 
-from PyQt5.QtWidgets import QDialog  # or from PySide2.QtWidgets import QDialog, depending on your framework
+from PyQt5.QtWidgets import QDialog, QMessageBox  
 from uipyfiles.infoofficialui import Ui_infoOfficialDialog  # adjust the import path as needed
 from database.database import Database
 
@@ -15,6 +15,7 @@ class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
         self.edit_mode = False
         self.saveOffiBtn.clicked.connect(self.saveButtonClicked)
         self.updOffiBtn.clicked.connect(self.editButtonClicked)
+        self.delOffiBtn.clicked.connect(self.deleteButtonClicked)
 
     def display_info(self):
         print(self.official)
@@ -55,7 +56,6 @@ class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
                 self.infoofficial_position_input.currentText()
             )
             self.db.update_barangay_official(updated_official)
-            print(updated_official)
     def editButtonClicked(self):
         if not self.edit_mode:
             self.edit_mode = True
@@ -64,5 +64,21 @@ class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
             # Change button color
             self.saveOffiBtn.setStyleSheet("background-color: rgb(148, 255, 148); color: black;")
             self.updOffiBtn.setStyleSheet("background-color: rgb(230, 230, 230); color:black;")
-            self.delOffiBtn.setStyleSheet("background-color: rgb(255, 179, 179); color: black;")
+            self.delOffiBtn.setStyleSheet("background-color: rgb(230, 230, 230); color: black;")
 
+    def deleteButtonClicked(self):
+        if not self.edit_mode:
+            reply = QMessageBox.question(
+                self,
+                "Confirm Deletion",
+                '<span style="color:white;">Are you sure you want to delete this complaint?</span>',
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
+            )
+            # Set the stylesheet to make the text white
+            for widget in self.findChildren(QMessageBox):
+                widget.setStyleSheet("QLabel{ color : white; }")
+
+            if reply == QMessageBox.Yes:
+                self.db.remove_barangay_official(self.infoofficial_officialID_input.text())
+                self.accept()

@@ -77,31 +77,31 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
 
 
     def deleteButtonClicked(self):
+        if not self.edit_mode:
+            reply = QMessageBox.question(
+                self,
+                "Confirm Deletion",
+                '<span style="color:white;">Are you sure you want to delete this resident?</span>',
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
+            )
+            # Set the stylesheet to make the text white
+            for widget in self.findChildren(QMessageBox):
+                widget.setStyleSheet("QLabel{ color : white; }")
 
-        reply = QMessageBox.question(
-            self,
-            "Confirm Deletion",
-            '<span style="color:white;">Are you sure you want to delete this resident?</span>',
-            QMessageBox.Yes | QMessageBox.No,
-            QMessageBox.No
-        )
-        # Set the stylesheet to make the text white
-        for widget in self.findChildren(QMessageBox):
-            widget.setStyleSheet("QLabel{ color : white; }")
+            if reply == QMessageBox.Yes:
 
-        if reply == QMessageBox.Yes:
+                # Delete the resident's photo file if it exists
+                photo_path = self.resident[5]
+                if photo_path and os.path.isfile(photo_path):
+                    try:
+                        os.remove(photo_path)
+                        printTime(f"Deleted photo file: {photo_path}")
+                    except Exception as e:
+                        printTime(f"Failed to delete photo file: {photo_path}. Error: {e}")
 
-            # Delete the resident's photo file if it exists
-            photo_path = self.resident[5]
-            if photo_path and os.path.isfile(photo_path):
-                try:
-                    os.remove(photo_path)
-                    printTime(f"Deleted photo file: {photo_path}")
-                except Exception as e:
-                    printTime(f"Failed to delete photo file: {photo_path}. Error: {e}")
-
-            printTime("Deleting resident from the database")
-            self.db.remove_resident(self.resident[0])
-            printTime("Resident deleted successfully")
-            self.accept()
+                printTime("Deleting resident from the database")
+                self.db.remove_resident(self.resident[0])
+                printTime("Resident deleted successfully")
+                self.accept()
 
