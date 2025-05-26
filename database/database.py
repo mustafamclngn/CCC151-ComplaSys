@@ -68,7 +68,7 @@ class Database:
             # --- Create BarangayOfficials Table ---
             cursor.execute('''
                 CREATE TABLE IF NOT EXISTS barangay_officials (
-                    official_id VARCHAR(9) PRIMARY KEY,
+                    barangay_official_id VARCHAR(9) PRIMARY KEY,
                     first_name VARCHAR(64) NOT NULL,
                     last_name VARCHAR(64) NOT NULL,
                     contact VARCHAR(11) NOT NULL,
@@ -358,6 +358,21 @@ class Database:
                 return []
         except Error as e:
             print(f"Error: {e}")
+
+    def check_unique_id(self, table, element_id):
+        """ check if an ID is unique in the specified table """
+        print(f"Checking uniqueness of ID {element_id} in {table} table")
+        sql = f''' SELECT COUNT(*) FROM {table} WHERE {table[:-1]}_id = %s '''
+        try:
+            cursor = self.cursor
+            cursor.execute(sql, (element_id,))
+            count = cursor.fetchone()[0]
+            is_unique = count == 0
+            print(f"ID {element_id} is {'unique' if is_unique else 'not unique'}")
+            return is_unique
+        except Error as e:
+            print(f"Error: {e}")
+            return False
 
     def close_connection(self):
         """ close the database connection """
