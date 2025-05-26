@@ -151,7 +151,7 @@ class Ui_MainWindow(object):
         self.frame_2.setGeometry(QtCore.QRect(0, 0, 1311, 91))
         self.frame_2.setStyleSheet("background-color: white;\n"
 "border: 1px solid rgb(230, 230, 230);\n"
-"border_radius: 13px;")
+"border-radius: 13px;")
         self.frame_2.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_2.setObjectName("frame_2")
