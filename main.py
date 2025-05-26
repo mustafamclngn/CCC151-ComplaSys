@@ -59,15 +59,13 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.timer.start(1000)
         self.updateDateTime()
         
-        #Delete Buttons
-       # self.delResBtn.clicked.connect(self.delete_resident)
-       # self.delCompBtn.clicked.connect(self.delete_complaint)
-       # self.delOffiBtn_2.clicked.connect(self.delete_official)
-
-        #Edit Buttons
-        #self.updResBtn.clicked.connect(self.edit_resident)
-        #self.updCompBtn.clicked.connect(self.edit_complaint)
-        #self.updOffiBtn_2.clicked.connect(self.edit_official)
+        #Refresh Button
+        self.refreshResBtn.clicked.connect(self.load_residents)
+        self.refreshResBtn_2.clicked.connect(self.load_residents)
+        self.refreshOffiBtn.clicked.connect(self.load_officials)
+        self.refreshOffiBtn_2.clicked.connect(self.load_officials)
+        self.refreshCompBtn.clicked.connect(self.load_complaints)
+        self.refreshCompBtn_2.clicked.connect(self.load_complaints)
 
         self.db = Database()
         self.resident_table.itemClicked.connect(self.on_resident_item_clicked)
