@@ -8,16 +8,20 @@ def printTime(message):
     now = datetime.datetime.now()
     print(f"[{now.strftime("%H:%M:%S.") + f"{int(now.microsecond/1000):03d}"}]  {message}")
 
-def qMessageBox(message, title="Message"):
+def warnMessageBox(parent=None, title="Message", message="", ):
     """ Display a message box with the given message and title """
+    printTime(f"  WARNING [{title}]: {message}")
+    QMessageBox.warning(parent, title, message)
 
-    printTime(f"{title}: {message}")
+def infoMessageBox(parent=None, title="Message", message="", ):
+    """ Display a message box with the given message and title """
+    printTime(f"  INFO    [{title}]: {message}")
+    QMessageBox.information(parent, title, message)
 
-    msg = QMessageBox()
-    msg.setIcon(QMessageBox.Information)
-    msg.setText(message)
-    msg.setWindowTitle(title)
-    msg.exec_()
+def errorMessageBox(parent=None, title="Error", message="", ):
+    """ Display an error message box with the given message and title """
+    printTime(f"  ERROR   [{title}]: {message}")
+    QMessageBox.critical(parent, title, message)
 
 class Database:
     def __init__(self):
@@ -150,7 +154,7 @@ class Database:
         except Error as e:
             printTime(f"Error: {e}")
 
-    def update_resident_age(self, resident_id, age):
+    def update_resident_age(self, resident_id, age, messageAlert=True):
         """ update the age of an existing resident in the residents table using resident_id """
         sql = ''' UPDATE residents
                   SET age = %s
@@ -159,7 +163,8 @@ class Database:
             cursor = self.conn.cursor()
             cursor.execute(sql, (age, resident_id))
             self.conn.commit()
-            printTime(f"Resident {resident_id} age updated successfully")
+            if messageAlert:
+                printTime(f"Resident {resident_id} age updated successfully")
         except Error as e:
             printTime(f"Error: {e}")
 
@@ -368,10 +373,10 @@ class Database:
             cursor.execute(sql)
             results = cursor.fetchall()
             if results:
-                printTime(f"{len(results)} residents found")
+                printTime(f"{len(results)} {table} found")
                 return results
             else:
-                printTime("No residents found")
+                printTime(f"No {table} found")
                 return []
         except Error as e:
             printTime(f"Error: {e}")

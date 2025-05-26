@@ -18,7 +18,6 @@ class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
         self.delOffiBtn.clicked.connect(self.deleteButtonClicked)
 
     def display_info(self):
-        print(self.official)
         self.infoofficial_officialID_input.setText(self.official[0])
         self.infoofficial_firstname_input.setText(self.official[1])
         self.infoofficial_lastname_input.setText(self.official[2])

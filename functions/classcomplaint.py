@@ -9,7 +9,7 @@ from PyQt5.QtCore import QRegExp
 from PyQt5.QtWidgets import QFileDialog
 from PyQt5.QtGui import QIntValidator
 
-from database.database import Database
+from database.database import printTime, warnMessageBox, infoMessageBox, errorMessageBox
 from resource import resource_qrc
 
 from uipyfiles.addresidentui import Ui_addResidentDialog
@@ -40,12 +40,12 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
         try:
             complaint_id = self.addcomplaint_complaintID_input.text()
             if not complaint_id or not self.addcomplaint_complaintID_input.hasAcceptableInput():
-                QMessageBox.warning(self, "Input Error", "Complaint ID must be in the format ####-#### (8 digits).")
+                warnMessageBox(self, "Input Error", "Complaint ID must be in the format ####-#### (8 digits).")
                 return
 
             self.db.cursor.execute("SELECT 1 FROM complaints WHERE complaint_id = %s", (complaint_id,))
             if self.db.cursor.fetchone():
-                QMessageBox.warning(self, "Duplicate ID", "Complaint ID already exists. Please enter a unique ID.")
+                warnMessageBox(self, "Duplicate ID", "Complaint ID already exists. Please enter a unique ID.")
                 return
 
             resident_id = self.addcomplaint_residentID_input.text()
@@ -65,9 +65,8 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
                 location
             )
             self.db.insert_complaint(complaint)
-            QMessageBox.information(self, "Success", "Complaint added successfully!")
+            infoMessageBox(self, "Success", "Complaint added successfully!")
             self.accept()
         except Exception as e:
-            QMessageBox.critical(self, "Error", f"Failed to add complaint:\n{e}")
-            print(f"Error: {e}")
+            errorMessageBox(self, "Error", f"Failed to add complaint:\n{e}")
 

@@ -10,12 +10,13 @@ from PyQt5.QtWidgets import QFileDialog
 from PyQt5.QtGui import QIntValidator
 from uipyfiles.addofficialui import Ui_addOfficialDialog
 from uipyfiles.mainui import Ui_MainWindow
-from database.database import Database
+from database.database import printTime
+from database.database import warnMessageBox, infoMessageBox, errorMessageBox
 from resource import resource_qrc
 
 class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
     def __init__(self,parent = None, db=None):
-        print("Opening AddOfficialDialog")  # Debug print
+        printTime("Initializing add official dialog")
         super().__init__(parent)
         self.setupUi(self)
         self.db = db
@@ -38,13 +39,13 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
     def save_official(self):
         try:
             official_id = self.addofficial_officialID_input.text().strip()
+
             if not official_id or not self.addofficial_officialID_input.hasAcceptableInput():
-                QMessageBox.warning(self, "Input Error", "Official ID must be in the format ####-#### (8 digits).")
+                warnMessageBox(self, "Input Error", "Official ID must be in the format ####-#### (8 digits).")
                 return
-                    # --- Check if Official ID already exists ---
-            self.db.cursor.execute("SELECT 1 FROM barangay_officials WHERE barangay_official_id = %s", (official_id,))
-            if self.db.cursor.fetchone():
-                QMessageBox.warning(self, "Duplicate ID", "Official ID already exists. Please enter a unique ID.")
+            
+            if not self.db.check_unique_id("barangay_officials", official_id):
+                warnMessageBox(self, "Duplicate ID", "Official ID already exists. Please enter a unique ID.")
                 return
         # -------------------------------------------
             first_name = self.addofficial_firstname_input.text()
@@ -60,10 +61,10 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
                 position
             )
             self.db.insert_barangay_official(official)
-            QMessageBox.information(self, "Success", "Official added successfully!")
+            infoMessageBox(self, "Success", "Official added successfully!")
             self.accept()
         except Exception as e:
-            QMessageBox.critical(self, "Error", f"Failed to add official:\n{e}")
+            errorMessageBox(self, "Error", f"Failed to add official:\n{e}")
 
 
 

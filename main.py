@@ -6,7 +6,7 @@ from PyQt5.QtGui import QFontDatabase, QFont
 from PyQt5.QtCore import QTimer, QDateTime
 from PyQt5 import QtCore
 
-from database.database import Database
+from database.database import Database, printTime, warnMessageBox, infoMessageBox, errorMessageBox
 from resource import resource_qrc
 
 from uipyfiles.inforesidentui import Ui_infoResidentDialog
@@ -120,13 +120,13 @@ class MainClass(QMainWindow, Ui_MainWindow):
     def edit_resident(self):
         selected = self.resident_table.currentRow()
         if selected < 0:
-            QMessageBox.warning(self, "Edit Resident", "Please select a resident to edit.")
+            warnMessageBox(self, "Edit Resident", "Please select a resident to edit.")
             return
         resident_id = self.resident_table.item(selected, 0).text()
         db = self.db
         data = db.get_element_by_id("residents", resident_id)
         if not data:
-            QMessageBox.warning(self, "Edit Resident", "Resident not found.")
+            warnMessageBox(self, "Edit Resident", "Resident not found.")
             return
         dialog = AddResidentDialog(self)
         # Pre-fill dialog fields
@@ -159,7 +159,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
     def delete_resident(self):
         selected = self.resident_table.currentRow()
         if selected < 0:
-            QMessageBox.warning(self, "Delete Resident", "Please select a resident to delete.")
+            warnMessageBox(self, "Delete Resident", "Please select a resident to delete.")
             return
         resident_id = self.resident_table.item(selected, 0).text()
         reply = QMessageBox.question(self, "Delete Resident", f"Delete resident {resident_id}?", QMessageBox.Yes | QMessageBox.No)
@@ -180,7 +180,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
             age = ""
             if birth_year:
                 age = str(datetime.now().year - birth_year)
-            self.db.update_resident_age(row_data[0], age)  # Update age based on birth date
+            self.db.update_resident_age(row_data[0], age, False)  # Update age based on birth date
             self.resident_table.insertRow(row_num)
             self.resident_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # ResidentID
             self.resident_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[1])))  # FirstName
@@ -205,13 +205,13 @@ class MainClass(QMainWindow, Ui_MainWindow):
     def edit_official(self):
         selected = self.official_table.currentRow()
         if selected < 0:
-            QMessageBox.warning(self, "Edit Official", "Please select an official to edit.")
+            warnMessageBox(self, "Edit Official", "Please select an official to edit.")
             return
         official_id = self.official_table.item(selected, 0).text()
         db = self.db 
         data = db.get_element_by_id("barangay_officials", official_id)
         if not data:
-            QMessageBox.warning(self, "Edit Official", "Official not found.")
+            warnMessageBox(self, "Edit Official", "Official not found.")
             return
         dialog = AddOfficialDialog(self)
         # Pre-fill dialog fields
@@ -236,7 +236,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
     def delete_official(self):
         selected = self.official_table.currentRow()
         if selected < 0:
-            QMessageBox.warning(self, "Delete Official", "Please select an official to delete.")
+            warnMessageBox(self, "Delete Official", "Please select an official to delete.")
             return
         official_id = self.official_table.item(selected, 0).text()
         reply = QMessageBox.question(self, "Delete Official", f"Delete official {official_id}?", QMessageBox.Yes | QMessageBox.No)
@@ -268,14 +268,14 @@ class MainClass(QMainWindow, Ui_MainWindow):
     def edit_complaint(self):
         selected = self.complaint_table.currentRow()
         if selected < 0:
-            QMessageBox.warning(self, "Edit Complaint", "Please select a complaint to edit.")
+            warnMessageBox(self, "Edit Complaint", "Please select a complaint to edit.")
             return
         complaint_id = self.complaint_table.item(selected, 0).text()
         db = self.db
         db.cursor.execute("SELECT * FROM Complaint WHERE complaint_id = %s", (complaint_id,))
         data = db.cursor.fetchone()
         if not data:
-            QMessageBox.warning(self, "Edit Complaint", "Complaint not found.")
+            warnMessageBox(self, "Edit Complaint", "Complaint not found.")
             return
         dialog = AddComplaintDialog(self)
         # Pre-fill dialog fields
@@ -303,7 +303,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
     def delete_complaint(self):
         selected = self.complaint_table.currentRow()
         if selected < 0:
-            QMessageBox.warning(self, "Delete Complaint", "Please select a complaint to delete.")
+            warnMessageBox(self, "Delete Complaint", "Please select a complaint to delete.")
             return
         complaint_id = self.complaint_table.item(selected, 0).text()
         reply = QMessageBox.question(self, "Delete Complaint", f"Delete complaint {complaint_id}?", QMessageBox.Yes | QMessageBox.No)
