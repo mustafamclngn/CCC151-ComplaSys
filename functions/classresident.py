@@ -29,7 +29,7 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
         regex = QRegExp(r"^\d{4}-\d{4}$")
         validator = QRegExpValidator(regex)
         self.addresident_residentID_input.setValidator(validator)
-        self.addresident_photo_button.clicked.connect(self.browse_photo)
+        self.addresident_upload_button.clicked.connect(self.browse_photo)
         self.addresident_addentry_button.clicked.connect(self.save_resident)
         # Contact number validation
         contact_regex = QRegExp(r"^\d{11}$")
@@ -45,7 +45,7 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
     def save_resident(self):
         try:
             if self.file_path:
-                local_dir = '.\photos'
+                local_dir = os.path.join('.', 'photos')
                 if not os.path.exists(local_dir):
                     os.makedirs(local_dir)
                 ext = os.path.splitext(self.file_path)[1]
