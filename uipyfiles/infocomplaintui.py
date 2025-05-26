@@ -128,15 +128,6 @@ class Ui_infoComplaintDialog(object):
 "border-radius: 4px;")
         self.infocomplaint_date_input.setCalendarPopup(True)
         self.infocomplaint_date_input.setObjectName("infocomplaint_date_input")
-        self.infocomplaint_residentID_input = QtWidgets.QComboBox(self.frame_2)
-        self.infocomplaint_residentID_input.setGeometry(QtCore.QRect(20, 120, 361, 28))
-        font = QtGui.QFont()
-        font.setPointSize(12)
-        self.infocomplaint_residentID_input.setFont(font)
-        self.infocomplaint_residentID_input.setStyleSheet("background-color: white;\n"
-"border: 1px solid grey;\n"
-"border-radius: 4px;")
-        self.infocomplaint_residentID_input.setObjectName("infocomplaint_residentID_input")
         self.label_address_3 = QtWidgets.QLabel(self.frame_2)
         self.label_address_3.setGeometry(QtCore.QRect(810, 170, 107, 24))
         font = QtGui.QFont()
@@ -175,6 +166,15 @@ class Ui_infoComplaintDialog(object):
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
         self.infocomplaint_handledby_input.setObjectName("infocomplaint_handledby_input")
+        self.infocomplaint_residentID_input = QtWidgets.QLineEdit(self.frame_2)
+        self.infocomplaint_residentID_input.setGeometry(QtCore.QRect(20, 120, 361, 28))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.infocomplaint_residentID_input.setFont(font)
+        self.infocomplaint_residentID_input.setStyleSheet("background-color: white;\n"
+"border: 1px solid grey;\n"
+"border-radius: 4px;")
+        self.infocomplaint_residentID_input.setObjectName("infocomplaint_residentID_input")
         self.saveCompBtn = QtWidgets.QPushButton(self.frame)
         self.saveCompBtn.setGeometry(QtCore.QRect(830, 20, 91, 31))
         font = QtGui.QFont()
@@ -207,7 +207,7 @@ class Ui_infoComplaintDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.delCompBtn.setFont(font)
-        self.delCompBtn.setStyleSheet("background-color: rgb(230, 230, 230);\n"
+        self.delCompBtn.setStyleSheet("background-color: rgb(255, 179, 179);\n"
 "border-radius: 10px;\n"
 "color: black;")
         icon1 = QtGui.QIcon()
