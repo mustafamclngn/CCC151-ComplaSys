@@ -36,6 +36,12 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
         contact_validator = QRegExpValidator(contact_regex)
         self.addresident_contact_input.setValidator(contact_validator)
 
+        #Auto-generate Resident ID
+        new_id = self.db.generate_id("residents")
+        self.addresident_residentID_input.setText(new_id)
+        # (Optional) Allow editing:
+        self.addresident_residentID_input.setEnabled(True)
+
         self.file_path = None
         self.photo_path = None
 

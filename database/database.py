@@ -378,6 +378,58 @@ class Database:
         except Error as e:
             printTime(f"Error: {e}")
             return False
+            
+    def generate_id(self, table):
+    #Generate an ID based on the table:
+    #residents: YYYY-##### (e.g., 2024-00001)
+    #complaints: ####-#### (e.g., 0001-0001)
+    #barangay_officials: ####-YYYY (e.g., 0001-2024)
+
+        from datetime import datetime
+        year = datetime.now().year
+        cursor = self.conn.cursor()
+
+        if table == "residents":
+            sql = "SELECT resident_id FROM residents WHERE resident_id LIKE %s ORDER BY resident_id DESC LIMIT 1"
+            like_pattern = f"{year}-%"
+            cursor.execute(sql, (like_pattern,))
+            last_id = cursor.fetchone()
+            if last_id:
+                last_num = int(last_id[0].split('-')[1])
+                new_num = last_num + 1
+            else:
+                new_num = 1
+            return f"{year}-{new_num:04d}"
+
+        elif table == "complaints":
+            sql = "SELECT complaint_id FROM complaints ORDER BY complaint_id DESC LIMIT 1"
+            cursor.execute(sql)
+            last_id = cursor.fetchone()
+            if last_id:
+                left, right = map(int, last_id[0].split('-'))
+                if right < 9999:
+                    right += 1
+                else:
+                    left += 1
+                    right = 1
+            else:
+                left, right = 1, 1
+            return f"{left:04d}-{right:04d}"
+
+        elif table == "barangay_officials":
+            sql = "SELECT barangay_official_id FROM barangay_officials WHERE barangay_official_id LIKE %s ORDER BY barangay_official_id DESC LIMIT 1"
+            like_pattern = f"%-{year}"
+            cursor.execute(sql, (like_pattern,))
+            last_id = cursor.fetchone()
+            if last_id:
+                left = int(last_id[0].split('-')[0])
+                new_left = left + 1
+            else:
+                new_left = 1
+            return f"{new_left:04d}-{year}"
+
+        else:
+            raise ValueError("Unknown table for ID generation")
 
     def close_connection(self):
         """ close the database connection """

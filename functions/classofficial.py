@@ -29,6 +29,12 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
         contact_validator = QRegExpValidator(contact_regex)
         self.addofficial_contact_input.setValidator(contact_validator)
 
+        #Auto-generate Official ID
+        new_id = self.db.generate_id("barangay_officials")
+        self.addofficial_officialID_input.setText(new_id)
+        # (Optional) Allow editing:
+        self.addofficial_officialID_input.setEnabled(True)
+        
     def save_official(self):
         try:
             official_id = self.addofficial_officialID_input.text().strip()

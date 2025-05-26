@@ -28,6 +28,13 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
         validator = QRegExpValidator(regex)
         self.addcomplaint_complaintID_input.setValidator(validator)
         self.addcomplaint_addentry_button.clicked.connect(self.save_complaint)
+        
+        #Auto-generate Resident ID
+        new_id = self.db.generate_id("complaints")
+        self.addcomplaint_complaintID_input.setText(new_id)
+        # (Optional) Allow editing:
+        self.addcomplaint_complaintID_input.setEnabled(True)
+
 
     def save_complaint(self):
         try:
