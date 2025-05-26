@@ -197,7 +197,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
         col = item.column()
         value = item.text()
         row_values = [self.resident_table.item(row, c).text() for c in range(self.resident_table.columnCount())]
-        print("Full row data:", row_values)
         dialog = InfoResidentDialog(self.db.get_element_by_id("residents", row_values[0]), self.db)
         dialog.display_info()
         dialog.exec_() 
@@ -261,7 +260,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
         col = item.column()
         value = item.text()
         row_values = [self.official_table.item(row, c).text() for c in range(self.official_table.columnCount())]
-        print("Full row data:", row_values)
         dialog = InfoOfficialDialog(self.db.get_barangay_official(row_values[0]), self.db)
         dialog.display_info()
         dialog.exec_()
@@ -331,7 +329,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
         col = item.column()
         value = item.text()
         row_values = self.db.get_element_by_id("complaints", self.complaint_table.item(row, 0).text())
-        print("Full row data:", row_values)
         dialog = InfoComplaintDialog(row_values, self.db)
         dialog.display_info()
         dialog.exec_()
