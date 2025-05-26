@@ -2,6 +2,7 @@ from PyQt5.QtWidgets import QDialog, QMessageBox
 from uipyfiles.inforesidentui import Ui_infoResidentDialog
 from PyQt5.QtCore import QDate
 from database.database import printTime
+import os
 
 class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
     def __init__(self, resident, db):
@@ -89,7 +90,18 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
             widget.setStyleSheet("QLabel{ color : white; }")
 
         if reply == QMessageBox.Yes:
+
+            # Delete the resident's photo file if it exists
+            photo_path = self.resident[5]
+            if photo_path and os.path.isfile(photo_path):
+                try:
+                    os.remove(photo_path)
+                    printTime(f"Deleted photo file: {photo_path}")
+                except Exception as e:
+                    printTime(f"Failed to delete photo file: {photo_path}. Error: {e}")
+
             printTime("Deleting resident from the database")
             self.db.remove_resident(self.resident[0])
             printTime("Resident deleted successfully")
             self.accept()
+
