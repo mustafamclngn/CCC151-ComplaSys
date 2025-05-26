@@ -252,7 +252,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.official_table.setRowCount(0)
         for row_num, row_data in enumerate(db.get_elements(table="barangay_officials", column="last_name", order="ASC")):
             self.official_table.insertRow(row_num)
-            print(f'Hello {row_data}')
             self.official_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # OFFICIALID
             self.official_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[4])))  # POSITION
             self.official_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[1])))  # FIRSTNAME
@@ -268,6 +267,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         dialog = InfoOfficialDialog(self.db.get_barangay_official(row_values[0]), self.db)
         dialog.display_info()
         dialog.exec_()
+        self.load_officials()
 
     def edit_complaint(self):
         selected = self.complaint_table.currentRow()
@@ -337,6 +337,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         dialog = InfoComplaintDialog(row_values, self.db)
         dialog.display_info()
         dialog.exec_()
+        self.load_complaints()
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
