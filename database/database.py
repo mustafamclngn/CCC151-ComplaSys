@@ -429,23 +429,59 @@ class Database:
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
 
-    def count_complaints_status(self):
-        """ count the number of complaints with each status """
+    def count_complaints_status(self, date=None):
+        """ count the number of complaints with each status
+         If date is provided, only count complaints in that month.
+         Args:
+            date (datetime.date or str): If provided, filter by this month.
+         Returns:
+            list: [total_complaints, completed, pending, cancelled]
+        """
         values = []
-        sql = ''' SELECT COUNT(*) FROM complaints WHERE complaint_status = %s '''
         try:
             cursor = self.cursor
-            cursor.execute('SELECT COUNT(*) FROM complaints')
-            values.append(cursor.fetchone())
-            cursor.execute(sql, ('Completed',))
-            values.append(cursor.fetchone())
-            cursor.execute(sql, ('Pending',))
-            values.append(cursor.fetchone())
-            cursor.execute(sql, ('Cancelled',))
-            values.append(cursor.fetchone())
+            if date is not None:
+                if isinstance(date, str):
+                    date = datetime.datetime.strptime(date, "%Y-%m-%d").date()
+                year = date.year
+                month = date.month
+                date_filter = "WHERE YEAR(date_time) = %s AND MONTH(date_time) = %s"
+                params = (year, month)
+            else:
+                date_filter = ""
+                params = ()
+
+            # Total complaints
+            sql_total = f"SELECT COUNT(*) FROM complaints {date_filter}"
+            cursor.execute(sql_total, params)
+            values.append(cursor.fetchone()[0])
+
+            # By status
+            for status in ('Completed', 'Pending', 'Cancelled'):
+                sql_status = f"SELECT COUNT(*) FROM complaints {date_filter} AND complaint_status = %s" if date_filter else \
+                             "SELECT COUNT(*) FROM complaints WHERE complaint_status = %s"
+                status_params = params + (status,) if date_filter else (status,)
+                cursor.execute(sql_status, status_params)
+                values.append(cursor.fetchone()[0])
+
             return values
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
+            return []
+
+    def count_elements(self, table):
+        """ count the number of elements in the specified table """
+        printTime(f"DATABASE    Counting elements in {table} table")
+        sql = f''' SELECT COUNT(*) FROM {table} '''
+        try:
+            cursor = self.cursor
+            cursor.execute(sql)
+            count = cursor.fetchone()[0]
+            printTime(f"DATABASE    {count} elements found in {table} table")
+            return count
+        except Error as e:
+            printTime(f"DATABASE    Error: {e}")
+            return 0
 
     # For multiple elements of a given table
     def get_elements(self, table="residents", column="last_name", order="ASC", page=1, limit=15):

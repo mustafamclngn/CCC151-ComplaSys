@@ -90,6 +90,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.resident_table.itemClicked.connect(self.on_resident_item_clicked)
         self.official_table.itemClicked.connect(self.on_official_item_clicked)
         self.complaint_table.itemClicked.connect(self.on_complaint_item_clicked)
+        self.sortCases_box.currentIndexChanged.connect(self.updateDashboardCases)
 
         #Pagination States
         self.res_page = 1
@@ -143,6 +144,24 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.resident_table.horizontalHeader().sectionClicked.connect(self.on_resident_header_clicked)
         self.complaint_table.horizontalHeader().sectionClicked.connect(self.on_complaint_header_clicked)
         self.official_table.horizontalHeader().sectionClicked.connect(self.on_barangay_official_header_clicked)
+
+    def updateDashboardCases(self):
+        month = self.sortCases_box.currentIndex()
+        # Create a datetime object for the first day of the selected month in the current year
+        now = datetime.now()
+        year = now.year
+        # If month is 0 ("All Months"), use January as default for the date, but let your count_complaints_status handle "all months"
+        r = self.db.count_complaints_status()
+        result = []
+        if month > 0:
+            dt = datetime(year, month, 1)
+            r = self.db.count_complaints_status(dt)
+        for i in r:
+            result.append(str(i).replace(",", "").replace("(", "").replace(")", ""))
+
+        self.overallComp_line.setText(result[0])
+        self.overallpendComp_line.setText(result[2])
+        self.overallcompComp_line.setText(result[1])
 
     def on_resident_header_clicked(self, logicalIndex):
         headers = ['resident_id', 'first_name', 'last_name', 'age', 'sex', 'contact']
@@ -290,6 +309,9 @@ class MainClass(QMainWindow, Ui_MainWindow):
             
     def show_home(self):
         self.stackedWidget.setCurrentIndex(0)
+        self.overallRes_line.setText(str(self.db.count_elements("residents")))
+        self.overallOffi_line.setText(str(self.db.count_elements("barangay_officials")))
+        self.updateDashboardCases()
         self.plot_complaint_pie_chart()
 
     def show_residents(self):
