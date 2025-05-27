@@ -8,11 +8,15 @@ from PyQt5.QtGui import QRegExpValidator
 from PyQt5.QtCore import QRegExp
 from PyQt5.QtWidgets import QFileDialog
 from PyQt5.QtGui import QIntValidator
+
 from uipyfiles.addofficialui import Ui_addOfficialDialog
 from uipyfiles.mainui import Ui_MainWindow
+
 from database.database import printTime
 from database.database import warnMessageBox, infoMessageBox, errorMessageBox
 from resource import resource_qrc
+
+from utils import all_fields_filled
 
 class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
     def __init__(self,parent = None, db=None):
@@ -37,6 +41,17 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
         self.addofficial_officialID_input.setEnabled(True)
         
     def save_official(self):
+        fields = [
+            self.addofficial_officialID_input,
+            self.addofficial_firstname_input,
+            self.addofficial_lastname_input,
+            self.addofficial_contact_input,
+            self.addofficial_position_input
+    ]
+        if not all_fields_filled(fields):
+            warnMessageBox(self, "Input Error", "Please fill in all required fields.")
+            return
+        
         try:
             official_id = self.addofficial_officialID_input.text().strip()
 

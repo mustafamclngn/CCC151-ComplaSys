@@ -19,6 +19,8 @@ from uipyfiles.addcomplaintui import Ui_addComplaintDialog
 from uipyfiles.addofficialui import Ui_addOfficialDialog
 from uipyfiles.mainui import Ui_MainWindow
 
+from utils import all_fields_filled
+
 class AddResidentDialog(QDialog, Ui_addResidentDialog):
     def __init__(self,parent = None, db=None):
         printTime("Initializing add resident dialog")
@@ -49,6 +51,20 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
         self.photo_path = None
 
     def save_resident(self):
+        fields = [
+            self.addresident_residentID_input,
+            self.addresident_firstname_input,
+            self.addresident_lastname_input,
+            self.addresident_dob_input,
+            self.addresident_photo_label,
+            self.addresident_address_input,
+            self.addresident_contact_input,
+            self.addresident_sex_input
+    ]
+        if not all_fields_filled(fields):
+            warnMessageBox(self, "Input Error", "Please fill in all required fields.")
+            return
+        
         try:
             if self.file_path:
                 local_dir = os.path.join('.', 'photos')
