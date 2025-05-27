@@ -181,8 +181,18 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.offi_page = 1
         self.rows_per_page = 15 
 
+        #Pagination Buttons
+        # Residents pagination
+        self.backResBtn.clicked.connect(lambda: self.prev_page('res_page', self.load_residents))
+        self.nextResBtn.clicked.connect(lambda: self.next_page('res_page', self.load_residents))
 
-    
+        # Complaints pagination
+        self.backCompBtn.clicked.connect(lambda: self.prev_page('comp_page', self.load_complaints))
+        self.nextCompBtn.clicked.connect(lambda: self.next_page('comp_page', self.load_complaints))
+
+        # Officials pagination
+        self.backOffiBtn.clicked.connect(lambda: self.prev_page('offi_page', self.load_officials))
+        self.nextOffiBtn.clicked.connect(lambda: self.next_page('offi_page', self.load_officials))
 
         #Search buttons for RESIDENT, OFFICIALS, COMPLAINTS
         #Residents Search
