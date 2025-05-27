@@ -15,9 +15,12 @@ class Ui_addComplaintDialog(object):
     def setupUi(self, addComplaintDialog):
         addComplaintDialog.setObjectName("addComplaintDialog")
         addComplaintDialog.resize(878, 507)
-        addComplaintDialog.setStyleSheet("background-color: rgb(0, 0, 25);")
+        addComplaintDialog.setStyleSheet("background-color: rgb(230, 230, 230);")
         self.frame = QtWidgets.QFrame(addComplaintDialog)
         self.frame.setGeometry(QtCore.QRect(20, 20, 841, 471))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.frame.setFont(font)
         self.frame.setStyleSheet("background-color: rgb(245, 245, 245);\n"
 "border-radius: 13px;")
         self.frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
@@ -25,6 +28,9 @@ class Ui_addComplaintDialog(object):
         self.frame.setObjectName("frame")
         self.frame_2 = QtWidgets.QFrame(self.frame)
         self.frame_2.setGeometry(QtCore.QRect(20, 60, 801, 391))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.frame_2.setFont(font)
         self.frame_2.setStyleSheet("background-color: white;\n"
 "border: 1px solid rgb(230, 230, 230);\n"
 "border-radius: 13px;")
@@ -73,6 +79,7 @@ class Ui_addComplaintDialog(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.addcomplaint_category_input.setFont(font)
+        self.addcomplaint_category_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.addcomplaint_category_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
@@ -104,6 +111,7 @@ class Ui_addComplaintDialog(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.addcomplaint_status_input.setFont(font)
+        self.addcomplaint_status_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.addcomplaint_status_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
@@ -123,6 +131,7 @@ class Ui_addComplaintDialog(object):
         font = QtGui.QFont()
         font.setPointSize(10)
         self.addcomplaint_date_input.setFont(font)
+        self.addcomplaint_date_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.addcomplaint_date_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
@@ -130,12 +139,19 @@ class Ui_addComplaintDialog(object):
         self.addcomplaint_date_input.setObjectName("addcomplaint_date_input")
         self.addcomplaint_description_input = QtWidgets.QTextEdit(self.frame_2)
         self.addcomplaint_description_input.setGeometry(QtCore.QRect(420, 190, 361, 171))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.addcomplaint_description_input.setFont(font)
         self.addcomplaint_description_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
-"border-radius: 4px;")
+"border-radius: 4px;\n"
+"font-size: 12;")
         self.addcomplaint_description_input.setObjectName("addcomplaint_description_input")
         self.addcomplaint_location_input = QtWidgets.QTextEdit(self.frame_2)
         self.addcomplaint_location_input.setGeometry(QtCore.QRect(420, 50, 361, 101))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.addcomplaint_location_input.setFont(font)
         self.addcomplaint_location_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
@@ -156,6 +172,7 @@ class Ui_addComplaintDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.addcomplaint_addentry_button.setFont(font)
+        self.addcomplaint_addentry_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.addcomplaint_addentry_button.setStyleSheet("background-color: rgb(148, 255, 148);\n"
 "border-radius: 10px;\n"
 "color: black;")
@@ -167,6 +184,7 @@ class Ui_addComplaintDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.addcomplaint_cancel_button.setFont(font)
+        self.addcomplaint_cancel_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.addcomplaint_cancel_button.setStyleSheet("background-color: rgb(255, 179, 179);\n"
 "border-radius: 10px;\n"
 "color: black;")
@@ -182,6 +200,7 @@ class Ui_addComplaintDialog(object):
         _translate = QtCore.QCoreApplication.translate
         addComplaintDialog.setWindowTitle(_translate("addComplaintDialog", "Add New Case"))
         self.label_resident_id.setText(_translate("addComplaintDialog", "Complaint ID:"))
+        self.addcomplaint_complaintID_input.setPlaceholderText(_translate("addComplaintDialog", " Ex: 0001-0001"))
         self.label_first_name.setText(_translate("addComplaintDialog", "Resident ID:"))
         self.label_dob.setText(_translate("addComplaintDialog", "Date:"))
         self.label_address.setText(_translate("addComplaintDialog", "Location:"))
@@ -202,12 +221,15 @@ class Ui_addComplaintDialog(object):
         self.addcomplaint_description_input.setHtml(_translate("addComplaintDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8.25pt;\"><br /></p></body></html>"))
+        self.addcomplaint_description_input.setPlaceholderText(_translate("addComplaintDialog", " Please provide a short description"))
         self.addcomplaint_location_input.setHtml(_translate("addComplaintDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:12px;\"><br /></p></body></html>"))
+        self.addcomplaint_location_input.setPlaceholderText(_translate("addComplaintDialog", " Please provide the location"))
+        self.addcomplaint_residentID_input.setPlaceholderText(_translate("addComplaintDialog", " Ex: 2025-0001"))
         self.addcomplaint_addentry_button.setText(_translate("addComplaintDialog", "Add Entry"))
         self.addcomplaint_cancel_button.setText(_translate("addComplaintDialog", "Cancel"))

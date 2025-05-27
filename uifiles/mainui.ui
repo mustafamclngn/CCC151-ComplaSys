@@ -14,7 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(0, 0, 10);</string>
+   <string notr="true">background-color: rgb(230, 230, 230);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QWidget" name="fullMenu" native="true">
@@ -53,6 +53,9 @@ color: white;</string>
        <bold>false</bold>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(0, 0, 30);
 border-radius: 13px;
@@ -82,6 +85,9 @@ color: white;</string>
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(0, 0, 30);
@@ -113,6 +119,9 @@ color: white;</string>
        <bold>false</bold>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(0, 0, 30);
 border-radius: 13px;
@@ -143,6 +152,9 @@ color: white;</string>
        <bold>false</bold>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(0, 0, 30);
 border-radius: 13px;
@@ -161,32 +173,6 @@ color: white;</string>
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>580</y>
-       <width>221</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <property name="font">
-      <font>
-       <pointsize>11</pointsize>
-       <weight>50</weight>
-       <bold>false</bold>
-      </font>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">background-color: rgb(0, 0, 30);
-border-radius: 13px;
-text-align: left;
-color: white;</string>
-     </property>
-     <property name="text">
-      <string>Exit</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="abtBtn">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
        <y>370</y>
        <width>221</width>
        <height>41</height>
@@ -199,6 +185,9 @@ color: white;</string>
        <bold>false</bold>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: rgb(0, 0, 30);
 border-radius: 13px;
@@ -206,11 +195,7 @@ text-align: left;
 color: white;</string>
      </property>
      <property name="text">
-      <string>About</string>
-     </property>
-     <property name="icon">
-      <iconset resource="../resource/resource.qrc">
-       <normaloff>:/icons/icons/interrogation.svg</normaloff>:/icons/icons/interrogation.svg</iconset>
+      <string>Exit</string>
      </property>
     </widget>
     <widget class="QFrame" name="frame">
@@ -291,7 +276,7 @@ border: 0px;</string>
 border-radius: 13px;</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="page">
      <widget class="QFrame" name="frame_2">
@@ -354,274 +339,6 @@ border_radius: 13px;</string>
        <string>Welcome back, Admin!</string>
       </property>
      </widget>
-     <widget class="QFrame" name="frame_7">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>190</y>
-        <width>171</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 217, 148);
-border-radius: 13px;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLineEdit" name="pendingComp_line">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>30</y>
-         <width>171</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>24</pointsize>
-        </font>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_11">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>-1</y>
-         <width>161</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>  Pending Cases</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QFrame" name="frame_8">
-      <property name="geometry">
-       <rect>
-        <x>210</x>
-        <y>190</y>
-        <width>171</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 179, 179);
-border-radius: 13px;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLineEdit" name="totalComp_line">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>30</y>
-         <width>171</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>24</pointsize>
-        </font>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_12">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>161</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>  Cancelled Cases:</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QFrame" name="frame_9">
-      <property name="geometry">
-       <rect>
-        <x>390</x>
-        <y>190</y>
-        <width>171</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(148, 255, 148);
-border-radius: 13px;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLineEdit" name="lineEdit_7">
-       <property name="geometry">
-        <rect>
-         <x>140</x>
-         <y>140</y>
-         <width>401</width>
-         <height>71</height>
-        </rect>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="completeComp_line">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>30</y>
-         <width>171</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>24</pointsize>
-        </font>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_13">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>161</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>  Completed Cases:</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QFrame" name="frame_10">
-      <property name="geometry">
-       <rect>
-        <x>570</x>
-        <y>190</y>
-        <width>171</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(184, 184, 255);
-border-radius: 13px;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLineEdit" name="totalOffi_line">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>30</y>
-         <width>171</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>24</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_14">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>161</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>  Total Officials:</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QFrame" name="frame_11">
-      <property name="geometry">
-       <rect>
-        <x>750</x>
-        <y>190</y>
-        <width>171</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: rgb(255, 255, 171);
-border-radius: 13px;</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLineEdit" name="totalRes_line">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>30</y>
-         <width>171</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>24</pointsize>
-        </font>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_15">
-       <property name="geometry">
-        <rect>
-         <x>0</x>
-         <y>0</y>
-         <width>161</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>  Total Residents:</string>
-       </property>
-      </widget>
-     </widget>
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
@@ -654,7 +371,7 @@ border-radius: 13px;</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>12</pointsize>
+        <pointsize>13</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -665,10 +382,244 @@ background-color: white;</string>
        <string>TextLabel</string>
       </property>
      </widget>
-     <widget class="QFrame" name="frame_12">
+     <widget class="QFrame" name="pendingComp_frame">
       <property name="geometry">
        <rect>
-        <x>950</x>
+        <x>30</x>
+        <y>290</y>
+        <width>891</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 1px solid rgb(230, 230, 230);
+border-radius: 10px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QTableWidget" name="pendingComp_table">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>80</y>
+         <width>841</width>
+         <height>371</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border: 0px;
+border-radius: 0px;</string>
+       </property>
+       <column>
+        <property name="text">
+         <string>COMPLAINTID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>CATEGORY</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>DATETIME</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>LOCATION</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>STATUS</string>
+        </property>
+       </column>
+      </widget>
+      <widget class="QLabel" name="label_10">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>10</y>
+         <width>191</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>18</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 0px;</string>
+       </property>
+       <property name="text">
+        <string>Pending Cases</string>
+       </property>
+      </widget>
+      <widget class="QLineEdit" name="searchPendComp_line">
+       <property name="geometry">
+        <rect>
+         <x>450</x>
+         <y>20</y>
+         <width>421</width>
+         <height>51</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border-radius: 13px;</string>
+       </property>
+       <property name="placeholderText">
+        <string>  Search</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="refreshPendCompBtn">
+       <property name="geometry">
+        <rect>
+         <x>770</x>
+         <y>30</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>System</family>
+         <weight>50</weight>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource/resource.qrc">
+         <normaloff>:/icons/icons/refresh.svg</normaloff>:/icons/icons/refresh.svg</iconset>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="searchPendCompBtn">
+       <property name="geometry">
+        <rect>
+         <x>820</x>
+         <y>30</y>
+         <width>41</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border-radius: 9px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="icon">
+        <iconset resource="../resource/resource.qrc">
+         <normaloff>:/icons/icons/search.svg</normaloff>:/icons/icons/search.svg</iconset>
+       </property>
+      </widget>
+      <widget class="QComboBox" name="searchbyPendComp_box">
+       <property name="geometry">
+        <rect>
+         <x>300</x>
+         <y>30</y>
+         <width>141</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: white;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
+       </property>
+       <item>
+        <property name="text">
+         <string>SEARCH BY</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>COMPLAINTID</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>CATEGORY</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>DATETIME</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>LOCATION</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>STATUS</string>
+        </property>
+       </item>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="chart_frame">
+      <property name="geometry">
+       <rect>
+        <x>940</x>
+        <y>400</y>
+        <width>341</width>
+        <height>361</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+border: 1px solid rgb(230, 230, 230);
+border-radius: 13px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+     </widget>
+     <widget class="QFrame" name="calendar_frame">
+      <property name="geometry">
+       <rect>
+        <x>940</x>
         <y>190</y>
         <width>341</width>
         <height>201</height>
@@ -715,19 +666,19 @@ QCalendarWidget QToolButton {
        </property>
       </widget>
      </widget>
-     <widget class="QFrame" name="frame_13">
+     <widget class="QFrame" name="overallOffi_frame">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>280</y>
-        <width>911</width>
-        <height>471</height>
+        <x>30</x>
+        <y>190</y>
+        <width>171</width>
+        <height>91</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-border: 1px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
+       <string notr="true">background-color: rgb(184, 184, 255);
+border-radius: 13px;
+border: 1px solid blue;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
@@ -735,58 +686,252 @@ border-radius: 10px;</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QTableWidget" name="pendingComp_table">
+      <widget class="QLineEdit" name="overallOffi_line">
        <property name="geometry">
         <rect>
          <x>10</x>
-         <y>70</y>
-         <width>871</width>
-         <height>371</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: white;
-border: 0px;
-border-radius: 0px;</string>
-       </property>
-       <column>
-        <property name="text">
-         <string>COMPLAINTID</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>CATEGORY</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>DATETIME</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>LOCATION</string>
-        </property>
-       </column>
-       <column>
-        <property name="text">
-         <string>STATUS</string>
-        </property>
-       </column>
-      </widget>
-      <widget class="QLabel" name="label_10">
-       <property name="geometry">
-        <rect>
-         <x>20</x>
-         <y>10</y>
-         <width>181</width>
-         <height>51</height>
+         <y>40</y>
+         <width>151</width>
+         <height>41</height>
         </rect>
        </property>
        <property name="font">
         <font>
-         <pointsize>18</pointsize>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 0px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_14">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 0px;</string>
+       </property>
+       <property name="text">
+        <string>Overall Officials</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="overallRes_frame">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>190</y>
+        <width>171</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 171);
+border: 1px solid yellow;
+border-radius: 13px;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="overallRes_line">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 0px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_15">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 0px;</string>
+       </property>
+       <property name="text">
+        <string>Overall Residents</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="overallComp_frame">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>190</y>
+        <width>171</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 179, 179);
+border-radius: 13px;
+border: 1px solid red;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="overallComp_line">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 0px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>9</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 0px;</string>
+       </property>
+       <property name="text">
+        <string>Overall Cases</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QFrame" name="overallPendComp_frame">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>190</y>
+        <width>171</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 217, 148);
+border-radius: 13px;
+border: 1px solid orange;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="overallpendComp_line">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 0px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_17">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
         </font>
        </property>
        <property name="styleSheet">
@@ -796,147 +941,104 @@ border-radius: 0px;</string>
         <string>Pending Cases</string>
        </property>
       </widget>
-      <widget class="QLineEdit" name="filter_line">
-       <property name="geometry">
-        <rect>
-         <x>470</x>
-         <y>10</y>
-         <width>421</width>
-         <height>51</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: white;
-border-radius: 13px;</string>
-       </property>
-       <property name="placeholderText">
-        <string>  Filter</string>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="refreshPendCompBtn">
-       <property name="geometry">
-        <rect>
-         <x>790</x>
-         <y>20</y>
-         <width>41</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>System</family>
-         <weight>50</weight>
-         <bold>false</bold>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: white;
-border: 2px solid rgb(230, 230, 230);
-border-radius: 13px;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="../resource/resource.qrc">
-         <normaloff>:/icons/icons/refresh.svg</normaloff>:/icons/icons/refresh.svg</iconset>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="filterPendCompBtn">
-       <property name="geometry">
-        <rect>
-         <x>840</x>
-         <y>20</y>
-         <width>41</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: white;
-border-radius: 9px;</string>
-       </property>
-       <property name="text">
-        <string/>
-       </property>
-       <property name="icon">
-        <iconset resource="../resource/resource.qrc">
-         <normaloff>:/icons/icons/search.svg</normaloff>:/icons/icons/search.svg</iconset>
-       </property>
-      </widget>
-      <widget class="QComboBox" name="filterPendComp_box">
-       <property name="geometry">
-        <rect>
-         <x>330</x>
-         <y>20</y>
-         <width>131</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: white;
-border: 2px solid rgb(230, 230, 230);</string>
-       </property>
-       <item>
-        <property name="text">
-         <string> FILTER</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>COMPLAINTID</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>CATEGORY</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>DATETIME</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>LOCATION</string>
-        </property>
-       </item>
-       <item>
-        <property name="text">
-         <string>STATUS</string>
-        </property>
-       </item>
-      </widget>
      </widget>
-     <widget class="QFrame" name="frame_14">
+     <widget class="QFrame" name="overallCompComp_frame">
       <property name="geometry">
        <rect>
-        <x>950</x>
-        <y>400</y>
-        <width>341</width>
-        <height>351</height>
+        <x>750</x>
+        <y>190</y>
+        <width>171</width>
+        <height>91</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-border: 1px solid rgb(230, 230, 230);
-border-radius: 13px;</string>
+       <string notr="true">background-color: rgb(148, 255, 148);
+border-radius: 13px;
+border: 1px solid green;</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLineEdit" name="overallcompComp_line">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>151</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 0px;</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_16">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>151</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>9</pointsize>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border: 0px;</string>
+       </property>
+       <property name="text">
+        <string>Completed Cases</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="refreshCasesBtn">
+      <property name="geometry">
+       <rect>
+        <x>1130</x>
+        <y>120</y>
+        <width>101</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>System</family>
+        <pointsize>7</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: blue;
+border: 2px solid rgb(230, 230, 230);
+border-radius: 10px;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Refresh</string>
       </property>
      </widget>
      <widget class="QComboBox" name="sortCases_box">
@@ -953,9 +1055,13 @@ border-radius: 13px;</string>
         <pointsize>12</pointsize>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: white;
-border: 2px solid rgb(230, 230, 230);</string>
+border: 2px solid rgb(230, 230, 230);
+border-radius: 4px;</string>
       </property>
       <item>
        <property name="text">
@@ -1018,33 +1124,6 @@ border: 2px solid rgb(230, 230, 230);</string>
        </property>
       </item>
      </widget>
-     <widget class="QPushButton" name="refreshCasesBtn">
-      <property name="geometry">
-       <rect>
-        <x>1130</x>
-        <y>120</y>
-        <width>111</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>System</family>
-        <pointsize>7</pointsize>
-        <weight>75</weight>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: blue;
-border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;
-color: white;</string>
-      </property>
-      <property name="text">
-       <string>Refresh</string>
-      </property>
-     </widget>
     </widget>
     <widget class="QWidget" name="page_3">
      <widget class="QFrame" name="frame_3">
@@ -1096,6 +1175,9 @@ border: 1px solid rgb(230, 230, 230);</string>
          <height>31</height>
         </rect>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: white;
 border-radius: 9px;</string>
@@ -1122,6 +1204,9 @@ border-radius: 9px;</string>
          <pointsize>12</pointsize>
         </font>
        </property>
+       <property name="cursor">
+        <cursorShape>IBeamCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: white;
 border-radius: 13px;</string>
@@ -1145,6 +1230,9 @@ border-radius: 13px;</string>
          <weight>50</weight>
          <bold>false</bold>
         </font>
+       </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
        </property>
        <property name="styleSheet">
         <string notr="true">background-color: white;
@@ -1173,10 +1261,13 @@ border-radius: 13px;</string>
          <pointsize>12</pointsize>
         </font>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
+border-radius: 4px;</string>
        </property>
        <item>
         <property name="text">
@@ -1228,6 +1319,9 @@ border-radius: 10px;</string>
         <width>1251</width>
         <height>551</height>
        </rect>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: white;
@@ -1285,6 +1379,9 @@ border-radius: 0px;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: blue;
 border: 2px solid rgb(230, 230, 230);
@@ -1313,10 +1410,13 @@ color: white;</string>
         <pointsize>12</pointsize>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
+border-radius: 4px;</string>
       </property>
       <item>
        <property name="text">
@@ -1371,6 +1471,9 @@ border-radius: 10px;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 255, 171);
 border: 2px solid rgb(230, 230, 230);
@@ -1381,7 +1484,7 @@ color: black;</string>
        <string>Refresh</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="backResBtn">
       <property name="geometry">
        <rect>
         <x>590</x>
@@ -1397,20 +1500,23 @@ color: black;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
 border-radius: 10px;</string>
       </property>
       <property name="text">
-       <string/>
+       <string>&lt;&lt;</string>
       </property>
       <property name="icon">
-       <iconset resource="../resource/resource.qrc">
+       <iconset>
         <normaloff>:/icons/icons/angle-double-left.svg</normaloff>:/icons/icons/angle-double-left.svg</iconset>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="nextResBtn">
       <property name="geometry">
        <rect>
         <x>700</x>
@@ -1426,6 +1532,9 @@ border-radius: 10px;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
@@ -1435,20 +1544,20 @@ border: 2px solid rgb(230, 230, 230);
 border-radius: 10px;</string>
       </property>
       <property name="text">
-       <string/>
+       <string>&gt;&gt;</string>
       </property>
       <property name="icon">
-       <iconset resource="../resource/resource.qrc">
+       <iconset>
         <normaloff>:/icons/icons/angle-double-right.svg</normaloff>:/icons/icons/angle-double-right.svg</iconset>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
+     <widget class="QLineEdit" name="ResPage_line">
       <property name="geometry">
        <rect>
         <x>640</x>
         <y>717</y>
         <width>51</width>
-        <height>41</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
@@ -1457,10 +1566,13 @@ border-radius: 10px;</string>
        </font>
       </property>
       <property name="text">
-       <string>32</string>
+       <string/>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -1536,6 +1648,9 @@ border-radius: 13px;</string>
          <height>31</height>
         </rect>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: white;
 border-radius: 9px;</string>
@@ -1564,6 +1679,9 @@ border-radius: 9px;</string>
          <bold>false</bold>
         </font>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
@@ -1591,10 +1709,13 @@ border-radius: 13px;</string>
          <pointsize>12</pointsize>
         </font>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
+border-radius: 4px;</string>
        </property>
        <item>
         <property name="text">
@@ -1636,6 +1757,9 @@ border-radius: 10px;</string>
         <width>1251</width>
         <height>551</height>
        </rect>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: white;
@@ -1684,6 +1808,9 @@ border-radius: 0px;</string>
         <bold>false</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: blue;
 border: 2px solid rgb(230, 230, 230);
@@ -1712,10 +1839,13 @@ color: white;</string>
         <pointsize>12</pointsize>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
+border-radius: 4px;</string>
       </property>
       <item>
        <property name="text">
@@ -1765,6 +1895,9 @@ border-radius: 10px;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 255, 171);
 border: 2px solid rgb(230, 230, 230);
@@ -1775,7 +1908,7 @@ color: black;</string>
        <string>Refresh</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="backCompBtn">
       <property name="geometry">
        <rect>
         <x>590</x>
@@ -1791,26 +1924,29 @@ color: black;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
 border-radius: 10px;</string>
       </property>
       <property name="text">
-       <string/>
+       <string>&lt;&lt;</string>
       </property>
       <property name="icon">
-       <iconset resource="../resource/resource.qrc">
+       <iconset>
         <normaloff>:/icons/icons/angle-double-left.svg</normaloff>:/icons/icons/angle-double-left.svg</iconset>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_3">
+     <widget class="QLineEdit" name="CompPage_line">
       <property name="geometry">
        <rect>
         <x>640</x>
         <y>717</y>
         <width>51</width>
-        <height>41</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
@@ -1819,13 +1955,16 @@ border-radius: 10px;</string>
        </font>
       </property>
       <property name="text">
-       <string>32</string>
+       <string/>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="nextCompBtn">
       <property name="geometry">
        <rect>
         <x>700</x>
@@ -1841,6 +1980,9 @@ border-radius: 10px;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
@@ -1850,10 +1992,10 @@ border: 2px solid rgb(230, 230, 230);
 border-radius: 10px;</string>
       </property>
       <property name="text">
-       <string/>
+       <string>&gt;&gt;</string>
       </property>
       <property name="icon">
-       <iconset resource="../resource/resource.qrc">
+       <iconset>
         <normaloff>:/icons/icons/angle-double-right.svg</normaloff>:/icons/icons/angle-double-right.svg</iconset>
       </property>
      </widget>
@@ -1930,6 +2072,9 @@ border-radius: 13px;</string>
          <height>31</height>
         </rect>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: white;
 border-radius: 9px;</string>
@@ -1958,6 +2103,9 @@ border-radius: 9px;</string>
          <bold>false</bold>
         </font>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
@@ -1985,10 +2133,13 @@ border-radius: 13px;</string>
          <pointsize>12</pointsize>
         </font>
        </property>
+       <property name="cursor">
+        <cursorShape>PointingHandCursor</cursorShape>
+       </property>
        <property name="styleSheet">
         <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
+border-radius: 4px;</string>
        </property>
        <item>
         <property name="text">
@@ -2035,6 +2186,9 @@ border-radius: 10px;</string>
         <width>1251</width>
         <height>551</height>
        </rect>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>PointingHandCursor</cursorShape>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: white;
@@ -2083,6 +2237,9 @@ border-radius: 0px;</string>
         <bold>false</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: blue;
 border: 2px solid rgb(230, 230, 230);
@@ -2111,10 +2268,13 @@ color: white;</string>
         <pointsize>12</pointsize>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
-border-radius: 10px;</string>
+border-radius: 4px;</string>
       </property>
       <item>
        <property name="text">
@@ -2164,6 +2324,9 @@ border-radius: 10px;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: rgb(255, 255, 171);
 border: 2px solid rgb(230, 230, 230);
@@ -2174,13 +2337,13 @@ color: black;</string>
        <string>Refresh</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_4">
+     <widget class="QLineEdit" name="OffiPage_line">
       <property name="geometry">
        <rect>
         <x>640</x>
         <y>717</y>
         <width>51</width>
-        <height>41</height>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
@@ -2189,13 +2352,16 @@ color: black;</string>
        </font>
       </property>
       <property name="text">
-       <string>32</string>
+       <string/>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
       </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_5">
+     <widget class="QPushButton" name="nextOffiBtn">
       <property name="geometry">
        <rect>
         <x>700</x>
@@ -2211,6 +2377,9 @@ color: black;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
@@ -2220,14 +2389,14 @@ border: 2px solid rgb(230, 230, 230);
 border-radius: 10px;</string>
       </property>
       <property name="text">
-       <string/>
+       <string>&gt;&gt;</string>
       </property>
       <property name="icon">
-       <iconset resource="../resource/resource.qrc">
+       <iconset>
         <normaloff>:/icons/icons/angle-double-right.svg</normaloff>:/icons/icons/angle-double-right.svg</iconset>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_6">
+     <widget class="QPushButton" name="backOffiBtn">
       <property name="geometry">
        <rect>
         <x>590</x>
@@ -2243,82 +2412,21 @@ border-radius: 10px;</string>
         <bold>true</bold>
        </font>
       </property>
+      <property name="cursor">
+       <cursorShape>PointingHandCursor</cursorShape>
+      </property>
       <property name="styleSheet">
        <string notr="true">background-color: white;
 border: 2px solid rgb(230, 230, 230);
 border-radius: 10px;</string>
       </property>
       <property name="text">
-       <string/>
+       <string>&lt;&lt;</string>
       </property>
       <property name="icon">
-       <iconset resource="../resource/resource.qrc">
+       <iconset>
         <normaloff>:/icons/icons/angle-double-left.svg</normaloff>:/icons/icons/angle-double-left.svg</iconset>
       </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="page_5">
-     <widget class="QFrame" name="frame_6">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>0</y>
-        <width>1311</width>
-        <height>91</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: white;
-border: 1px solid rgb(230, 230, 230);</string>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLabel" name="label_7">
-       <property name="geometry">
-        <rect>
-         <x>16</x>
-         <y>10</y>
-         <width>361</width>
-         <height>71</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>24</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border: 0px;</string>
-       </property>
-       <property name="text">
-        <string>About</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="labelDateTime2">
-       <property name="geometry">
-        <rect>
-         <x>1070</x>
-         <y>30</y>
-         <width>221</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>12</pointsize>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">border: 0px;</string>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
-       </property>
-      </widget>
      </widget>
     </widget>
    </widget>

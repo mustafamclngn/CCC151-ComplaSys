@@ -14,7 +14,7 @@
    <string>Add New Official</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color: rgb(0, 0, 25);</string>
+   <string notr="true">background-color: rgb(230, 230, 230);</string>
   </property>
   <widget class="QFrame" name="frame">
    <property name="geometry">
@@ -95,6 +95,9 @@ border-radius: 13px;</string>
 border: 1px solid grey;
 border-radius: 4px;</string>
      </property>
+     <property name="placeholderText">
+      <string> Ex: 0001-2025</string>
+     </property>
     </widget>
     <widget class="QLabel" name="label_first_name_2">
      <property name="geometry">
@@ -135,6 +138,9 @@ border-radius: 4px;</string>
       <string notr="true">background-color: white;
 border: 1px solid grey;
 border-radius: 4px;</string>
+     </property>
+     <property name="placeholderText">
+      <string> Ex: Jane</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_last_name">
@@ -177,6 +183,9 @@ border-radius: 4px;</string>
 border: 1px solid grey;
 border-radius: 4px;</string>
      </property>
+     <property name="placeholderText">
+      <string> Ex: Doe</string>
+     </property>
     </widget>
     <widget class="QLabel" name="label_contact">
      <property name="geometry">
@@ -218,6 +227,9 @@ border-radius: 4px;</string>
 border: 1px solid grey;
 border-radius: 4px;</string>
      </property>
+     <property name="placeholderText">
+      <string> Ex: 09987654321</string>
+     </property>
     </widget>
     <widget class="QComboBox" name="addofficial_position_input">
      <property name="geometry">
@@ -232,6 +244,9 @@ border-radius: 4px;</string>
       <font>
        <pointsize>12</pointsize>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: white;
@@ -312,6 +327,9 @@ border-radius: 4px;</string>
       <bold>false</bold>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(148, 255, 148);
 border-radius: 10px;
@@ -336,6 +354,9 @@ color: black;</string>
       <weight>50</weight>
       <bold>false</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 179, 179);

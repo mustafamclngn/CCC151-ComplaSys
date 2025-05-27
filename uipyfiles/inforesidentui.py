@@ -15,7 +15,7 @@ class Ui_infoResidentDialog(object):
     def setupUi(self, infoResidentDialog):
         infoResidentDialog.setObjectName("infoResidentDialog")
         infoResidentDialog.resize(890, 521)
-        infoResidentDialog.setStyleSheet("background-color: rgb(0, 0, 25);")
+        infoResidentDialog.setStyleSheet("background-color: rgb(230, 230, 230);")
         self.frame = QtWidgets.QFrame(infoResidentDialog)
         self.frame.setGeometry(QtCore.QRect(20, 20, 851, 481))
         self.frame.setStyleSheet("background-color: rgb(245, 245, 245);\n"
@@ -81,6 +81,7 @@ class Ui_infoResidentDialog(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.inforesident_sex_input.setFont(font)
+        self.inforesident_sex_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.inforesident_sex_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
@@ -122,6 +123,7 @@ class Ui_infoResidentDialog(object):
         self.inforesident_dob_input.setGeometry(QtCore.QRect(20, 350, 361, 28))
         font = QtGui.QFont()
         self.inforesident_dob_input.setFont(font)
+        self.inforesident_dob_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.inforesident_dob_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
@@ -167,6 +169,7 @@ class Ui_infoResidentDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.inforesident_upload_button.setFont(font)
+        self.inforesident_upload_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.inforesident_upload_button.setStyleSheet("border: 2px solid rgb(230, 230, 230);\n"
 "")
         self.inforesident_upload_button.setObjectName("inforesident_upload_button")
@@ -178,6 +181,7 @@ class Ui_infoResidentDialog(object):
         self.inforesident_residentID_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
+        self.inforesident_residentID_input.setText("")
         self.inforesident_residentID_input.setObjectName("inforesident_residentID_input")
         self.inforesident_photo_label = QtWidgets.QLineEdit(self.frame_2)
         self.inforesident_photo_label.setGeometry(QtCore.QRect(430, 310, 361, 28))
@@ -187,6 +191,7 @@ class Ui_infoResidentDialog(object):
         self.inforesident_photo_label.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
+        self.inforesident_photo_label.setReadOnly(True)
         self.inforesident_photo_label.setObjectName("inforesident_photo_label")
         self.inforesident_view_button = QtWidgets.QPushButton(self.frame_2)
         self.inforesident_view_button.setGeometry(QtCore.QRect(610, 350, 91, 31))
@@ -196,6 +201,7 @@ class Ui_infoResidentDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.inforesident_view_button.setFont(font)
+        self.inforesident_view_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.inforesident_view_button.setStyleSheet("border: 2px solid rgb(230, 230, 230);\n"
 "")
         self.inforesident_view_button.setObjectName("inforesident_view_button")
@@ -206,6 +212,7 @@ class Ui_infoResidentDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.delResBtn.setFont(font)
+        self.delResBtn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.delResBtn.setStyleSheet("background-color: rgb(255, 179, 179);\n"
 "border-radius: 10px;\n"
 "color: black;")
@@ -220,6 +227,7 @@ class Ui_infoResidentDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.updResBtn.setFont(font)
+        self.updResBtn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.updResBtn.setStyleSheet("background-color: rgb(255, 217, 148);\n"
 "border-radius: 10px;\n"
 "color: black;")
@@ -234,6 +242,7 @@ class Ui_infoResidentDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.saveResBtn.setFont(font)
+        self.saveResBtn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.saveResBtn.setStyleSheet("background-color: rgb(230, 230, 230);\n"
 "border-radius: 10px;\n"
 "color: black;")
@@ -247,21 +256,28 @@ class Ui_infoResidentDialog(object):
         infoResidentDialog.setWindowTitle(_translate("infoResidentDialog", "Resident Information"))
         self.label_resident_id.setText(_translate("infoResidentDialog", "Resident ID:"))
         self.label_first_name.setText(_translate("infoResidentDialog", "First Name:"))
+        self.inforesident_firstname_input.setPlaceholderText(_translate("infoResidentDialog", " Ex: John"))
         self.label_last_name.setText(_translate("infoResidentDialog", "Last Name:"))
+        self.inforesident_lastname_input.setPlaceholderText(_translate("infoResidentDialog", " Ex: Doe"))
         self.label_sex.setText(_translate("infoResidentDialog", "Sex:"))
         self.inforesident_sex_input.setItemText(0, _translate("infoResidentDialog", "Male"))
         self.inforesident_sex_input.setItemText(1, _translate("infoResidentDialog", "Female"))
         self.label_contact_3.setText(_translate("infoResidentDialog", "Age:"))
         self.label_dob.setText(_translate("infoResidentDialog", "Date of Birth:"))
+        self.inforesident_age_input.setPlaceholderText(_translate("infoResidentDialog", " Please input a valid age"))
         self.label_contact.setText(_translate("infoResidentDialog", "Contact:"))
+        self.inforesident_contact_input.setPlaceholderText(_translate("infoResidentDialog", " Ex: 09123456789"))
         self.label_address.setText(_translate("infoResidentDialog", "Address:"))
         self.inforesident_address_input.setHtml(_translate("infoResidentDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.inforesident_address_input.setPlaceholderText(_translate("infoResidentDialog", " Please provide the address"))
         self.label_contact_2.setText(_translate("infoResidentDialog", "Photo Credentials:"))
         self.inforesident_upload_button.setText(_translate("infoResidentDialog", "Upload"))
+        self.inforesident_residentID_input.setPlaceholderText(_translate("infoResidentDialog", " Ex: 2025-0001"))
+        self.inforesident_photo_label.setPlaceholderText(_translate("infoResidentDialog", " Upload an image"))
         self.inforesident_view_button.setText(_translate("infoResidentDialog", "View"))
         self.delResBtn.setText(_translate("infoResidentDialog", "Delete"))
         self.updResBtn.setText(_translate("infoResidentDialog", "Edit"))

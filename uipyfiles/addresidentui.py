@@ -15,7 +15,7 @@ class Ui_addResidentDialog(object):
     def setupUi(self, addResidentDialog):
         addResidentDialog.setObjectName("addResidentDialog")
         addResidentDialog.resize(890, 521)
-        addResidentDialog.setStyleSheet("background-color: rgb(0, 0, 25);")
+        addResidentDialog.setStyleSheet("background-color: rgb(230, 230, 230);")
         self.frame = QtWidgets.QFrame(addResidentDialog)
         self.frame.setGeometry(QtCore.QRect(20, 20, 851, 481))
         self.frame.setStyleSheet("background-color: rgb(245, 245, 245);\n"
@@ -91,6 +91,7 @@ class Ui_addResidentDialog(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.addresident_sex_input.setFont(font)
+        self.addresident_sex_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.addresident_sex_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
@@ -132,6 +133,7 @@ class Ui_addResidentDialog(object):
         self.addresident_dob_input.setGeometry(QtCore.QRect(20, 350, 361, 28))
         font = QtGui.QFont()
         self.addresident_dob_input.setFont(font)
+        self.addresident_dob_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.addresident_dob_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
@@ -189,6 +191,7 @@ class Ui_addResidentDialog(object):
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
         self.addresident_photo_label.setText("")
+        self.addresident_photo_label.setReadOnly(True)
         self.addresident_photo_label.setObjectName("addresident_photo_label")
         self.addresident_view_button = QtWidgets.QPushButton(self.frame_2)
         self.addresident_view_button.setGeometry(QtCore.QRect(620, 350, 91, 31))
@@ -208,6 +211,7 @@ class Ui_addResidentDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.addresident_cancel_button.setFont(font)
+        self.addresident_cancel_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.addresident_cancel_button.setStyleSheet("background-color: rgb(255, 179, 179);\n"
 "border-radius: 10px;\n"
 "color: black;")
@@ -222,6 +226,7 @@ class Ui_addResidentDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.addresident_addentry_button.setFont(font)
+        self.addresident_addentry_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.addresident_addentry_button.setStyleSheet("background-color: rgb(148, 255, 148);\n"
 "border-radius: 10px;\n"
 "color: black;")
@@ -234,22 +239,29 @@ class Ui_addResidentDialog(object):
         _translate = QtCore.QCoreApplication.translate
         addResidentDialog.setWindowTitle(_translate("addResidentDialog", "Add New Resident"))
         self.label_resident_id.setText(_translate("addResidentDialog", "Resident ID:"))
+        self.addresident_residentID_input.setPlaceholderText(_translate("addResidentDialog", " Ex: 2025-0001"))
         self.label_first_name.setText(_translate("addResidentDialog", "First Name:"))
+        self.addresident_firstname_input.setPlaceholderText(_translate("addResidentDialog", " Ex: John"))
         self.label_last_name.setText(_translate("addResidentDialog", "Last Name:"))
+        self.addresident_lastname_input.setPlaceholderText(_translate("addResidentDialog", " Ex: Doe"))
         self.label_sex.setText(_translate("addResidentDialog", "Sex:"))
         self.addresident_sex_input.setItemText(0, _translate("addResidentDialog", "Male"))
         self.addresident_sex_input.setItemText(1, _translate("addResidentDialog", "Female"))
         self.label_contact_3.setText(_translate("addResidentDialog", "Age:"))
         self.label_dob.setText(_translate("addResidentDialog", "Date of Birth:"))
+        self.addresident_age_input.setPlaceholderText(_translate("addResidentDialog", " Please provide a valid age"))
         self.label_contact.setText(_translate("addResidentDialog", "Contact:"))
+        self.addresident_contact_input.setPlaceholderText(_translate("addResidentDialog", " Ex: 09123456789"))
         self.label_address.setText(_translate("addResidentDialog", "Address:"))
         self.addresident_address_input.setHtml(_translate("addResidentDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
 "<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+        self.addresident_address_input.setPlaceholderText(_translate("addResidentDialog", " Please provide the address location"))
         self.label_contact_2.setText(_translate("addResidentDialog", "Photo Credentials:"))
         self.addresident_upload_button.setText(_translate("addResidentDialog", "Upload"))
+        self.addresident_photo_label.setPlaceholderText(_translate("addResidentDialog", " Please upload an image file"))
         self.addresident_view_button.setText(_translate("addResidentDialog", "View"))
         self.addresident_cancel_button.setText(_translate("addResidentDialog", "Cancel"))
         self.addresident_addentry_button.setText(_translate("addResidentDialog", "Add Entry"))
