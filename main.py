@@ -136,6 +136,47 @@ class MainClass(QMainWindow, Ui_MainWindow):
         )
     )
         
+        # Table Header Sort
+        self.resSort = 'ASC'
+        self.comSort = 'ASC'
+        self.offSort = 'ASC'
+        self.resident_table.horizontalHeader().sectionClicked.connect(self.on_resident_header_clicked)
+        self.complaint_table.horizontalHeader().sectionClicked.connect(self.on_complaint_header_clicked)
+        self.official_table.horizontalHeader().sectionClicked.connect(self.on_barangay_official_header_clicked)
+
+    def on_resident_header_clicked(self, logicalIndex):
+        headers = ['resident_id', 'first_name', 'last_name', 'age', 'sex', 'contact']
+        headers_names = ['RESIDENTID', 'FIRSTNAME', 'LASTNAME', 'AGE', 'SEX', 'CONTACT']
+        if self.resSort == 'ASC':
+            self.resSort = 'DESC'
+        else:
+            self.resSort = 'ASC'
+        self.load_residents(page=self.res_page, column=headers[logicalIndex], order=self.resSort)
+        self.sortRes_box.setCurrentText(headers_names[logicalIndex])
+        self.resSortCurrentSetting = [headers[logicalIndex], self.resSort]  # Update current sorting settings
+
+    def on_complaint_header_clicked(self, logicalIndex):
+        headers = ['complaint_id', 'resident_id', 'complaint_category', 'date_time', 'complaint_status']
+        headers_names = ['COMPLAINTID', 'RESIDENTID', 'CATEGORY', 'DATETIME', 'STATUS', 'LOCATION']
+        if self.comSort == 'ASC':
+            self.comSort = 'DESC'
+        else:
+            self.comSort = 'ASC'
+        self.load_complaints(page=self.comp_page, column=headers[logicalIndex], order=self.comSort)
+        self.sortComp_box.setCurrentText(headers_names[logicalIndex])
+        self.comSortCurrentSetting = [headers[logicalIndex], self.comSort]
+
+    def on_barangay_official_header_clicked(self, logicalIndex):
+        headers = ['barangay_official_id', 'position', 'first_name', 'last_name', 'contact']
+        headers_names = ['OFFICIALID', 'POSITION', 'FIRSTNAME', 'LASTNAME', 'CONTACT']
+        if self.offSort == 'ASC':
+            self.offSort = 'DESC'
+        else:
+            self.offSort = 'ASC'
+        self.load_officials(page=self.offi_page, column=headers[logicalIndex], order=self.offSort)
+        self.sortOff_box.setCurrentText(headers_names[logicalIndex])
+        self.offSortCurrentSetting = [headers[logicalIndex], self.offSort]
+
     def plot_complaint_pie_chart(self):
         # layout chart in chart_frame
         layout = self.chart_frame.layout()
@@ -313,7 +354,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.db.remove_resident(resident_id)
             self.load_residents()
 
-    def load_residents(self, page=None):
+    def load_residents(self, page=None, column="last_name", order='ASC'):
         if page is not None:
             self.res_page = max(1, page)
         else:
@@ -322,8 +363,9 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.resident_table.setRowCount(0)
         results = db.get_elements(
             table="residents",
-            column="last_name",
+            column=column,
             page=self.res_page,
+            order=order,
             limit=self.rows_per_page
         )
         for row_num, row_data in enumerate(results):
@@ -402,7 +444,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.db.remove_official(official_id)
             self.load_officials()
 
-    def load_officials(self, page=None):
+    def load_officials(self, page=None, column='last_name', order='ASC'):
         if page is not None:
             self.offi_page = max(1, page)
         else:
@@ -411,7 +453,8 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.official_table.setRowCount(0)
         results = db.get_elements(
             table="barangay_officials",
-            column="last_name",
+            column=column,
+            order=order,
             page=self.offi_page,
             limit=self.rows_per_page
         )
@@ -480,7 +523,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.db.remove_complaint(complaint_id)
             self.load_complaints()
 
-    def load_complaints(self, page=None):
+    def load_complaints(self, page=None, column="date_time", order='ASC'):
         if page is not None:
             self.comp_page = max(1, page)
         else:
@@ -489,7 +532,8 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.complaint_table.setRowCount(0)
         results = db.get_elements(
             table="complaints",
-            column="date_time",
+            column=column,
+            order=order,
             page=self.comp_page,
             limit=self.rows_per_page
         )
