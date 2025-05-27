@@ -68,6 +68,12 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
             warnMessageBox(self, "Input Error", "Please fill in all required fields.")
             return
         
+        #Error if not 11 digits
+        contact = self.addresident_contact_input.text()
+        if not (contact.isdigit() and len(contact) == 11):
+            warnMessageBox(self, "Input Error", "Contact number must be exactly 11 digits.")
+            return
+        
         try:
             if self.file_path:
                 local_dir = os.path.join('.', 'photos')
