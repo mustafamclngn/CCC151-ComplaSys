@@ -33,7 +33,7 @@ class Database:
         else:
             printTime("Error! Cannot create the database connection.")
 
-    def create_connection(self, host="127.0.0.1", database="delcarmencomplaint", user="root", password="hello1234"):
+    def create_connection(self, host="127.0.0.1", database="delcarmencomplaint", user="root", password="password"):
         """ create a database connection to a MySQL database """
         conn = None
         try:
@@ -311,7 +311,7 @@ class Database:
                 printTime(f"DATABASE    {len(results)} accuses found for complaint {complaint_id}")
                 return results
             else:
-                printTime("No accuses found")
+                printTime("DATABASE    No accuses found")
                 return []
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
@@ -374,7 +374,7 @@ class Database:
                 printTime(f"DATABASE    {len(results)} handles found for complaint {complaint_id}")
                 return results
             else:
-                printTime("No handles found")
+                printTime("DATABASE    No handles found")
                 return []
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
