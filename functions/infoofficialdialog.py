@@ -29,7 +29,7 @@ class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
 
     def inputEnabled(self, enabled):
         # Make input fields not editable
-        self.infoofficial_officialID_input.setReadOnly(not enabled)
+        self.infoofficial_officialID_input.setReadOnly(True)
         self.infoofficial_firstname_input.setReadOnly(not enabled)
         self.infoofficial_lastname_input.setReadOnly(not enabled)
         self.infoofficial_contact_input.setReadOnly(not enabled)

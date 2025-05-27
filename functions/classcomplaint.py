@@ -35,7 +35,7 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
         new_id = self.db.generate_id("complaints")
         self.addcomplaint_complaintID_input.setText(new_id)
         # (Optional) Allow editing:
-        self.addcomplaint_complaintID_input.setEnabled(True)
+        self.addcomplaint_complaintID_input.setEnabled(False)
 
         #Cancel Button
         self.addcomplaint_cancel_button.clicked.connect(lambda: cancel_dialog(self))

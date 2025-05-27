@@ -53,6 +53,8 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
         #Cancel button
         self.addresident_cancel_button.clicked.connect(lambda: cancel_dialog(self))
 
+        self.addresident_residentID_input.setEnabled(False)  
+
     def save_resident(self):
         fields = [
             self.addresident_residentID_input,

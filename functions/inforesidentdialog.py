@@ -41,7 +41,7 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
 
     def inputEnabled(self, enabled):
         # Make input fields not editable
-        self.inforesident_residentID_input.setReadOnly(not enabled)
+        self.inforesident_residentID_input.setReadOnly(True)
         self.inforesident_firstname_input.setReadOnly(not enabled)
         self.inforesident_lastname_input.setReadOnly(not enabled)
         self.inforesident_dob_input.setReadOnly(not enabled)

@@ -44,7 +44,7 @@ class InfoComplaintDialog(QDialog, Ui_infoComplaintDialog):
 
     def inputEnabled(self, enabled):
         # Make input fields editable
-        self.infocomplaint_complaintID_input.setReadOnly(not enabled)
+        self.infocomplaint_complaintID_input.setReadOnly(True)
         self.infocomplaint_date_input.setEnabled(enabled)
         self.infocomplaint_description_input.setReadOnly(not enabled)
         self.infocomplaint_residentID_input.setEnabled(enabled)
@@ -94,6 +94,9 @@ class InfoComplaintDialog(QDialog, Ui_infoComplaintDialog):
             )
             if not self.db.check_unique_id('complaints', self.infocomplaint_complaintID_input.text()) and self.infocomplaint_complaintID_input.text() != self.old_complaint_id:
                 errorMessageBox(self, "Duplicate Complaint ID", "The complaint ID already exists. Please use a different ID.")
+                return
+            if self.db.check_unique_id('residents', self.infocomplaint_residentID_input.text()):
+                errorMessageBox(self, "Resident ID Error", "The resident ID does not exist in the database.")
                 return
             # Here you would typically call a method to update the database with updated_complaint
             self.db.update_complaint(self.old_complaint_id, updated_complaint)
