@@ -33,7 +33,7 @@ class Database:
         else:
             printTime("Error! Cannot create the database connection.")
 
-    def create_connection(self, host="127.0.0.1", database="delcarmencomplaint", user="root", password="hello1234"):
+    def create_connection(self, host="127.0.0.1", database="delcarmencomplaint", user="root", password="password"):
         """ create a database connection to a MySQL database """
         conn = None
         try:
@@ -150,7 +150,7 @@ class Database:
             cursor = self.conn.cursor()
             cursor.execute(sql, (*new_resident, res_id))
             self.conn.commit()
-            printTime(f"DATABASE    Resident {new_resident[0]} updated successfully")
+            printTime(f"DATABASE    Resident {res_id} updated successfully")
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
 
@@ -192,16 +192,16 @@ class Database:
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
 
-    def update_complaint(self, new_complaint):
+    def update_complaint(self, com_id, new_complaint):
         """ update an existing complaint in the complaints table using complaint_id """
         sql = ''' UPDATE complaints
-                  SET date_time = %s, complaint_desc = %s, resident_id = %s, complaint_category = %s, complaint_status = %s, location = %s
+                  SET complaint_id = %s, date_time = %s, complaint_desc = %s, resident_id = %s, complaint_category = %s, complaint_status = %s, location = %s
                   WHERE complaint_id = %s '''
         try:
             cursor = self.conn.cursor()
-            cursor.execute(sql, (*new_complaint[1:7], new_complaint[0]))
+            cursor.execute(sql, (*new_complaint, com_id))
             self.conn.commit()
-            printTime(f"DATABASE    Complaint {new_complaint[0]} updated successfully")
+            printTime(f"DATABASE    Complaint {com_id} updated successfully")
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
 
@@ -213,6 +213,23 @@ class Database:
             cursor.execute(sql, (complaint_id,))
             self.conn.commit()
             printTime(f"DATABASE    Complaint {complaint_id} removed successfully")
+        except Error as e:
+            printTime(f"DATABASE    Error: {e}")
+
+    def get_pending_complaints(self):
+        """ get all pending complaints from the complaints table """
+        printTime("DATABSE    Fetching pending complaints")
+        sql = ''' SELECT * FROM complaints WHERE complaint_status = 'Pending' '''
+        try:
+            cursor = self.cursor
+            cursor.execute(sql)
+            results = cursor.fetchall()
+            if results:
+                printTime(f"DATABASE    {len(results)} pending complaints found")
+                return results
+            else:
+                printTime("DATABASE    No pending complaints found")
+                return []
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
 
@@ -229,16 +246,16 @@ class Database:
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
     
-    def update_barangay_official(self, new_official):
+    def update_barangay_official(self, off_id, new_official):
         """ update an existing barangay official in the barangay_officials table using barangay_official_id """
         sql = ''' UPDATE barangay_officials
-                  SET first_name = %s, last_name = %s, contact = %s, position = %s
+                  SET barangay_official_id = %s, first_name = %s, last_name = %s, contact = %s, position = %s
                   WHERE barangay_official_id = %s '''
         try:
             cursor = self.conn.cursor()
-            cursor.execute(sql, (*new_official[1:5], new_official[0]))
+            cursor.execute(sql, (*new_official, off_id))
             self.conn.commit()
-            printTime(f"DATABASE    Barangay Official {new_official[0]} updated successfully")
+            printTime(f"DATABASE    Barangay Official {off_id} updated successfully")
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
 
@@ -377,16 +394,16 @@ class Database:
             printTime(f"DATABASE    Error: {e}")
             return False
 
-    def get_handles_elements(self, complaint_id):
+    def get_handles_elements(self, attribute='complaint_id', id=None):
         """ get all handles for a specific complaint """
-        printTime(f"DATABASE    Fetching handles for complaint {complaint_id}")
-        sql = ''' SELECT barangay_official_id FROM handles WHERE complaint_id = %s '''
+        printTime(f"DATABASE    Fetching handles for complaint {id}")
+        sql = f''' SELECT * FROM handles WHERE {attribute} = %s '''
         try:
             cursor = self.cursor
-            cursor.execute(sql, (complaint_id,))
+            cursor.execute(sql, (id,))
             results = cursor.fetchall()
             if results:
-                printTime(f"DATABASE    {len(results)} handles found for complaint {complaint_id}")
+                printTime(f"DATABASE    {len(results)} handles found for {attribute} {id}")
                 return results
             else:
                 printTime("DATABASE    No handles found")
@@ -429,23 +446,59 @@ class Database:
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
 
-    def count_complaints_status(self):
-        """ count the number of complaints with each status """
+    def count_complaints_status(self, date=None):
+        """ count the number of complaints with each status
+         If date is provided, only count complaints in that month.
+         Args:
+            date (datetime.date or str): If provided, filter by this month.
+         Returns:
+            list: [total_complaints, completed, pending, cancelled]
+        """
         values = []
-        sql = ''' SELECT COUNT(*) FROM complaints WHERE complaint_status = %s '''
         try:
             cursor = self.cursor
-            cursor.execute('SELECT COUNT(*) FROM complaints')
-            values.append(cursor.fetchone())
-            cursor.execute(sql, ('Completed',))
-            values.append(cursor.fetchone())
-            cursor.execute(sql, ('Pending',))
-            values.append(cursor.fetchone())
-            cursor.execute(sql, ('Cancelled',))
-            values.append(cursor.fetchone())
+            if date is not None:
+                if isinstance(date, str):
+                    date = datetime.datetime.strptime(date, "%Y-%m-%d").date()
+                year = date.year
+                month = date.month
+                date_filter = "WHERE YEAR(date_time) = %s AND MONTH(date_time) = %s"
+                params = (year, month)
+            else:
+                date_filter = ""
+                params = ()
+
+            # Total complaints
+            sql_total = f"SELECT COUNT(*) FROM complaints {date_filter}"
+            cursor.execute(sql_total, params)
+            values.append(cursor.fetchone()[0])
+
+            # By status
+            for status in ('Completed', 'Pending', 'Cancelled'):
+                sql_status = f"SELECT COUNT(*) FROM complaints {date_filter} AND complaint_status = %s" if date_filter else \
+                             "SELECT COUNT(*) FROM complaints WHERE complaint_status = %s"
+                status_params = params + (status,) if date_filter else (status,)
+                cursor.execute(sql_status, status_params)
+                values.append(cursor.fetchone()[0])
+
             return values
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
+            return []
+
+    def count_elements(self, table):
+        """ count the number of elements in the specified table """
+        printTime(f"DATABASE    Counting elements in {table} table")
+        sql = f''' SELECT COUNT(*) FROM {table} '''
+        try:
+            cursor = self.cursor
+            cursor.execute(sql)
+            count = cursor.fetchone()[0]
+            printTime(f"DATABASE    {count} elements found in {table} table")
+            return count
+        except Error as e:
+            printTime(f"DATABASE    Error: {e}")
+            return 0
 
     # For multiple elements of a given table
     def get_elements(self, table="residents", column="last_name", order="ASC", page=1, limit=15):

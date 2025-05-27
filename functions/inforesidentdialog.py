@@ -12,6 +12,7 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
         super().__init__()
         self.setupUi(self)
         self.resident = resident
+        self.old_res_id = resident[0]  # Store the original resident ID for updates
         self.db = db
         self.edit_mode = False
         self.inputEnabled(False)  
@@ -24,6 +25,10 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
         self.inforesident_view_button.clicked.connect(self.view_photo)
         self.inforesident_upload_button.clicked.connect(self.uploadPhotoButtonClicked)
 
+        self.display_info()
+
+    def updateResident(self):
+        self.resident = self.db.get_element_by_id('residents', self.inforesident_residentID_input.text())
 
     def display_info(self):
         self.inforesident_residentID_input.setText(self.resident[0])
@@ -38,7 +43,7 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
 
     def inputEnabled(self, enabled):
         # Make input fields not editable
-        self.inforesident_residentID_input.setReadOnly(not enabled)
+        self.inforesident_residentID_input.setReadOnly(True)
         self.inforesident_firstname_input.setReadOnly(not enabled)
         self.inforesident_lastname_input.setReadOnly(not enabled)
         self.inforesident_dob_input.setReadOnly(not enabled)
@@ -57,8 +62,9 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
                 warnMessageBox(self, "Error", "Resident not found in database. It may have been deleted.")
                 return
 
-            self.file_path = self.inforesident_photo_label.text()
-            if self.file_path != self.db.get_element_by_id('residents', self.inforesident_residentID_input.text())[5]:
+            self.file_path = self.inforesident_photo_label.text() # New photo path
+            old_photo_path = self.db.get_element_by_id('residents', self.old_res_id)[5]
+            if self.file_path != old_photo_path:
                 local_dir = os.path.join('.', 'photos')
                 if not os.path.exists(local_dir):
                     os.makedirs(local_dir)
@@ -67,9 +73,15 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
                 self.photo_path = os.path.join(local_dir, self.inforesident_residentID_input.text() + ext)
 
                 if self.photo_path != self.file_path:
-                    shutil.copy(self.file_path, self.photo_path)
-                    os.remove(self.db.get_element_by_id('residents', self.inforesident_residentID_input.text())[5])  # Remove old photo file
-                    self.inforesident_photo_label.setText(self.photo_path)
+                    try:
+                        shutil.copy(self.file_path, self.photo_path)
+                        # Only remove the old photo if it exists and is different from the new photo
+                        if old_photo_path and os.path.isfile(old_photo_path) and old_photo_path != self.photo_path:
+                            os.remove(old_photo_path)  # Remove old photo file
+                        self.inforesident_photo_label.setText(self.photo_path)
+                    except Exception as e:
+                        errorMessageBox(self, "File Error", f"Failed to copy photo file: {e}")
+                        return
             # fields to validate if present or not
             fields = [
                 self.inforesident_residentID_input,
@@ -87,7 +99,7 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
 
             # Change button color
             self.saveResBtn.setStyleSheet("background-color: rgb(230, 230, 230); color:black;")
-            self.updResBtn.setStyleSheet("background-color: rgb(148, 255, 148); color: black;")
+            self.updResBtn.setStyleSheet("background-color: rgb(255, 217, 148); color: black;")
             self.delResBtn.setStyleSheet("background-color: rgb(255, 179, 179); color: black;")
 
             # Update Database with new resident information
@@ -101,8 +113,18 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
                 self.inforesident_contact_input.text(),
                 self.inforesident_sex_input.currentText()
             )
+            for i in updated_resident:
+                if i == "":
+                    errorMessageBox(self, "Empty Field", "Please fill in all fields.")
+                    self.editButtonClicked()
+                    return
+            if not self.db.check_unique_id('residents', self.inforesident_residentID_input.text()) and self.inforesident_residentID_input.text() != self.old_res_id:
+                errorMessageBox(self, "Duplicate Resident ID", "The resident ID already exists. Please use a different ID.")
+                return
             printTime("Updating resident information in the database")
-            self.db.update_resident(updated_resident)
+            self.db.update_resident(self.old_res_id, updated_resident)
+            self.display_info()
+            self.accept()
 
 
     def editButtonClicked(self):

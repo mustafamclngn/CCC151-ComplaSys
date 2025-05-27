@@ -10,6 +10,7 @@ class InfoComplaintDialog(QDialog, Ui_infoComplaintDialog):
         super().__init__()
         self.setupUi(self)
         self.complaint = complaint
+        self.old_complaint_id = complaint[0]  # Store the original complaint ID for updates
         self.db = db
 
         self.edit_mode = False
@@ -26,6 +27,8 @@ class InfoComplaintDialog(QDialog, Ui_infoComplaintDialog):
 
         self.infocomplaint_accusehandle_input.addItems(["Accuses", "Handles"])
 
+        self.display_info()
+
 
     def display_info(self):
         self.infocomplaint_complaintID_input.setText(self.complaint[0])
@@ -41,7 +44,7 @@ class InfoComplaintDialog(QDialog, Ui_infoComplaintDialog):
 
     def inputEnabled(self, enabled):
         # Make input fields editable
-        self.infocomplaint_complaintID_input.setReadOnly(not enabled)
+        self.infocomplaint_complaintID_input.setReadOnly(True)
         self.infocomplaint_date_input.setEnabled(enabled)
         self.infocomplaint_description_input.setReadOnly(not enabled)
         self.infocomplaint_residentID_input.setEnabled(enabled)
@@ -76,7 +79,7 @@ class InfoComplaintDialog(QDialog, Ui_infoComplaintDialog):
 
             # Change button color
             self.saveCompBtn.setStyleSheet("background-color: rgb(230, 230, 230); color:black;")
-            self.updCompBtn.setStyleSheet("background-color: rgb(148, 255, 148); color: black;")
+            self.updCompBtn.setStyleSheet("background-color: rgb(255, 217, 148); color: black;")
             self.delCompBtn.setStyleSheet("background-color: rgb(255, 179, 179); color: black;")
 
             # Update Database with new complaint information
@@ -89,8 +92,23 @@ class InfoComplaintDialog(QDialog, Ui_infoComplaintDialog):
                 self.infocomplaint_status_input.currentText(),
                 self.infocomplaint_location_input.toPlainText(),
             )
+            for i in updated_complaint:
+                if i == '':
+                    warnMessageBox(self, "Empty Field", "Please fill in all fields.")
+                    self.editButtonClicked()
+                    return
+            if not self.db.check_unique_id('complaints', self.infocomplaint_complaintID_input.text()) and self.infocomplaint_complaintID_input.text() != self.old_complaint_id:
+                errorMessageBox(self, "Duplicate Complaint ID", "The complaint ID already exists. Please use a different ID.")
+                self.editButtonClicked
+                return
+            if self.db.check_unique_id('residents', self.infocomplaint_residentID_input.text()):
+                errorMessageBox(self, "Resident ID Error", "The resident ID does not exist in the database.")
+                self.editButtonClicked()
+                return
             # Here you would typically call a method to update the database with updated_complaint
-            self.db.update_complaint(updated_complaint)
+            self.db.update_complaint(self.old_complaint_id, updated_complaint)
+            self.display_info()
+            self.accept()
 
     def deleteButtonClicked(self):
         if not self.edit_mode:
@@ -176,7 +194,7 @@ class InfoComplaintDialog(QDialog, Ui_infoComplaintDialog):
             self.infocomplaint_accuses_input.append(f"[{resident[0]}]  " + resident[1] + ' ' + resident[2])
 
     def displayHandles(self):
-        handles = self.db.get_handles_elements(self.infocomplaint_complaintID_input.text())
+        handles = self.db.get_handles_elements(id=self.infocomplaint_complaintID_input.text())
         self.infocomplaint_handledby_input.clear()
         for handler in handles:
             official = self.db.get_element_by_id('barangay_officials', handler[0])

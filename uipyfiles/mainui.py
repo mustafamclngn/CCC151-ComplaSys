@@ -447,6 +447,7 @@ class Ui_MainWindow(object):
         self.sortCases_box.addItem("")
         self.sortCases_box.addItem("")
         self.sortCases_box.addItem("")
+        self.sortCases_box.addItem("")
         self.stackedWidget.addWidget(self.page)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
@@ -1012,7 +1013,8 @@ class Ui_MainWindow(object):
         self.sortCases_box.setItemText(8, _translate("MainWindow", "August"))
         self.sortCases_box.setItemText(9, _translate("MainWindow", "September"))
         self.sortCases_box.setItemText(10, _translate("MainWindow", "October"))
-        self.sortCases_box.setItemText(11, _translate("MainWindow", "December"))
+        self.sortCases_box.setItemText(11, _translate("MainWindow", "November"))
+        self.sortCases_box.setItemText(12, _translate("MainWindow", "December"))
         self.label_2.setText(_translate("MainWindow", "Residents"))
         self.searchRes_line.setPlaceholderText(_translate("MainWindow", "    Search Residents..."))
         self.searchbyRes_box.setItemText(0, _translate("MainWindow", " SEARCH BY"))
@@ -1114,22 +1116,41 @@ class Ui_MainWindow(object):
 
         table_style = """
         QHeaderView::section {
-        background-color: #f3f6f9;
-        color: #333;
-        border: none;
-        font-weight: 50;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        text-align: left;
+                background-color: #f3f6f9;
+                color: #333;
+                border: none;
+                font-weight: 50;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                text-align: left;
+                padding-left: 5px;
+                margin-right: 0px;
+        }
+        QHeaderView::section:hover {
+                background-color: #e3e6e9;
+                color: #000;
         }
         QHeaderView::section:!first {
-        border-top-left-radius: 0px;
+                border-top-left-radius: 0px;
         }
         QHeaderView::section:!last {
-        border-top-right-radius: 0px;
+                border-top-right-radius: 0px;
         }
         """
+
+        # sort icons to each header
+        for table in [self.resident_table, self.complaint_table, self.official_table, self.pendingComp_table]:
+            for col in range(table.columnCount()):
+                header_item = table.horizontalHeaderItem(col)
+                icon = QtGui.QIcon(":/icons/icons/sort.svg") 
+                header_item.setIcon(icon)
+                table.horizontalHeader().setIconSize(QtCore.QSize(16, 16))
         
+        self.resident_table.horizontalHeader().setDefaultAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.complaint_table.horizontalHeader().setDefaultAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.official_table.horizontalHeader().setDefaultAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.pendingComp_table.horizontalHeader().setDefaultAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+
         # table_style stylesheet to header
         self.resident_table.horizontalHeader().setStyleSheet(table_style)
         self.complaint_table.horizontalHeader().setStyleSheet(table_style)
@@ -1224,6 +1245,41 @@ class Ui_MainWindow(object):
                 shadow.setColor(QColor(0, 0, 0, 50))  # Reduced opacity from 150 to 50
                 frame.setGraphicsEffect(shadow)
 
+        refreshBtnStyle = """
+        QPushButton {
+                background-color: rgb(255, 255, 171);
+                border: 2px solid rgb(230, 230, 230);
+                border-radius: 10px;
+                color: black;
+        }
+        QPushButton:hover {
+                background-color: yellow;
+        }
+        """
+
+        self.refreshResBtn_2.setStyleSheet(refreshBtnStyle)
+        self.refreshCompBtn_2.setStyleSheet(refreshBtnStyle)
+        self.refreshOffiBtn_2.setStyleSheet(refreshBtnStyle)
+
+        searchBtnStyle = """
+        QPushButton {
+                background-color: white;
+                border: 2px solid rgb(230, 230, 230);
+                border-radius: 10px;
+        }
+        QPushButton:hover {
+                background-color: rgb(240, 240, 240);
+        }
+        """
+
+        # apply search button style
+        self.searchResBtn.setStyleSheet(searchBtnStyle)
+        self.refreshResBtn.setStyleSheet(searchBtnStyle)
+        self.searchCompBtn.setStyleSheet(searchBtnStyle)
+        self.refreshCompBtn.setStyleSheet(searchBtnStyle)
+        self.searchOffiBtn.setStyleSheet(searchBtnStyle)
+        self.refreshOffiBtn.setStyleSheet(searchBtnStyle)
+
         #custom drop dowm arrow
         comboBoxStyle = """
             QComboBox {
@@ -1255,7 +1311,7 @@ class Ui_MainWindow(object):
         self.searchbyRes_box.setStyleSheet(comboBoxStyle)
         self.searchbyComp_box.setStyleSheet(comboBoxStyle)
         self.searchbyOff_box.setStyleSheet(comboBoxStyle)
-
+        self.searchbyPendComp_box.setStyleSheet(comboBoxStyle)
 
         # Make resident_table items read-only
         self.resident_table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)

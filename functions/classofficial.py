@@ -38,7 +38,7 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
         new_id = self.db.generate_id("barangay_officials")
         self.addofficial_officialID_input.setText(new_id)
         # (Optional) Allow editing:
-        self.addofficial_officialID_input.setEnabled(True)
+        self.addofficial_officialID_input.setEnabled(False)
 
         #Cancel Button
         self.addofficial_cancel_button.clicked.connect(lambda: cancel_dialog(self))

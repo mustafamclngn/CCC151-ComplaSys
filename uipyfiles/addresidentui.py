@@ -134,9 +134,15 @@ class Ui_addResidentDialog(object):
         font = QtGui.QFont()
         self.addresident_dob_input.setFont(font)
         self.addresident_dob_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.addresident_dob_input.setStyleSheet("background-color: white;\n"
-"border: 1px solid grey;\n"
-"border-radius: 4px;")
+        self.addresident_dob_input.setStyleSheet("""
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 4px;
+    color: black;
+    QCalendarWidget {
+        color: black;
+    }
+""")
         self.addresident_dob_input.setCalendarPopup(True)
         self.addresident_dob_input.setObjectName("addresident_dob_input")
         self.addresident_contact_input = QtWidgets.QLineEdit(self.frame_2)
@@ -212,9 +218,16 @@ class Ui_addResidentDialog(object):
         font.setWeight(50)
         self.addresident_cancel_button.setFont(font)
         self.addresident_cancel_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.addresident_cancel_button.setStyleSheet("background-color: rgb(255, 179, 179);\n"
-"border-radius: 10px;\n"
-"color: black;")
+        self.addresident_cancel_button.setStyleSheet("""
+            QPushButton {
+                background-color: rgb(255, 179, 179);
+                border-radius: 10px;
+                color: black;
+            }
+            QPushButton:hover {
+                background-color: rgb(230, 150, 150);
+            }
+        """)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/trash.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.addresident_cancel_button.setIcon(icon)
@@ -227,9 +240,16 @@ class Ui_addResidentDialog(object):
         font.setWeight(50)
         self.addresident_addentry_button.setFont(font)
         self.addresident_addentry_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.addresident_addentry_button.setStyleSheet("background-color: rgb(148, 255, 148);\n"
-"border-radius: 10px;\n"
-"color: black;")
+        self.addresident_addentry_button.setStyleSheet("""
+            QPushButton {
+                background-color: rgb(148, 255, 148);
+                border-radius: 10px;
+                color: black;
+            }
+            QPushButton:hover {
+                background-color: rgb(120, 230, 120);
+            }
+        """)
         self.addresident_addentry_button.setObjectName("addresident_addentry_button")
 
         self.retranslateUi(addResidentDialog)

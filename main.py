@@ -90,6 +90,8 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.resident_table.itemClicked.connect(self.on_resident_item_clicked)
         self.official_table.itemClicked.connect(self.on_official_item_clicked)
         self.complaint_table.itemClicked.connect(self.on_complaint_item_clicked)
+        self.pendingComp_table.itemClicked.connect(self.onDashboardBtnClicked)
+        self.sortCases_box.currentIndexChanged.connect(self.updateDashboardCases)
 
         #Pagination States
         self.res_page = 1
@@ -143,6 +145,56 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.resident_table.horizontalHeader().sectionClicked.connect(self.on_resident_header_clicked)
         self.complaint_table.horizontalHeader().sectionClicked.connect(self.on_complaint_header_clicked)
         self.official_table.horizontalHeader().sectionClicked.connect(self.on_barangay_official_header_clicked)
+
+        self.refreshCasesBtn.clicked.connect(self.refreshCasBtnClicked)
+
+
+    def onDashboardBtnClicked(self, item):
+        row = item.row()
+        col = item.column()
+        value = item.text()
+        row_values = self.db.get_element_by_id("complaints", self.pendingComp_table.item(row, 0).text())
+        dialog = InfoComplaintDialog(row_values, self.db)
+        dialog.exec_()
+        self.showDashboardTable()
+
+    def showDashboardTable(self):
+        # Load the overall counts
+        self.overallRes_line.setText(str(self.db.count_elements("residents")))
+        self.overallOffi_line.setText(str(self.db.count_elements("barangay_officials")))
+        self.updateDashboardCases()
+
+        # Set up the pending complaints table
+        self.pendingComp_table.setRowCount(0)
+        pending_cases = self.db.get_pending_complaints()
+        for row_num, row_data in enumerate(pending_cases):
+            self.pendingComp_table.insertRow(row_num)
+            self.pendingComp_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0]))) # ComplaintID
+            self.pendingComp_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[4]))) # Category
+            self.pendingComp_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[1]))) # DateTime
+            self.pendingComp_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[6]))) # Location
+            self.pendingComp_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[5]))) # Status
+
+    def refreshCasBtnClicked(self):
+        self.sortCases_box.setCurrentIndex(0)  # Reset to "All Months"
+
+    def updateDashboardCases(self):
+        month = self.sortCases_box.currentIndex()
+        # Create a datetime object for the first day of the selected month in the current year
+        now = datetime.now()
+        year = now.year
+        # If month is 0 ("All Months"), use January as default for the date, but let your count_complaints_status handle "all months"
+        r = self.db.count_complaints_status()
+        result = []
+        if month > 0:
+            dt = datetime(year, month, 1)
+            r = self.db.count_complaints_status(dt)
+        for i in r:
+            result.append(str(i).replace(",", "").replace("(", "").replace(")", ""))
+
+        self.overallComp_line.setText(result[0])
+        self.overallpendComp_line.setText(result[2])
+        self.overallcompComp_line.setText(result[1])
 
     def on_resident_header_clicked(self, logicalIndex):
         headers = ['resident_id', 'first_name', 'last_name', 'age', 'sex', 'contact']
@@ -290,7 +342,11 @@ class MainClass(QMainWindow, Ui_MainWindow):
             
     def show_home(self):
         self.stackedWidget.setCurrentIndex(0)
+        self.overallRes_line.setText(str(self.db.count_elements("residents")))
+        self.overallOffi_line.setText(str(self.db.count_elements("barangay_officials")))
+        self.updateDashboardCases()
         self.plot_complaint_pie_chart()
+        self.showDashboardTable()
 
     def show_residents(self):
         self.stackedWidget.setCurrentIndex(1)
@@ -376,8 +432,8 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.resident_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[2])))  # LastName
             self.resident_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[3])))  # Age
             self.resident_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[8])))  # Sex
-            self.resident_table.setItem(row_num, 5, QTableWidgetItem(str(row_data[4])))  # Birthdate
-            self.resident_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[7])))  # Contact
+            self.resident_table.setItem(row_num, 5, QTableWidgetItem(str(row_data[7])))  # Contact
+            self.resident_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[4])))  # Birthdate
             self.resident_table.setItem(row_num, 7, QTableWidgetItem(str(row_data[6])))  # Address
             self.resident_table.setItem(row_num, 8, QTableWidgetItem(str(row_data[5])))  # Credentials (photo_cred)
         self.ResPage_line.setText(str(self.res_page))
@@ -420,7 +476,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
                 dialog.addofficial_contact_input.text(),
                 dialog.addofficial_position_input.currentText()
             )
-            db.update_barangay_official(updated)
+            db.update_barangay_official(official_id, updated)
             self.load_officials()
 
     def delete_official(self):
@@ -500,7 +556,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
                 dialog.addcomplaint_status_input.currentText(),
                 dialog.addcomplaint_location_input.text()
             )
-            db.update_complaint(updated)
+            db.update_complaint(complaint_id, updated)
 
     def delete_complaint(self):
         selected = self.complaint_table.currentRow()
@@ -544,7 +600,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
         value = item.text()
         row_values = self.db.get_element_by_id("complaints", self.complaint_table.item(row, 0).text())
         dialog = InfoComplaintDialog(row_values, self.db)
-        dialog.display_info()
         dialog.exec_()
         self.load_complaints()
 
