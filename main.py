@@ -530,7 +530,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
             return
         complaint_id = self.complaint_table.item(selected, 0).text()
         db = self.db
-        db.cursor.execute("SELECT * FROM Complaint WHERE complaint_id = %s", (complaint_id,))
+        db.cursor.execute("SELECT * FROM complaints WHERE complaint_id = %s", (complaint_id,))
         data = db.cursor.fetchone()
         if not data:
             warnMessageBox(self, "Edit Complaint", "Complaint not found.")
