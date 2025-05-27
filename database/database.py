@@ -33,7 +33,7 @@ class Database:
         else:
             printTime("Error! Cannot create the database connection.")
 
-    def create_connection(self, host="127.0.0.1", database="delcarmencomplaint", user="root", password="hello1234"):
+    def create_connection(self, host="127.0.0.1", database="delcarmencomplaint", user="root", password="password"):
         """ create a database connection to a MySQL database """
         conn = None
         try:
@@ -150,7 +150,7 @@ class Database:
             cursor = self.conn.cursor()
             cursor.execute(sql, (*new_resident, res_id))
             self.conn.commit()
-            printTime(f"DATABASE    Resident {new_resident[0]} updated successfully")
+            printTime(f"DATABASE    Resident {res_id} updated successfully")
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
 
@@ -192,16 +192,16 @@ class Database:
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
 
-    def update_complaint(self, new_complaint):
+    def update_complaint(self, com_id, new_complaint):
         """ update an existing complaint in the complaints table using complaint_id """
         sql = ''' UPDATE complaints
-                  SET date_time = %s, complaint_desc = %s, resident_id = %s, complaint_category = %s, complaint_status = %s, location = %s
+                  SET complaint_id = %s, date_time = %s, complaint_desc = %s, resident_id = %s, complaint_category = %s, complaint_status = %s, location = %s
                   WHERE complaint_id = %s '''
         try:
             cursor = self.conn.cursor()
-            cursor.execute(sql, (*new_complaint[1:7], new_complaint[0]))
+            cursor.execute(sql, (*new_complaint, com_id))
             self.conn.commit()
-            printTime(f"DATABASE    Complaint {new_complaint[0]} updated successfully")
+            printTime(f"DATABASE    Complaint {com_id} updated successfully")
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
 
@@ -229,16 +229,16 @@ class Database:
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
     
-    def update_barangay_official(self, new_official):
+    def update_barangay_official(self, off_id, new_official):
         """ update an existing barangay official in the barangay_officials table using barangay_official_id """
         sql = ''' UPDATE barangay_officials
-                  SET first_name = %s, last_name = %s, contact = %s, position = %s
+                  SET barangay_official_id = %s, first_name = %s, last_name = %s, contact = %s, position = %s
                   WHERE barangay_official_id = %s '''
         try:
             cursor = self.conn.cursor()
-            cursor.execute(sql, (*new_official[1:5], new_official[0]))
+            cursor.execute(sql, (*new_official, off_id))
             self.conn.commit()
-            printTime(f"DATABASE    Barangay Official {new_official[0]} updated successfully")
+            printTime(f"DATABASE    Barangay Official {off_id} updated successfully")
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
 

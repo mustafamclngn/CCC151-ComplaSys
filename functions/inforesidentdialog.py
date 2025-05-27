@@ -10,6 +10,7 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
         super().__init__()
         self.setupUi(self)
         self.resident = resident
+        self.old_res_id = resident[0]  # Store the original resident ID for updates
         self.db = db
         self.edit_mode = False
         self.inputEnabled(False)  
@@ -22,6 +23,10 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
         self.inforesident_view_button.clicked.connect(self.view_photo)
         self.inforesident_upload_button.clicked.connect(self.uploadPhotoButtonClicked)
 
+        self.display_info()
+
+    def updateResident(self):
+        self.resident = self.db.get_element_by_id('residents', self.inforesident_residentID_input.text())
 
     def display_info(self):
         self.inforesident_residentID_input.setText(self.resident[0])
@@ -50,7 +55,7 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
             self.inputEnabled(False)
 
             self.file_path = self.inforesident_photo_label.text()
-            if self.file_path != self.db.get_element_by_id('residents', self.inforesident_residentID_input.text())[5]:
+            if self.file_path != self.db.get_element_by_id('residents', self.old_res_id)[5]:
                 local_dir = os.path.join('.', 'photos')
                 if not os.path.exists(local_dir):
                     os.makedirs(local_dir)
@@ -59,10 +64,18 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
                 self.photo_path = os.path.join(local_dir, self.inforesident_residentID_input.text() + ext)
 
                 if self.photo_path != self.file_path:
-                    shutil.copy(self.file_path, self.photo_path)
-                    os.remove(self.db.get_element_by_id('residents', self.inforesident_residentID_input.text())[5])  # Remove old photo file
-                    self.inforesident_photo_label.setText(self.photo_path)
+                    try:
+                        shutil.copy(self.file_path, self.photo_path)
+                        os.remove(self.db.get_element_by_id('residents', self.inforesident_residentID_input.text())[5])  # Remove old photo file
+                        self.inforesident_photo_label.setText(self.photo_path)
+                    except Exception as e:
+                        errorMessageBox(self, "File Error", f"Failed to copy photo file: {e}")
+                        return
 
+            if self.old_res_id != self.inforesident_residentID_input.text():
+                photo_path = os.path.join('.', 'photos', self.inforesident_residentID_input.text() + os.path.splitext(self.file_path)[1])
+                os.rename(self.file_path, photo_path)  # Rename the file to match the new resident ID
+                self.inforesident_photo_label.setText(photo_path)  # Update photo label if resident ID changes
 
             # Change button color
             self.saveResBtn.setStyleSheet("background-color: rgb(230, 230, 230); color:black;")
@@ -80,8 +93,12 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
                 self.inforesident_contact_input.text(),
                 self.inforesident_sex_input.currentText()
             )
+            if not self.db.check_unique_id('residents', self.inforesident_residentID_input.text()) and self.inforesident_residentID_input.text() != self.old_res_id:
+                errorMessageBox(self, "Duplicate Resident ID", "The resident ID already exists. Please use a different ID.")
+                return
             printTime("Updating resident information in the database")
-            self.db.update_resident(updated_resident)
+            self.db.update_resident(self.old_res_id, updated_resident)
+            self.display_info()
 
     def editButtonClicked(self):
         if not self.edit_mode:

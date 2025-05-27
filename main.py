@@ -376,8 +376,8 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.resident_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[2])))  # LastName
             self.resident_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[3])))  # Age
             self.resident_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[8])))  # Sex
-            self.resident_table.setItem(row_num, 5, QTableWidgetItem(str(row_data[4])))  # Birthdate
-            self.resident_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[7])))  # Contact
+            self.resident_table.setItem(row_num, 5, QTableWidgetItem(str(row_data[7])))  # Contact
+            self.resident_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[4])))  # Birthdate
             self.resident_table.setItem(row_num, 7, QTableWidgetItem(str(row_data[6])))  # Address
             self.resident_table.setItem(row_num, 8, QTableWidgetItem(str(row_data[5])))  # Credentials (photo_cred)
         self.ResPage_line.setText(str(self.res_page))
@@ -419,7 +419,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
                 dialog.addofficial_contact_input.text(),
                 dialog.addofficial_position_input.currentText()
             )
-            db.update_barangay_official(updated)
+            db.update_barangay_official(official_id, updated)
             self.load_officials()
 
     def delete_official(self):
@@ -499,7 +499,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
                 dialog.addcomplaint_status_input.currentText(),
                 dialog.addcomplaint_location_input.text()
             )
-            db.update_complaint(updated)
+            db.update_complaint(complaint_id, updated)
 
     def delete_complaint(self):
         selected = self.complaint_table.currentRow()
@@ -543,7 +543,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
         value = item.text()
         row_values = self.db.get_element_by_id("complaints", self.complaint_table.item(row, 0).text())
         dialog = InfoComplaintDialog(row_values, self.db)
-        dialog.display_info()
         dialog.exec_()
         self.load_complaints()
 

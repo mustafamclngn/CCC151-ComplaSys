@@ -2,13 +2,14 @@
 
 from PyQt5.QtWidgets import QDialog, QMessageBox  
 from uipyfiles.infoofficialui import Ui_infoOfficialDialog  # adjust the import path as needed
-from database.database import Database
+from database.database import printTime, warnMessageBox, infoMessageBox, errorMessageBox
 
 class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
     def __init__(self, official, db):
         super().__init__()
         self.setupUi(self)
         self.official = official
+        self.old_official_id = official[0]  # Store the original official ID for updates
         self.inputEnabled(False)  
         self.db = db
 
@@ -54,7 +55,10 @@ class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
                 self.infoofficial_contact_input.text(),
                 self.infoofficial_position_input.currentText()
             )
-            self.db.update_barangay_official(updated_official)
+            if not self.db.check_unique_id('barangay_officials', self.infoofficial_officialID_input.text()) and self.infoofficial_officialID_input.text() != self.old_official_id:
+                errorMessageBox(self, "Duplicate Official ID", "The official ID already exists. Please use a different ID.")
+                return
+            self.db.update_barangay_official(self.old_official_id, updated_official)
     def editButtonClicked(self):
         if not self.edit_mode:
             self.edit_mode = True

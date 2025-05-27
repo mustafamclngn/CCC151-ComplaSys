@@ -10,6 +10,7 @@ class InfoComplaintDialog(QDialog, Ui_infoComplaintDialog):
         super().__init__()
         self.setupUi(self)
         self.complaint = complaint
+        self.old_complaint_id = complaint[0]  # Store the original complaint ID for updates
         self.db = db
 
         self.edit_mode = False
@@ -25,6 +26,8 @@ class InfoComplaintDialog(QDialog, Ui_infoComplaintDialog):
         self.infocomplaint_handledby_input.setReadOnly(True)
 
         self.infocomplaint_accusehandle_input.addItems(["Accuses", "Handles"])
+
+        self.display_info()
 
 
     def display_info(self):
@@ -89,8 +92,12 @@ class InfoComplaintDialog(QDialog, Ui_infoComplaintDialog):
                 self.infocomplaint_status_input.currentText(),
                 self.infocomplaint_location_input.toPlainText(),
             )
+            if not self.db.check_unique_id('complaints', self.infocomplaint_complaintID_input.text()) and self.infocomplaint_complaintID_input.text() != self.old_complaint_id:
+                errorMessageBox(self, "Duplicate Complaint ID", "The complaint ID already exists. Please use a different ID.")
+                return
             # Here you would typically call a method to update the database with updated_complaint
-            self.db.update_complaint(updated_complaint)
+            self.db.update_complaint(self.old_complaint_id, updated_complaint)
+            self.display_info()
 
     def deleteButtonClicked(self):
         if not self.edit_mode:
