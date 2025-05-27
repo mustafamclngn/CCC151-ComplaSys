@@ -65,7 +65,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.resBtn.clicked.connect(self.show_residents)
         self.compBtn.clicked.connect(self.show_complaints)
         self.offiBtn.clicked.connect(self.show_officials)
-        self.abtBtn.clicked.connect(self.show_about)
         self.exBtn.clicked.connect(self.show_exit_message)
 
         #add dialogs (to be changed)
@@ -180,7 +179,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
         current = QDateTime.currentDateTime()
         formatted = current.toString("ddd, MMM d, h:mm AP")
         self.labelDateTime1.setText(formatted)
-        self.labelDateTime2.setText(formatted)
 
 #add dialogs
     def add_residents(self):
@@ -218,9 +216,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
     def show_officials(self):
         self.stackedWidget.setCurrentIndex(3)
         self.load_officials()
-
-    def show_about(self):
-        self.stackedWidget.setCurrentIndex(4)
 
     def edit_resident(self):
         selected = self.resident_table.currentRow()
