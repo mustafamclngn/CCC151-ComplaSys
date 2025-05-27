@@ -104,8 +104,8 @@ class Database:
                     resident_id VARCHAR(9) NOT NULL,
                     complaint_id VARCHAR(9) NOT NULL,
                     PRIMARY KEY (resident_id, complaint_id),
-                    FOREIGN KEY (resident_id) REFERENCES residents(resident_id) ON DELETE CASCADE,
-                    FOREIGN KEY (complaint_id) REFERENCES complaints(complaint_id) ON DELETE CASCADE
+                    FOREIGN KEY (resident_id) REFERENCES residents(resident_id) ON DELETE CASCADE ON UPDATE CASCADE,
+                    FOREIGN KEY (complaint_id) REFERENCES complaints(complaint_id) ON DELETE CASCADE ON UPDATE CASCADE
                 );
             ''')
 
@@ -117,8 +117,8 @@ class Database:
                     complaint_id VARCHAR(9) NOT NULL,
                     handle_datetime DATETIME NOT NULL,
                     PRIMARY KEY (barangay_official_id, complaint_id),
-                    FOREIGN KEY (barangay_official_id) REFERENCES barangay_officials(barangay_official_id) ON DELETE CASCADE,
-                    FOREIGN KEY (complaint_id) REFERENCES complaints(complaint_id) ON DELETE CASCADE
+                    FOREIGN KEY (barangay_official_id) REFERENCES barangay_officials(barangay_official_id) ON DELETE CASCADE ON UPDATE CASCADE,
+                    FOREIGN KEY (complaint_id) REFERENCES complaints(complaint_id) ON DELETE CASCADE ON UPDATE CASCADE
                 );
             ''')
 
@@ -141,14 +141,14 @@ class Database:
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
 
-    def update_resident(self, new_resident):
+    def update_resident(self, res_id, new_resident):
         """ update an existing resident in the residents table using resident_id """
         sql = ''' UPDATE residents
-                  SET first_name = %s, last_name = %s, birth_date = %s, photo_cred = %s, address = %s, contact = %s, sex = %s
+                  SET resident_id = %s, first_name = %s, last_name = %s, birth_date = %s, photo_cred = %s, address = %s, contact = %s, sex = %s
                   WHERE resident_id = %s '''
         try:
             cursor = self.conn.cursor()
-            cursor.execute(sql, (*new_resident[1:8], new_resident[0]))
+            cursor.execute(sql, (*new_resident, res_id))
             self.conn.commit()
             printTime(f"DATABASE    Resident {new_resident[0]} updated successfully")
         except Error as e:

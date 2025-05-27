@@ -340,7 +340,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
                 dialog.addresident_contact_input.text(),
                 dialog.addresident_sex_input.currentText()
             )
-            db.update_resident(updated)
+            db.update_resident(resident_id, updated)
             self.load_residents()
 
     def delete_resident(self):
@@ -388,7 +388,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
         value = item.text()
         row_values = [self.resident_table.item(row, c).text() for c in range(self.resident_table.columnCount())]
         dialog = InfoResidentDialog(self.db.get_element_by_id("residents", row_values[0]), self.db)
-        dialog.display_info()
         dialog.exec_() 
         self.load_residents()
 
