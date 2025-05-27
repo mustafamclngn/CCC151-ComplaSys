@@ -316,6 +316,21 @@ class Database:
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
 
+    def check_if_resident_accused(self, resident_id):
+        """ check if a resident is accused in any complaint """
+        printTime(f"DATABASE    Checking if resident {resident_id} is accused in any complaint")
+        sql = ''' SELECT COUNT(*) FROM accuses WHERE resident_id = %s '''
+        try:
+            cursor = self.cursor
+            cursor.execute(sql, (resident_id,))
+            count = cursor.fetchone()[0]
+            is_accused = count > 0
+            printTime(f"DATABASE    Resident {resident_id} is {'accused' if is_accused else 'not accused'} in any complaint")
+            return is_accused
+        except Error as e:
+            printTime(f"DATABASE    Error: {e}")
+            return False
+
     #--------------------------------------------------------------------------- HANDLES TABLE OPERATIONS
     def insert_handle(self, handle):
         """
@@ -560,6 +575,14 @@ class Database:
         else:
             return []
         return cursor.fetchall()
+
+    def calculate_age(self, birth_date):
+        """ calculate age from birth date """
+        if isinstance(birth_date, str):
+            birth_date = datetime.datetime.strptime(birth_date, "%Y-%m-%d").date()
+        today = datetime.date.today()
+        age = today.year - birth_date.year - ((today.month, today.day) < (birth_date.month, birth_date.day))
+        return age
 
     def close_connection(self):
         """ close the database connection """

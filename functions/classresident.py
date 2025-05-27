@@ -32,6 +32,7 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
         self.addresident_upload_button.clicked.connect(self.browse_photo)
         self.addresident_addentry_button.clicked.connect(self.save_resident)
         self.addresident_view_button.clicked.connect(self.view_photo)
+        self.addresident_dob_input.editingFinished.connect(self.on_dob_editing_finished)
         # Contact number validation
         contact_regex = QRegExp(r"^\d{11}$")
         contact_validator = QRegExpValidator(contact_regex)
@@ -42,6 +43,7 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
         self.addresident_residentID_input.setText(new_id)
         # (Optional) Allow editing:
         self.addresident_residentID_input.setEnabled(True)
+        self.addresident_age_input.setEnabled(False)
 
         self.file_path = None
         self.photo_path = None
@@ -122,4 +124,6 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
             warnMessageBox(self, "File Not Found", "The selected photo file does not exist.")
 
 
-
+    def on_dob_editing_finished(self):
+        age = self.db.calculate_age(self.addresident_dob_input.date().toString("yyyy-MM-dd"))
+        self.addresident_age_input.setText(str(age))

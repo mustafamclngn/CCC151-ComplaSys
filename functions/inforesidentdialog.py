@@ -14,6 +14,7 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
         self.edit_mode = False
         self.inputEnabled(False)  
 
+        self.inforesident_age_input.setEnabled(False)
 
         self.saveResBtn.clicked.connect(self.saveButtonClicked)
         self.updResBtn.clicked.connect(self.editButtonClicked)
@@ -38,7 +39,6 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
         self.inforesident_residentID_input.setReadOnly(not enabled)
         self.inforesident_firstname_input.setReadOnly(not enabled)
         self.inforesident_lastname_input.setReadOnly(not enabled)
-        self.inforesident_age_input.setReadOnly(not enabled)
         self.inforesident_dob_input.setReadOnly(not enabled)
         self.inforesident_address_input.setReadOnly(not enabled)
         self.inforesident_contact_input.setReadOnly(not enabled)
@@ -96,16 +96,25 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
 
     def deleteButtonClicked(self):
         if not self.edit_mode:
+            if self.db.check_if_resident_accused(self.resident[0]):
+                reply = QMessageBox.question(
+                    self,
+                    "Confirm Deletion",
+                    '<span style="color:black;">This resident is being accused currently, are you sure?</span>',
+                    QMessageBox.Yes | QMessageBox.No,
+                    QMessageBox.No
+                )
+
+                if reply == QMessageBox.No:
+                    return
+
             reply = QMessageBox.question(
                 self,
                 "Confirm Deletion",
-                '<span style="color:white;">Are you sure you want to delete this resident?</span>',
+                '<span style="color:black;">Are you sure you want to delete this resident?</span>',
                 QMessageBox.Yes | QMessageBox.No,
                 QMessageBox.No
             )
-            # Set the stylesheet to make the text white
-            for widget in self.findChildren(QMessageBox):
-                widget.setStyleSheet("QLabel{ color : white; }")
 
             if reply == QMessageBox.Yes:
 
