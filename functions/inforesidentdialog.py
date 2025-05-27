@@ -79,7 +79,7 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
 
             # Change button color
             self.saveResBtn.setStyleSheet("background-color: rgb(230, 230, 230); color:black;")
-            self.updResBtn.setStyleSheet("background-color: rgb(148, 255, 148); color: black;")
+            self.updResBtn.setStyleSheet("background-color: rgb(255, 217, 148); color: black;")
             self.delResBtn.setStyleSheet("background-color: rgb(255, 179, 179); color: black;")
 
             # Update Database with new resident information
@@ -93,12 +93,18 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
                 self.inforesident_contact_input.text(),
                 self.inforesident_sex_input.currentText()
             )
+            for i in updated_resident:
+                if i == "":
+                    errorMessageBox(self, "Empty Field", "Please fill in all fields.")
+                    self.editButtonClicked()
+                    return
             if not self.db.check_unique_id('residents', self.inforesident_residentID_input.text()) and self.inforesident_residentID_input.text() != self.old_res_id:
                 errorMessageBox(self, "Duplicate Resident ID", "The resident ID already exists. Please use a different ID.")
                 return
             printTime("Updating resident information in the database")
             self.db.update_resident(self.old_res_id, updated_resident)
             self.display_info()
+            self.accept()
 
     def editButtonClicked(self):
         if not self.edit_mode:

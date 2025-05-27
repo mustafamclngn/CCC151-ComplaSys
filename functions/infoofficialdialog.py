@@ -18,6 +18,8 @@ class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
         self.updOffiBtn.clicked.connect(self.editButtonClicked)
         self.delOffiBtn.clicked.connect(self.deleteButtonClicked)
 
+        self.infoofficial_caseshandled_input.setPlaceholderText("None")
+
     def display_info(self):
         self.infoofficial_officialID_input.setText(self.official[0])
         self.infoofficial_firstname_input.setText(self.official[1])
@@ -34,7 +36,7 @@ class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
         self.infoofficial_lastname_input.setReadOnly(not enabled)
         self.infoofficial_contact_input.setReadOnly(not enabled)
         self.infoofficial_position_input.setEnabled(enabled)
-        self.infoofficial_caseshandled_input.setReadOnly(not enabled)
+        self.infoofficial_caseshandled_input.setReadOnly(True)
 
 
     def saveButtonClicked(self):
@@ -44,7 +46,7 @@ class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
 
             # Change button color
             self.saveOffiBtn.setStyleSheet("background-color: rgb(230, 230, 230); color:black;")
-            self.updOffiBtn.setStyleSheet("background-color: rgb(148, 255, 148); color: black;")
+            self.updOffiBtn.setStyleSheet("background-color: rgb(255, 217, 148); color: black;")
             self.delOffiBtn.setStyleSheet("background-color: rgb(255, 179, 179); color: black;")
 
             # Update Database with new official information
@@ -55,10 +57,16 @@ class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
                 self.infoofficial_contact_input.text(),
                 self.infoofficial_position_input.currentText()
             )
+            for i in updated_official:
+                if not i.strip():
+                    warnMessageBox(self, "Empty Field", "Please fill in all fields.")
+                    self.editButtonClicked()
+                    return
             if not self.db.check_unique_id('barangay_officials', self.infoofficial_officialID_input.text()) and self.infoofficial_officialID_input.text() != self.old_official_id:
                 errorMessageBox(self, "Duplicate Official ID", "The official ID already exists. Please use a different ID.")
                 return
             self.db.update_barangay_official(self.old_official_id, updated_official)
+            self.accept()
     def editButtonClicked(self):
         if not self.edit_mode:
             self.edit_mode = True
