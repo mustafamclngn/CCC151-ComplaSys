@@ -132,9 +132,15 @@ class Ui_addComplaintDialog(object):
         font.setPointSize(10)
         self.addcomplaint_date_input.setFont(font)
         self.addcomplaint_date_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.addcomplaint_date_input.setStyleSheet("background-color: white;\n"
-"border: 1px solid grey;\n"
-"border-radius: 4px;")
+        self.addcomplaint_date_input.setStyleSheet("""
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 4px;
+    color: black;
+    QCalendarWidget {
+        color: black;
+    }
+""")
         self.addcomplaint_date_input.setCalendarPopup(True)
         self.addcomplaint_date_input.setObjectName("addcomplaint_date_input")
         self.addcomplaint_description_input = QtWidgets.QTextEdit(self.frame_2)
