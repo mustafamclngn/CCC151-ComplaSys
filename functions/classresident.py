@@ -62,12 +62,17 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
                 warnMessageBox(self, "Input Error", "Resident ID must be in the format ####-#### (8 digits).")
                 return
 
-            # --- Check if Resident ID already exists ---
+            # Check if Resident ID already exists 
             self.db.cursor.execute("SELECT 1 FROM residents WHERE resident_id = %s", (resident_id,))
             if self.db.cursor.fetchone():
                 warnMessageBox(self, "Duplicate ID", "Resident ID already exists. Please enter a unique ID.")
                 return
-                    
+            
+            # Check if photo_cred is provided
+            if not self.photo_path:
+                warnMessageBox(self, "Input Error", "Please upload a photo for the resident.")
+                return
+
             first_name = self.addresident_firstname_input.text()
             last_name = self.addresident_lastname_input.text()
             birth_date = self.addresident_dob_input.date().toString("yyyy-MM-dd")
