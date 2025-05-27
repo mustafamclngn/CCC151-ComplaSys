@@ -134,9 +134,15 @@ class Ui_addResidentDialog(object):
         font = QtGui.QFont()
         self.addresident_dob_input.setFont(font)
         self.addresident_dob_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.addresident_dob_input.setStyleSheet("background-color: white;\n"
-"border: 1px solid grey;\n"
-"border-radius: 4px;")
+        self.addresident_dob_input.setStyleSheet("""
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 4px;
+    color: black;
+    QCalendarWidget {
+        color: black;
+    }
+""")
         self.addresident_dob_input.setCalendarPopup(True)
         self.addresident_dob_input.setObjectName("addresident_dob_input")
         self.addresident_contact_input = QtWidgets.QLineEdit(self.frame_2)

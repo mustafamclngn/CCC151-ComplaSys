@@ -124,9 +124,15 @@ class Ui_infoResidentDialog(object):
         font = QtGui.QFont()
         self.inforesident_dob_input.setFont(font)
         self.inforesident_dob_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.inforesident_dob_input.setStyleSheet("background-color: white;\n"
-"border: 1px solid grey;\n"
-"border-radius: 4px;")
+        self.inforesident_dob_input.setStyleSheet("""
+    background-color: white;
+    border: 1px solid grey;
+    border-radius: 4px;
+    color: black;
+    QCalendarWidget {
+        color: black;
+    }
+""")
         self.inforesident_dob_input.setCalendarPopup(True)
         self.inforesident_dob_input.setObjectName("inforesident_dob_input")
         self.inforesident_contact_input = QtWidgets.QLineEdit(self.frame_2)
