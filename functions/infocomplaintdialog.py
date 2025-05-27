@@ -194,7 +194,7 @@ class InfoComplaintDialog(QDialog, Ui_infoComplaintDialog):
             self.infocomplaint_accuses_input.append(f"[{resident[0]}]  " + resident[1] + ' ' + resident[2])
 
     def displayHandles(self):
-        handles = self.db.get_handles_elements(self.infocomplaint_complaintID_input.text())
+        handles = self.db.get_handles_elements(id=self.infocomplaint_complaintID_input.text())
         self.infocomplaint_handledby_input.clear()
         for handler in handles:
             official = self.db.get_element_by_id('barangay_officials', handler[0])

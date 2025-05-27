@@ -26,6 +26,7 @@ class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
         self.infoofficial_lastname_input.setText(self.official[2])
         self.infoofficial_contact_input.setText(self.official[3])
         self.infoofficial_position_input.setCurrentText(self.official[4])
+        self.displayHandles()
         
 
 
@@ -93,3 +94,10 @@ class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
             if reply == QMessageBox.Yes:
                 self.db.remove_barangay_official(self.infoofficial_officialID_input.text())
                 self.accept()
+
+    def displayHandles(self):
+        handles = self.db.get_handles_elements(attribute='barangay_official_id', id=self.infoofficial_officialID_input.text())
+        self.infoofficial_caseshandled_input.clear()
+        for handler in handles:
+            complaint = self.db.get_element_by_id('complaints', handler[1])
+            self.infoofficial_caseshandled_input.append(f"[{complaint[0]}]  {complaint[2][:25]}")

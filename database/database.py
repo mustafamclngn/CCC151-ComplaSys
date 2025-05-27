@@ -377,16 +377,16 @@ class Database:
             printTime(f"DATABASE    Error: {e}")
             return False
 
-    def get_handles_elements(self, complaint_id):
+    def get_handles_elements(self, attribute='complaint_id', id=None):
         """ get all handles for a specific complaint """
-        printTime(f"DATABASE    Fetching handles for complaint {complaint_id}")
-        sql = ''' SELECT barangay_official_id FROM handles WHERE complaint_id = %s '''
+        printTime(f"DATABASE    Fetching handles for complaint {id}")
+        sql = f''' SELECT * FROM handles WHERE {attribute} = %s '''
         try:
             cursor = self.cursor
-            cursor.execute(sql, (complaint_id,))
+            cursor.execute(sql, (id,))
             results = cursor.fetchall()
             if results:
-                printTime(f"DATABASE    {len(results)} handles found for complaint {complaint_id}")
+                printTime(f"DATABASE    {len(results)} handles found for {attribute} {id}")
                 return results
             else:
                 printTime("DATABASE    No handles found")
