@@ -91,6 +91,51 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.official_table.itemClicked.connect(self.on_official_item_clicked)
         self.complaint_table.itemClicked.connect(self.on_complaint_item_clicked)
 
+        #Pagination States
+        self.res_page = 1
+        self.comp_page = 1
+        self.offi_page = 1
+        self.rows_per_page = 15 
+
+        #Pagination Buttons
+        # Residents pagination
+        self.backResBtn.clicked.connect(lambda: self.prev_page('res_page', self.load_residents))
+        self.nextResBtn.clicked.connect(lambda: self.next_page('res_page', self.load_residents))
+
+        # Complaints pagination
+        self.backCompBtn.clicked.connect(lambda: self.prev_page('comp_page', self.load_complaints))
+        self.nextCompBtn.clicked.connect(lambda: self.next_page('comp_page', self.load_complaints))
+
+        # Officials pagination
+        self.backOffiBtn.clicked.connect(lambda: self.prev_page('offi_page', self.load_officials))
+        self.nextOffiBtn.clicked.connect(lambda: self.next_page('offi_page', self.load_officials))
+
+        #Search buttons for RESIDENT, OFFICIALS, COMPLAINTS
+        #Residents Search
+        self.searchResBtn.clicked.connect(
+        lambda: self.universal_search(
+            "residents",
+            self.searchRes_line,
+            self.resident_table
+        )
+    )   
+        #Complaints Search
+        self.searchCompBtn.clicked.connect(
+        lambda: self.universal_search(
+            "complaints",
+            self.searchComp_line,
+            self.complaint_table
+        )
+    )
+        #Officials Search
+        self.searchOffiBtn.clicked.connect(
+        lambda: self.universal_search(
+            "barangay_officials",
+            self.searchOffi_line,
+            self.official_table
+        )
+    )
+        
         # Table Header Sort
         self.resSort = 'ASC'
         self.comSort = 'ASC'
@@ -216,50 +261,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
         layout.addWidget(canvas)
         layout.addWidget(self.monthFilterBox)
 
-        #Pagination States
-        self.res_page = 1
-        self.comp_page = 1
-        self.offi_page = 1
-        self.rows_per_page = 15 
-
-        #Pagination Buttons
-        # Residents pagination
-        self.backResBtn.clicked.connect(lambda: self.prev_page('res_page', self.load_residents))
-        self.nextResBtn.clicked.connect(lambda: self.next_page('res_page', self.load_residents))
-
-        # Complaints pagination
-        self.backCompBtn.clicked.connect(lambda: self.prev_page('comp_page', self.load_complaints))
-        self.nextCompBtn.clicked.connect(lambda: self.next_page('comp_page', self.load_complaints))
-
-        # Officials pagination
-        self.backOffiBtn.clicked.connect(lambda: self.prev_page('offi_page', self.load_officials))
-        self.nextOffiBtn.clicked.connect(lambda: self.next_page('offi_page', self.load_officials))
-
-        #Search buttons for RESIDENT, OFFICIALS, COMPLAINTS
-        #Residents Search
-        self.searchResBtn.clicked.connect(
-        lambda: self.universal_search(
-            "residents",
-            self.searchRes_line,
-            self.resident_table
-        )
-    )   
-        #Complaints Search
-        self.searchCompBtn.clicked.connect(
-        lambda: self.universal_search(
-            "complaints",
-            self.searchComp_line,
-            self.complaint_table
-        )
-    )
-        #Officials Search
-        self.searchOffiBtn.clicked.connect(
-        lambda: self.universal_search(
-            "barangay_officials",
-            self.searchOffi_line,
-            self.official_table
-        )
-    )
 
     def updateDateTime(self):
         current = QDateTime.currentDateTime()
@@ -379,7 +380,8 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.resident_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[7])))  # Contact
             self.resident_table.setItem(row_num, 7, QTableWidgetItem(str(row_data[6])))  # Address
             self.resident_table.setItem(row_num, 8, QTableWidgetItem(str(row_data[5])))  # Credentials (photo_cred)
-        
+        self.ResPage_line.setText(str(self.res_page))
+
     def on_resident_item_clicked(self, item):
         row = item.row()
         col = item.column()
@@ -452,6 +454,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.official_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[1])))  # FIRSTNAME
             self.official_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[2])))  # LASTNAME
             self.official_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[3])))  # CONTACT
+        self.OffiPage_line.setText(str(self.offi_page))
 
     def on_official_item_clicked(self, item):
         row = item.row()
@@ -532,7 +535,8 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.complaint_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[5])))  # Status
             self.complaint_table.setItem(row_num, 5, QTableWidgetItem(str(row_data[6])))  # Location
             self.complaint_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[2])))  # Description
-
+        self.CompPage_line.setText(str(self.comp_page))
+        
     def on_complaint_item_clicked(self, item):
         row = item.row()
         col = item.column()

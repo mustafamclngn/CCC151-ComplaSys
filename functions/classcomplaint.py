@@ -17,6 +17,8 @@ from uipyfiles.addcomplaintui import Ui_addComplaintDialog
 from uipyfiles.addofficialui import Ui_addOfficialDialog
 from uipyfiles.mainui import Ui_MainWindow
 
+from utils import all_fields_filled, cancel_dialog
+
 class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
     def __init__(self, parent=None, db=None):
         print("Opening AddComplaintDialog")  # Debug print
@@ -35,8 +37,22 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
         # (Optional) Allow editing:
         self.addcomplaint_complaintID_input.setEnabled(True)
 
+        #Cancel Button
+        self.addcomplaint_cancel_button.clicked.connect(lambda: cancel_dialog(self))
 
     def save_complaint(self):
+        fields = [
+            self.addcomplaint_complaintID_input,
+            self.addcomplaint_date_input,
+            self.addcomplaint_description_input,
+            self.addcomplaint_residentID_input,
+            self.addcomplaint_category_input,
+            self.addcomplaint_status_input,
+            self.addcomplaint_location_input
+        ]
+        if not all_fields_filled(fields):
+            warnMessageBox(self, "Input Error", "Please fill in all required fields.")
+            return
         try:
             complaint_id = self.addcomplaint_complaintID_input.text()
             if not complaint_id or not self.addcomplaint_complaintID_input.hasAcceptableInput():
