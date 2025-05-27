@@ -90,6 +90,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.resident_table.itemClicked.connect(self.on_resident_item_clicked)
         self.official_table.itemClicked.connect(self.on_official_item_clicked)
         self.complaint_table.itemClicked.connect(self.on_complaint_item_clicked)
+        self.pendingComp_table.itemClicked.connect(self.onDashboardBtnClicked)
         self.sortCases_box.currentIndexChanged.connect(self.updateDashboardCases)
 
         #Pagination States
@@ -146,6 +147,33 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.official_table.horizontalHeader().sectionClicked.connect(self.on_barangay_official_header_clicked)
 
         self.refreshCasesBtn.clicked.connect(self.refreshCasBtnClicked)
+
+
+    def onDashboardBtnClicked(self, item):
+        row = item.row()
+        col = item.column()
+        value = item.text()
+        row_values = self.db.get_element_by_id("complaints", self.pendingComp_table.item(row, 0).text())
+        dialog = InfoComplaintDialog(row_values, self.db)
+        dialog.exec_()
+        self.showDashboardTable()
+
+    def showDashboardTable(self):
+        # Load the overall counts
+        self.overallRes_line.setText(str(self.db.count_elements("residents")))
+        self.overallOffi_line.setText(str(self.db.count_elements("barangay_officials")))
+        self.updateDashboardCases()
+
+        # Set up the pending complaints table
+        self.pendingComp_table.setRowCount(0)
+        pending_cases = self.db.get_pending_complaints()
+        for row_num, row_data in enumerate(pending_cases):
+            self.pendingComp_table.insertRow(row_num)
+            self.pendingComp_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0]))) # ComplaintID
+            self.pendingComp_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[4]))) # Category
+            self.pendingComp_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[1]))) # DateTime
+            self.pendingComp_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[6]))) # Location
+            self.pendingComp_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[5]))) # Status
 
     def refreshCasBtnClicked(self):
         self.sortCases_box.setCurrentIndex(0)  # Reset to "All Months"
@@ -318,6 +346,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.overallOffi_line.setText(str(self.db.count_elements("barangay_officials")))
         self.updateDashboardCases()
         self.plot_complaint_pie_chart()
+        self.showDashboardTable()
 
     def show_residents(self):
         self.stackedWidget.setCurrentIndex(1)

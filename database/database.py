@@ -216,6 +216,23 @@ class Database:
         except Error as e:
             printTime(f"DATABASE    Error: {e}")
 
+    def get_pending_complaints(self):
+        """ get all pending complaints from the complaints table """
+        printTime("DATABSE    Fetching pending complaints")
+        sql = ''' SELECT * FROM complaints WHERE complaint_status = 'Pending' '''
+        try:
+            cursor = self.cursor
+            cursor.execute(sql)
+            results = cursor.fetchall()
+            if results:
+                printTime(f"DATABASE    {len(results)} pending complaints found")
+                return results
+            else:
+                printTime("DATABASE    No pending complaints found")
+                return []
+        except Error as e:
+            printTime(f"DATABASE    Error: {e}")
+
     #--------------------------------------------------------------------------- BARANGAY OFFICIALS TABLE OPERATIONS
     def insert_barangay_official(self, official):
         """ insert a new barangay official into the barangay_officials table """
