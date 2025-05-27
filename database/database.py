@@ -380,6 +380,7 @@ class Database:
                 return []
         except Error as e:
             printTime(f"Error: {e}")
+            return []
 
     def check_unique_id(self, table, element_id):
         """ check if an ID is unique in the specified table """
