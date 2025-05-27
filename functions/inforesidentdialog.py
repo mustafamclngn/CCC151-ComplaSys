@@ -54,8 +54,9 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
             self.edit_mode = False
             self.inputEnabled(False)
 
-            self.file_path = self.inforesident_photo_label.text()
-            if self.file_path != self.db.get_element_by_id('residents', self.old_res_id)[5]:
+            self.file_path = self.inforesident_photo_label.text() # New photo path
+            old_photo_path = self.db.get_element_by_id('residents', self.old_res_id)[5]
+            if self.file_path != old_photo_path:
                 local_dir = os.path.join('.', 'photos')
                 if not os.path.exists(local_dir):
                     os.makedirs(local_dir)
@@ -66,16 +67,14 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
                 if self.photo_path != self.file_path:
                     try:
                         shutil.copy(self.file_path, self.photo_path)
-                        os.remove(self.db.get_element_by_id('residents', self.inforesident_residentID_input.text())[5])  # Remove old photo file
+                        # Only remove the old photo if it exists and is different from the new photo
+                        if old_photo_path and os.path.isfile(old_photo_path) and old_photo_path != self.photo_path:
+                            os.remove(old_photo_path)  # Remove old photo file
                         self.inforesident_photo_label.setText(self.photo_path)
                     except Exception as e:
                         errorMessageBox(self, "File Error", f"Failed to copy photo file: {e}")
                         return
 
-            if self.old_res_id != self.inforesident_residentID_input.text():
-                photo_path = os.path.join('.', 'photos', self.inforesident_residentID_input.text() + os.path.splitext(self.file_path)[1])
-                os.rename(self.file_path, photo_path)  # Rename the file to match the new resident ID
-                self.inforesident_photo_label.setText(photo_path)  # Update photo label if resident ID changes
 
             # Change button color
             self.saveResBtn.setStyleSheet("background-color: rgb(230, 230, 230); color:black;")
