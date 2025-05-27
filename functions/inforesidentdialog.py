@@ -5,6 +5,8 @@ from PyQt5.QtCore import QDate
 from database.database import printTime, warnMessageBox, infoMessageBox, errorMessageBox
 import os
 
+from utils import all_fields_filled
+
 class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
     def __init__(self, resident, db):
         super().__init__()
@@ -49,6 +51,12 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
             self.edit_mode = False
             self.inputEnabled(False)
 
+            # Check if resident still exists
+            resident = self.db.get_element_by_id('residents', self.inforesident_residentID_input.text())
+            if resident is None:
+                warnMessageBox(self, "Error", "Resident not found in database. It may have been deleted.")
+                return
+
             self.file_path = self.inforesident_photo_label.text()
             if self.file_path != self.db.get_element_by_id('residents', self.inforesident_residentID_input.text())[5]:
                 local_dir = os.path.join('.', 'photos')
@@ -62,7 +70,20 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
                     shutil.copy(self.file_path, self.photo_path)
                     os.remove(self.db.get_element_by_id('residents', self.inforesident_residentID_input.text())[5])  # Remove old photo file
                     self.inforesident_photo_label.setText(self.photo_path)
-
+            # fields to validate if present or not
+            fields = [
+                self.inforesident_residentID_input,
+                self.inforesident_firstname_input,
+                self.inforesident_lastname_input,
+                self.inforesident_dob_input,
+                self.inforesident_photo_label,
+                self.inforesident_address_input,
+                self.inforesident_contact_input,
+                self.inforesident_sex_input
+            ]
+            if not all_fields_filled(fields):
+                warnMessageBox(self, "Input Error", "Please fill in all required fields.")
+                return
 
             # Change button color
             self.saveResBtn.setStyleSheet("background-color: rgb(230, 230, 230); color:black;")
@@ -82,6 +103,7 @@ class InfoResidentDialog(QDialog, Ui_infoResidentDialog):
             )
             printTime("Updating resident information in the database")
             self.db.update_resident(updated_resident)
+
 
     def editButtonClicked(self):
         if not self.edit_mode:

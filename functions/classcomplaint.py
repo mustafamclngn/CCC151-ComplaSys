@@ -30,7 +30,11 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
         validator = QRegExpValidator(regex)
         self.addcomplaint_complaintID_input.setValidator(validator)
         self.addcomplaint_addentry_button.clicked.connect(self.save_complaint)
-        
+        # Restrict Resident ID to YYYY-####
+        regex = QRegExp(r"^\d{4}-\d{4}$")
+        validator = QRegExpValidator(regex)
+        self.addcomplaint_residentID_input.setValidator(validator)
+
         #Auto-generate Resident ID
         new_id = self.db.generate_id("complaints")
         self.addcomplaint_complaintID_input.setText(new_id)
@@ -75,6 +79,12 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
             self.db.cursor.execute("SELECT 1 FROM residents WHERE resident_id = %s", (resident_id,))
             if not self.db.cursor.fetchone():
                 warnMessageBox(self, "Input Error", "Resident ID does not exist. Please enter a valid Resident ID.")
+                return
+            
+            #ID must follow pattern YYYY-####
+            resident_id = self.addcomplaint_residentID_input.text()
+            if not resident_id or not self.addcomplaint_residentID_input.hasAcceptableInput():
+                warnMessageBox(self, "Input Error", "Resident ID must be in the format YYYY-#### (8 digits).")
                 return
             
             resident_id = self.addcomplaint_residentID_input.text()

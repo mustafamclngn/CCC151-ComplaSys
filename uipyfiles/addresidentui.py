@@ -249,7 +249,7 @@ class Ui_addResidentDialog(object):
         self.addresident_sex_input.setItemText(1, _translate("addResidentDialog", "Female"))
         self.label_contact_3.setText(_translate("addResidentDialog", "Age:"))
         self.label_dob.setText(_translate("addResidentDialog", "Date of Birth:"))
-        self.addresident_age_input.setPlaceholderText(_translate("addResidentDialog", " Please provide a valid age"))
+        self.addresident_age_input.setPlaceholderText(_translate("addResidentDialog", " Age is based on date of birth"))
         self.label_contact.setText(_translate("addResidentDialog", "Contact:"))
         self.addresident_contact_input.setPlaceholderText(_translate("addResidentDialog", " Ex: 09123456789"))
         self.label_address.setText(_translate("addResidentDialog", "Address:"))
