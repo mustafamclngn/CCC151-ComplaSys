@@ -43,16 +43,24 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
                 warnMessageBox(self, "Input Error", "Complaint ID must be in the format ####-#### (8 digits).")
                 return
 
+            #Duplication of ID
             self.db.cursor.execute("SELECT 1 FROM complaints WHERE complaint_id = %s", (complaint_id,))
             if self.db.cursor.fetchone():
                 warnMessageBox(self, "Duplicate ID", "Complaint ID already exists. Please enter a unique ID.")
                 return
 
+            #Check Res_ID REQUIRED
             resident_id = self.addcomplaint_residentID_input.text()
             if not resident_id.strip():
                 warnMessageBox(self, "Input Error", "Resident ID is required.")
                 return
-
+            
+            #Check if Resident ID exists
+            self.db.cursor.execute("SELECT 1 FROM residents WHERE resident_id = %s", (resident_id,))
+            if not self.db.cursor.fetchone():
+                warnMessageBox(self, "Input Error", "Resident ID does not exist. Please enter a valid Resident ID.")
+                return
+            
             resident_id = self.addcomplaint_residentID_input.text()
             category = self.addcomplaint_category_input.currentText()
             date = self.addcomplaint_date_input.date().toString("yyyy-MM-dd")

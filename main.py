@@ -314,7 +314,9 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
     def load_residents(self, page=None):
         if page is not None:
-            self.res_page = page
+            self.res_page = max(1, page)
+        else:
+            self.res_page = max(1, self.res_page)
         db = self.db
         self.resident_table.setRowCount(0)
         results = db.get_elements(
@@ -400,7 +402,9 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
     def load_officials(self, page=None):
         if page is not None:
-            self.offi_page=page
+            self.offi_page = max(1, page)
+        else:
+            self.offi_page = max(1, self.offi_page)
         db = self.db 
         self.official_table.setRowCount(0)
         results = db.get_elements(
@@ -475,7 +479,9 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
     def load_complaints(self, page=None):
         if page is not None:
-            self.comp_page = page
+            self.comp_page = max(1, page)
+        else:
+            self.comp_page = max(1, self.comp_page)
         db = self.db  # Create a new Database instance
         self.complaint_table.setRowCount(0)
         results = db.get_elements(
