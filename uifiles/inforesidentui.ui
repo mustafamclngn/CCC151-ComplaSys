@@ -115,6 +115,9 @@ border-radius: 13px;</string>
 border: 1px solid grey;
 border-radius: 4px;</string>
      </property>
+     <property name="placeholderText">
+      <string> Ex: John</string>
+     </property>
     </widget>
     <widget class="QLabel" name="label_last_name">
      <property name="geometry">
@@ -156,6 +159,9 @@ border-radius: 4px;</string>
 border: 1px solid grey;
 border-radius: 4px;</string>
      </property>
+     <property name="placeholderText">
+      <string> Ex: Doe</string>
+     </property>
     </widget>
     <widget class="QLabel" name="label_sex">
      <property name="geometry">
@@ -191,6 +197,9 @@ border-radius: 4px;</string>
       <font>
        <pointsize>12</pointsize>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: white;
@@ -272,6 +281,9 @@ border-radius: 4px;</string>
      <property name="text">
       <string/>
      </property>
+     <property name="placeholderText">
+      <string> Please input a valid age</string>
+     </property>
     </widget>
     <widget class="QLabel" name="label_contact">
      <property name="geometry">
@@ -306,6 +318,9 @@ border-radius: 4px;</string>
      <property name="font">
       <font/>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">background-color: white;
 border: 1px solid grey;
@@ -333,6 +348,9 @@ border-radius: 4px;</string>
       <string notr="true">background-color: white;
 border: 1px solid grey;
 border-radius: 4px;</string>
+     </property>
+     <property name="placeholderText">
+      <string> Ex: 09123456789</string>
      </property>
     </widget>
     <widget class="QLabel" name="label_address">
@@ -382,6 +400,9 @@ p, li { white-space: pre-wrap; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
+     <property name="placeholderText">
+      <string> Please provide the address</string>
+     </property>
     </widget>
     <widget class="QLabel" name="label_contact_2">
      <property name="geometry">
@@ -421,6 +442,9 @@ p, li { white-space: pre-wrap; }
        <bold>false</bold>
       </font>
      </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
+     </property>
      <property name="styleSheet">
       <string notr="true">border: 2px solid rgb(230, 230, 230);
 </string>
@@ -448,6 +472,12 @@ p, li { white-space: pre-wrap; }
 border: 1px solid grey;
 border-radius: 4px;</string>
      </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="placeholderText">
+      <string> Ex: 2025-0001</string>
+     </property>
     </widget>
     <widget class="QLineEdit" name="inforesident_photo_label">
      <property name="geometry">
@@ -468,6 +498,12 @@ border-radius: 4px;</string>
 border: 1px solid grey;
 border-radius: 4px;</string>
      </property>
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+     <property name="placeholderText">
+      <string> Upload an image</string>
+     </property>
     </widget>
     <widget class="QPushButton" name="inforesident_view_button">
      <property name="geometry">
@@ -485,6 +521,9 @@ border-radius: 4px;</string>
        <weight>50</weight>
        <bold>false</bold>
       </font>
+     </property>
+     <property name="cursor">
+      <cursorShape>PointingHandCursor</cursorShape>
      </property>
      <property name="styleSheet">
       <string notr="true">border: 2px solid rgb(230, 230, 230);
@@ -510,6 +549,9 @@ border-radius: 4px;</string>
       <weight>50</weight>
       <bold>false</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 179, 179);
@@ -540,6 +582,9 @@ color: black;</string>
       <bold>false</bold>
      </font>
     </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
+    </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(255, 217, 148);
 border-radius: 10px;
@@ -568,6 +613,9 @@ color: black;</string>
       <weight>50</weight>
       <bold>false</bold>
      </font>
+    </property>
+    <property name="cursor">
+     <cursorShape>PointingHandCursor</cursorShape>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(230, 230, 230);

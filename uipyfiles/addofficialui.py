@@ -100,6 +100,7 @@ class Ui_addOfficialDialog(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.addofficial_position_input.setFont(font)
+        self.addofficial_position_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.addofficial_position_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
@@ -125,6 +126,7 @@ class Ui_addOfficialDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.addofficial_addentry_button.setFont(font)
+        self.addofficial_addentry_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.addofficial_addentry_button.setStyleSheet("background-color: rgb(148, 255, 148);\n"
 "border-radius: 10px;\n"
 "color: black;")
@@ -136,6 +138,7 @@ class Ui_addOfficialDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.addofficial_cancel_button.setFont(font)
+        self.addofficial_cancel_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.addofficial_cancel_button.setStyleSheet("background-color: rgb(255, 179, 179);\n"
 "border-radius: 10px;\n"
 "color: black;")
@@ -151,9 +154,13 @@ class Ui_addOfficialDialog(object):
         _translate = QtCore.QCoreApplication.translate
         addOfficialDialog.setWindowTitle(_translate("addOfficialDialog", "Add New Official"))
         self.label_resident_id.setText(_translate("addOfficialDialog", "Official ID:"))
+        self.addofficial_officialID_input.setPlaceholderText(_translate("addOfficialDialog", " Ex: 0001-2025"))
         self.label_first_name_2.setText(_translate("addOfficialDialog", "First Name:"))
+        self.addofficial_firstname_input.setPlaceholderText(_translate("addOfficialDialog", " Ex: Jane"))
         self.label_last_name.setText(_translate("addOfficialDialog", "Last Name:"))
+        self.addofficial_lastname_input.setPlaceholderText(_translate("addOfficialDialog", " Ex: Doe"))
         self.label_contact.setText(_translate("addOfficialDialog", "Contact:"))
+        self.addofficial_contact_input.setPlaceholderText(_translate("addOfficialDialog", " Ex: 09987654321"))
         self.addofficial_position_input.setItemText(0, _translate("addOfficialDialog", "Barangay Captain"))
         self.addofficial_position_input.setItemText(1, _translate("addOfficialDialog", "Barangay Councilor"))
         self.addofficial_position_input.setItemText(2, _translate("addOfficialDialog", "SK Offical"))

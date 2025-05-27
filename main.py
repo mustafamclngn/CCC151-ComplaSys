@@ -24,11 +24,31 @@ from functions.inforesidentdialog import InfoResidentDialog
 from functions.infocomplaintdialog import InfoComplaintDialog
 from functions.infoofficialdialog import InfoOfficialDialog
 from datetime import datetime
+
+from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
+from matplotlib.figure import Figure
             
 class MainClass(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+
+        # setup and layout
+        if self.chart_frame.layout() is None:
+            self.chart_frame.setLayout(QVBoxLayout())
+
+        # combo box from month choice
+        self.monthFilterBox = QComboBox(self.chart_frame)
+        self.monthFilterBox.addItem("All Months")
+        months = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
+        ]
+        self.monthFilterBox.addItems(months)
+        self.chart_frame.layout().addWidget(self.monthFilterBox)
+
+        # connect choice to chart
+        self.monthFilterBox.currentIndexChanged.connect(self.plot_complaint_pie_chart)
 
         #Font
         font_id = QFontDatabase.addApplicationFont("resource/Gilroy-Medium.ttf")
@@ -72,6 +92,90 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.official_table.itemClicked.connect(self.on_official_item_clicked)
         self.complaint_table.itemClicked.connect(self.on_complaint_item_clicked)
 
+    def plot_complaint_pie_chart(self):
+        # layout chart in chart_frame
+        layout = self.chart_frame.layout()
+
+        # clear widget every change
+        self.monthFilterBox.setParent(None)  # remove combo box temp
+        for i in reversed(range(layout.count())):
+            widget = layout.itemAt(i).widget()
+            if widget:
+                layout.removeWidget(widget)
+                widget.deleteLater()
+
+        # chart label
+        label = QLabel("Overall Complaints")
+        label.setStyleSheet("font-size: 24px; border: 0px;")
+        label.setAlignment(QtCore.Qt.AlignLeft)
+        layout.addWidget(label)
+
+        # get data
+        month_index = self.monthFilterBox.currentIndex()
+        cursor = self.db.cursor
+
+        if month_index == 0:
+            cursor.execute("SELECT complaint_status FROM complaints")
+        else:
+            cursor.execute("""
+                SELECT complaint_status FROM complaints
+                WHERE MONTH(STR_TO_DATE(date_time, '%Y-%m-%d')) = %s
+            """, (month_index,))
+
+        results = cursor.fetchall()
+
+        # count cases
+        completed = sum(1 for r in results if r[0] == "Completed")
+        pending = sum(1 for r in results if r[0] == "Pending")
+        cancelled = sum(1 for r in results if r[0] == "Cancelled")
+        total = completed + pending + cancelled
+
+        # create chart
+        fig = Figure(figsize=(10, 9), dpi=100)
+        ax = fig.add_subplot(111)
+        ax.set_position([0.1, 0.2, 0.8, 0.7])
+
+        # chart data
+        if total == 0:
+            wedges, texts = ax.pie(
+                [1],
+                labels=[""],
+                colors=["#D3D3D3"],
+                startangle=90,
+                wedgeprops=dict(width=0.5)
+            )
+            legend_labels = ["No Complaints: 0"]
+        else:
+            wedges, texts = ax.pie(
+                [completed, pending, cancelled],
+                labels=["", "", ""],
+                colors=["#94FF94", "#FFD994", "#FFB3B3"],
+                startangle=90,
+                wedgeprops=dict(width=0.5)
+            )
+            legend_labels = [
+                f"Completed: {completed}",
+                f"Pending:   {pending}",
+                f"Cancelled: {cancelled}"
+            ]
+
+        ax.axis("equal")
+        ax.legend(
+            wedges, legend_labels,
+            title="",
+            loc='center',
+            bbox_to_anchor=(0.5, -0.2),
+            frameon=False
+        )
+
+        # layout shi idk
+        fig.tight_layout(rect=[0, 0.15, 1, 0.95])
+        
+        # widgets in correct order
+        canvas = FigureCanvas(fig)
+        layout.addWidget(canvas)
+        layout.addWidget(self.monthFilterBox)
+
     def updateDateTime(self):
         current = QDateTime.currentDateTime()
         formatted = current.toString("ddd, MMM d, h:mm AP")
@@ -101,6 +205,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
             
     def show_home(self):
         self.stackedWidget.setCurrentIndex(0)
+        self.plot_complaint_pie_chart()
 
     def show_residents(self):
         self.stackedWidget.setCurrentIndex(1)
@@ -329,6 +434,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         col = item.column()
         value = item.text()
         row_values = self.db.get_element_by_id("complaints", self.complaint_table.item(row, 0).text())
+        print("Full row data:", row_values)
         dialog = InfoComplaintDialog(row_values, self.db)
         dialog.display_info()
         dialog.exec_()

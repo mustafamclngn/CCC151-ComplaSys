@@ -100,6 +100,7 @@ class Ui_infoOfficialDialog(object):
         font = QtGui.QFont()
         font.setPointSize(12)
         self.infoofficial_position_input.setFont(font)
+        self.infoofficial_position_input.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.infoofficial_position_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
@@ -127,6 +128,9 @@ class Ui_infoOfficialDialog(object):
         self.label_address_3.setObjectName("label_address_3")
         self.infoofficial_caseshandled_input = QtWidgets.QTextEdit(self.frame_2)
         self.infoofficial_caseshandled_input.setGeometry(QtCore.QRect(30, 340, 361, 71))
+        font = QtGui.QFont()
+        font.setPointSize(12)
+        self.infoofficial_caseshandled_input.setFont(font)
         self.infoofficial_caseshandled_input.setStyleSheet("background-color: white;\n"
 "border: 1px solid grey;\n"
 "border-radius: 4px;")
@@ -138,6 +142,7 @@ class Ui_infoOfficialDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.saveOffiBtn.setFont(font)
+        self.saveOffiBtn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.saveOffiBtn.setStyleSheet("background-color: rgb(230, 230, 230);\n"
 "border-radius: 10px;\n"
 "color: black;")
@@ -149,6 +154,7 @@ class Ui_infoOfficialDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.updOffiBtn.setFont(font)
+        self.updOffiBtn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.updOffiBtn.setStyleSheet("background-color: rgb(255, 217, 148);\n"
 "border-radius: 10px;\n"
 "color: black;")
@@ -163,6 +169,7 @@ class Ui_infoOfficialDialog(object):
         font.setBold(False)
         font.setWeight(50)
         self.delOffiBtn.setFont(font)
+        self.delOffiBtn.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
         self.delOffiBtn.setStyleSheet("background-color: rgb(255, 179, 179);\n"
 "border-radius: 10px;\n"
 "color: black;")
@@ -178,9 +185,13 @@ class Ui_infoOfficialDialog(object):
         _translate = QtCore.QCoreApplication.translate
         infoOfficialDialog.setWindowTitle(_translate("infoOfficialDialog", "Official Information"))
         self.label_resident_id.setText(_translate("infoOfficialDialog", "Official ID:"))
+        self.infoofficial_officialID_input.setPlaceholderText(_translate("infoOfficialDialog", " Ex: 0001-2025"))
         self.label_first_name_2.setText(_translate("infoOfficialDialog", "First Name:"))
+        self.infoofficial_firstname_input.setPlaceholderText(_translate("infoOfficialDialog", " Ex: Jane"))
         self.label_last_name.setText(_translate("infoOfficialDialog", "Last Name:"))
+        self.infoofficial_lastname_input.setPlaceholderText(_translate("infoOfficialDialog", " Ex: Doe"))
         self.label_contact.setText(_translate("infoOfficialDialog", "Contact:"))
+        self.infoofficial_contact_input.setPlaceholderText(_translate("infoOfficialDialog", " Ex: 09987654321"))
         self.infoofficial_position_input.setItemText(0, _translate("infoOfficialDialog", "Barangay Captain"))
         self.infoofficial_position_input.setItemText(1, _translate("infoOfficialDialog", "Barangay Councilor"))
         self.infoofficial_position_input.setItemText(2, _translate("infoOfficialDialog", "SK Offical"))
@@ -193,8 +204,9 @@ class Ui_infoOfficialDialog(object):
         self.infoofficial_caseshandled_input.setHtml(_translate("infoOfficialDialog", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:8.25pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
+"</style></head><body style=\" font-family:\'MS Shell Dlg 2\'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:8.25pt;\"><br /></p></body></html>"))
+        self.infoofficial_caseshandled_input.setPlaceholderText(_translate("infoOfficialDialog", " Please provide if applicable"))
         self.saveOffiBtn.setText(_translate("infoOfficialDialog", "Save"))
         self.updOffiBtn.setText(_translate("infoOfficialDialog", "Edit"))
         self.delOffiBtn.setText(_translate("infoOfficialDialog", "Delete"))
