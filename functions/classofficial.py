@@ -56,6 +56,12 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
             warnMessageBox(self, "Input Error", "Please fill in all required fields.")
             return
         
+        #Error if not 11 digits
+        contact = self.addofficial_contact_input.text()
+        if not (contact.isdigit() and len(contact) == 11):
+            warnMessageBox(self, "Input Error", "Contact number must be exactly 11 digits.")
+            return
+        
         try:
             official_id = self.addofficial_officialID_input.text().strip()
 
