@@ -179,9 +179,16 @@ class Ui_addComplaintDialog(object):
         font.setWeight(50)
         self.addcomplaint_addentry_button.setFont(font)
         self.addcomplaint_addentry_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.addcomplaint_addentry_button.setStyleSheet("background-color: rgb(148, 255, 148);\n"
-"border-radius: 10px;\n"
-"color: black;")
+        self.addcomplaint_addentry_button.setStyleSheet("""
+            QPushButton {
+                background-color: rgb(148, 255, 148);
+                border-radius: 10px;
+                color: black;
+            }
+            QPushButton:hover {
+                background-color: rgb(120, 230, 120);
+            }
+        """)
         self.addcomplaint_addentry_button.setObjectName("addcomplaint_addentry_button")
         self.addcomplaint_cancel_button = QtWidgets.QPushButton(self.frame)
         self.addcomplaint_cancel_button.setGeometry(QtCore.QRect(710, 20, 91, 31))
@@ -191,9 +198,16 @@ class Ui_addComplaintDialog(object):
         font.setWeight(50)
         self.addcomplaint_cancel_button.setFont(font)
         self.addcomplaint_cancel_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.addcomplaint_cancel_button.setStyleSheet("background-color: rgb(255, 179, 179);\n"
-"border-radius: 10px;\n"
-"color: black;")
+        self.addcomplaint_cancel_button.setStyleSheet("""
+            QPushButton {
+                background-color: rgb(255, 179, 179);
+                border-radius: 10px;
+                color: black;
+            }
+            QPushButton:hover {
+                background-color: rgb(230, 150, 150);
+            }
+        """)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/trash.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.addcomplaint_cancel_button.setIcon(icon)

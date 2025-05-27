@@ -127,9 +127,16 @@ class Ui_addOfficialDialog(object):
         font.setWeight(50)
         self.addofficial_addentry_button.setFont(font)
         self.addofficial_addentry_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.addofficial_addentry_button.setStyleSheet("background-color: rgb(148, 255, 148);\n"
-"border-radius: 10px;\n"
-"color: black;")
+        self.addofficial_addentry_button.setStyleSheet("""
+            QPushButton {
+                background-color: rgb(148, 255, 148);
+                border-radius: 10px;
+                color: black;
+            }
+            QPushButton:hover {
+                background-color: rgb(120, 230, 120);
+            }
+        """)
         self.addofficial_addentry_button.setObjectName("addofficial_addentry_button")
         self.addofficial_cancel_button = QtWidgets.QPushButton(self.frame)
         self.addofficial_cancel_button.setGeometry(QtCore.QRect(330, 20, 91, 31))
@@ -139,9 +146,16 @@ class Ui_addOfficialDialog(object):
         font.setWeight(50)
         self.addofficial_cancel_button.setFont(font)
         self.addofficial_cancel_button.setCursor(QtGui.QCursor(QtCore.Qt.PointingHandCursor))
-        self.addofficial_cancel_button.setStyleSheet("background-color: rgb(255, 179, 179);\n"
-"border-radius: 10px;\n"
-"color: black;")
+        self.addofficial_cancel_button.setStyleSheet("""
+            QPushButton {
+                background-color: rgb(255, 179, 179);
+                border-radius: 10px;
+                color: black;
+            }
+            QPushButton:hover {
+                background-color: rgb(230, 150, 150);
+            }
+        """)
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap(":/icons/trash.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.addofficial_cancel_button.setIcon(icon)
