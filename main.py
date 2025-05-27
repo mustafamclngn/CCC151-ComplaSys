@@ -72,6 +72,41 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.official_table.itemClicked.connect(self.on_official_item_clicked)
         self.complaint_table.itemClicked.connect(self.on_complaint_item_clicked)
 
+        #Pagination States
+        self.res_page = 1
+        self.comp_page = 1
+        self.offi_page = 1
+        self.rows_per_page = 15 
+
+
+    
+
+        #Search buttons for RESIDENT, OFFICIALS, COMPLAINTS
+        #Residents Search
+        self.searchResBtn.clicked.connect(
+        lambda: self.universal_search(
+            "residents",
+            self.searchRes_line,
+            self.resident_table
+        )
+    )   
+        #Complaints Search
+        self.searchCompBtn.clicked.connect(
+        lambda: self.universal_search(
+            "complaints",
+            self.searchComp_line,
+            self.complaint_table
+        )
+    )
+        #Officials Search
+        self.searchOffiBtn.clicked.connect(
+        lambda: self.universal_search(
+            "barangay_officials",
+            self.searchOffi_line,
+            self.official_table
+        )
+    )
+
     def updateDateTime(self):
         current = QDateTime.currentDateTime()
         formatted = current.toString("ddd, MMM d, h:mm AP")
@@ -167,9 +202,17 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.db.remove_resident(resident_id)
             self.load_residents()
 
-    def load_residents(self):
+    def load_residents(self, page=None):
+        if page is not None:
+            self.res_page = page
+        db = self.db
         self.resident_table.setRowCount(0)
-        for row_num, row_data in enumerate(self.db.get_elements()):
+        results = db.get_elements(
+            table="residents",
+            page=self.res_page,
+            limit=self.rows_per_page
+        )
+        for row_num, row_data in enumerate(results):
             birth_year = None
             try:
                 birth_date = row_data[4]
@@ -244,10 +287,17 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.db.remove_official(official_id)
             self.load_officials()
 
-    def load_officials(self):
+    def load_officials(self, page=None):
+        if page is not None:
+            self.offi_page=page
         db = self.db 
         self.official_table.setRowCount(0)
-        for row_num, row_data in enumerate(db.get_elements(table="barangay_officials", column="last_name", order="ASC")):
+        results = db.get_elements(
+            table="barangay_officials",
+            page=self.offi_page,
+            limit=self.rows_per_page
+        )
+        for row_num, row_data in enumerate(results):
             self.official_table.insertRow(row_num)
             self.official_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # OFFICIALID
             self.official_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[4])))  # POSITION
@@ -311,10 +361,17 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.db.remove_complaint(complaint_id)
             self.load_complaints()
 
-    def load_complaints(self):
+    def load_complaints(self, page=None):
+        if page is not None:
+            self.comp_page = page
         db = self.db  # Create a new Database instance
         self.complaint_table.setRowCount(0)
-        for row_num, row_data in enumerate(db.get_elements(table="complaints", column="date_time", order="DESC")):
+        results = db.get_elements(
+            table="complaints",
+            page=self.comp_page,
+            limit=self.rows_per_page
+        )
+        for row_num, row_data in enumerate(results):
             self.complaint_table.insertRow(row_num)
             self.complaint_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # ComplaintID
             self.complaint_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[3])))  # ResidentID
@@ -333,6 +390,26 @@ class MainClass(QMainWindow, Ui_MainWindow):
         dialog.display_info()
         dialog.exec_()
         self.load_complaints()
+
+    def universal_search(self, table, searchbar, tablewidget):
+        query = searchbar.text().strip()
+        tablewidget.setRowCount(0)
+        results = self.db.universal_search(table,query)
+        for row_num, row_data in enumerate(results):
+            tablewidget.insertRow(row_num,)
+            for col_num, value in enumerate(row_data):
+                tablewidget.setItem(row_num, col_num, QTableWidgetItem(str(value)))
+    
+    def next_page(self, page_attr, load_func):
+        setattr(self, page_attr, getattr(self, page_attr) + 1)
+        load_func()
+
+    def prev_page(self, page_attr, load_func):
+        if getattr(self, page_attr) > 1:
+            setattr(self, page_attr, getattr(self, page_attr) - 1)
+            load_func()
+
+
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
