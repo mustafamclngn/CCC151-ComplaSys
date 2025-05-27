@@ -319,6 +319,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.resident_table.setRowCount(0)
         results = db.get_elements(
             table="residents",
+            column="last_name",
             page=self.res_page,
             limit=self.rows_per_page
         )
@@ -404,6 +405,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.official_table.setRowCount(0)
         results = db.get_elements(
             table="barangay_officials",
+            column="last_name",
             page=self.offi_page,
             limit=self.rows_per_page
         )
@@ -478,6 +480,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.complaint_table.setRowCount(0)
         results = db.get_elements(
             table="complaints",
+            column="date_time",
             page=self.comp_page,
             limit=self.rows_per_page
         )
@@ -518,6 +521,8 @@ class MainClass(QMainWindow, Ui_MainWindow):
         if getattr(self, page_attr) > 1:
             setattr(self, page_attr, getattr(self, page_attr) - 1)
             load_func()
+        else:
+            setattr(self, page_attr, 1)
 
 
 

@@ -49,6 +49,11 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
                 return
 
             resident_id = self.addcomplaint_residentID_input.text()
+            if not resident_id.strip():
+                warnMessageBox(self, "Input Error", "Resident ID is required.")
+                return
+
+            resident_id = self.addcomplaint_residentID_input.text()
             category = self.addcomplaint_category_input.currentText()
             date = self.addcomplaint_date_input.date().toString("yyyy-MM-dd")
             description = self.addcomplaint_description_input.toPlainText()
