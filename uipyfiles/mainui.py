@@ -1245,6 +1245,41 @@ class Ui_MainWindow(object):
                 shadow.setColor(QColor(0, 0, 0, 50))  # Reduced opacity from 150 to 50
                 frame.setGraphicsEffect(shadow)
 
+        refreshBtnStyle = """
+        QPushButton {
+                background-color: rgb(255, 255, 171);
+                border: 2px solid rgb(230, 230, 230);
+                border-radius: 10px;
+                color: black;
+        }
+        QPushButton:hover {
+                background-color: yellow;
+        }
+        """
+
+        self.refreshResBtn_2.setStyleSheet(refreshBtnStyle)
+        self.refreshCompBtn_2.setStyleSheet(refreshBtnStyle)
+        self.refreshOffiBtn_2.setStyleSheet(refreshBtnStyle)
+
+        searchBtnStyle = """
+        QPushButton {
+                background-color: white;
+                border: 2px solid rgb(230, 230, 230);
+                border-radius: 10px;
+        }
+        QPushButton:hover {
+                background-color: rgb(240, 240, 240);
+        }
+        """
+
+        # apply search button style
+        self.searchResBtn.setStyleSheet(searchBtnStyle)
+        self.refreshResBtn.setStyleSheet(searchBtnStyle)
+        self.searchCompBtn.setStyleSheet(searchBtnStyle)
+        self.refreshCompBtn.setStyleSheet(searchBtnStyle)
+        self.searchOffiBtn.setStyleSheet(searchBtnStyle)
+        self.refreshOffiBtn.setStyleSheet(searchBtnStyle)
+
         #custom drop dowm arrow
         comboBoxStyle = """
             QComboBox {
@@ -1276,7 +1311,7 @@ class Ui_MainWindow(object):
         self.searchbyRes_box.setStyleSheet(comboBoxStyle)
         self.searchbyComp_box.setStyleSheet(comboBoxStyle)
         self.searchbyOff_box.setStyleSheet(comboBoxStyle)
-
+        self.searchbyPendComp_box.setStyleSheet(comboBoxStyle)
 
         # Make resident_table items read-only
         self.resident_table.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
