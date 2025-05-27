@@ -15,7 +15,7 @@ class Ui_infoResidentDialog(object):
     def setupUi(self, infoResidentDialog):
         infoResidentDialog.setObjectName("infoResidentDialog")
         infoResidentDialog.resize(890, 521)
-        infoResidentDialog.setStyleSheet("background-color: rgb(0, 0, 25);")
+        infoResidentDialog.setStyleSheet("background-color: rgb(230, 230, 230);")
         self.frame = QtWidgets.QFrame(infoResidentDialog)
         self.frame.setGeometry(QtCore.QRect(20, 20, 851, 481))
         self.frame.setStyleSheet("background-color: rgb(245, 245, 245);\n"

@@ -15,7 +15,7 @@ class Ui_addOfficialDialog(object):
     def setupUi(self, addOfficialDialog):
         addOfficialDialog.setObjectName("addOfficialDialog")
         addOfficialDialog.resize(501, 449)
-        addOfficialDialog.setStyleSheet("background-color: rgb(0, 0, 25);")
+        addOfficialDialog.setStyleSheet("background-color: rgb(230, 230, 230);")
         self.frame = QtWidgets.QFrame(addOfficialDialog)
         self.frame.setGeometry(QtCore.QRect(20, 20, 461, 411))
         self.frame.setStyleSheet("background-color: rgb(245, 245, 245);\n"

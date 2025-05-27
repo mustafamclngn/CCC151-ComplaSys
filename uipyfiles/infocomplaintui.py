@@ -15,7 +15,7 @@ class Ui_infoComplaintDialog(object):
     def setupUi(self, infoComplaintDialog):
         infoComplaintDialog.setObjectName("infoComplaintDialog")
         infoComplaintDialog.resize(1203, 506)
-        infoComplaintDialog.setStyleSheet("background-color: rgb(0, 0, 25);")
+        infoComplaintDialog.setStyleSheet("background-color: rgb(230, 230, 230);")
         self.frame = QtWidgets.QFrame(infoComplaintDialog)
         self.frame.setGeometry(QtCore.QRect(20, 20, 1161, 471))
         self.frame.setStyleSheet("background-color: rgb(245, 245, 245);\n"
