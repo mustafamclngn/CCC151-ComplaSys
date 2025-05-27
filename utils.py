@@ -16,3 +16,6 @@ def all_fields_filled(fields):
             if not field.currentText().strip():
                 return False
     return True
+
+def cancel_dialog(self):
+    self.reject()

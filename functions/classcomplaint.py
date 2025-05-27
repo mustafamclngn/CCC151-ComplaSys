@@ -17,7 +17,7 @@ from uipyfiles.addcomplaintui import Ui_addComplaintDialog
 from uipyfiles.addofficialui import Ui_addOfficialDialog
 from uipyfiles.mainui import Ui_MainWindow
 
-from utils import all_fields_filled
+from utils import all_fields_filled, cancel_dialog
 
 class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
     def __init__(self, parent=None, db=None):
@@ -37,6 +37,8 @@ class AddComplaintDialog(QDialog, Ui_addComplaintDialog):
         # (Optional) Allow editing:
         self.addcomplaint_complaintID_input.setEnabled(True)
 
+        #Cancel Button
+        self.addcomplaint_cancel_button.clicked.connect(lambda: cancel_dialog(self))
 
     def save_complaint(self):
         fields = [

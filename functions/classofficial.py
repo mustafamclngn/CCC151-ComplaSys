@@ -16,7 +16,7 @@ from database.database import printTime
 from database.database import warnMessageBox, infoMessageBox, errorMessageBox
 from resource import resource_qrc
 
-from utils import all_fields_filled
+from utils import all_fields_filled, cancel_dialog
 
 class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
     def __init__(self,parent = None, db=None):
@@ -39,6 +39,10 @@ class AddOfficialDialog(QDialog, Ui_addOfficialDialog):
         self.addofficial_officialID_input.setText(new_id)
         # (Optional) Allow editing:
         self.addofficial_officialID_input.setEnabled(True)
+
+        #Cancel Button
+        self.addofficial_cancel_button.clicked.connect(lambda: cancel_dialog(self))
+    
         
     def save_official(self):
         fields = [
