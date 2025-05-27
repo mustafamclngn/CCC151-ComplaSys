@@ -1114,22 +1114,41 @@ class Ui_MainWindow(object):
 
         table_style = """
         QHeaderView::section {
-        background-color: #f3f6f9;
-        color: #333;
-        border: none;
-        font-weight: 50;
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
-        text-align: left;
+                background-color: #f3f6f9;
+                color: #333;
+                border: none;
+                font-weight: 50;
+                border-top-left-radius: 0px;
+                border-top-right-radius: 0px;
+                text-align: left;
+                padding-left: 5px;
+                margin-right: 0px;
+        }
+        QHeaderView::section:hover {
+                background-color: #e3e6e9;
+                color: #000;
         }
         QHeaderView::section:!first {
-        border-top-left-radius: 0px;
+                border-top-left-radius: 0px;
         }
         QHeaderView::section:!last {
-        border-top-right-radius: 0px;
+                border-top-right-radius: 0px;
         }
         """
+
+        # sort icons to each header
+        for table in [self.resident_table, self.complaint_table, self.official_table, self.pendingComp_table]:
+            for col in range(table.columnCount()):
+                header_item = table.horizontalHeaderItem(col)
+                icon = QtGui.QIcon(":/icons/icons/sort.svg") 
+                header_item.setIcon(icon)
+                table.horizontalHeader().setIconSize(QtCore.QSize(16, 16))
         
+        self.resident_table.horizontalHeader().setDefaultAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.complaint_table.horizontalHeader().setDefaultAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.official_table.horizontalHeader().setDefaultAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+        self.pendingComp_table.horizontalHeader().setDefaultAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+
         # table_style stylesheet to header
         self.resident_table.horizontalHeader().setStyleSheet(table_style)
         self.complaint_table.horizontalHeader().setStyleSheet(table_style)
