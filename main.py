@@ -145,6 +145,11 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.complaint_table.horizontalHeader().sectionClicked.connect(self.on_complaint_header_clicked)
         self.official_table.horizontalHeader().sectionClicked.connect(self.on_barangay_official_header_clicked)
 
+        self.refreshCasesBtn.clicked.connect(self.refreshCasBtnClicked)
+
+    def refreshCasBtnClicked(self):
+        self.sortCases_box.setCurrentIndex(0)  # Reset to "All Months"
+
     def updateDashboardCases(self):
         month = self.sortCases_box.currentIndex()
         # Create a datetime object for the first day of the selected month in the current year
