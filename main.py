@@ -94,7 +94,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.res_page = 1
         self.comp_page = 1
         self.offi_page = 1
-        self.rows_per_page = 15 
+        self.rows_per_page = 17
 
         #Pagination Buttons
         # Residents pagination
