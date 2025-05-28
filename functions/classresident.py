@@ -123,6 +123,7 @@ class AddResidentDialog(QDialog, Ui_addResidentDialog):
                 sex
             )
             self.db.insert_resident(resident)  # Insert into the database
+            self.db.update_resident_age(resident_id, self.db.calculate_age(birth_date))  # Update age based on DOB
             infoMessageBox(self, "Success", "Resident added successfully!")
             self.accept()
         except Exception as e:
