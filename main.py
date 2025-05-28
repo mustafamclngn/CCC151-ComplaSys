@@ -124,6 +124,10 @@ class MainClass(QMainWindow, Ui_MainWindow):
 
         self.refreshCasesBtn.clicked.connect(self.refreshCasBtnClicked)
 
+        self.searchbyPendComp_box.deleteLater()
+        self.searchPendComp_line.deleteLater()
+        self.refreshPendCompBtn.deleteLater()
+        self.searchPendCompBtn.deleteLater()
 
     def onDashboardBtnClicked(self, item):
         row = item.row()
