@@ -83,7 +83,7 @@ class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
             reply = QMessageBox.question(
                 self,
                 "Confirm Deletion",
-                '<span style="color:white;">Are you sure you want to delete this complaint?</span>',
+                '<span style="color:black;">Are you sure you want to delete this complaint?</span>',
                 QMessageBox.Yes | QMessageBox.No,
                 QMessageBox.No
             )
