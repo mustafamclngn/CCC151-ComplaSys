@@ -113,30 +113,9 @@ class MainClass(QMainWindow, Ui_MainWindow):
         self.nextOffiBtn.clicked.connect(lambda: self.next_page('offi_page', self.load_officials))
 
         #Search buttons for RESIDENT, OFFICIALS, COMPLAINTS
-        #Residents Search
-        self.searchResBtn.clicked.connect(
-        lambda: self.universal_search(
-            "residents",
-            self.searchRes_line,
-            self.resident_table
-        )
-    )   
-        #Complaints Search
-        self.searchCompBtn.clicked.connect(
-        lambda: self.universal_search(
-            "complaints",
-            self.searchComp_line,
-            self.complaint_table
-        )
-    )
-        #Officials Search
-        self.searchOffiBtn.clicked.connect(
-        lambda: self.universal_search(
-            "barangay_officials",
-            self.searchOffi_line,
-            self.official_table
-        )
-    )
+        self.searchResBtn.clicked.connect(self.search_residents)
+        self.searchCompBtn.clicked.connect(self.search_complaints)
+        self.searchOffiBtn.clicked.connect(self.search_officials)
         
         # Table Header Sort
         self.resSort = 'ASC'
@@ -602,15 +581,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
         dialog = InfoComplaintDialog(row_values, self.db)
         dialog.exec_()
         self.load_complaints()
-
-    def universal_search(self, table, searchbar, tablewidget):
-        query = searchbar.text().strip()
-        tablewidget.setRowCount(0)
-        results = self.db.universal_search(table,query)
-        for row_num, row_data in enumerate(results):
-            tablewidget.insertRow(row_num,)
-            for col_num, value in enumerate(row_data):
-                tablewidget.setItem(row_num, col_num, QTableWidgetItem(str(value)))
     
     def next_page(self, page_attr, load_func):
         setattr(self, page_attr, getattr(self, page_attr) + 1)
@@ -624,6 +594,51 @@ class MainClass(QMainWindow, Ui_MainWindow):
             setattr(self, page_attr, 1)
 
 
+    def search_residents(self):
+        query = self.searchRes_line.text().strip()
+        self.resident_table.setRowCount(0)
+        if not query:
+            self.load_residents()
+            return
+        results = self.db.universal_search("residents", query)
+        for row_num, row_data in enumerate(results):
+            self.resident_table.insertRow(row_num)
+            self.resident_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # ResidentID
+            self.resident_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[1])))  # FirstName
+            self.resident_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[2])))  # LastName
+            self.resident_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[3])))  # Age
+            self.resident_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[8])))  # Sex
+            self.resident_table.setItem(row_num, 5, QTableWidgetItem(str(row_data[7])))  # Contact
+    
+    def search_complaints(self):
+        query = self.searchComp_line.text().strip()
+        self.complaint_table.setRowCount(0)
+        if not query:
+            self.load_complaints()
+            return
+        results = self.db.universal_search("complaints", query)
+        for row_num, row_data in enumerate(results):
+            self.complaint_table.insertRow(row_num)
+            self.complaint_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # ComplaintID
+            self.complaint_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[3])))  # ResidentID
+            self.complaint_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[4])))  # Category
+            self.complaint_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[1])))  # DateTime
+            self.complaint_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[5])))  # Status
+
+    def search_officials(self):
+        query = self.searchOffi_line.text().strip()
+        self.official_table.setRowCount(0)
+        if not query:
+            self.load_officials()
+            return
+        results = self.db.universal_search("barangay_officials", query)
+        for row_num, row_data in enumerate(results):
+            self.official_table.insertRow(row_num)
+            self.official_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # OfficialID
+            self.official_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[4])))  # Position
+            self.official_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[1])))  # FirstName
+            self.official_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[2])))  # LastName
+            self.official_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[3])))  # Contact
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)

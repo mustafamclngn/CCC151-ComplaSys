@@ -589,42 +589,41 @@ class Database:
             raise ValueError("Unknown table for ID generation")
 
         
-    def universal_search(self, table, query, column="last_name", order="ASC", limit=100, offset=0):
-        """
-        Universal search for residents, complaints, and barangay_officials.
-        Args:
-            table (str): Table name
-            query (str): Search string
-            column (str): Column to sort by
-            order (str): ASC or DESC
-            limit (int): Max results
-            offset (int): For pagination
-        Returns:
-            list: Matching rows
-        """
+    def universal_search(self, table, query, column=None, order="ASC", limit=100, offset=0):
         cursor = self.cursor
         param = f"%{query}%"
+
         if table == "residents":
+            if column is None:
+                column = "last_name"
             sql = f"""
                 SELECT * FROM residents
-                WHERE resident_id LIKE %s OR first_name LIKE %s OR last_name LIKE %s OR address LIKE %s
+                WHERE resident_id LIKE %s OR first_name LIKE %s OR last_name LIKE %s OR sex LIKE %s OR contact LIKE %s 
                 ORDER BY {column} {order} LIMIT %s OFFSET %s
             """
-            cursor.execute(sql, (param, param, param, param, limit, offset))
+            cursor.execute(sql, (param, param, param, param, param, limit, offset))
+
         elif table == "complaints":
+            # Default sort column for complaints
+            if column is None:
+                column = "date_time"
             sql = f"""
                 SELECT * FROM complaints
-                WHERE complaint_id LIKE %s OR resident_id LIKE %s OR complaint_category LIKE %s OR complaint_status LIKE %s
+                WHERE complaint_id LIKE %s OR resident_id LIKE %s OR complaint_category LIKE %s OR date_time LIKE %s OR complaint_status LIKE %s 
                 ORDER BY {column} {order} LIMIT %s OFFSET %s
             """
-            cursor.execute(sql, (param, param, param, param, limit, offset))
+            cursor.execute(sql, (param, param, param, param, param, limit, offset))
+
         elif table == "barangay_officials":
+            # Default sort column for officials
+            if column is None:
+                column = "last_name"
             sql = f"""
                 SELECT * FROM barangay_officials
-                WHERE barangay_official_id LIKE %s OR first_name LIKE %s OR last_name LIKE %s OR position LIKE %s
+                WHERE barangay_official_id LIKE %s OR position LIKE %s OR first_name LIKE %s OR last_name LIKE %s OR contact LIKE %s
                 ORDER BY {column} {order} LIMIT %s OFFSET %s
             """
-            cursor.execute(sql, (param, param, param, param, limit, offset))
+            cursor.execute(sql, (param, param, param, param, param, limit, offset))
         else:
             return []
         return cursor.fetchall()
