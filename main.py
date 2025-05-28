@@ -147,7 +147,9 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.pendingComp_table.insertRow(row_num)
             self.pendingComp_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0]))) # ComplaintID
             self.pendingComp_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[4]))) # Category
-            self.pendingComp_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[1]))) # DateTime
+            # Only display the date part (YYYY-MM-DD) from the datetime string
+            date_str = str(row_data[1]).split(" ")[0] if row_data[1] else ""
+            self.pendingComp_table.setItem(row_num, 2, QTableWidgetItem(date_str)) # Date
             self.pendingComp_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[6]))) # Location
             self.pendingComp_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[5]))) # Status
 
@@ -562,7 +564,9 @@ class MainClass(QMainWindow, Ui_MainWindow):
             self.complaint_table.setItem(row_num, 0, QTableWidgetItem(str(row_data[0])))  # ComplaintID
             self.complaint_table.setItem(row_num, 1, QTableWidgetItem(str(row_data[3])))  # ResidentID
             self.complaint_table.setItem(row_num, 2, QTableWidgetItem(str(row_data[4])))  # Category
-            self.complaint_table.setItem(row_num, 3, QTableWidgetItem(str(row_data[1])))  # DateTime
+            # Only display the date part (YYYY-MM-DD) from the datetime string
+            date_str = str(row_data[1]).split(" ")[0] if row_data[1] else ""
+            self.complaint_table.setItem(row_num, 3, QTableWidgetItem(date_str))  # Date
             self.complaint_table.setItem(row_num, 4, QTableWidgetItem(str(row_data[5])))  # Status
             self.complaint_table.setItem(row_num, 5, QTableWidgetItem(str(row_data[6])))  # Location
             self.complaint_table.setItem(row_num, 6, QTableWidgetItem(str(row_data[2])))  # Description
