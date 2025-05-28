@@ -80,11 +80,8 @@ class MainClass(QMainWindow, Ui_MainWindow):
         
         #Refresh Button
         self.refreshResBtn.clicked.connect(self.load_residents)
-        self.refreshResBtn_2.clicked.connect(self.load_residents)
         self.refreshOffiBtn.clicked.connect(self.load_officials)
-        self.refreshOffiBtn_2.clicked.connect(self.load_officials)
         self.refreshCompBtn.clicked.connect(self.load_complaints)
-        self.refreshCompBtn_2.clicked.connect(self.load_complaints)
 
         self.db = Database()
         self.resident_table.itemClicked.connect(self.on_resident_item_clicked)
