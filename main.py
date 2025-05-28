@@ -180,7 +180,7 @@ class MainClass(QMainWindow, Ui_MainWindow):
         else:
             self.resSort = 'ASC'
         self.load_residents(page=self.res_page, column=headers[logicalIndex], order=self.resSort)
-        self.sortRes_box.setCurrentText(headers_names[logicalIndex])
+        
         self.resSortCurrentSetting = [headers[logicalIndex], self.resSort]  # Update current sorting settings
 
     def on_complaint_header_clicked(self, logicalIndex):
@@ -191,7 +191,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
         else:
             self.comSort = 'ASC'
         self.load_complaints(page=self.comp_page, column=headers[logicalIndex], order=self.comSort)
-        self.sortComp_box.setCurrentText(headers_names[logicalIndex])
         self.comSortCurrentSetting = [headers[logicalIndex], self.comSort]
 
     def on_barangay_official_header_clicked(self, logicalIndex):
@@ -202,7 +201,6 @@ class MainClass(QMainWindow, Ui_MainWindow):
         else:
             self.offSort = 'ASC'
         self.load_officials(page=self.offi_page, column=headers[logicalIndex], order=self.offSort)
-        self.sortOff_box.setCurrentText(headers_names[logicalIndex])
         self.offSortCurrentSetting = [headers[logicalIndex], self.offSort]
 
     def plot_complaint_pie_chart(self):
