@@ -87,9 +87,6 @@ class InfoOfficialDialog(QDialog, Ui_infoOfficialDialog):
                 QMessageBox.Yes | QMessageBox.No,
                 QMessageBox.No
             )
-            # Set the stylesheet to make the text white
-            for widget in self.findChildren(QMessageBox):
-                widget.setStyleSheet("QLabel{ color : white; }")
 
             if reply == QMessageBox.Yes:
                 self.db.remove_barangay_official(self.infoofficial_officialID_input.text())
